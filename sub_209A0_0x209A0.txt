@@ -1,0 +1,42 @@
+Function: sub_209A0 (0x209A0)
+Architecture: 64-bit
+Segment range: 0x209A0 - 0x20A34
+----------------------------------------
+
+..text:00000000000209A0       SUB             SP, SP, #0x20
+..text:00000000000209A4       CMP             X1, XZR
+..text:00000000000209A8       CSET            W4, EQ
+..text:00000000000209AC       CMP             X2, XZR
+..text:00000000000209B0       CSET            W3, EQ
+..text:00000000000209B4       STP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000209B8       STR             X30, [SP,#0x20+var_10]
+..text:00000000000209BC       ORR             W3, W4, W3
+..text:00000000000209C0       CBNZ            W3, loc_209F8
+..text:00000000000209C4       CMP             X0, XZR
+..text:00000000000209C8       CSET            W20, EQ
+..text:00000000000209CC       CBNZ            W20, loc_209F8
+..text:00000000000209D0       LDR             X3, [X1]
+..text:00000000000209D4       CMP             X3, #0x3F ; '?'
+..text:00000000000209D8       B.HI            loc_20A0C
+..text:00000000000209DC       MOV             X2, #0x40 ; '@'
+..text:00000000000209E0       MOV             W0, #6
+..text:00000000000209E4       STR             X2, [X1]
+..text:00000000000209E8       LDP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000209EC       LDR             X30, [SP,#0x20+var_10]
+..text:00000000000209F0       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000209F4       RET
+..text:00000000000209F8       MOV             W0, #0x10
+..text:00000000000209FC       LDR             X30, [SP,#0x20+var_10]
+..text:0000000000020A00       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000020A04       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000020A08       RET
+..text:0000000000020A0C       MOV             X19, X1
+..text:0000000000020A10       MOV             X1, #0x40 ; '@'
+..text:0000000000020A14       BL              sub_20900
+..text:0000000000020A18       CMP             X0, #0x40 ; '@'
+..text:0000000000020A1C       MOV             X1, X0
+..text:0000000000020A20       MOV             W0, #9
+..text:0000000000020A24       B.NE            loc_209E8
+..text:0000000000020A28       STR             X1, [X19]
+..text:0000000000020A2C       MOV             W0, W20
+..text:0000000000020A30       B               loc_209E8

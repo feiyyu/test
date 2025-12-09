@@ -1,0 +1,9 @@
+Function: sub_2757C (0x2757C)
+Architecture: 64-bit
+Segment range: 0x2757C - 0x2758C
+----------------------------------------
+
+..text:000000000002757C       MOV             W1, #0x10FFFF
+..text:0000000000027580       CMP             W0, W1
+..text:0000000000027584       CSET            W0, LS
+..text:0000000000027588       RET

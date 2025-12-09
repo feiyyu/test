@@ -1,0 +1,33 @@
+Function: sub_207B4 (0x207B4)
+Architecture: 64-bit
+Segment range: 0x207B4 - 0x20824
+----------------------------------------
+
+..text:00000000000207B4       SUB             SP, SP, #0x20
+..text:00000000000207B8       CMP             X2, XZR
+..text:00000000000207BC       CSET            W4, EQ
+..text:00000000000207C0       CMP             X1, #0x3F ; '?'
+..text:00000000000207C4       CSET            W3, LS
+..text:00000000000207C8       STP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000207CC       STP             X21, X30, [SP,#0x20+var_10]
+..text:00000000000207D0       ORR             W3, W4, W3
+..text:00000000000207D4       CBNZ            W3, loc_207DC
+..text:00000000000207D8       CBNZ            X0, loc_207F0
+..text:00000000000207DC       MOV             W0, #0x10
+..text:00000000000207E0       LDP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000207E4       LDP             X21, X30, [SP,#0x20+var_10]
+..text:00000000000207E8       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000207EC       RET
+..text:00000000000207F0       MOV             X19, X0
+..text:00000000000207F4       MOV             X0, X2
+..text:00000000000207F8       MOV             X21, X1
+..text:00000000000207FC       MOV             X20, X2
+..text:0000000000020800       BL              sub_20688
+..text:0000000000020804       CBNZ            W0, loc_207E0
+..text:0000000000020808       MOV             X0, X19
+..text:000000000002080C       MOV             X1, X21
+..text:0000000000020810       MOV             X2, X20
+..text:0000000000020814       LDP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000020818       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000002081C       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000020820       B               sub_2055C

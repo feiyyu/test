@@ -1,0 +1,80 @@
+Function: sub_168C4 (0x168C4)
+Architecture: 64-bit
+Segment range: 0x168C4 - 0x169F0
+----------------------------------------
+
+..text:00000000000168C4       SUB             SP, SP, #0x40
+..text:00000000000168C8       CMP             X3, XZR
+..text:00000000000168CC       CSET            W7, EQ
+..text:00000000000168D0       CMP             X4, XZR
+..text:00000000000168D4       CSET            W5, EQ
+..text:00000000000168D8       STP             X19, X20, [SP,#0x40+var_40]
+..text:00000000000168DC       STP             X21, X22, [SP,#0x40+var_30]
+..text:00000000000168E0       STP             X23, X24, [SP,#0x40+var_20]
+..text:00000000000168E4       STP             X25, X30, [SP,#0x40+var_10]
+..text:00000000000168E8       ORR             W5, W7, W5
+..text:00000000000168EC       CBNZ            W5, loc_16960
+..text:00000000000168F0       CBZ             X1, loc_16960
+..text:00000000000168F4       MOV             X21, X3
+..text:00000000000168F8       MOV             X23, X2
+..text:00000000000168FC       MOV             X22, X1
+..text:0000000000016900       MOV             W20, W0
+..text:0000000000016904       MOV             X19, X4
+..text:0000000000016908       BL              sub_1FF68
+..text:000000000001690C       MOV             W3, W0
+..text:0000000000016910       CBNZ            W0, loc_16944
+..text:0000000000016914       SXTW            X6, W20
+..text:0000000000016918       ADRP            X24, #off_59F88@PAGE
+..text:000000000001691C       LDR             X1, [X19]
+..text:0000000000016920       ADD             X0, X6, X6,LSL#1
+..text:0000000000016924       LDR             X24, [X24,#off_59F88@PAGEOFF]
+..text:0000000000016928       ADD             X6, X6, X0,LSL#2
+..text:000000000001692C       ADD             X24, X24, X6,LSL#4
+..text:0000000000016930       LDR             X0, [X24,#0x10]
+..text:0000000000016934       CMP             X1, X0
+..text:0000000000016938       B.CS            loc_16980
+..text:000000000001693C       STR             X0, [X19]
+..text:0000000000016940       MOV             W3, #6
+..text:0000000000016944       MOV             W0, W3
+..text:0000000000016948       LDP             X19, X20, [SP,#0x40+var_40]
+..text:000000000001694C       LDP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000016950       LDP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000016954       LDP             X25, X30, [SP,#0x40+var_10]
+..text:0000000000016958       ADD             SP, SP, #0x40 ; '@'
+..text:000000000001695C       RET
+..text:0000000000016960       MOV             W3, #0x10
+..text:0000000000016964       MOV             W0, W3
+..text:0000000000016968       LDP             X19, X20, [SP,#0x40+var_40]
+..text:000000000001696C       LDP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000016970       LDP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000016974       LDP             X25, X30, [SP,#0x40+var_10]
+..text:0000000000016978       ADD             SP, SP, #0x40 ; '@'
+..text:000000000001697C       RET
+..text:0000000000016980       MOV             X0, #0xD0; byte_count
+..text:0000000000016984       BL              .malloc
+..text:0000000000016988       MOV             X25, X0
+..text:000000000001698C       MOV             W3, #0xD
+..text:0000000000016990       CBZ             X0, loc_16944
+..text:0000000000016994       LDR             X1, [X24,#0xA8]
+..text:0000000000016998       BLR             X1
+..text:000000000001699C       MOV             W20, W0
+..text:00000000000169A0       CBZ             W0, loc_169B4
+..text:00000000000169A4       MOV             X0, X25; p
+..text:00000000000169A8       BL              .free
+..text:00000000000169AC       MOV             W3, W20
+..text:00000000000169B0       B               loc_16944
+..text:00000000000169B4       LDR             X3, [X24,#0xB0]
+..text:00000000000169B8       MOV             X0, X25
+..text:00000000000169BC       MOV             X1, X22
+..text:00000000000169C0       MOV             X2, X23
+..text:00000000000169C4       BLR             X3
+..text:00000000000169C8       MOV             W20, W0
+..text:00000000000169CC       CBNZ            W0, loc_169A4
+..text:00000000000169D0       LDR             X2, [X24,#0xB8]
+..text:00000000000169D4       MOV             X0, X25
+..text:00000000000169D8       MOV             X1, X21
+..text:00000000000169DC       BLR             X2
+..text:00000000000169E0       MOV             W20, W0
+..text:00000000000169E4       LDR             X0, [X24,#0x10]
+..text:00000000000169E8       STR             X0, [X19]
+..text:00000000000169EC       B               loc_169A4

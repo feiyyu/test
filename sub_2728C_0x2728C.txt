@@ -1,0 +1,179 @@
+Function: sub_2728C (0x2728C)
+Architecture: 64-bit
+Segment range: 0x2728C - 0x27544
+----------------------------------------
+
+..text:000000000002728C       SUB             SP, SP, #0x40
+..text:0000000000027290       CMP             X2, XZR
+..text:0000000000027294       CSET            W5, EQ
+..text:0000000000027298       CMP             X3, XZR
+..text:000000000002729C       CSET            W4, EQ
+..text:00000000000272A0       STP             X19, X20, [SP,#0x40+var_40]
+..text:00000000000272A4       STP             X21, X22, [SP,#0x40+var_30]
+..text:00000000000272A8       STP             X23, X24, [SP,#0x40+var_20]
+..text:00000000000272AC       STP             X25, X30, [SP,#0x40+var_10]
+..text:00000000000272B0       ORR             W4, W5, W4
+..text:00000000000272B4       CBNZ            W4, loc_27300
+..text:00000000000272B8       CBZ             X0, loc_27300
+..text:00000000000272BC       MOV             X24, X1
+..text:00000000000272C0       MOV             X20, X0
+..text:00000000000272C4       MOV             X23, X3
+..text:00000000000272C8       MOV             X22, X2
+..text:00000000000272CC       CBZ             X1, loc_27360
+..text:00000000000272D0       MOV             X21, #0
+..text:00000000000272D4       MOV             X19, X21
+..text:00000000000272D8       B               loc_272F4
+..text:00000000000272DC       LDR             W0, [X20,X19,LSL#2]
+..text:00000000000272E0       ADD             X19, X19, #1
+..text:00000000000272E4       BL              sub_27544
+..text:00000000000272E8       ADD             X21, X21, X0
+..text:00000000000272EC       CMP             X19, X24
+..text:00000000000272F0       B.EQ            loc_2731C
+..text:00000000000272F4       LDR             W0, [X20,X19,LSL#2]
+..text:00000000000272F8       BL              sub_2757C
+..text:00000000000272FC       CBNZ            W0, loc_272DC
+..text:0000000000027300       MOV             W0, #0x10
+..text:0000000000027304       LDP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000027308       LDP             X21, X22, [SP,#0x40+var_30]
+..text:000000000002730C       LDP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000027310       LDP             X25, X30, [SP,#0x40+var_10]
+..text:0000000000027314       ADD             SP, SP, #0x40 ; '@'
+..text:0000000000027318       RET
+..text:000000000002731C       CMP             X21, #0x7F
+..text:0000000000027320       ADD             X0, X21, #2
+..text:0000000000027324       B.LS            loc_27368
+..text:0000000000027328       CMP             X21, #0xFF
+..text:000000000002732C       B.HI            loc_273C0
+..text:0000000000027330       LDR             X1, [X23]
+..text:0000000000027334       ADD             X0, X21, #3
+..text:0000000000027338       CMP             X0, X1
+..text:000000000002733C       B.LS            loc_27528
+..text:0000000000027340       STR             X0, [X23]
+..text:0000000000027344       MOV             W0, #6
+..text:0000000000027348       LDP             X19, X20, [SP,#0x40+var_40]
+..text:000000000002734C       LDP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000027350       LDP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000027354       LDP             X25, X30, [SP,#0x40+var_10]
+..text:0000000000027358       ADD             SP, SP, #0x40 ; '@'
+..text:000000000002735C       RET
+..text:0000000000027360       MOV             X0, #2
+..text:0000000000027364       MOV             X21, X1
+..text:0000000000027368       LDR             X1, [X23]
+..text:000000000002736C       CMP             X0, X1
+..text:0000000000027370       B.HI            loc_27340
+..text:0000000000027374       MOV             W0, #0xC
+..text:0000000000027378       STRB            W21, [X22,#1]
+..text:000000000002737C       STRB            W0, [X22]
+..text:0000000000027380       MOV             X25, #2
+..text:0000000000027384       CBZ             X24, loc_2745C
+..text:0000000000027388       ADRP            X21, #jpt_273BC@PAGE
+..text:000000000002738C       MOV             X19, #0
+..text:0000000000027390       ADD             X21, X21, #jpt_273BC@PAGEOFF
+..text:0000000000027394       LDR             W0, [X20,X19,LSL#2]
+..text:0000000000027398       BL              sub_27544
+..text:000000000002739C       SUB             X0, X0, #1; switch 4 cases
+..text:00000000000273A0       CMP             X0, #3
+..text:00000000000273A4       B.HI            def_273BC; jumptable 00000000000273BC default case
+..text:00000000000273A8       CMP             W0, #3
+..text:00000000000273AC       B.HI            def_273BC; jumptable 00000000000273BC default case
+..text:00000000000273B0       LDRB            W0, [X21,W0,UXTW]
+..text:00000000000273B4       ADR             X1, loc_273C0
+..text:00000000000273B8       ADD             X0, X1, W0,SXTB#2
+..text:00000000000273BC       BR              X0; switch jump
+..text:00000000000273C0       MOV             X0, #0xFFFF
+..text:00000000000273C4       CMP             X21, X0
+..text:00000000000273C8       B.LS            loc_274F4
+..text:00000000000273CC       MOV             X0, #0xFFFFFF
+..text:00000000000273D0       CMP             X21, X0
+..text:00000000000273D4       B.HI            loc_27300
+..text:00000000000273D8       LDR             X1, [X23]
+..text:00000000000273DC       ADD             X0, X21, #5
+..text:00000000000273E0       CMP             X0, X1
+..text:00000000000273E4       B.HI            loc_27340
+..text:00000000000273E8       MOV             W2, #0xC
+..text:00000000000273EC       LSR             X1, X21, #0x10
+..text:00000000000273F0       LSR             X0, X21, #8
+..text:00000000000273F4       STRB            W2, [X22]
+..text:00000000000273F8       MOV             X25, #5
+..text:00000000000273FC       MOV             W2, #0xFFFFFF83
+..text:0000000000027400       STRB            W1, [X22,#2]
+..text:0000000000027404       STRB            W2, [X22,#1]
+..text:0000000000027408       STRB            W0, [X22,#3]
+..text:000000000002740C       STRB            W21, [X22,#4]
+..text:0000000000027410       B               loc_27388
+..text:0000000000027414       LDR             W0, [X20,X19,LSL#2]; jumptable 00000000000273BC case 3
+..text:0000000000027418       ADD             X2, X22, X25
+..text:000000000002741C       ADD             X1, X25, #2
+..text:0000000000027420       UBFX            X0, X0, #0xC, #4
+..text:0000000000027424       ORR             W0, W0, #0xFFFFFFE0
+..text:0000000000027428       STRB            W0, [X22,X25]
+..text:000000000002742C       ADD             X25, X25, #3
+..text:0000000000027430       LDR             W0, [X20,X19,LSL#2]
+..text:0000000000027434       UBFX            X0, X0, #6, #6
+..text:0000000000027438       ORR             W0, W0, #0xFFFFFF80
+..text:000000000002743C       STRB            W0, [X2,#1]
+..text:0000000000027440       LDR             W0, [X20,X19,LSL#2]
+..text:0000000000027444       AND             W0, W0, #0x3F ; '?'
+..text:0000000000027448       ORR             W0, W0, #0xFFFFFF80
+..text:000000000002744C       STRB            W0, [X22,X1]
+..text:0000000000027450       ADD             X19, X19, #1; jumptable 00000000000273BC default case
+..text:0000000000027454       CMP             X19, X24
+..text:0000000000027458       B.NE            loc_27394
+..text:000000000002745C       STR             X25, [X23]
+..text:0000000000027460       MOV             W0, #0
+..text:0000000000027464       B               loc_27304
+..text:0000000000027468       LDR             W0, [X20,X19,LSL#2]; jumptable 00000000000273BC case 2
+..text:000000000002746C       ADD             X1, X25, #1
+..text:0000000000027470       UBFX            X0, X0, #6, #5
+..text:0000000000027474       ORR             W0, W0, #0xFFFFFFC0
+..text:0000000000027478       STRB            W0, [X22,X25]
+..text:000000000002747C       ADD             X25, X25, #2
+..text:0000000000027480       LDR             W0, [X20,X19,LSL#2]
+..text:0000000000027484       AND             W0, W0, #0x3F ; '?'
+..text:0000000000027488       ORR             W0, W0, #0xFFFFFF80
+..text:000000000002748C       STRB            W0, [X22,X1]
+..text:0000000000027490       B               def_273BC; jumptable 00000000000273BC default case
+..text:0000000000027494       LDR             W0, [X20,X19,LSL#2]; jumptable 00000000000273BC case 1
+..text:0000000000027498       STRB            W0, [X22,X25]
+..text:000000000002749C       ADD             X25, X25, #1
+..text:00000000000274A0       B               def_273BC; jumptable 00000000000273BC default case
+..text:00000000000274A4       LDR             W0, [X20,X19,LSL#2]; jumptable 00000000000273BC case 4
+..text:00000000000274A8       ADD             X2, X22, X25
+..text:00000000000274AC       ADD             X1, X25, #3
+..text:00000000000274B0       UBFX            X0, X0, #0x12, #3
+..text:00000000000274B4       ORR             W0, W0, #0xFFFFFFF0
+..text:00000000000274B8       STRB            W0, [X22,X25]
+..text:00000000000274BC       ADD             X25, X25, #4
+..text:00000000000274C0       LDR             W0, [X20,X19,LSL#2]
+..text:00000000000274C4       UBFX            X0, X0, #0xC, #6
+..text:00000000000274C8       ORR             W0, W0, #0xFFFFFF80
+..text:00000000000274CC       STRB            W0, [X2,#1]
+..text:00000000000274D0       LDR             W0, [X20,X19,LSL#2]
+..text:00000000000274D4       UBFX            X0, X0, #6, #6
+..text:00000000000274D8       ORR             W0, W0, #0xFFFFFF80
+..text:00000000000274DC       STRB            W0, [X2,#2]
+..text:00000000000274E0       LDR             W0, [X20,X19,LSL#2]
+..text:00000000000274E4       AND             W0, W0, #0x3F ; '?'
+..text:00000000000274E8       ORR             W0, W0, #0xFFFFFF80
+..text:00000000000274EC       STRB            W0, [X22,X1]
+..text:00000000000274F0       B               def_273BC; jumptable 00000000000273BC default case
+..text:00000000000274F4       LDR             X1, [X23]
+..text:00000000000274F8       ADD             X0, X21, #4
+..text:00000000000274FC       CMP             X0, X1
+..text:0000000000027500       B.HI            loc_27340
+..text:0000000000027504       MOV             W1, #0xC
+..text:0000000000027508       LSR             X0, X21, #8
+..text:000000000002750C       STRB            W1, [X22]
+..text:0000000000027510       MOV             X25, #4
+..text:0000000000027514       MOV             W1, #0xFFFFFF82
+..text:0000000000027518       STRB            W21, [X22,#3]
+..text:000000000002751C       STRB            W1, [X22,#1]
+..text:0000000000027520       STRB            W0, [X22,#2]
+..text:0000000000027524       B               loc_27388
+..text:0000000000027528       MOV             W0, #0xC
+..text:000000000002752C       MOV             X25, #3
+..text:0000000000027530       STRB            W0, [X22]
+..text:0000000000027534       MOV             W0, #0xFFFFFF81
+..text:0000000000027538       STRB            W21, [X22,#2]
+..text:000000000002753C       STRB            W0, [X22,#1]
+..text:0000000000027540       B               loc_27388

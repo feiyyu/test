@@ -1,0 +1,22 @@
+Function: sub_133C8 (0x133C8)
+Architecture: 64-bit
+Segment range: 0x133C8 - 0x1340C
+----------------------------------------
+
+..text:00000000000133C8       CBZ             X0, loc_13400
+..text:00000000000133CC       LDR             W2, [X0]
+..text:00000000000133D0       MOV             W1, #3
+..text:00000000000133D4       CMP             W2, #4
+..text:00000000000133D8       B.GT            loc_133E4
+..text:00000000000133DC       MOV             W0, W1
+..text:00000000000133E0       RET
+..text:00000000000133E4       CMP             W2, #0x10
+..text:00000000000133E8       MOV             W1, #0
+..text:00000000000133EC       B.LE            loc_133DC
+..text:00000000000133F0       MOV             W2, #0x10
+..text:00000000000133F4       STR             W2, [X0]
+..text:00000000000133F8       MOV             W0, W1
+..text:00000000000133FC       RET
+..text:0000000000013400       MOV             W1, #0x10
+..text:0000000000013404       MOV             W0, W1
+..text:0000000000013408       RET

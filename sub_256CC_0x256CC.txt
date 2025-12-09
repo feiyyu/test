@@ -1,0 +1,14 @@
+Function: sub_256CC (0x256CC)
+Architecture: 64-bit
+Segment range: 0x256CC - 0x256F0
+----------------------------------------
+
+..text:00000000000256CC       CBZ             X0, loc_256E4
+..text:00000000000256D0       MOV             W1, #0
+..text:00000000000256D4       MOV             X2, #3
+..text:00000000000256D8       STR             X2, [X0]
+..text:00000000000256DC       MOV             W0, W1
+..text:00000000000256E0       RET
+..text:00000000000256E4       MOV             W1, #0x10
+..text:00000000000256E8       MOV             W0, W1
+..text:00000000000256EC       RET

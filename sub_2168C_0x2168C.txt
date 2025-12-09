@@ -1,0 +1,13 @@
+Function: sub_2168C (0x2168C)
+Architecture: 64-bit
+Segment range: 0x2168C - 0x216AC
+----------------------------------------
+
+..text:000000000002168C       CBZ             X0, locret_216A8
+..text:0000000000021690       CBZ             X1, locret_216A8
+..text:0000000000021694       ADD             X1, X0, X1
+..text:0000000000021698       STRB            WZR, [X0]
+..text:000000000002169C       ADD             X0, X0, #1
+..text:00000000000216A0       CMP             X0, X1
+..text:00000000000216A4       B.NE            loc_21698
+..text:00000000000216A8       RET

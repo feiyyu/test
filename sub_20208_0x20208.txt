@@ -1,0 +1,25 @@
+Function: sub_20208 (0x20208)
+Architecture: 64-bit
+Segment range: 0x20208 - 0x20258
+----------------------------------------
+
+..text:0000000000020208       ADRP            X0, #off_59FE0@PAGE
+..text:000000000002020C       SUB             SP, SP, #0x10
+..text:0000000000020210       LDR             X0, [X0,#off_59FE0@PAGEOFF]; void *
+..text:0000000000020214       STR             X30, [SP,#0x10+var_10]
+..text:0000000000020218       BL              sub_20258
+..text:000000000002021C       CMN             W0, #1
+..text:0000000000020220       B.NE            loc_20234
+..text:0000000000020224       MOV             W0, #0x10
+..text:0000000000020228       LDR             X30, [SP,#0x10+var_10]
+..text:000000000002022C       ADD             SP, SP, #0x10
+..text:0000000000020230       RET
+..text:0000000000020234       ADRP            X0, #off_5A000@PAGE
+..text:0000000000020238       LDR             X0, [X0,#off_5A000@PAGEOFF]; void *
+..text:000000000002023C       BL              sub_20258
+..text:0000000000020240       CMN             W0, #1
+..text:0000000000020244       B.EQ            loc_20224
+..text:0000000000020248       MOV             W0, #0
+..text:000000000002024C       LDR             X30, [SP,#0x10+var_10]
+..text:0000000000020250       ADD             SP, SP, #0x10
+..text:0000000000020254       RET

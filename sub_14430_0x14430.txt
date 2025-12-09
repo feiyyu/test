@@ -1,0 +1,301 @@
+Function: sub_14430 (0x14430)
+Architecture: 64-bit
+Segment range: 0x14430 - 0x148D0
+----------------------------------------
+
+..text:0000000000014430       SUB             SP, SP, #0x1E0
+..text:0000000000014434       ADRP            X15, #unk_3EFB0@PAGE
+..text:0000000000014438       SXTH            W1, W1
+..text:000000000001443C       MOV             X3, #0
+..text:0000000000014440       STP             D8, D9, [SP,#0x1E0+var_1D0]
+..text:0000000000014444       ADD             X9, SP, #0x1E0+var_78
+..text:0000000000014448       STP             X19, X30, [SP,#0x1E0+var_1E0]
+..text:000000000001444C       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:0000000000014450       ADD             X6, X15, #unk_3EFB0@PAGEOFF
+..text:0000000000014454       LDR             X4, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000014458       LDR             X4, [X4]
+..text:000000000001445C       STR             X4, [SP,#0x1E0+var_8]
+..text:0000000000014460       LDRB            W4, [X3,X6]
+..text:0000000000014464       ADD             X5, X6, #0x40 ; '@'
+..text:0000000000014468       AND             W7, W4, #7
+..text:000000000001446C       UBFX            X4, X4, #3, #5
+..text:0000000000014470       LDR             W5, [X5,W7,UXTW#2]
+..text:0000000000014474       LDRB            W4, [X0,X4]
+..text:0000000000014478       AND             W4, W4, W5
+..text:000000000001447C       CMP             W5, W4
+..text:0000000000014480       CSET            W4, EQ
+..text:0000000000014484       STRB            W4, [X9,X3]
+..text:0000000000014488       ADD             X3, X3, #1
+..text:000000000001448C       CMP             X3, #0x38 ; '8'
+..text:0000000000014490       B.NE            loc_14460
+..text:0000000000014494       ADD             X15, X15, #unk_3EFB0@PAGEOFF
+..text:0000000000014498       MOV             W16, #0xF
+..text:000000000001449C       MOV             X14, #0
+..text:00000000000144A0       ADD             X7, SP, #0x1E0+var_180
+..text:00000000000144A4       ADD             X8, SP, #0x1E0+var_40
+..text:00000000000144A8       ADD             X12, X15, #0x88
+..text:00000000000144AC       LSL             W3, W14, #1
+..text:00000000000144B0       LSL             W6, W16, #1
+..text:00000000000144B4       CMP             W1, #1
+..text:00000000000144B8       ADD             X4, X15, #0x60 ; '`'
+..text:00000000000144BC       CSEL            W6, W3, W6, NE
+..text:00000000000144C0       MOV             X5, X8
+..text:00000000000144C4       ADD             W11, W6, #1
+..text:00000000000144C8       LDRB            W13, [X14,X4]
+..text:00000000000144CC       MOV             W10, W6
+..text:00000000000144D0       STR             WZR, [X7,W11,UXTW#2]
+..text:00000000000144D4       ADD             W4, W13, #0x1C
+..text:00000000000144D8       MOV             W3, W13
+..text:00000000000144DC       STR             WZR, [X7,W6,UXTW#2]
+..text:00000000000144E0       B               loc_144F8
+..text:00000000000144E4       LDRB            W6, [X9,W3,UXTW]
+..text:00000000000144E8       ADD             W3, W3, #1
+..text:00000000000144EC       STRB            W6, [X5],#1
+..text:00000000000144F0       CMP             W3, W4
+..text:00000000000144F4       B.EQ            loc_14518
+..text:00000000000144F8       CMP             W3, #0x1B
+..text:00000000000144FC       B.LS            loc_144E4
+..text:0000000000014500       SUB             W6, W3, #0x1C
+..text:0000000000014504       ADD             W3, W3, #1
+..text:0000000000014508       CMP             W3, W4
+..text:000000000001450C       LDRB            W6, [X9,X6]
+..text:0000000000014510       STRB            W6, [X5],#1
+..text:0000000000014514       B.NE            loc_144F8
+..text:0000000000014518       ADD             X3, X8, #0x1C
+..text:000000000001451C       ADD             W6, W13, #0x38 ; '8'
+..text:0000000000014520       B               loc_14538
+..text:0000000000014524       LDRB            W5, [X9,W4,UXTW]
+..text:0000000000014528       ADD             W4, W4, #1
+..text:000000000001452C       STRB            W5, [X3],#1
+..text:0000000000014530       CMP             W4, W6
+..text:0000000000014534       B.EQ            loc_14558
+..text:0000000000014538       CMP             W4, #0x37 ; '7'
+..text:000000000001453C       B.LS            loc_14524
+..text:0000000000014540       SUB             W5, W4, #0x1C
+..text:0000000000014544       ADD             W4, W4, #1
+..text:0000000000014548       CMP             W4, W6
+..text:000000000001454C       LDRB            W5, [X9,X5]
+..text:0000000000014550       STRB            W5, [X3],#1
+..text:0000000000014554       B.NE            loc_14538
+..text:0000000000014558       ADD             X3, X15, #0x70 ; 'p'
+..text:000000000001455C       ADD             X4, X15, #0xA0
+..text:0000000000014560       LDRB            W5, [X3]
+..text:0000000000014564       LDRB            W5, [X8,X5]
+..text:0000000000014568       CBZ             W5, loc_1457C
+..text:000000000001456C       LDR             W5, [X7,X10,LSL#2]
+..text:0000000000014570       LDR             W6, [X4]
+..text:0000000000014574       ORR             W5, W6, W5
+..text:0000000000014578       STR             W5, [X7,X10,LSL#2]
+..text:000000000001457C       LDRB            W5, [X3,#0x18]
+..text:0000000000014580       LDRB            W5, [X8,X5]
+..text:0000000000014584       CBZ             W5, loc_14598
+..text:0000000000014588       LDR             W5, [X7,X11,LSL#2]
+..text:000000000001458C       LDR             W6, [X4]
+..text:0000000000014590       ORR             W5, W6, W5
+..text:0000000000014594       STR             W5, [X7,X11,LSL#2]
+..text:0000000000014598       ADD             X3, X3, #1
+..text:000000000001459C       ADD             X4, X4, #4
+..text:00000000000145A0       CMP             X3, X12
+..text:00000000000145A4       B.NE            loc_14560
+..text:00000000000145A8       ADD             X14, X14, #1
+..text:00000000000145AC       SUB             W16, W16, #1
+..text:00000000000145B0       CMP             X14, #0x10
+..text:00000000000145B4       B.NE            loc_144AC
+..text:00000000000145B8       MOV             X0, X7
+..text:00000000000145BC       ADD             X1, SP, #0x1E0+var_1A0
+..text:00000000000145C0       MOVI            V2.4S, #0xFC,LSL#16
+..text:00000000000145C4       ADD             X6, X7, #0x40 ; '@'
+..text:00000000000145C8       LD2             {V3.4S-V4.4S}, [X0],#0x20
+..text:00000000000145CC       ADD             X8, SP, #0x1E0+var_1A0
+..text:00000000000145D0       MOVI            V6.4S, #0x3F ; '?'
+..text:00000000000145D4       ADD             X7, X7, #0x60 ; '`'
+..text:00000000000145D8       ADD             X5, SP, #0x1E0+src
+..text:00000000000145DC       ADD             X4, X5, #0x40 ; '@'
+..text:00000000000145E0       ADD             X3, X5, #0x60 ; '`'
+..text:00000000000145E4       ST1             {V3.16B-V4.16B}, [X1]
+..text:00000000000145E8       ADR             X1, xmmword_148D0
+..text:00000000000145EC       LD2             {V18.4S-V19.4S}, [X0]
+..text:00000000000145F0       ADD             X0, SP, #0x1E0+var_1A0
+..text:00000000000145F4       LDR             Q1, [X1]
+..text:00000000000145F8       ADR             X1, xmmword_148E0
+..text:00000000000145FC       LDR             Q0, [X1]
+..text:0000000000014600       ADD             X1, SP, #0x1E0+var_1A0
+..text:0000000000014604       LDR             Q4, [X1]
+..text:0000000000014608       ADD             X1, SP, #0x1E0+var_190
+..text:000000000001460C       LDR             Q20, [X1]
+..text:0000000000014610       ST1             {V18.16B-V19.16B}, [X0]
+..text:0000000000014614       LD2             {V18.4S-V19.4S}, [X6]
+..text:0000000000014618       ADD             X6, SP, #0x1E0+var_1A0
+..text:000000000001461C       MOV             X1, X5; src
+..text:0000000000014620       AND             V21.16B, V4.16B, V2.16B
+..text:0000000000014624       MOV             X0, X2; dest
+..text:0000000000014628       LDR             Q3, [X8]
+..text:000000000001462C       AND             V7.16B, V4.16B, V1.16B
+..text:0000000000014630       AND             V5.16B, V20.16B, V2.16B
+..text:0000000000014634       ADD             X8, SP, #0x1E0+var_190
+..text:0000000000014638       AND             V17.16B, V4.16B, V0.16B
+..text:000000000001463C       MOV             X2, #0x80; n
+..text:0000000000014640       LDR             Q16, [X8]
+..text:0000000000014644       SHL             V21.4S, V21.4S, #6
+..text:0000000000014648       ST1             {V18.16B-V19.16B}, [X6]
+..text:000000000001464C       USHR            V5.4S, V5.4S, #0xA
+..text:0000000000014650       AND             V19.16B, V20.16B, V1.16B
+..text:0000000000014654       AND             V24.16B, V20.16B, V0.16B
+..text:0000000000014658       USHLL           V18.2D, V7.2S, #0
+..text:000000000001465C       LDR             Q26, [X8]
+..text:0000000000014660       USHLL2          V27.2D, V7.4S, #0
+..text:0000000000014664       AND             V4.16B, V4.16B, V6.16B
+..text:0000000000014668       ORR             V21.16B, V5.16B, V21.16B
+..text:000000000001466C       USHR            V19.4S, V19.4S, #6
+..text:0000000000014670       SHL             V17.4S, V17.4S, #0xC
+..text:0000000000014674       USHR            V24.4S, V24.4S, #4
+..text:0000000000014678       SHL             V18.2D, V18.2D, #0xA
+..text:000000000001467C       SHL             V27.2D, V27.2D, #0xA
+..text:0000000000014680       USHLL           V28.2D, V4.2S, #0
+..text:0000000000014684       ORR             V19.16B, V21.16B, V19.16B
+..text:0000000000014688       LD2             {V21.4S-V22.4S}, [X7]
+..text:000000000001468C       USHLL2          V5.2D, V4.4S, #0
+..text:0000000000014690       XTN             V29.2S, V18.2D
+..text:0000000000014694       XTN2            V29.4S, V27.2D
+..text:0000000000014698       ORR             V18.16B, V17.16B, V24.16B
+..text:000000000001469C       AND             V24.16B, V20.16B, V6.16B
+..text:00000000000146A0       LDR             Q4, [X6]
+..text:00000000000146A4       ORR             V8.16B, V19.16B, V29.16B
+..text:00000000000146A8       ADD             X6, SP, #0x1E0+var_1A0
+..text:00000000000146AC       AND             V7.16B, V16.16B, V2.16B
+..text:00000000000146B0       AND             V23.16B, V3.16B, V2.16B
+..text:00000000000146B4       SHL             V27.2D, V28.2D, #0x10
+..text:00000000000146B8       SHL             V5.2D, V5.2D, #0x10
+..text:00000000000146BC       ST1             {V21.16B-V22.16B}, [X6]
+..text:00000000000146C0       ADD             X6, SP, #0x1E0+var_1C0
+..text:00000000000146C4       AND             V25.16B, V3.16B, V1.16B
+..text:00000000000146C8       ORR             V24.16B, V18.16B, V24.16B
+..text:00000000000146CC       AND             V17.16B, V3.16B, V0.16B
+..text:00000000000146D0       XTN             V31.2S, V27.2D
+..text:00000000000146D4       XTN2            V31.4S, V5.2D
+..text:00000000000146D8       AND             V20.16B, V16.16B, V0.16B
+..text:00000000000146DC       STR             Q8, [X6]
+..text:00000000000146E0       ADD             X6, SP, #0x1E0+var_1A0
+..text:00000000000146E4       AND             V3.16B, V3.16B, V6.16B
+..text:00000000000146E8       AND             V22.16B, V16.16B, V1.16B
+..text:00000000000146EC       USHR            V7.4S, V7.4S, #0xA
+..text:00000000000146F0       SHL             V23.4S, V23.4S, #6
+..text:00000000000146F4       ORR             V8.16B, V24.16B, V31.16B
+..text:00000000000146F8       USHLL           V21.2D, V25.2S, #0
+..text:00000000000146FC       USHLL2          V25.2D, V25.4S, #0
+..text:0000000000014700       SHL             V17.4S, V17.4S, #0xC
+..text:0000000000014704       USHR            V20.4S, V20.4S, #4
+..text:0000000000014708       ORR             V23.16B, V7.16B, V23.16B
+..text:000000000001470C       USHLL           V29.2D, V3.2S, #0
+..text:0000000000014710       USHLL2          V5.2D, V3.4S, #0
+..text:0000000000014714       LDR             Q3, [X6]
+..text:0000000000014718       USHR            V22.4S, V22.4S, #6
+..text:000000000001471C       ADD             X6, SP, #0x1E0+var_1B0
+..text:0000000000014720       SHL             V18.2D, V21.2D, #0xA
+..text:0000000000014724       STR             Q8, [X6]
+..text:0000000000014728       ADD             X6, SP, #0x1E0+var_1C0
+..text:000000000001472C       SHL             V28.2D, V25.2D, #0xA
+..text:0000000000014730       LDR             Q25, [X8]
+..text:0000000000014734       ORR             V21.16B, V17.16B, V20.16B
+..text:0000000000014738       AND             V20.16B, V16.16B, V6.16B
+..text:000000000001473C       AND             V27.16B, V4.16B, V1.16B
+..text:0000000000014740       LD1             {V8.16B-V9.16B}, [X6]
+..text:0000000000014744       ORR             V22.16B, V23.16B, V22.16B
+..text:0000000000014748       XTN             V30.2S, V18.2D
+..text:000000000001474C       XTN2            V30.4S, V28.2D
+..text:0000000000014750       SHL             V24.2D, V29.2D, #0x10
+..text:0000000000014754       SHL             V5.2D, V5.2D, #0x10
+..text:0000000000014758       AND             V7.16B, V26.16B, V2.16B
+..text:000000000001475C       AND             V19.16B, V4.16B, V2.16B
+..text:0000000000014760       ORR             V20.16B, V21.16B, V20.16B
+..text:0000000000014764       AND             V17.16B, V4.16B, V0.16B
+..text:0000000000014768       XTN             V28.2S, V24.2D
+..text:000000000001476C       XTN2            V28.4S, V5.2D
+..text:0000000000014770       AND             V16.16B, V26.16B, V0.16B
+..text:0000000000014774       ORR             V5.16B, V22.16B, V30.16B
+..text:0000000000014778       USHLL           V23.2D, V27.2S, #0
+..text:000000000001477C       USHLL2          V27.2D, V27.4S, #0
+..text:0000000000014780       AND             V4.16B, V4.16B, V6.16B
+..text:0000000000014784       ST2             {V8.4S-V9.4S}, [X5],#0x20
+..text:0000000000014788       AND             V18.16B, V26.16B, V1.16B
+..text:000000000001478C       ORR             V8.16B, V20.16B, V28.16B
+..text:0000000000014790       USHR            V7.4S, V7.4S, #0xA
+..text:0000000000014794       SHL             V19.4S, V19.4S, #6
+..text:0000000000014798       STR             Q5, [X6]
+..text:000000000001479C       ADD             X6, SP, #0x1E0+var_1B0
+..text:00000000000147A0       SHL             V5.4S, V17.4S, #0xC
+..text:00000000000147A4       USHR            V16.4S, V16.4S, #4
+..text:00000000000147A8       SHL             V17.2D, V23.2D, #0xA
+..text:00000000000147AC       SHL             V27.2D, V27.2D, #0xA
+..text:00000000000147B0       USHLL           V22.2D, V4.2S, #0
+..text:00000000000147B4       USHLL2          V4.2D, V4.4S, #0
+..text:00000000000147B8       STR             Q8, [X6]
+..text:00000000000147BC       ADD             X6, SP, #0x1E0+var_1C0
+..text:00000000000147C0       ORR             V19.16B, V7.16B, V19.16B
+..text:00000000000147C4       XTN             V23.2S, V17.2D
+..text:00000000000147C8       XTN2            V23.4S, V27.2D
+..text:00000000000147CC       USHR            V18.4S, V18.4S, #6
+..text:00000000000147D0       ORR             V17.16B, V5.16B, V16.16B
+..text:00000000000147D4       AND             V16.16B, V26.16B, V6.16B
+..text:00000000000147D8       LD1             {V8.16B-V9.16B}, [X6]
+..text:00000000000147DC       SHL             V20.2D, V22.2D, #0x10
+..text:00000000000147E0       SHL             V4.2D, V4.2D, #0x10
+..text:00000000000147E4       ORR             V18.16B, V19.16B, V18.16B
+..text:00000000000147E8       AND             V7.16B, V25.16B, V2.16B
+..text:00000000000147EC       ORR             V16.16B, V17.16B, V16.16B
+..text:00000000000147F0       AND             V2.16B, V3.16B, V2.16B
+..text:00000000000147F4       XTN             V17.2S, V20.2D
+..text:00000000000147F8       XTN2            V17.4S, V4.2D
+..text:00000000000147FC       AND             V21.16B, V3.16B, V1.16B
+..text:0000000000014800       AND             V5.16B, V3.16B, V0.16B
+..text:0000000000014804       ORR             V4.16B, V18.16B, V23.16B
+..text:0000000000014808       AND             V0.16B, V25.16B, V0.16B
+..text:000000000001480C       ST2             {V8.4S-V9.4S}, [X5]
+..text:0000000000014810       ADD             X5, SP, #0x1E0+var_1B0
+..text:0000000000014814       AND             V3.16B, V3.16B, V6.16B
+..text:0000000000014818       ORR             V8.16B, V16.16B, V17.16B
+..text:000000000001481C       USHR            V7.4S, V7.4S, #0xA
+..text:0000000000014820       AND             V1.16B, V25.16B, V1.16B
+..text:0000000000014824       SHL             V2.4S, V2.4S, #6
+..text:0000000000014828       STR             Q4, [X6]
+..text:000000000001482C       USHLL           V19.2D, V21.2S, #0
+..text:0000000000014830       SHL             V4.4S, V5.4S, #0xC
+..text:0000000000014834       USHLL2          V21.2D, V21.4S, #0
+..text:0000000000014838       USHR            V0.4S, V0.4S, #4
+..text:000000000001483C       STR             Q8, [X5]
+..text:0000000000014840       ORR             V2.16B, V7.16B, V2.16B
+..text:0000000000014844       USHLL           V5.2D, V3.2S, #0
+..text:0000000000014848       USHR            V1.4S, V1.4S, #6
+..text:000000000001484C       USHLL2          V3.2D, V3.4S, #0
+..text:0000000000014850       SHL             V7.2D, V19.2D, #0xA
+..text:0000000000014854       SHL             V21.2D, V21.2D, #0xA
+..text:0000000000014858       ORR             V0.16B, V4.16B, V0.16B
+..text:000000000001485C       AND             V6.16B, V25.16B, V6.16B
+..text:0000000000014860       ORR             V1.16B, V2.16B, V1.16B
+..text:0000000000014864       SHL             V2.2D, V5.2D, #0x10
+..text:0000000000014868       LD1             {V4.16B-V5.16B}, [X6]
+..text:000000000001486C       SHL             V3.2D, V3.2D, #0x10
+..text:0000000000014870       XTN             V16.2S, V7.2D
+..text:0000000000014874       XTN2            V16.4S, V21.2D
+..text:0000000000014878       ORR             V0.16B, V0.16B, V6.16B
+..text:000000000001487C       ST2             {V4.4S-V5.4S}, [X4]
+..text:0000000000014880       ADD             X4, SP, #0x1E0+var_1B0
+..text:0000000000014884       ORR             V4.16B, V1.16B, V16.16B
+..text:0000000000014888       XTN             V1.2S, V2.2D
+..text:000000000001488C       XTN2            V1.4S, V3.2D
+..text:0000000000014890       ORR             V0.16B, V0.16B, V1.16B
+..text:0000000000014894       STR             Q4, [X6]
+..text:0000000000014898       STR             Q0, [X4]
+..text:000000000001489C       LD1             {V0.16B-V1.16B}, [X6]
+..text:00000000000148A0       ST2             {V0.4S-V1.4S}, [X3]
+..text:00000000000148A4       BL              .memcpy
+..text:00000000000148A8       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:00000000000148AC       LDR             X1, [SP,#0x1E0+var_8]
+..text:00000000000148B0       LDR             X0, [X19]
+..text:00000000000148B4       CMP             X1, X0
+..text:00000000000148B8       B.NE            loc_148CC
+..text:00000000000148BC       LDP             X19, X30, [SP,#0x1E0+var_1E0]
+..text:00000000000148C0       LDP             D8, D9, [SP,#0x1E0+var_1D0]
+..text:00000000000148C4       ADD             SP, SP, #0x1E0
+..text:00000000000148C8       RET
+..text:00000000000148CC       BL              .__stack_chk_fail

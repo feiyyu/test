@@ -1,0 +1,80 @@
+Function: sub_2055C (0x2055C)
+Architecture: 64-bit
+Segment range: 0x2055C - 0x20688
+----------------------------------------
+
+..text:000000000002055C       SUB             SP, SP, #0x120
+..text:0000000000020560       CMP             X0, XZR
+..text:0000000000020564       STP             X19, X20, [SP,#0x120+var_120]
+..text:0000000000020568       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000002056C       MOV             X20, X1
+..text:0000000000020570       STP             X21, X22, [SP,#0x120+var_110]
+..text:0000000000020574       MOV             X21, X0
+..text:0000000000020578       CSET            W1, EQ
+..text:000000000002057C       LDR             X0, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000020580       CMP             X20, XZR
+..text:0000000000020584       STP             X23, X24, [SP,#0x120+var_100]
+..text:0000000000020588       STP             X25, X30, [SP,#0x120+var_F0]
+..text:000000000002058C       CSET            W3, EQ
+..text:0000000000020590       MOV             X22, X2
+..text:0000000000020594       LDR             X0, [X0]
+..text:0000000000020598       ORR             W3, W1, W3
+..text:000000000002059C       STR             X0, [SP,#0x120+var_8]
+..text:00000000000205A0       CBNZ            W3, loc_205A8
+..text:00000000000205A4       CBNZ            X2, loc_205D8
+..text:00000000000205A8       MOV             W0, #0x10
+..text:00000000000205AC       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:00000000000205B0       LDR             X2, [SP,#0x120+var_8]
+..text:00000000000205B4       LDR             X1, [X19]
+..text:00000000000205B8       CMP             X2, X1
+..text:00000000000205BC       B.NE            loc_20684
+..text:00000000000205C0       LDP             X19, X20, [SP,#0x120+var_120]
+..text:00000000000205C4       LDP             X21, X22, [SP,#0x120+var_110]
+..text:00000000000205C8       LDP             X23, X24, [SP,#0x120+var_100]
+..text:00000000000205CC       LDP             X25, X30, [SP,#0x120+var_F0]
+..text:00000000000205D0       ADD             SP, SP, #0x120
+..text:00000000000205D4       RET
+..text:00000000000205D8       LDR             W0, [X2,#4]
+..text:00000000000205DC       BL              sub_1FF68
+..text:00000000000205E0       CBNZ            W0, loc_205AC
+..text:00000000000205E4       LDRSW           X2, [X22,#4]
+..text:00000000000205E8       ADRP            X23, #off_59F88@PAGE
+..text:00000000000205EC       ADD             X24, SP, #0x120+var_D8
+..text:00000000000205F0       MOV             X0, X24
+..text:00000000000205F4       ADD             X1, X2, X2,LSL#1
+..text:00000000000205F8       LDR             X23, [X23,#off_59F88@PAGEOFF]
+..text:00000000000205FC       ADD             X1, X2, X1,LSL#2
+..text:0000000000020600       ADD             X1, X23, X1,LSL#4
+..text:0000000000020604       LDR             X1, [X1,#0xA8]
+..text:0000000000020608       BLR             X1
+..text:000000000002060C       CBNZ            W0, loc_205AC
+..text:0000000000020610       LDRSW           X3, [X22,#4]
+..text:0000000000020614       ADD             X25, X22, #8
+..text:0000000000020618       MOV             X0, X24
+..text:000000000002061C       MOV             X1, X25
+..text:0000000000020620       ADD             X2, X3, X3,LSL#1
+..text:0000000000020624       ADD             X2, X3, X2,LSL#2
+..text:0000000000020628       ADD             X2, X23, X2,LSL#4
+..text:000000000002062C       LDR             X3, [X2,#0xB0]
+..text:0000000000020630       LDR             X2, [X2,#0x10]
+..text:0000000000020634       BLR             X3
+..text:0000000000020638       CBNZ            W0, loc_205AC
+..text:000000000002063C       LDRSW           X4, [X22,#4]
+..text:0000000000020640       MOV             X0, X24
+..text:0000000000020644       MOV             X1, X21
+..text:0000000000020648       MOV             X2, X20
+..text:000000000002064C       ADD             X3, X4, X4,LSL#1
+..text:0000000000020650       ADD             X3, X4, X3,LSL#2
+..text:0000000000020654       ADD             X3, X23, X3,LSL#4
+..text:0000000000020658       LDR             X3, [X3,#0xB0]
+..text:000000000002065C       BLR             X3
+..text:0000000000020660       CBNZ            W0, loc_205AC
+..text:0000000000020664       LDRSW           X2, [X22,#4]
+..text:0000000000020668       MOV             X3, #0xD0
+..text:000000000002066C       MOV             X0, X24
+..text:0000000000020670       MOV             X1, X25
+..text:0000000000020674       MADD            X23, X2, X3, X23
+..text:0000000000020678       LDR             X2, [X23,#0xB8]
+..text:000000000002067C       BLR             X2
+..text:0000000000020680       B               loc_205AC
+..text:0000000000020684       BL              .__stack_chk_fail

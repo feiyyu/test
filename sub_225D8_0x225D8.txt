@@ -1,0 +1,30 @@
+Function: sub_225D8 (0x225D8)
+Architecture: 64-bit
+Segment range: 0x225D8 - 0x2263C
+----------------------------------------
+
+..text:00000000000225D8       SUB             SP, SP, #0x10
+..text:00000000000225DC       STP             X19, X30, [SP,#0x10+var_10]
+..text:00000000000225E0       CBZ             X0, loc_22610
+..text:00000000000225E4       CMP             X2, XZR
+..text:00000000000225E8       CSET            W19, EQ
+..text:00000000000225EC       CBNZ            W19, loc_22610
+..text:00000000000225F0       LDRSW           X4, [X2,#4]
+..text:00000000000225F4       MOV             W3, #0x10
+..text:00000000000225F8       CMP             X4, X1
+..text:00000000000225FC       B.EQ            loc_22624
+..text:0000000000022600       MOV             W0, W3
+..text:0000000000022604       LDP             X19, X30, [SP,#0x10+var_10]
+..text:0000000000022608       ADD             SP, SP, #0x10
+..text:000000000002260C       RET
+..text:0000000000022610       MOV             W3, #0x10
+..text:0000000000022614       MOV             W0, W3
+..text:0000000000022618       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000002261C       ADD             SP, SP, #0x10
+..text:0000000000022620       RET
+..text:0000000000022624       MOV             X1, X0; src
+..text:0000000000022628       ADD             X0, X2, #8; dest
+..text:000000000002262C       MOV             X2, X4; n
+..text:0000000000022630       BL              .memcpy
+..text:0000000000022634       MOV             W3, W19
+..text:0000000000022638       B               loc_22600

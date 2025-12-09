@@ -1,0 +1,33 @@
+Function: sub_216D0 (0x216D0)
+Architecture: 64-bit
+Segment range: 0x216D0 - 0x21744
+----------------------------------------
+
+..text:00000000000216D0       SUB             SP, SP, #0x10
+..text:00000000000216D4       STP             X19, X30, [SP,#0x10+var_10]
+..text:00000000000216D8       MOV             W19, W0
+..text:00000000000216DC       CBZ             W0, loc_21720
+..text:00000000000216E0       CMP             W0, #1
+..text:00000000000216E4       B.EQ            loc_216F8
+..text:00000000000216E8       MOV             W0, #0x10
+..text:00000000000216EC       LDP             X19, X30, [SP,#0x10+var_10]
+..text:00000000000216F0       ADD             SP, SP, #0x10
+..text:00000000000216F4       RET
+..text:00000000000216F8       MOV             X0, X1; dest
+..text:00000000000216FC       ADRP            X1, #unk_402E8@PAGE
+..text:0000000000021700       MOV             X2, #0x88; n
+..text:0000000000021704       ADD             X1, X1, #unk_402E8@PAGEOFF
+..text:0000000000021708       ADD             X1, X1, X2; src
+..text:000000000002170C       BL              .memcpy
+..text:0000000000021710       MOV             W0, #0
+..text:0000000000021714       LDP             X19, X30, [SP,#0x10+var_10]
+..text:0000000000021718       ADD             SP, SP, #0x10
+..text:000000000002171C       RET
+..text:0000000000021720       MOV             X0, X1; dest
+..text:0000000000021724       ADRL            X1, unk_402E8; src
+..text:000000000002172C       MOV             X2, #0x88; n
+..text:0000000000021730       BL              .memcpy
+..text:0000000000021734       MOV             W0, W19
+..text:0000000000021738       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000002173C       ADD             SP, SP, #0x10
+..text:0000000000021740       RET

@@ -1,0 +1,47 @@
+Function: sub_6520 (0x6520)
+Architecture: 64-bit
+Segment range: 0x6520 - 0x65C8
+----------------------------------------
+
+..text:0000000000006520       SUB             SP, SP, #0x60
+..text:0000000000006524       STP             X19, X20, [SP,#0x60+var_60]
+..text:0000000000006528       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000000652C       MOV             X20, X0
+..text:0000000000006530       STP             X21, X22, [SP,#0x60+var_50]
+..text:0000000000006534       STP             X23, X30, [SP,#0x60+var_40]
+..text:0000000000006538       LDR             X4, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000653C       ADD             X21, SP, #0x60+var_20
+..text:0000000000006540       MOV             X0, X21
+..text:0000000000006544       STR             X1, [SP,#0x60+var_28]
+..text:0000000000006548       MOV             X23, X2
+..text:000000000000654C       MOV             X22, X3
+..text:0000000000006550       LDR             X4, [X4]
+..text:0000000000006554       STR             X4, [SP,#0x60+var_8]
+..text:0000000000006558       BL              sub_93C4
+..text:000000000000655C       LDR             X1, [SP,#0x60+var_28]
+..text:0000000000006560       CBZ             W0, loc_658C
+..text:0000000000006564       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000006568       LDR             X2, [SP,#0x60+var_8]
+..text:000000000000656C       LDR             X1, [X19]
+..text:0000000000006570       CMP             X2, X1
+..text:0000000000006574       B.NE            loc_65C4
+..text:0000000000006578       LDP             X19, X20, [SP,#0x60+var_60]
+..text:000000000000657C       LDP             X21, X22, [SP,#0x60+var_50]
+..text:0000000000006580       LDP             X23, X30, [SP,#0x60+var_40]
+..text:0000000000006584       ADD             SP, SP, #0x60 ; '`'
+..text:0000000000006588       RET
+..text:000000000000658C       MOV             X0, X20
+..text:0000000000006590       MOV             X2, X21
+..text:0000000000006594       BL              sub_6230
+..text:0000000000006598       MOV             W20, W0
+..text:000000000000659C       CBNZ            W0, loc_65B4
+..text:00000000000065A0       MOV             X1, X23
+..text:00000000000065A4       MOV             X2, X22
+..text:00000000000065A8       MOV             X0, X21
+..text:00000000000065AC       BL              sub_AB94
+..text:00000000000065B0       MOV             W20, W0
+..text:00000000000065B4       MOV             X0, X21
+..text:00000000000065B8       BL              sub_6814
+..text:00000000000065BC       MOV             W0, W20
+..text:00000000000065C0       B               loc_6564
+..text:00000000000065C4       BL              .__stack_chk_fail

@@ -1,0 +1,57 @@
+Function: sub_6814 (0x6814)
+Architecture: 64-bit
+Segment range: 0x6814 - 0x68E4
+----------------------------------------
+
+..text:0000000000006814       SUB             SP, SP, #0x10
+..text:0000000000006818       STP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000681C       MOV             X19, X0
+..text:0000000000006820       LDR             X0, [X0,#0x10]; p
+..text:0000000000006824       CBZ             X0, loc_68A0
+..text:0000000000006828       LDR             W3, [X19]
+..text:000000000000682C       CMP             W3, WZR
+..text:0000000000006830       B.LE            loc_688C
+..text:0000000000006834       SUB             W2, W3, #1
+..text:0000000000006838       SUB             W1, W3, #2
+..text:000000000000683C       CMP             W2, #2
+..text:0000000000006840       LSR             W1, W1, #1
+..text:0000000000006844       ADD             W1, W1, #1
+..text:0000000000006848       LSL             W2, W1, #1
+..text:000000000000684C       B.LS            loc_68C8
+..text:0000000000006850       MOVI            V0.4S, #0
+..text:0000000000006854       MOV             X5, X0
+..text:0000000000006858       MOV             W4, #0
+..text:000000000000685C       STR             Q0, [X5],#0x10
+..text:0000000000006860       ADD             W4, W4, #1
+..text:0000000000006864       CMP             W1, W4
+..text:0000000000006868       B.HI            loc_685C
+..text:000000000000686C       CMP             W2, W3
+..text:0000000000006870       MOV             W1, W2
+..text:0000000000006874       B.EQ            loc_688C
+..text:0000000000006878       SBFIZ           X2, X1, #3, #0x20 ; ' '
+..text:000000000000687C       ADD             W4, W1, #1
+..text:0000000000006880       CMP             W4, W3
+..text:0000000000006884       STR             XZR, [X0,X2]
+..text:0000000000006888       B.LT            loc_68AC
+..text:000000000000688C       BL              .free
+..text:0000000000006890       STR             XZR, [X19,#0x10]
+..text:0000000000006894       STR             WZR, [X19]
+..text:0000000000006898       STR             WZR, [X19,#4]
+..text:000000000000689C       STR             WZR, [X19,#8]
+..text:00000000000068A0       LDP             X19, X30, [SP,#0x10+var_10]
+..text:00000000000068A4       ADD             SP, SP, #0x10
+..text:00000000000068A8       RET
+..text:00000000000068AC       ADD             X2, X0, X2
+..text:00000000000068B0       ADD             W1, W1, #2
+..text:00000000000068B4       CMP             W3, W1
+..text:00000000000068B8       STR             XZR, [X2,#8]
+..text:00000000000068BC       B.LE            loc_688C
+..text:00000000000068C0       STR             XZR, [X2,#0x10]
+..text:00000000000068C4       B               loc_688C
+..text:00000000000068C8       MOV             W1, #0
+..text:00000000000068CC       SBFIZ           X2, X1, #3, #0x20 ; ' '
+..text:00000000000068D0       ADD             W4, W1, #1
+..text:00000000000068D4       CMP             W4, W3
+..text:00000000000068D8       STR             XZR, [X0,X2]
+..text:00000000000068DC       B.GE            loc_688C
+..text:00000000000068E0       B               loc_68AC

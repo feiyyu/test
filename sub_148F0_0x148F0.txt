@@ -1,0 +1,42 @@
+Function: sub_148F0 (0x148F0)
+Architecture: 64-bit
+Segment range: 0x148F0 - 0x14984
+----------------------------------------
+
+..text:00000000000148F0       SUB             SP, SP, #0x20
+..text:00000000000148F4       STP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000148F8       STP             X21, X30, [SP,#0x20+var_10]
+..text:00000000000148FC       CBZ             X0, loc_14924
+..text:0000000000014900       CBZ             X3, loc_14924
+..text:0000000000014904       ANDS            W19, W2, #0xFFFFFFEF
+..text:0000000000014908       B.EQ            loc_1493C
+..text:000000000001490C       MOV             W19, #4
+..text:0000000000014910       MOV             W0, W19
+..text:0000000000014914       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000014918       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001491C       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000014920       RET
+..text:0000000000014924       MOV             W19, #0x10
+..text:0000000000014928       MOV             W0, W19
+..text:000000000001492C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000014930       LDP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000014934       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000014938       RET
+..text:000000000001493C       CMP             W1, #8
+..text:0000000000014940       B.EQ            loc_1495C
+..text:0000000000014944       MOV             W19, #3
+..text:0000000000014948       MOV             W0, W19; int
+..text:000000000001494C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000014950       LDP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000014954       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000014958       RET
+..text:000000000001495C       MOV             W1, W19; int
+..text:0000000000014960       MOV             X2, X3; dest
+..text:0000000000014964       MOV             X21, X3
+..text:0000000000014968       MOV             X20, X0
+..text:000000000001496C       BL              sub_14430
+..text:0000000000014970       MOV             X0, X20; int
+..text:0000000000014974       MOV             W1, #1; int
+..text:0000000000014978       ADD             X2, X21, #0x80; dest
+..text:000000000001497C       BL              sub_14430
+..text:0000000000014980       B               loc_14910

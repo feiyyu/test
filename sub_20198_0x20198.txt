@@ -1,0 +1,33 @@
+Function: sub_20198 (0x20198)
+Architecture: 64-bit
+Segment range: 0x20198 - 0x20208
+----------------------------------------
+
+..text:0000000000020198       ADRP            X0, #off_59FC0@PAGE
+..text:000000000002019C       SUB             SP, SP, #0x10
+..text:00000000000201A0       LDR             X0, [X0,#off_59FC0@PAGEOFF]; void *
+..text:00000000000201A4       STR             X30, [SP,#0x10+var_10]
+..text:00000000000201A8       BL              sub_200A8
+..text:00000000000201AC       CMN             W0, #1
+..text:00000000000201B0       B.NE            loc_201C4
+..text:00000000000201B4       MOV             W0, #0x10
+..text:00000000000201B8       LDR             X30, [SP,#0x10+var_10]
+..text:00000000000201BC       ADD             SP, SP, #0x10
+..text:00000000000201C0       RET
+..text:00000000000201C4       ADRP            X0, #off_59F68@PAGE
+..text:00000000000201C8       LDR             X0, [X0,#off_59F68@PAGEOFF]; void *
+..text:00000000000201CC       BL              sub_200A8
+..text:00000000000201D0       CMN             W0, #1
+..text:00000000000201D4       B.EQ            loc_201B4
+..text:00000000000201D8       ADRP            X0, #off_59F48@PAGE
+..text:00000000000201DC       LDR             X0, [X0,#off_59F48@PAGEOFF]; void *
+..text:00000000000201E0       BL              sub_200A8
+..text:00000000000201E4       CMN             W0, #1
+..text:00000000000201E8       B.EQ            loc_201B4
+..text:00000000000201EC       ADRP            X0, #off_59F80@PAGE
+..text:00000000000201F0       LDR             X0, [X0,#off_59F80@PAGEOFF]; void *
+..text:00000000000201F4       BL              sub_200A8
+..text:00000000000201F8       CMN             W0, #1
+..text:00000000000201FC       B.EQ            loc_201B4
+..text:0000000000020200       MOV             W0, #0
+..text:0000000000020204       B               loc_201B8

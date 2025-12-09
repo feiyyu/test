@@ -1,0 +1,23 @@
+Function: sub_2694C (0x2694C)
+Architecture: 64-bit
+Segment range: 0x2694C - 0x26994
+----------------------------------------
+
+..text:000000000002694C       ADRP            X4, #dword_40700@PAGE
+..text:0000000000026950       MOV             W2, #0
+..text:0000000000026954       ADD             X1, X4, #dword_40700@PAGEOFF
+..text:0000000000026958       ADD             X1, X1, #4
+..text:000000000002695C       B               loc_2696C
+..text:0000000000026960       ADD             W2, W2, #1
+..text:0000000000026964       CMP             W2, #0x66 ; 'f'
+..text:0000000000026968       B.EQ            loc_2698C
+..text:000000000002696C       LDR             W3, [X1]
+..text:0000000000026970       ADD             X1, X1, #8
+..text:0000000000026974       CMP             W3, W0
+..text:0000000000026978       B.NE            loc_26960
+..text:000000000002697C       ADD             X4, X4, #dword_40700@PAGEOFF
+..text:0000000000026980       SBFIZ           X2, X2, #3, #0x20 ; ' '
+..text:0000000000026984       LDR             W0, [X4,X2]
+..text:0000000000026988       RET
+..text:000000000002698C       MOV             W0, #0xFFFFFFFF
+..text:0000000000026990       RET

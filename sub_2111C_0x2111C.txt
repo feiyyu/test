@@ -1,0 +1,57 @@
+Function: sub_2111C (0x2111C)
+Architecture: 64-bit
+Segment range: 0x2111C - 0x211EC
+----------------------------------------
+
+..text:000000000002111C       CMP             X5, XZR
+..text:0000000000021120       SUB             SP, SP, #0x40
+..text:0000000000021124       CSET            W8, EQ
+..text:0000000000021128       CMP             X6, XZR
+..text:000000000002112C       CSET            W7, EQ
+..text:0000000000021130       CMP             X2, XZR
+..text:0000000000021134       ORR             W7, W8, W7
+..text:0000000000021138       CSET            W8, EQ
+..text:000000000002113C       STP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000021140       STP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000021144       STP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000021148       STP             X25, X30, [SP,#0x40+var_10]
+..text:000000000002114C       ORR             W7, W8, W7
+..text:0000000000021150       CBNZ            W7, loc_21198
+..text:0000000000021154       CBZ             X0, loc_21198
+..text:0000000000021158       MOV             X19, X0
+..text:000000000002115C       MOV             W0, W4
+..text:0000000000021160       MOV             W22, W4
+..text:0000000000021164       MOV             W23, W3
+..text:0000000000021168       MOV             X25, X1
+..text:000000000002116C       MOV             X24, X2
+..text:0000000000021170       MOV             X20, X6
+..text:0000000000021174       MOV             X21, X5
+..text:0000000000021178       BL              sub_1FF68
+..text:000000000002117C       CBZ             W0, loc_211B4
+..text:0000000000021180       LDP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000021184       LDP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000021188       LDP             X23, X24, [SP,#0x40+var_20]
+..text:000000000002118C       LDP             X25, X30, [SP,#0x40+var_10]
+..text:0000000000021190       ADD             SP, SP, #0x40 ; '@'
+..text:0000000000021194       RET
+..text:0000000000021198       MOV             W0, #0x10
+..text:000000000002119C       LDP             X19, X20, [SP,#0x40+var_40]
+..text:00000000000211A0       LDP             X21, X22, [SP,#0x40+var_30]
+..text:00000000000211A4       LDP             X23, X24, [SP,#0x40+var_20]
+..text:00000000000211A8       LDP             X25, X30, [SP,#0x40+var_10]
+..text:00000000000211AC       ADD             SP, SP, #0x40 ; '@'
+..text:00000000000211B0       RET
+..text:00000000000211B4       MOV             X0, X19
+..text:00000000000211B8       MOV             X1, X25
+..text:00000000000211BC       MOV             X2, X24
+..text:00000000000211C0       MOV             W3, W23
+..text:00000000000211C4       MOV             W4, W22
+..text:00000000000211C8       MOV             X5, X21
+..text:00000000000211CC       MOV             X6, X20
+..text:00000000000211D0       MOV             W7, #1
+..text:00000000000211D4       LDP             X19, X20, [SP,#0x40+var_40]
+..text:00000000000211D8       LDP             X21, X22, [SP,#0x40+var_30]
+..text:00000000000211DC       LDP             X23, X24, [SP,#0x40+var_20]
+..text:00000000000211E0       LDP             X25, X30, [SP,#0x40+var_10]
+..text:00000000000211E4       ADD             SP, SP, #0x40 ; '@'
+..text:00000000000211E8       B               sub_20DB8

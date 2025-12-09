@@ -1,0 +1,28 @@
+Function: sub_132B0 (0x132B0)
+Architecture: 64-bit
+Segment range: 0x132B0 - 0x1330C
+----------------------------------------
+
+..text:00000000000132B0       ADD             W4, W1, W0
+..text:00000000000132B4       NEG             W1, W2
+..text:00000000000132B8       AND             W1, W1, #0x1F
+..text:00000000000132BC       AND             W2, W2, #0x1F
+..text:00000000000132C0       LSL             W0, W4, W2
+..text:00000000000132C4       LSR             X3, X4, X1
+..text:00000000000132C8       ADRP            X4, #unk_34710@PAGE
+..text:00000000000132CC       ORR             W1, W0, W3
+..text:00000000000132D0       ADD             X4, X4, #unk_34710@PAGEOFF
+..text:00000000000132D4       UBFX            X0, X1, #0x10, #8
+..text:00000000000132D8       ADD             X2, X4, W1,UXTB#2
+..text:00000000000132DC       ADD             X5, X4, #0x400
+..text:00000000000132E0       UBFX            X3, X1, #8, #8
+..text:00000000000132E4       LSR             W1, W1, #0x18
+..text:00000000000132E8       ADD             X6, X4, #0x800
+..text:00000000000132EC       LDR             W0, [X4,W0,UXTW#2]
+..text:00000000000132F0       LDR             W2, [X2,#0xC00]
+..text:00000000000132F4       LDR             W1, [X5,W1,UXTW#2]
+..text:00000000000132F8       LDR             W3, [X6,W3,UXTW#2]
+..text:00000000000132FC       EOR             W1, W0, W1
+..text:0000000000013300       SUB             W0, W1, W3
+..text:0000000000013304       ADD             W0, W0, W2
+..text:0000000000013308       RET

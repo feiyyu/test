@@ -1,0 +1,14 @@
+Function: sub_216AC (0x216AC)
+Architecture: 64-bit
+Segment range: 0x216AC - 0x216D0
+----------------------------------------
+
+..text:00000000000216AC       CMP             X1, X3
+..text:00000000000216B0       MOV             X4, X1
+..text:00000000000216B4       B.EQ            loc_216C4
+..text:00000000000216B8       MOV             W0, #0xFFFFFFFF
+..text:00000000000216BC       CSINC           W0, W0, WZR, HI
+..text:00000000000216C0       RET
+..text:00000000000216C4       MOV             X1, X2
+..text:00000000000216C8       MOV             X2, X4
+..text:00000000000216CC       B               .memcmp

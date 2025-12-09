@@ -1,0 +1,47 @@
+Function: sub_20410 (0x20410)
+Architecture: 64-bit
+Segment range: 0x20410 - 0x204B8
+----------------------------------------
+
+..text:0000000000020410       SUB             SP, SP, #0x30
+..text:0000000000020414       STP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000020418       STP             X21, X22, [SP,#0x30+var_20]
+..text:000000000002041C       STR             X30, [SP,#0x30+var_10]
+..text:0000000000020420       CBZ             X0, loc_204A0
+..text:0000000000020424       ADRP            X22, #off_59F88@PAGE
+..text:0000000000020428       MOV             X21, X0
+..text:000000000002042C       MOV             W19, #0
+..text:0000000000020430       LDR             X20, [X22,#off_59F88@PAGEOFF]
+..text:0000000000020434       B               loc_20444
+..text:0000000000020438       ADD             W19, W19, #1
+..text:000000000002043C       CMP             W19, #0x20 ; ' '
+..text:0000000000020440       B.EQ            loc_20488
+..text:0000000000020444       MOV             X0, X20; void *
+..text:0000000000020448       MOV             X2, #0xD0; size_t
+..text:000000000002044C       MOV             X1, X21; void *
+..text:0000000000020450       ADD             X20, X20, X2
+..text:0000000000020454       BL              .memcmp
+..text:0000000000020458       CBNZ            W0, loc_20438
+..text:000000000002045C       SXTW            X19, W19
+..text:0000000000020460       LDR             X22, [X22,#off_59F88@PAGEOFF]
+..text:0000000000020464       ADD             X1, X19, X19,LSL#1
+..text:0000000000020468       ADD             X19, X19, X1,LSL#2
+..text:000000000002046C       LSL             X19, X19, #4
+..text:0000000000020470       STR             XZR, [X22,X19]
+..text:0000000000020474       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000020478       LDP             X21, X22, [SP,#0x30+var_20]
+..text:000000000002047C       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000020480       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000020484       RET
+..text:0000000000020488       MOV             W0, #1
+..text:000000000002048C       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000020490       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000020494       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000020498       ADD             SP, SP, #0x30 ; '0'
+..text:000000000002049C       RET
+..text:00000000000204A0       MOV             W0, #0x10
+..text:00000000000204A4       LDR             X30, [SP,#0x30+var_10]
+..text:00000000000204A8       LDP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000204AC       LDP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000204B0       ADD             SP, SP, #0x30 ; '0'
+..text:00000000000204B4       RET

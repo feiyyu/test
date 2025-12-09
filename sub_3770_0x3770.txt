@@ -1,0 +1,18 @@
+Function: sub_3770 (0x3770)
+Architecture: 64-bit
+Segment range: 0x3770 - 0x37A4
+----------------------------------------
+
+..text:0000000000003770       SUB             SP, SP, #0x10
+..text:0000000000003774       STR             X30, [SP,#0x10+var_10]
+..text:0000000000003778       BL              sub_20208
+..text:000000000000377C       BL              sub_20198
+..text:0000000000003780       ADRP            X0, #off_59FB0@PAGE
+..text:0000000000003784       ADRP            X1, #off_59FE8@PAGE
+..text:0000000000003788       MOV             X2, #0x1A0; n
+..text:000000000000378C       LDR             X1, [X1,#off_59FE8@PAGEOFF]; src
+..text:0000000000003790       LDR             X0, [X0,#off_59FB0@PAGEOFF]; dest
+..text:0000000000003794       BL              .memcpy
+..text:0000000000003798       LDR             X30, [SP,#0x10+var_10]
+..text:000000000000379C       ADD             SP, SP, #0x10
+..text:00000000000037A0       RET

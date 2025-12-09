@@ -1,0 +1,69 @@
+Function: sub_2758C (0x2758C)
+Architecture: 64-bit
+Segment range: 0x2758C - 0x2768C
+----------------------------------------
+
+..text:000000000002758C       CBZ             X0, loc_2763C
+..text:0000000000027590       CBZ             X2, loc_2763C
+..text:0000000000027594       CBZ             X1, loc_27684
+..text:0000000000027598       LDR             W4, [X0]
+..text:000000000002759C       MOV             W7, #0x10FFFF
+..text:00000000000275A0       CMP             W4, W7
+..text:00000000000275A4       B.HI            loc_2763C
+..text:00000000000275A8       MOV             X6, #0
+..text:00000000000275AC       MOV             W10, #0xFFFF
+..text:00000000000275B0       MOV             X3, X6
+..text:00000000000275B4       MOV             X9, #3
+..text:00000000000275B8       MOV             X8, #4
+..text:00000000000275BC       B               loc_275DC
+..text:00000000000275C0       ADD             X3, X3, #1
+..text:00000000000275C4       ADD             X6, X6, X5
+..text:00000000000275C8       CMP             X3, X1
+..text:00000000000275CC       B.EQ            loc_2760C
+..text:00000000000275D0       LDR             W4, [X0,X3,LSL#2]
+..text:00000000000275D4       CMP             W4, W7
+..text:00000000000275D8       B.HI            loc_2763C
+..text:00000000000275DC       CMP             W4, #0x7F
+..text:00000000000275E0       MOV             X5, #1
+..text:00000000000275E4       B.LS            loc_275C0
+..text:00000000000275E8       CMP             W4, #0x7FF
+..text:00000000000275EC       MOV             X5, #2
+..text:00000000000275F0       B.LS            loc_275C0
+..text:00000000000275F4       CMP             W4, W10
+..text:00000000000275F8       ADD             X3, X3, #1
+..text:00000000000275FC       CSEL            X5, X9, X8, LS
+..text:0000000000027600       CMP             X3, X1
+..text:0000000000027604       ADD             X6, X6, X5
+..text:0000000000027608       B.NE            loc_275D0
+..text:000000000002760C       CMP             X6, #0x7F
+..text:0000000000027610       B.LS            loc_27644
+..text:0000000000027614       CMP             X6, #0xFF
+..text:0000000000027618       B.LS            loc_27654
+..text:000000000002761C       MOV             X0, #0xFFFF
+..text:0000000000027620       CMP             X6, X0
+..text:0000000000027624       B.LS            loc_27674
+..text:0000000000027628       MOV             X1, #0xFFFFFF
+..text:000000000002762C       MOV             W0, #0x10
+..text:0000000000027630       CMP             X6, X1
+..text:0000000000027634       B.LS            loc_27664
+..text:0000000000027638       RET
+..text:000000000002763C       MOV             W0, #0x10
+..text:0000000000027640       RET
+..text:0000000000027644       ADD             X6, X6, #2
+..text:0000000000027648       STR             X6, [X2]
+..text:000000000002764C       MOV             W0, #0
+..text:0000000000027650       RET
+..text:0000000000027654       ADD             X6, X6, #3
+..text:0000000000027658       MOV             W0, #0
+..text:000000000002765C       STR             X6, [X2]
+..text:0000000000027660       RET
+..text:0000000000027664       ADD             X6, X6, #5
+..text:0000000000027668       MOV             W0, #0
+..text:000000000002766C       STR             X6, [X2]
+..text:0000000000027670       RET
+..text:0000000000027674       ADD             X6, X6, #4
+..text:0000000000027678       MOV             W0, #0
+..text:000000000002767C       STR             X6, [X2]
+..text:0000000000027680       RET
+..text:0000000000027684       MOV             X6, #2
+..text:0000000000027688       B               loc_27648

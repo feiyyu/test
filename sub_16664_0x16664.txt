@@ -1,0 +1,51 @@
+Function: sub_16664 (0x16664)
+Architecture: 64-bit
+Segment range: 0x16664 - 0x1671C
+----------------------------------------
+
+..text:0000000000016664       SUB             SP, SP, #0x30
+..text:0000000000016668       CMP             X2, XZR
+..text:000000000001666C       CSET            W5, EQ
+..text:0000000000016670       CMP             X3, XZR
+..text:0000000000016674       CSET            W4, EQ
+..text:0000000000016678       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001667C       STP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000016680       STR             X30, [SP,#0x30+var_10]
+..text:0000000000016684       ORR             W4, W5, W4
+..text:0000000000016688       CBNZ            W4, loc_166BC
+..text:000000000001668C       CBZ             X1, loc_166BC
+..text:0000000000016690       MOV             X21, X1
+..text:0000000000016694       MOV             W22, W0
+..text:0000000000016698       MOV             X19, X3
+..text:000000000001669C       MOV             X20, X2
+..text:00000000000166A0       BL              sub_1FF68
+..text:00000000000166A4       CBZ             W0, loc_166D4
+..text:00000000000166A8       LDP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000166AC       LDP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000166B0       LDR             X30, [SP,#0x30+var_10]
+..text:00000000000166B4       ADD             SP, SP, #0x30 ; '0'
+..text:00000000000166B8       RET
+..text:00000000000166BC       MOV             W0, #0x10
+..text:00000000000166C0       LDR             X30, [SP,#0x30+var_10]
+..text:00000000000166C4       LDP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000166C8       LDP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000166CC       ADD             SP, SP, #0x30 ; '0'
+..text:00000000000166D0       RET
+..text:00000000000166D4       ADRP            X1, #aRb@PAGE; "rb"
+..text:00000000000166D8       MOV             X0, X21; filename
+..text:00000000000166DC       ADD             X1, X1, #aRb@PAGEOFF; modes
+..text:00000000000166E0       BL              .fopen
+..text:00000000000166E4       MOV             X21, X0
+..text:00000000000166E8       MOV             W0, #0x11
+..text:00000000000166EC       CBZ             X21, loc_166A8
+..text:00000000000166F0       MOV             X3, X19
+..text:00000000000166F4       MOV             X1, X21
+..text:00000000000166F8       MOV             X2, X20
+..text:00000000000166FC       MOV             W0, W22
+..text:0000000000016700       BL              sub_1671C
+..text:0000000000016704       MOV             W19, W0
+..text:0000000000016708       MOV             X0, X21; stream
+..text:000000000001670C       BL              .fclose
+..text:0000000000016710       CMP             W0, WZR
+..text:0000000000016714       CSINC           W0, W19, WZR, EQ
+..text:0000000000016718       B               loc_166A8

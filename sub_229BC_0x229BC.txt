@@ -1,0 +1,15 @@
+Function: sub_229BC (0x229BC)
+Architecture: 64-bit
+Segment range: 0x229BC - 0x229E4
+----------------------------------------
+
+..text:00000000000229BC       CMP             X0, XZR
+..text:00000000000229C0       CSET            W5, EQ
+..text:00000000000229C4       CMP             X3, XZR
+..text:00000000000229C8       CSET            W4, EQ
+..text:00000000000229CC       ORR             W4, W5, W4
+..text:00000000000229D0       CBNZ            W4, loc_229DC
+..text:00000000000229D4       CBZ             X1, loc_229DC
+..text:00000000000229D8       B               sub_22BD4
+..text:00000000000229DC       MOV             W0, #0x10
+..text:00000000000229E0       RET

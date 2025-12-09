@@ -1,0 +1,37 @@
+Function: sub_6180 (0x6180)
+Architecture: 64-bit
+Segment range: 0x6180 - 0x6200
+----------------------------------------
+
+..text:0000000000006180       SUB             SP, SP, #0x30
+..text:0000000000006184       STP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000006188       STP             X21, X22, [SP,#0x30+var_20]
+..text:000000000000618C       MOV             W20, W1
+..text:0000000000006190       STR             X30, [SP,#0x30+var_10]
+..text:0000000000006194       MOV             X21, X0
+..text:0000000000006198       BL              sub_F7EC
+..text:000000000000619C       MOV             W2, #0x8889
+..text:00000000000061A0       MOV             X0, X21
+..text:00000000000061A4       MOVK            W2, #0x8888,LSL#16
+..text:00000000000061A8       SMULL           X2, W20, W2
+..text:00000000000061AC       LSR             X2, X2, #0x20 ; ' '
+..text:00000000000061B0       ADD             W2, W20, W2
+..text:00000000000061B4       ASR             W19, W2, #5
+..text:00000000000061B8       SUB             W19, W19, W20,ASR#31
+..text:00000000000061BC       ADD             W22, W19, #1
+..text:00000000000061C0       MOV             W1, W22
+..text:00000000000061C4       BL              sub_9070
+..text:00000000000061C8       CBNZ            W0, loc_61EC
+..text:00000000000061CC       LSL             W1, W19, #6
+..text:00000000000061D0       LDR             X2, [X21,#0x10]
+..text:00000000000061D4       SUB             W1, W1, W19,LSL#2
+..text:00000000000061D8       STR             W22, [X21]
+..text:00000000000061DC       SUB             W20, W20, W1
+..text:00000000000061E0       MOV             X1, #1
+..text:00000000000061E4       LSL             X20, X1, X20
+..text:00000000000061E8       STR             X20, [X2,W19,SXTW#3]
+..text:00000000000061EC       LDP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000061F0       LDP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000061F4       LDR             X30, [SP,#0x30+var_10]
+..text:00000000000061F8       ADD             SP, SP, #0x30 ; '0'
+..text:00000000000061FC       RET

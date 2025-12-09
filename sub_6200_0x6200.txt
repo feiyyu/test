@@ -1,0 +1,17 @@
+Function: sub_6200 (0x6200)
+Architecture: 64-bit
+Segment range: 0x6200 - 0x6230
+----------------------------------------
+
+..text:0000000000006200       SUB             SP, SP, #0x10
+..text:0000000000006204       CMP             X1, X0
+..text:0000000000006208       STP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000620C       MOV             X19, X1
+..text:0000000000006210       B.EQ            loc_621C
+..text:0000000000006214       BL              sub_6B8C
+..text:0000000000006218       CBNZ            W0, loc_6224
+..text:000000000000621C       STR             WZR, [X19,#8]
+..text:0000000000006220       MOV             W0, #0
+..text:0000000000006224       LDP             X19, X30, [SP,#0x10+var_10]
+..text:0000000000006228       ADD             SP, SP, #0x10
+..text:000000000000622C       RET

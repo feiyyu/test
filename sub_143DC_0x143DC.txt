@@ -1,0 +1,25 @@
+Function: sub_143DC (0x143DC)
+Architecture: 64-bit
+Segment range: 0x143DC - 0x1442C
+----------------------------------------
+
+..text:00000000000143DC       CBZ             X0, loc_14414
+..text:00000000000143E0       LDR             W2, [X0]
+..text:00000000000143E4       MOV             W1, #3
+..text:00000000000143E8       CMP             W2, #0xF
+..text:00000000000143EC       B.GT            loc_143F8
+..text:00000000000143F0       MOV             W0, W1
+..text:00000000000143F4       RET
+..text:00000000000143F8       CMP             W2, #0x17
+..text:00000000000143FC       MOV             W1, #0
+..text:0000000000014400       B.LE            loc_14420
+..text:0000000000014404       MOV             W2, #0x18
+..text:0000000000014408       STR             W2, [X0]
+..text:000000000001440C       MOV             W0, W1
+..text:0000000000014410       RET
+..text:0000000000014414       MOV             W1, #0x10
+..text:0000000000014418       MOV             W0, W1
+..text:000000000001441C       RET
+..text:0000000000014420       MOV             W2, #0x10
+..text:0000000000014424       STR             W2, [X0]
+..text:0000000000014428       B               loc_143F0

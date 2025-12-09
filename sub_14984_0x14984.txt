@@ -1,0 +1,85 @@
+Function: sub_14984 (0x14984)
+Architecture: 64-bit
+Segment range: 0x14984 - 0x14AC4
+----------------------------------------
+
+..text:0000000000014984       SUB             SP, SP, #0x30
+..text:0000000000014988       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001498C       STP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000014990       STP             X23, X30, [SP,#0x30+var_10]
+..text:0000000000014994       CBZ             X0, loc_149C0
+..text:0000000000014998       CBZ             X3, loc_149C0
+..text:000000000001499C       ANDS            W19, W2, #0xFFFFFFEF
+..text:00000000000149A0       B.EQ            loc_149DC
+..text:00000000000149A4       MOV             W19, #4
+..text:00000000000149A8       MOV             W0, W19
+..text:00000000000149AC       LDP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000149B0       LDP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000149B4       LDP             X23, X30, [SP,#0x30+var_10]
+..text:00000000000149B8       ADD             SP, SP, #0x30 ; '0'
+..text:00000000000149BC       RET
+..text:00000000000149C0       MOV             W19, #0x10
+..text:00000000000149C4       MOV             W0, W19
+..text:00000000000149C8       LDP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000149CC       LDP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000149D0       LDP             X23, X30, [SP,#0x30+var_10]
+..text:00000000000149D4       ADD             SP, SP, #0x30 ; '0'
+..text:00000000000149D8       RET
+..text:00000000000149DC       AND             W2, W1, #0xFFFFFFF7
+..text:00000000000149E0       CMP             W2, #0x10
+..text:00000000000149E4       B.EQ            loc_14A04
+..text:00000000000149E8       MOV             W19, #3
+..text:00000000000149EC       MOV             W0, W19; int
+..text:00000000000149F0       LDP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000149F4       LDP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000149F8       LDP             X23, X30, [SP,#0x30+var_10]
+..text:00000000000149FC       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000014A00       RET
+..text:0000000000014A04       MOV             X2, X3; dest
+..text:0000000000014A08       MOV             W22, W1
+..text:0000000000014A0C       MOV             W1, W19; int
+..text:0000000000014A10       MOV             X21, X3
+..text:0000000000014A14       MOV             X20, X0
+..text:0000000000014A18       ADD             X23, X0, #8
+..text:0000000000014A1C       BL              sub_14430
+..text:0000000000014A20       MOV             X0, X23; int
+..text:0000000000014A24       MOV             W1, #1; int
+..text:0000000000014A28       ADD             X2, X21, #0x80; dest
+..text:0000000000014A2C       BL              sub_14430
+..text:0000000000014A30       CMP             W22, #0x18
+..text:0000000000014A34       B.EQ            loc_14A7C
+..text:0000000000014A38       MOV             W1, W19; int
+..text:0000000000014A3C       ADD             X2, X21, #0x100; dest
+..text:0000000000014A40       MOV             X0, X20; int
+..text:0000000000014A44       BL              sub_14430
+..text:0000000000014A48       MOV             X0, X20; int
+..text:0000000000014A4C       ADD             X2, X21, #0x280; dest
+..text:0000000000014A50       MOV             W1, #1; int
+..text:0000000000014A54       BL              sub_14430
+..text:0000000000014A58       MOV             X0, X23; int
+..text:0000000000014A5C       MOV             W1, W19; int
+..text:0000000000014A60       ADD             X2, X21, #0x200; dest
+..text:0000000000014A64       BL              sub_14430
+..text:0000000000014A68       MOV             X0, X20; int
+..text:0000000000014A6C       MOV             W1, #1; int
+..text:0000000000014A70       ADD             X2, X21, #0x180; dest
+..text:0000000000014A74       BL              sub_14430
+..text:0000000000014A78       B               loc_149A8
+..text:0000000000014A7C       ADD             X22, X20, #0x10
+..text:0000000000014A80       MOV             W1, W19; int
+..text:0000000000014A84       ADD             X2, X21, #0x100; dest
+..text:0000000000014A88       MOV             X0, X22; int
+..text:0000000000014A8C       BL              sub_14430
+..text:0000000000014A90       MOV             X0, X20; int
+..text:0000000000014A94       ADD             X2, X21, #0x280; dest
+..text:0000000000014A98       MOV             W1, #1; int
+..text:0000000000014A9C       BL              sub_14430
+..text:0000000000014AA0       MOV             X0, X23; int
+..text:0000000000014AA4       MOV             W1, W19; int
+..text:0000000000014AA8       ADD             X2, X21, #0x200; dest
+..text:0000000000014AAC       BL              sub_14430
+..text:0000000000014AB0       MOV             X0, X22; int
+..text:0000000000014AB4       MOV             W1, #1; int
+..text:0000000000014AB8       ADD             X2, X21, #0x180; dest
+..text:0000000000014ABC       BL              sub_14430
+..text:0000000000014AC0       B               loc_149A8

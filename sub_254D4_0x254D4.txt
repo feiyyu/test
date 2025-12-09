@@ -1,0 +1,10 @@
+Function: sub_254D4 (0x254D4)
+Architecture: 64-bit
+Segment range: 0x254D4 - 0x254E8
+----------------------------------------
+
+..text:00000000000254D4       CBZ             X0, loc_254E0
+..text:00000000000254D8       CBZ             X2, loc_254E0
+..text:00000000000254DC       B               loc_252A4
+..text:00000000000254E0       MOV             W0, #0x10
+..text:00000000000254E4       RET

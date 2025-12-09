@@ -1,0 +1,32 @@
+Function: sub_9488 (0x9488)
+Architecture: 64-bit
+Segment range: 0x9488 - 0x94F4
+----------------------------------------
+
+..text:0000000000009488       SUB             SP, SP, #0x20
+..text:000000000000948C       STP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000009490       STP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000009494       MOV             X20, X1
+..text:0000000000009498       MOV             X21, X0
+..text:000000000000949C       LDR             W1, [X1]
+..text:00000000000094A0       BL              sub_9710
+..text:00000000000094A4       MOV             W19, W0
+..text:00000000000094A8       CBZ             W0, loc_94C0
+..text:00000000000094AC       MOV             W0, W19
+..text:00000000000094B0       LDP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000094B4       LDP             X21, X30, [SP,#0x20+var_10]
+..text:00000000000094B8       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000094BC       RET
+..text:00000000000094C0       MOV             X1, X21
+..text:00000000000094C4       MOV             X0, X20
+..text:00000000000094C8       BL              sub_6B8C
+..text:00000000000094CC       MOV             W1, W0
+..text:00000000000094D0       CBZ             W0, loc_94AC
+..text:00000000000094D4       MOV             X0, X21
+..text:00000000000094D8       MOV             W19, W1
+..text:00000000000094DC       BL              sub_6814
+..text:00000000000094E0       MOV             W0, W19
+..text:00000000000094E4       LDP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000094E8       LDP             X21, X30, [SP,#0x20+var_10]
+..text:00000000000094EC       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000094F0       RET

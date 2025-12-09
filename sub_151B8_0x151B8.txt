@@ -1,0 +1,15 @@
+Function: sub_151B8 (0x151B8)
+Architecture: 64-bit
+Segment range: 0x151B8 - 0x151E0
+----------------------------------------
+
+..text:00000000000151B8       SUB             SP, SP, #0x10
+..text:00000000000151BC       STR             X30, [SP,#0x10+var_10]
+..text:00000000000151C0       BL              sub_14FC0
+..text:00000000000151C4       CBNZ            W0, loc_151D4
+..text:00000000000151C8       LDR             X30, [SP,#0x10+var_10]
+..text:00000000000151CC       ADD             SP, SP, #0x10
+..text:00000000000151D0       B               sub_14E00
+..text:00000000000151D4       LDR             X30, [SP,#0x10+var_10]
+..text:00000000000151D8       ADD             SP, SP, #0x10
+..text:00000000000151DC       RET

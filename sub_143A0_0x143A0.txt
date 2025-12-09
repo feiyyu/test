@@ -1,0 +1,20 @@
+Function: sub_143A0 (0x143A0)
+Architecture: 64-bit
+Segment range: 0x143A0 - 0x143DC
+----------------------------------------
+
+..text:00000000000143A0       CBZ             X0, loc_143D0
+..text:00000000000143A4       LDR             W2, [X0]
+..text:00000000000143A8       MOV             W1, #3
+..text:00000000000143AC       CMP             W2, #7
+..text:00000000000143B0       B.GT            loc_143BC
+..text:00000000000143B4       MOV             W0, W1
+..text:00000000000143B8       RET
+..text:00000000000143BC       MOV             W1, #0
+..text:00000000000143C0       MOV             W2, #8
+..text:00000000000143C4       STR             W2, [X0]
+..text:00000000000143C8       MOV             W0, W1
+..text:00000000000143CC       RET
+..text:00000000000143D0       MOV             W1, #0x10
+..text:00000000000143D4       MOV             W0, W1
+..text:00000000000143D8       RET
