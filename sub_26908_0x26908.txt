@@ -1,0 +1,22 @@
+Function: sub_26908 (0x26908)
+Architecture: 64-bit
+Segment range: 0x26908 - 0x2694C
+----------------------------------------
+
+..text:0000000000026908       ADRP            X4, #dword_40700@PAGE
+..text:000000000002690C       MOV             W2, #0
+..text:0000000000026910       ADD             X1, X4, #dword_40700@PAGEOFF
+..text:0000000000026914       B               loc_26924
+..text:0000000000026918       ADD             W2, W2, #1
+..text:000000000002691C       CMP             W2, #0x66 ; 'f'
+..text:0000000000026920       B.EQ            loc_26944
+..text:0000000000026924       LDR             W3, [X1]
+..text:0000000000026928       ADD             X1, X1, #8
+..text:000000000002692C       CMP             W3, W0
+..text:0000000000026930       B.NE            loc_26918
+..text:0000000000026934       ADD             X4, X4, #dword_40700@PAGEOFF
+..text:0000000000026938       ADD             X2, X4, W2,SXTW#3
+..text:000000000002693C       LDR             W0, [X2,#4]
+..text:0000000000026940       RET
+..text:0000000000026944       MOV             W0, #0xFFFFFFFF
+..text:0000000000026948       RET

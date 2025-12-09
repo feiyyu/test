@@ -1,0 +1,8 @@
+Function: sub_ADC0 (0xADC0)
+Architecture: 64-bit
+Segment range: 0xADC0 - 0xADCC
+----------------------------------------
+
+..text:000000000000ADC0       MOV             X3, X2
+..text:000000000000ADC4       MOV             X2, #0
+..text:000000000000ADC8       B               sub_7788

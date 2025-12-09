@@ -1,0 +1,44 @@
+Function: sub_D558 (0xD558)
+Architecture: 64-bit
+Segment range: 0xD558 - 0xD5F4
+----------------------------------------
+
+..text:000000000000D558       SUB             SP, SP, #0x10
+..text:000000000000D55C       STP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000D560       LDR             W2, [X0]
+..text:000000000000D564       CBZ             W2, loc_D5E4
+..text:000000000000D568       CMP             W2, #1
+..text:000000000000D56C       B.LE            loc_D5D4
+..text:000000000000D570       MOV             X19, X0
+..text:000000000000D574       BL              sub_6D38
+..text:000000000000D578       CMP             W0, #0x3C ; '<'
+..text:000000000000D57C       B.LE            loc_D5D4
+..text:000000000000D580       LDR             X5, [X19,#0x10]
+..text:000000000000D584       LDR             X1, [X5,#8]
+..text:000000000000D588       TBZ             W1, #0, loc_D5E4
+..text:000000000000D58C       MOV             W2, #0x3C ; '<'
+..text:000000000000D590       MOV             X1, #2
+..text:000000000000D594       MOV             W3, #1
+..text:000000000000D598       MOV             X6, #0xFFFFFFFFFFFFFFF
+..text:000000000000D59C       ADD             W2, W2, #1
+..text:000000000000D5A0       CMP             W2, W0
+..text:000000000000D5A4       B.EQ            loc_D5D4
+..text:000000000000D5A8       LDR             X4, [X5,W3,SXTW#3]
+..text:000000000000D5AC       TST             X1, X4
+..text:000000000000D5B0       LSL             X1, X1, #1
+..text:000000000000D5B4       B.EQ            loc_D5E4
+..text:000000000000D5B8       CMP             X1, X6
+..text:000000000000D5BC       B.LS            loc_D59C
+..text:000000000000D5C0       ADD             W2, W2, #1
+..text:000000000000D5C4       ADD             W3, W3, #1
+..text:000000000000D5C8       CMP             W2, W0
+..text:000000000000D5CC       MOV             X1, #1
+..text:000000000000D5D0       B.NE            loc_D5A8
+..text:000000000000D5D4       MOV             W0, #1
+..text:000000000000D5D8       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000D5DC       ADD             SP, SP, #0x10
+..text:000000000000D5E0       RET
+..text:000000000000D5E4       MOV             W0, #0
+..text:000000000000D5E8       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000D5EC       ADD             SP, SP, #0x10
+..text:000000000000D5F0       RET

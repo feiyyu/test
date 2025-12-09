@@ -1,0 +1,6 @@
+Function: toupper (0x61520)
+Architecture: 64-bit
+Segment range: 0x61520 - 0x61528
+----------------------------------------
+
+.extern:0000000000061520      IMPORT toupper

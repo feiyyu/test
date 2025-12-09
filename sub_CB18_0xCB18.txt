@@ -1,0 +1,54 @@
+Function: sub_CB18 (0xCB18)
+Architecture: 64-bit
+Segment range: 0xCB18 - 0xCBDC
+----------------------------------------
+
+..text:000000000000CB18       SUB             SP, SP, #0x20
+..text:000000000000CB1C       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000CB20       ADRP            X20, #aDevUrandom@PAGE; "/dev/urandom"
+..text:000000000000CB24       STP             X21, X30, [SP,#0x20+var_10]
+..text:000000000000CB28       ADD             X20, X20, #aDevUrandom@PAGEOFF; "/dev/urandom"
+..text:000000000000CB2C       MOV             X21, X0
+..text:000000000000CB30       B               loc_CB44
+..text:000000000000CB34       BL              .__errno
+..text:000000000000CB38       LDR             W2, [X0]
+..text:000000000000CB3C       CMP             W2, #4
+..text:000000000000CB40       B.NE            loc_CBAC
+..text:000000000000CB44       MOV             W1, #0; oflag
+..text:000000000000CB48       MOV             X0, X20; file
+..text:000000000000CB4C       BL              .open
+..text:000000000000CB50       CMN             W0, #1
+..text:000000000000CB54       MOV             W19, W0
+..text:000000000000CB58       B.EQ            loc_CB34
+..text:000000000000CB5C       B               loc_CB70
+..text:000000000000CB60       BL              .__errno
+..text:000000000000CB64       LDR             W2, [X0]
+..text:000000000000CB68       CMP             W2, #4
+..text:000000000000CB6C       B.NE            loc_CBC0
+..text:000000000000CB70       MOV             X1, X21; buf
+..text:000000000000CB74       MOV             X2, #8; nbytes
+..text:000000000000CB78       MOV             W0, W19; fd
+..text:000000000000CB7C       BL              .read
+..text:000000000000CB80       CMN             X0, #1
+..text:000000000000CB84       MOV             X20, X0
+..text:000000000000CB88       B.EQ            loc_CB60
+..text:000000000000CB8C       MOV             W0, W19; fd
+..text:000000000000CB90       BL              .close
+..text:000000000000CB94       CMP             X20, #8
+..text:000000000000CB98       CSETM           W0, NE
+..text:000000000000CB9C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000CBA0       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000000CBA4       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000CBA8       RET
+..text:000000000000CBAC       MOV             W0, W19
+..text:000000000000CBB0       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000CBB4       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000000CBB8       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000CBBC       RET
+..text:000000000000CBC0       MOV             W0, W19; fd
+..text:000000000000CBC4       BL              .close
+..text:000000000000CBC8       MOV             W0, W20
+..text:000000000000CBCC       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000CBD0       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000000CBD4       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000CBD8       RET

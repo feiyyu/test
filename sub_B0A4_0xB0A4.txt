@@ -1,0 +1,26 @@
+Function: sub_B0A4 (0xB0A4)
+Architecture: 64-bit
+Segment range: 0xB0A4 - 0xB0F8
+----------------------------------------
+
+..text:000000000000B0A4       LDR             X0, [X0,#0x10]
+..text:000000000000B0A8       LDR             X2, [X0]
+..text:000000000000B0AC       TBZ             W2, #0, loc_B0F0
+..text:000000000000B0B0       ADD             X3, X2, #2
+..text:000000000000B0B4       MOV             X5, #2
+..text:000000000000B0B8       AND             X3, X3, #4
+..text:000000000000B0BC       MOV             W0, #0
+..text:000000000000B0C0       ADD             X3, X2, X3,LSL#1
+..text:000000000000B0C4       MSUB            X4, X3, X2, X5
+..text:000000000000B0C8       MUL             X3, X4, X3
+..text:000000000000B0CC       MSUB            X4, X3, X2, X5
+..text:000000000000B0D0       MUL             X3, X4, X3
+..text:000000000000B0D4       MSUB            X4, X3, X2, X5
+..text:000000000000B0D8       MUL             X3, X4, X3
+..text:000000000000B0DC       MSUB            X2, X3, X2, X5
+..text:000000000000B0E0       MNEG            X2, X3, X2
+..text:000000000000B0E4       AND             X2, X2, #0xFFFFFFFFFFFFFFF
+..text:000000000000B0E8       STR             X2, [X1]
+..text:000000000000B0EC       RET
+..text:000000000000B0F0       MOV             W0, #0xFFFFFFFD
+..text:000000000000B0F4       RET

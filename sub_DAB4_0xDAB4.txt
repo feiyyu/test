@@ -1,0 +1,45 @@
+Function: sub_DAB4 (0xDAB4)
+Architecture: 64-bit
+Segment range: 0xDAB4 - 0xDB54
+----------------------------------------
+
+..text:000000000000DAB4       SUB             SP, SP, #0x50
+..text:000000000000DAB8       STP             X19, X20, [SP,#0x50+var_50]
+..text:000000000000DABC       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000000DAC0       MOV             X20, X0
+..text:000000000000DAC4       STP             X21, X22, [SP,#0x50+var_40]
+..text:000000000000DAC8       STP             X23, X30, [SP,#0x50+var_30]
+..text:000000000000DACC       LDR             X3, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000DAD0       ADD             X21, SP, #0x50+var_20
+..text:000000000000DAD4       MOV             X0, X21
+..text:000000000000DAD8       MOV             X23, X1
+..text:000000000000DADC       MOV             X22, X2
+..text:000000000000DAE0       LDR             X3, [X3]
+..text:000000000000DAE4       STR             X3, [SP,#0x50+var_8]
+..text:000000000000DAE8       BL              sub_93C4
+..text:000000000000DAEC       CBZ             W0, loc_DB18
+..text:000000000000DAF0       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000DAF4       LDR             X2, [SP,#0x50+var_8]
+..text:000000000000DAF8       LDR             X1, [X19]
+..text:000000000000DAFC       CMP             X2, X1
+..text:000000000000DB00       B.NE            loc_DB50
+..text:000000000000DB04       LDP             X19, X20, [SP,#0x50+var_50]
+..text:000000000000DB08       LDP             X21, X22, [SP,#0x50+var_40]
+..text:000000000000DB0C       LDP             X23, X30, [SP,#0x50+var_30]
+..text:000000000000DB10       ADD             SP, SP, #0x50 ; 'P'
+..text:000000000000DB14       RET
+..text:000000000000DB18       MOV             X0, X20
+..text:000000000000DB1C       MOV             X1, X21
+..text:000000000000DB20       BL              sub_DA18
+..text:000000000000DB24       MOV             W20, W0
+..text:000000000000DB28       CBNZ            W0, loc_DB40
+..text:000000000000DB2C       MOV             X1, X23
+..text:000000000000DB30       MOV             X2, X22
+..text:000000000000DB34       MOV             X0, X21
+..text:000000000000DB38       BL              sub_AB94
+..text:000000000000DB3C       MOV             W20, W0
+..text:000000000000DB40       MOV             X0, X21
+..text:000000000000DB44       BL              sub_6814
+..text:000000000000DB48       MOV             W0, W20
+..text:000000000000DB4C       B               loc_DAF0
+..text:000000000000DB50       BL              .__stack_chk_fail

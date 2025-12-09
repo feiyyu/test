@@ -1,0 +1,408 @@
+Function: sub_28000 (0x28000)
+Architecture: 64-bit
+Segment range: 0x28000 - 0x28650
+----------------------------------------
+
+..text:0000000000028000       SUB             SP, SP, #0x60
+..text:0000000000028004       CMP             X1, XZR
+..text:0000000000028008       CSET            W5, EQ
+..text:000000000002800C       CMP             X2, XZR
+..text:0000000000028010       CSET            W3, EQ
+..text:0000000000028014       STP             X19, X20, [SP,#0x60+var_60]
+..text:0000000000028018       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000002801C       MOV             X20, X0
+..text:0000000000028020       STP             X21, X30, [SP,#0x60+var_50]
+..text:0000000000028024       ORR             W3, W5, W3
+..text:0000000000028028       LDR             X4, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000002802C       LDR             X0, [X4]
+..text:0000000000028030       STR             X0, [SP,#0x60+var_8]
+..text:0000000000028034       CBNZ            W3, loc_2807C
+..text:0000000000028038       CBZ             X20, loc_2807C
+..text:000000000002803C       LDR             X0, [X1]
+..text:0000000000028040       CMP             X0, #1
+..text:0000000000028044       B.LS            loc_28054
+..text:0000000000028048       LDRB            W3, [X20,#1]
+..text:000000000002804C       CMP             W3, #0x1F
+..text:0000000000028050       B.LS            loc_28084
+..text:0000000000028054       MOV             W0, #7
+..text:0000000000028058       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000002805C       LDR             X2, [SP,#0x60+var_8]
+..text:0000000000028060       LDR             X1, [X19]
+..text:0000000000028064       CMP             X2, X1
+..text:0000000000028068       B.NE            loc_282C0
+..text:000000000002806C       LDP             X19, X20, [SP,#0x60+var_60]
+..text:0000000000028070       LDP             X21, X30, [SP,#0x60+var_50]
+..text:0000000000028074       ADD             SP, SP, #0x60 ; '`'
+..text:0000000000028078       RET
+..text:000000000002807C       MOV             W0, #0x10
+..text:0000000000028080       B               loc_28058
+..text:0000000000028084       UXTB            W4, W3
+..text:0000000000028088       ADD             X4, X4, #2
+..text:000000000002808C       CMP             X0, X4
+..text:0000000000028090       B.CC            loc_28054
+..text:0000000000028094       CBZ             W3, loc_282B0
+..text:0000000000028098       MOV             X21, #0
+..text:000000000002809C       B               loc_280E8
+..text:00000000000280A0       SUB             W3, W0, #0x30 ; '0'
+..text:00000000000280A4       LDR             X1, [SP,#0x60+var_40]
+..text:00000000000280A8       CMP             W3, #9
+..text:00000000000280AC       LDR             X2, [SP,#0x60+var_38]
+..text:00000000000280B0       B.LS            loc_280D0
+..text:00000000000280B4       CMP             W0, #0x5A ; 'Z'
+..text:00000000000280B8       B.EQ            loc_280D0
+..text:00000000000280BC       CMP             W0, #0x2B ; '+'
+..text:00000000000280C0       B.EQ            loc_280D0
+..text:00000000000280C4       SUB             W3, W0, #0x2D ; '-'
+..text:00000000000280C8       CMP             W3, #1
+..text:00000000000280CC       B.HI            loc_28054
+..text:00000000000280D0       ADD             X3, SP, #0x60+var_28
+..text:00000000000280D4       LDRB            W4, [X20,#1]
+..text:00000000000280D8       STRB            W0, [X3,X21]
+..text:00000000000280DC       ADD             X21, X21, #1
+..text:00000000000280E0       CMP             X4, X21
+..text:00000000000280E4       B.LS            loc_28108
+..text:00000000000280E8       ADD             X0, X20, X21
+..text:00000000000280EC       STR             X2, [SP,#0x60+var_38]
+..text:00000000000280F0       STR             X1, [SP,#0x60+var_40]
+..text:00000000000280F4       LDRB            W0, [X0,#2]
+..text:00000000000280F8       BL              sub_2694C
+..text:00000000000280FC       CMN             W0, #1
+..text:0000000000028100       B.NE            loc_280A0
+..text:0000000000028104       B               loc_28054
+..text:0000000000028108       ADD             X0, X21, #2
+..text:000000000002810C       CMP             X21, #0xE
+..text:0000000000028110       STR             X0, [X1]
+..text:0000000000028114       B.LS            loc_28054
+..text:0000000000028118       LDRB            W1, [X3]
+..text:000000000002811C       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028120       UXTB            W1, W1
+..text:0000000000028124       CMP             W1, #9
+..text:0000000000028128       B.HI            loc_28220
+..text:000000000002812C       ADRP            X0, #unk_40C90@PAGE
+..text:0000000000028130       UXTB            W1, W1
+..text:0000000000028134       ADD             X0, X0, #unk_40C90@PAGEOFF
+..text:0000000000028138       MOV             W4, #0x3E8
+..text:000000000002813C       LDR             W0, [X0,X1,LSL#2]
+..text:0000000000028140       MUL             W5, W0, W4
+..text:0000000000028144       LDRB            W1, [SP,#0x60+var_27]
+..text:0000000000028148       MOV             W4, #0x2710
+..text:000000000002814C       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028150       UXTB            W1, W1
+..text:0000000000028154       CMP             W1, #9
+..text:0000000000028158       B.HI            loc_28174
+..text:000000000002815C       ADRP            X0, #unk_40C90@PAGE
+..text:0000000000028160       UXTB            W1, W1
+..text:0000000000028164       ADD             X0, X0, #unk_40C90@PAGEOFF
+..text:0000000000028168       MOV             W4, #0x64 ; 'd'
+..text:000000000002816C       LDR             W0, [X0,X1,LSL#2]
+..text:0000000000028170       MUL             W4, W0, W4
+..text:0000000000028174       LDRB            W1, [SP,#0x60+var_26]
+..text:0000000000028178       ADD             W4, W4, W5
+..text:000000000002817C       MOV             W0, #0x3E8
+..text:0000000000028180       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028184       UXTB            W1, W1
+..text:0000000000028188       CMP             W1, #9
+..text:000000000002818C       B.HI            loc_281A8
+..text:0000000000028190       ADRP            X0, #unk_40C90@PAGE
+..text:0000000000028194       UXTB            W1, W1
+..text:0000000000028198       ADD             X0, X0, #unk_40C90@PAGEOFF
+..text:000000000002819C       LDR             W1, [X0,X1,LSL#2]
+..text:00000000000281A0       ADD             W1, W1, W1,LSL#2
+..text:00000000000281A4       LSL             W0, W1, #1
+..text:00000000000281A8       LDRB            W1, [SP,#0x60+var_25]
+..text:00000000000281AC       ADD             W4, W4, W0
+..text:00000000000281B0       MOV             W0, #0x64 ; 'd'
+..text:00000000000281B4       SUB             W1, W1, #0x30 ; '0'
+..text:00000000000281B8       UXTB            W1, W1
+..text:00000000000281BC       CMP             W1, #9
+..text:00000000000281C0       B.HI            loc_281D4
+..text:00000000000281C4       ADRP            X0, #unk_40C90@PAGE
+..text:00000000000281C8       UXTB            W1, W1
+..text:00000000000281CC       ADD             X0, X0, #unk_40C90@PAGEOFF
+..text:00000000000281D0       LDR             W0, [X0,X1,LSL#2]
+..text:00000000000281D4       ADD             W0, W4, W0
+..text:00000000000281D8       MOV             W1, #0x270F
+..text:00000000000281DC       STR             W0, [X2]
+..text:00000000000281E0       CMP             W0, W1
+..text:00000000000281E4       B.HI            loc_28054
+..text:00000000000281E8       LDRB            W1, [SP,#0x60+var_24]
+..text:00000000000281EC       SUB             W1, W1, #0x30 ; '0'
+..text:00000000000281F0       UXTB            W1, W1
+..text:00000000000281F4       CMP             W1, #9
+..text:00000000000281F8       B.LS            loc_2822C
+..text:00000000000281FC       LDRB            W1, [SP,#0x60+var_23]
+..text:0000000000028200       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028204       UXTB            W1, W1
+..text:0000000000028208       CMP             W1, #9
+..text:000000000002820C       B.LS            loc_284E0
+..text:0000000000028210       MOV             W1, #0x44C
+..text:0000000000028214       MOV             W0, #7
+..text:0000000000028218       STR             W1, [X2,#4]
+..text:000000000002821C       B               loc_28058
+..text:0000000000028220       MOV             W5, #0x186A0
+..text:0000000000028228       B               loc_28144
+..text:000000000002822C       ADRP            X0, #unk_40C90@PAGE
+..text:0000000000028230       UXTB            W4, W1
+..text:0000000000028234       ADD             X6, X0, #unk_40C90@PAGEOFF
+..text:0000000000028238       LDRB            W1, [SP,#0x60+var_23]
+..text:000000000002823C       MOV             W5, #0x64 ; 'd'
+..text:0000000000028240       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028244       LDR             W4, [X6,X4,LSL#2]
+..text:0000000000028248       UXTB            W1, W1
+..text:000000000002824C       CMP             W1, #9
+..text:0000000000028250       ADD             W4, W4, W4,LSL#2
+..text:0000000000028254       LSL             W4, W4, #1
+..text:0000000000028258       B.HI            loc_28268
+..text:000000000002825C       ADD             X5, X0, #unk_40C90@PAGEOFF
+..text:0000000000028260       UXTB            W1, W1
+..text:0000000000028264       LDR             W5, [X5,X1,LSL#2]
+..text:0000000000028268       ADD             W4, W4, W5
+..text:000000000002826C       STR             W4, [X2,#4]
+..text:0000000000028270       CMP             W4, #0xC
+..text:0000000000028274       B.HI            loc_28054
+..text:0000000000028278       LDRB            W4, [SP,#0x60+var_22]
+..text:000000000002827C       LDRB            W1, [SP,#0x60+var_21]
+..text:0000000000028280       SUB             W4, W4, #0x30 ; '0'
+..text:0000000000028284       UXTB            W4, W4
+..text:0000000000028288       CMP             W4, #9
+..text:000000000002828C       B.LS            loc_282C4
+..text:0000000000028290       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028294       UXTB            W1, W1
+..text:0000000000028298       CMP             W1, #9
+..text:000000000002829C       B.LS            loc_28500
+..text:00000000000282A0       MOV             W1, #0x44C
+..text:00000000000282A4       MOV             W0, #7
+..text:00000000000282A8       STR             W1, [X2,#8]
+..text:00000000000282AC       B               loc_28058
+..text:00000000000282B0       MOV             X2, #2
+..text:00000000000282B4       MOV             W0, #7
+..text:00000000000282B8       STR             X2, [X1]
+..text:00000000000282BC       B               loc_28058
+..text:00000000000282C0       BL              .__stack_chk_fail
+..text:00000000000282C4       ADD             X6, X0, #unk_40C90@PAGEOFF
+..text:00000000000282C8       UXTB            W4, W4
+..text:00000000000282CC       SUB             W1, W1, #0x30 ; '0'
+..text:00000000000282D0       MOV             W5, #0x64 ; 'd'
+..text:00000000000282D4       LDR             W4, [X6,X4,LSL#2]
+..text:00000000000282D8       UXTB            W1, W1
+..text:00000000000282DC       MOV             W6, #0xA
+..text:00000000000282E0       CMP             W1, #9
+..text:00000000000282E4       MUL             W4, W4, W6
+..text:00000000000282E8       B.HI            loc_282F8
+..text:00000000000282EC       ADD             X5, X0, #unk_40C90@PAGEOFF
+..text:00000000000282F0       UXTB            W1, W1
+..text:00000000000282F4       LDR             W5, [X5,X1,LSL#2]
+..text:00000000000282F8       ADD             W1, W4, W5
+..text:00000000000282FC       STR             W1, [X2,#8]
+..text:0000000000028300       CMP             W1, #0x1F
+..text:0000000000028304       B.HI            loc_28054
+..text:0000000000028308       LDRB            W4, [SP,#0x60+var_20]
+..text:000000000002830C       LDRB            W1, [SP,#0x60+var_1F]
+..text:0000000000028310       SUB             W4, W4, #0x30 ; '0'
+..text:0000000000028314       UXTB            W4, W4
+..text:0000000000028318       CMP             W4, #9
+..text:000000000002831C       B.HI            loc_28508
+..text:0000000000028320       ADD             X6, X0, #unk_40C90@PAGEOFF
+..text:0000000000028324       UXTB            W4, W4
+..text:0000000000028328       SUB             W1, W1, #0x30 ; '0'
+..text:000000000002832C       MOV             W5, #0x64 ; 'd'
+..text:0000000000028330       LDR             W4, [X6,X4,LSL#2]
+..text:0000000000028334       UXTB            W1, W1
+..text:0000000000028338       MOV             W6, #0xA
+..text:000000000002833C       CMP             W1, #9
+..text:0000000000028340       MUL             W4, W4, W6
+..text:0000000000028344       B.LS            loc_284F0
+..text:0000000000028348       ADD             W1, W4, W5
+..text:000000000002834C       STR             W1, [X2,#0xC]
+..text:0000000000028350       CMP             W1, #0x17
+..text:0000000000028354       B.HI            loc_28054
+..text:0000000000028358       LDRB            W4, [SP,#0x60+var_1E]
+..text:000000000002835C       LDRB            W1, [SP,#0x60+var_1D]
+..text:0000000000028360       SUB             W4, W4, #0x30 ; '0'
+..text:0000000000028364       UXTB            W4, W4
+..text:0000000000028368       CMP             W4, #9
+..text:000000000002836C       B.HI            loc_28584
+..text:0000000000028370       ADD             X6, X0, #unk_40C90@PAGEOFF
+..text:0000000000028374       UXTB            W4, W4
+..text:0000000000028378       SUB             W1, W1, #0x30 ; '0'
+..text:000000000002837C       MOV             W5, #0x64 ; 'd'
+..text:0000000000028380       LDR             W4, [X6,X4,LSL#2]
+..text:0000000000028384       UXTB            W1, W1
+..text:0000000000028388       MOV             W6, #0xA
+..text:000000000002838C       CMP             W1, #9
+..text:0000000000028390       MUL             W4, W4, W6
+..text:0000000000028394       B.LS            loc_28560
+..text:0000000000028398       ADD             W1, W4, W5
+..text:000000000002839C       STR             W1, [X2,#0x10]
+..text:00000000000283A0       CMP             W1, #0x3B ; ';'
+..text:00000000000283A4       B.HI            loc_28054
+..text:00000000000283A8       LDRB            W4, [SP,#0x60+var_1C]
+..text:00000000000283AC       LDRB            W1, [SP,#0x60+var_1B]
+..text:00000000000283B0       SUB             W4, W4, #0x30 ; '0'
+..text:00000000000283B4       UXTB            W4, W4
+..text:00000000000283B8       CMP             W4, #9
+..text:00000000000283BC       B.HI            loc_2853C
+..text:00000000000283C0       ADD             X6, X0, #unk_40C90@PAGEOFF
+..text:00000000000283C4       UXTB            W4, W4
+..text:00000000000283C8       SUB             W1, W1, #0x30 ; '0'
+..text:00000000000283CC       MOV             W5, #0x64 ; 'd'
+..text:00000000000283D0       LDR             W4, [X6,X4,LSL#2]
+..text:00000000000283D4       UXTB            W1, W1
+..text:00000000000283D8       MOV             W6, #0xA
+..text:00000000000283DC       CMP             W1, #9
+..text:00000000000283E0       MUL             W4, W4, W6
+..text:00000000000283E4       B.LS            loc_28574
+..text:00000000000283E8       ADD             W1, W4, W5
+..text:00000000000283EC       STR             W1, [X2,#0x14]
+..text:00000000000283F0       CMP             W1, #0x3B ; ';'
+..text:00000000000283F4       B.HI            loc_28054
+..text:00000000000283F8       LDRB            W1, [SP,#0x60+var_1A]
+..text:00000000000283FC       STR             WZR, [X2,#0x18]
+..text:0000000000028400       CMP             W1, #0x5A ; 'Z'
+..text:0000000000028404       B.EQ            loc_284D8
+..text:0000000000028408       CMP             W1, #0x2E ; '.'
+..text:000000000002840C       B.EQ            loc_285F8
+..text:0000000000028410       MOV             X4, #0xE
+..text:0000000000028414       SUB             W5, W1, #0x2B ; '+'
+..text:0000000000028418       AND             W5, W5, #0xFFFFFFFD
+..text:000000000002841C       UXTB            W5, W5
+..text:0000000000028420       CBNZ            W5, loc_28054
+..text:0000000000028424       ADD             X6, X3, X4
+..text:0000000000028428       CMP             W1, #0x2B ; '+'
+..text:000000000002842C       CSET            W1, NE
+..text:0000000000028430       STR             W1, [X2,#0x1C]
+..text:0000000000028434       LDRB            W5, [X6,#1]
+..text:0000000000028438       LDRB            W1, [X6,#2]
+..text:000000000002843C       SUB             W5, W5, #0x30 ; '0'
+..text:0000000000028440       UXTB            W5, W5
+..text:0000000000028444       CMP             W5, #9
+..text:0000000000028448       B.HI            loc_285C4
+..text:000000000002844C       ADD             X7, X0, #unk_40C90@PAGEOFF
+..text:0000000000028450       UXTB            W5, W5
+..text:0000000000028454       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028458       MOV             W6, #0x64 ; 'd'
+..text:000000000002845C       LDR             W5, [X7,X5,LSL#2]
+..text:0000000000028460       UXTB            W1, W1
+..text:0000000000028464       MOV             W7, #0xA
+..text:0000000000028468       CMP             W1, #9
+..text:000000000002846C       MUL             W5, W5, W7
+..text:0000000000028470       B.LS            loc_285E8
+..text:0000000000028474       ADD             W1, W5, W6
+..text:0000000000028478       STR             W1, [X2,#0x20]
+..text:000000000002847C       CMP             W1, #0x17
+..text:0000000000028480       B.HI            loc_28054
+..text:0000000000028484       ADD             X3, X3, X4
+..text:0000000000028488       LDRB            W4, [X3,#3]
+..text:000000000002848C       LDRB            W1, [X3,#4]
+..text:0000000000028490       SUB             W4, W4, #0x30 ; '0'
+..text:0000000000028494       UXTB            W4, W4
+..text:0000000000028498       CMP             W4, #9
+..text:000000000002849C       B.HI            loc_285A4
+..text:00000000000284A0       ADD             X5, X0, #unk_40C90@PAGEOFF
+..text:00000000000284A4       UXTB            W4, W4
+..text:00000000000284A8       SUB             W1, W1, #0x30 ; '0'
+..text:00000000000284AC       MOV             W3, #0x64 ; 'd'
+..text:00000000000284B0       LDR             W4, [X5,X4,LSL#2]
+..text:00000000000284B4       UXTB            W1, W1
+..text:00000000000284B8       MOV             W5, #0xA
+..text:00000000000284BC       CMP             W1, #9
+..text:00000000000284C0       MUL             W4, W4, W5
+..text:00000000000284C4       B.LS            loc_2852C
+..text:00000000000284C8       ADD             W0, W4, W3
+..text:00000000000284CC       STR             W0, [X2,#0x24]
+..text:00000000000284D0       CMP             W0, #0x3B ; ';'
+..text:00000000000284D4       B.HI            loc_28054
+..text:00000000000284D8       MOV             W0, #0
+..text:00000000000284DC       B               loc_28058
+..text:00000000000284E0       MOV             W4, #0x3E8
+..text:00000000000284E4       ADRP            X0, #0x40000
+..text:00000000000284E8       B               loc_2825C
+..text:00000000000284EC       MOV             W4, #0x3E8
+..text:00000000000284F0       ADD             X5, X0, #unk_40C90@PAGEOFF
+..text:00000000000284F4       UXTB            W1, W1
+..text:00000000000284F8       LDR             W5, [X5,X1,LSL#2]
+..text:00000000000284FC       B               loc_28348
+..text:0000000000028500       MOV             W4, #0x3E8
+..text:0000000000028504       B               loc_282EC
+..text:0000000000028508       SUB             W1, W1, #0x30 ; '0'
+..text:000000000002850C       UXTB            W1, W1
+..text:0000000000028510       CMP             W1, #9
+..text:0000000000028514       B.LS            loc_284EC
+..text:0000000000028518       MOV             W1, #0x44C
+..text:000000000002851C       MOV             W0, #7
+..text:0000000000028520       STR             W1, [X2,#0xC]
+..text:0000000000028524       B               loc_28058
+..text:0000000000028528       MOV             W4, #0x3E8
+..text:000000000002852C       ADD             X0, X0, #unk_40C90@PAGEOFF
+..text:0000000000028530       UXTB            W1, W1
+..text:0000000000028534       LDR             W3, [X0,X1,LSL#2]
+..text:0000000000028538       B               loc_284C8
+..text:000000000002853C       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028540       UXTB            W1, W1
+..text:0000000000028544       CMP             W1, #9
+..text:0000000000028548       B.LS            loc_28570
+..text:000000000002854C       MOV             W1, #0x44C
+..text:0000000000028550       MOV             W0, #7
+..text:0000000000028554       STR             W1, [X2,#0x14]
+..text:0000000000028558       B               loc_28058
+..text:000000000002855C       MOV             W4, #0x3E8
+..text:0000000000028560       ADD             X5, X0, #unk_40C90@PAGEOFF
+..text:0000000000028564       UXTB            W1, W1
+..text:0000000000028568       LDR             W5, [X5,X1,LSL#2]
+..text:000000000002856C       B               loc_28398
+..text:0000000000028570       MOV             W4, #0x3E8
+..text:0000000000028574       ADD             X5, X0, #unk_40C90@PAGEOFF
+..text:0000000000028578       UXTB            W1, W1
+..text:000000000002857C       LDR             W5, [X5,X1,LSL#2]
+..text:0000000000028580       B               loc_283E8
+..text:0000000000028584       SUB             W1, W1, #0x30 ; '0'
+..text:0000000000028588       UXTB            W1, W1
+..text:000000000002858C       CMP             W1, #9
+..text:0000000000028590       B.LS            loc_2855C
+..text:0000000000028594       MOV             W1, #0x44C
+..text:0000000000028598       MOV             W0, #7
+..text:000000000002859C       STR             W1, [X2,#0x10]
+..text:00000000000285A0       B               loc_28058
+..text:00000000000285A4       SUB             W1, W1, #0x30 ; '0'
+..text:00000000000285A8       UXTB            W1, W1
+..text:00000000000285AC       CMP             W1, #9
+..text:00000000000285B0       B.LS            loc_28528
+..text:00000000000285B4       MOV             W1, #0x44C
+..text:00000000000285B8       MOV             W0, #7
+..text:00000000000285BC       STR             W1, [X2,#0x24]
+..text:00000000000285C0       B               loc_28058
+..text:00000000000285C4       SUB             W1, W1, #0x30 ; '0'
+..text:00000000000285C8       UXTB            W1, W1
+..text:00000000000285CC       CMP             W1, #9
+..text:00000000000285D0       B.LS            loc_285E4
+..text:00000000000285D4       MOV             W1, #0x44C
+..text:00000000000285D8       MOV             W0, #7
+..text:00000000000285DC       STR             W1, [X2,#0x20]
+..text:00000000000285E0       B               loc_28058
+..text:00000000000285E4       MOV             W5, #0x3E8
+..text:00000000000285E8       ADD             X6, X0, #unk_40C90@PAGEOFF
+..text:00000000000285EC       UXTB            W1, W1
+..text:00000000000285F0       LDR             W6, [X6,X1,LSL#2]
+..text:00000000000285F4       B               loc_28474
+..text:00000000000285F8       MOV             X4, #0xF
+..text:00000000000285FC       MOV             W7, #0xA
+..text:0000000000028600       LDRB            W1, [X3,X4]
+..text:0000000000028604       SUB             W5, W1, #0x30 ; '0'
+..text:0000000000028608       UXTB            W5, W5
+..text:000000000002860C       CMP             W5, #9
+..text:0000000000028610       B.HI            loc_28644
+..text:0000000000028614       ADD             X1, X0, #unk_40C90@PAGEOFF
+..text:0000000000028618       UXTB            W5, W5
+..text:000000000002861C       LDR             W6, [X2,#0x18]
+..text:0000000000028620       LDR             W1, [X1,X5,LSL#2]
+..text:0000000000028624       MADD            W1, W6, W7, W1
+..text:0000000000028628       STR             W1, [X2,#0x18]
+..text:000000000002862C       CMP             W6, W1
+..text:0000000000028630       B.HI            loc_2863C
+..text:0000000000028634       ADD             X4, X4, #1
+..text:0000000000028638       B               loc_28600
+..text:000000000002863C       MOV             W0, #0x13
+..text:0000000000028640       B               loc_28058
+..text:0000000000028644       CMP             W1, #0x5A ; 'Z'
+..text:0000000000028648       B.NE            loc_28414
+..text:000000000002864C       B               loc_284D8

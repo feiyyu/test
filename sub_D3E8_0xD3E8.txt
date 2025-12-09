@@ -1,0 +1,55 @@
+Function: sub_D3E8 (0xD3E8)
+Architecture: 64-bit
+Segment range: 0xD3E8 - 0xD4B0
+----------------------------------------
+
+..text:000000000000D3E8       SUB             SP, SP, #0x50
+..text:000000000000D3EC       STP             X19, X20, [SP,#0x50+var_50]
+..text:000000000000D3F0       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000000D3F4       ADD             X20, SP, #0x50+var_20
+..text:000000000000D3F8       STP             X21, X22, [SP,#0x50+var_40]
+..text:000000000000D3FC       STP             X23, X30, [SP,#0x50+var_30]
+..text:000000000000D400       LDR             X2, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000D404       MOV             X22, X0
+..text:000000000000D408       MOV             X0, X20
+..text:000000000000D40C       MOV             X23, X1
+..text:000000000000D410       LDR             X2, [X2]
+..text:000000000000D414       STR             X2, [SP,#0x50+var_8]
+..text:000000000000D418       BL              sub_93C4
+..text:000000000000D41C       MOV             W21, W0
+..text:000000000000D420       CBZ             W0, loc_D450
+..text:000000000000D424       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000D428       MOV             W0, W21
+..text:000000000000D42C       LDR             X2, [SP,#0x50+var_8]
+..text:000000000000D430       LDR             X1, [X19]
+..text:000000000000D434       CMP             X2, X1
+..text:000000000000D438       B.NE            loc_D4AC
+..text:000000000000D43C       LDP             X19, X20, [SP,#0x50+var_50]
+..text:000000000000D440       LDP             X21, X22, [SP,#0x50+var_40]
+..text:000000000000D444       LDP             X23, X30, [SP,#0x50+var_30]
+..text:000000000000D448       ADD             SP, SP, #0x50 ; 'P'
+..text:000000000000D44C       RET
+..text:000000000000D450       MOV             X0, X22
+..text:000000000000D454       BL              sub_6D38
+..text:000000000000D458       MOV             W1, W0
+..text:000000000000D45C       MOV             X0, X20
+..text:000000000000D460       BL              sub_6180
+..text:000000000000D464       MOV             W1, W0
+..text:000000000000D468       MOV             X0, X20
+..text:000000000000D46C       CBNZ            W1, loc_D4A0
+..text:000000000000D470       MOV             X1, X22
+..text:000000000000D474       MOV             X2, X20
+..text:000000000000D478       BL              sub_1061C
+..text:000000000000D47C       MOV             W1, W0
+..text:000000000000D480       CBNZ            W0, loc_D49C
+..text:000000000000D484       LDR             X1, [X20,#0x10]
+..text:000000000000D488       MOV             X0, X20
+..text:000000000000D48C       LDR             X1, [X1]
+..text:000000000000D490       STR             X1, [X23]
+..text:000000000000D494       BL              sub_6814
+..text:000000000000D498       B               loc_D424
+..text:000000000000D49C       MOV             X0, X20
+..text:000000000000D4A0       MOV             W21, W1
+..text:000000000000D4A4       BL              sub_6814
+..text:000000000000D4A8       B               loc_D424
+..text:000000000000D4AC       BL              .__stack_chk_fail

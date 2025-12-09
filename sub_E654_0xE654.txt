@@ -1,0 +1,30 @@
+Function: sub_E654 (0xE654)
+Architecture: 64-bit
+Segment range: 0xE654 - 0xE6B8
+----------------------------------------
+
+..text:000000000000E654       SUB             SP, SP, #0x30
+..text:000000000000E658       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000000E65C       STP             X21, X30, [SP,#0x30+var_20]
+..text:000000000000E660       MOV             X19, X2
+..text:000000000000E664       LDR             X21, [X2]
+..text:000000000000E668       MOV             X20, X0
+..text:000000000000E66C       STR             X1, [SP,#0x30+var_8]
+..text:000000000000E670       BL              sub_F650
+..text:000000000000E674       CMP             X21, W0,SXTW
+..text:000000000000E678       B.CC            loc_E6A4
+..text:000000000000E67C       MOV             X0, X20
+..text:000000000000E680       BL              sub_F650
+..text:000000000000E684       SXTW            X0, W0
+..text:000000000000E688       STR             X0, [X19]
+..text:000000000000E68C       MOV             X0, X20
+..text:000000000000E690       LDR             X1, [SP,#0x30+var_8]
+..text:000000000000E694       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000000E698       LDP             X21, X30, [SP,#0x30+var_20]
+..text:000000000000E69C       ADD             SP, SP, #0x30 ; '0'
+..text:000000000000E6A0       B               sub_E594
+..text:000000000000E6A4       MOV             W0, #0xFFFFFFFD
+..text:000000000000E6A8       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000000E6AC       LDP             X21, X30, [SP,#0x30+var_20]
+..text:000000000000E6B0       ADD             SP, SP, #0x30 ; '0'
+..text:000000000000E6B4       RET

@@ -1,0 +1,74 @@
+Function: sub_B0F8 (0xB0F8)
+Architecture: 64-bit
+Segment range: 0xB0F8 - 0xB20C
+----------------------------------------
+
+..text:000000000000B0F8       SUB             SP, SP, #0x20
+..text:000000000000B0FC       ADRP            X4, #off_59F58@PAGE
+..text:000000000000B100       MOV             X7, X0
+..text:000000000000B104       MOV             X6, X1
+..text:000000000000B108       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000B10C       STR             X30, [SP,#0x20+var_10]
+..text:000000000000B110       MOV             X20, X2
+..text:000000000000B114       LDR             X4, [X4,#off_59F58@PAGEOFF]
+..text:000000000000B118       LDR             W8, [X0,#8]
+..text:000000000000B11C       LDR             W3, [X1,#8]
+..text:000000000000B120       LDR             W5, [X1]
+..text:000000000000B124       CMP             W8, W3
+..text:000000000000B128       LDR             W3, [X0]
+..text:000000000000B12C       LDR             W8, [X4]
+..text:000000000000B130       CSET            W19, NE
+..text:000000000000B134       CMP             W3, W5
+..text:000000000000B138       CSEL            W4, W3, W5, LE
+..text:000000000000B13C       CMP             W4, W8
+..text:000000000000B140       B.GE            loc_B1A0
+..text:000000000000B144       ADRP            X8, #off_59F28@PAGE
+..text:000000000000B148       LDR             X8, [X8,#off_59F28@PAGEOFF]
+..text:000000000000B14C       LDR             W8, [X8]
+..text:000000000000B150       CMP             W4, W8
+..text:000000000000B154       B.GE            loc_B1C4
+..text:000000000000B158       ADD             W3, W5, W3
+..text:000000000000B15C       ADD             W3, W3, #1
+..text:000000000000B160       CMP             W3, #0x1FF
+..text:000000000000B164       B.GT            loc_B170
+..text:000000000000B168       CMP             W4, #0x100
+..text:000000000000B16C       B.LE            loc_B1E8
+..text:000000000000B170       MOV             X1, X6
+..text:000000000000B174       MOV             X2, X20
+..text:000000000000B178       MOV             X0, X7
+..text:000000000000B17C       BL              sub_1009C
+..text:000000000000B180       LDR             W1, [X20]
+..text:000000000000B184       CMP             W1, WZR
+..text:000000000000B188       CSEL            W19, W19, WZR, GT
+..text:000000000000B18C       STR             W19, [X20,#8]
+..text:000000000000B190       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000B194       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000B198       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000B19C       RET
+..text:000000000000B1A0       BL              sub_E6B8
+..text:000000000000B1A4       LDR             W1, [X20]
+..text:000000000000B1A8       CMP             W1, WZR
+..text:000000000000B1AC       CSEL            W19, W19, WZR, GT
+..text:000000000000B1B0       STR             W19, [X20,#8]
+..text:000000000000B1B4       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000B1B8       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000B1BC       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000B1C0       RET
+..text:000000000000B1C4       BL              sub_9FE0
+..text:000000000000B1C8       LDR             W1, [X20]
+..text:000000000000B1CC       CMP             W1, WZR
+..text:000000000000B1D0       CSEL            W19, W19, WZR, GT
+..text:000000000000B1D4       STR             W19, [X20,#8]
+..text:000000000000B1D8       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000B1DC       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000B1E0       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000B1E4       RET
+..text:000000000000B1E8       BL              sub_56F4
+..text:000000000000B1EC       LDR             W1, [X20]
+..text:000000000000B1F0       CMP             W1, WZR
+..text:000000000000B1F4       CSEL            W19, W19, WZR, GT
+..text:000000000000B1F8       STR             W19, [X20,#8]
+..text:000000000000B1FC       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000B200       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000B204       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000B208       RET

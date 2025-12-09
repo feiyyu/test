@@ -1,0 +1,40 @@
+Function: sub_E194 (0xE194)
+Architecture: 64-bit
+Segment range: 0xE194 - 0xE220
+----------------------------------------
+
+..text:000000000000E194       SUB             SP, SP, #0x30
+..text:000000000000E198       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000000E19C       STP             X21, X30, [SP,#0x30+var_20]
+..text:000000000000E1A0       LDR             W21, [X0,#8]
+..text:000000000000E1A4       LDR             W6, [X1,#8]
+..text:000000000000E1A8       CMP             W21, W6
+..text:000000000000E1AC       B.EQ            loc_E1C4
+..text:000000000000E1B0       STR             W21, [X2,#8]
+..text:000000000000E1B4       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000000E1B8       LDP             X21, X30, [SP,#0x30+var_20]
+..text:000000000000E1BC       ADD             SP, SP, #0x30 ; '0'
+..text:000000000000E1C0       B               sub_F8C8
+..text:000000000000E1C4       STR             X2, [SP,#0x30+var_8]
+..text:000000000000E1C8       MOV             X20, X1
+..text:000000000000E1CC       MOV             X19, X0
+..text:000000000000E1D0       BL              sub_6A5C
+..text:000000000000E1D4       CMN             W0, #1
+..text:000000000000E1D8       LDR             X2, [SP,#0x30+var_8]
+..text:000000000000E1DC       B.EQ            loc_E1FC
+..text:000000000000E1E0       STR             W21, [X2,#8]
+..text:000000000000E1E4       MOV             X0, X19
+..text:000000000000E1E8       MOV             X1, X20
+..text:000000000000E1EC       LDP             X21, X30, [SP,#0x30+var_20]
+..text:000000000000E1F0       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000000E1F4       ADD             SP, SP, #0x30 ; '0'
+..text:000000000000E1F8       B               sub_1061C
+..text:000000000000E1FC       CMP             W21, WZR
+..text:000000000000E200       MOV             X0, X20
+..text:000000000000E204       CSET            W3, EQ
+..text:000000000000E208       STR             W3, [X2,#8]
+..text:000000000000E20C       MOV             X1, X19
+..text:000000000000E210       LDP             X21, X30, [SP,#0x30+var_20]
+..text:000000000000E214       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000000E218       ADD             SP, SP, #0x30 ; '0'
+..text:000000000000E21C       B               sub_1061C

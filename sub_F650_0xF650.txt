@@ -1,0 +1,18 @@
+Function: sub_F650 (0xF650)
+Architecture: 64-bit
+Segment range: 0xF650 - 0xF684
+----------------------------------------
+
+..text:000000000000F650       SUB             SP, SP, #0x10
+..text:000000000000F654       STR             X30, [SP,#0x10+var_10]
+..text:000000000000F658       BL              sub_6D38
+..text:000000000000F65C       AND             W2, W0, #7
+..text:000000000000F660       CMP             W0, WZR
+..text:000000000000F664       ADD             W1, W0, #7
+..text:000000000000F668       LDR             X30, [SP,#0x10+var_10]
+..text:000000000000F66C       CSEL            W0, W1, W0, LT
+..text:000000000000F670       CMP             W2, WZR
+..text:000000000000F674       CSET            W1, NE
+..text:000000000000F678       ADD             SP, SP, #0x10
+..text:000000000000F67C       ADD             W0, W1, W0,ASR#3
+..text:000000000000F680       RET

@@ -1,0 +1,53 @@
+Function: sub_E594 (0xE594)
+Architecture: 64-bit
+Segment range: 0xE594 - 0xE654
+----------------------------------------
+
+..text:000000000000E594       SUB             SP, SP, #0x50
+..text:000000000000E598       MOV             X2, X0
+..text:000000000000E59C       STP             X23, X30, [SP,#0x50+var_30]
+..text:000000000000E5A0       ADRP            X23, #__stack_chk_guard_ptr@PAGE
+..text:000000000000E5A4       STP             X21, X22, [SP,#0x50+var_40]
+..text:000000000000E5A8       MOV             X22, X1
+..text:000000000000E5AC       MOV             X1, X2
+..text:000000000000E5B0       LDR             X2, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000E5B4       MOV             X21, #0
+..text:000000000000E5B8       STP             X19, X20, [SP,#0x50+var_50]
+..text:000000000000E5BC       ADD             X20, SP, #0x50+var_20
+..text:000000000000E5C0       LDR             X2, [X2]
+..text:000000000000E5C4       MOV             X0, X20
+..text:000000000000E5C8       STR             X2, [SP,#0x50+var_8]
+..text:000000000000E5CC       BL              sub_9488
+..text:000000000000E5D0       MOV             W19, W0
+..text:000000000000E5D4       CBZ             W0, loc_E608
+..text:000000000000E5D8       B               loc_E624
+..text:000000000000E5DC       LDR             X4, [X20,#0x10]
+..text:000000000000E5E0       MOV             X0, X20
+..text:000000000000E5E4       MOV             W1, #8
+..text:000000000000E5E8       MOV             X2, X20
+..text:000000000000E5EC       MOV             X3, #0
+..text:000000000000E5F0       LDR             X4, [X4]
+..text:000000000000E5F4       STRB            W4, [X22,X21]
+..text:000000000000E5F8       ADD             X21, X21, #1
+..text:000000000000E5FC       BL              sub_7470
+..text:000000000000E600       MOV             W19, W0
+..text:000000000000E604       CBNZ            W0, loc_E61C
+..text:000000000000E608       LDR             W19, [X20]
+..text:000000000000E60C       CBNZ            W19, loc_E5DC
+..text:000000000000E610       MOV             X0, X22
+..text:000000000000E614       MOV             W1, W21
+..text:000000000000E618       BL              sub_F890
+..text:000000000000E61C       MOV             X0, X20
+..text:000000000000E620       BL              sub_6814
+..text:000000000000E624       LDR             X23, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000E628       MOV             W0, W19
+..text:000000000000E62C       LDR             X2, [SP,#0x50+var_8]
+..text:000000000000E630       LDR             X1, [X23]
+..text:000000000000E634       CMP             X2, X1
+..text:000000000000E638       B.NE            loc_E650
+..text:000000000000E63C       LDP             X19, X20, [SP,#0x50+var_50]
+..text:000000000000E640       LDP             X21, X22, [SP,#0x50+var_40]
+..text:000000000000E644       LDP             X23, X30, [SP,#0x50+var_30]
+..text:000000000000E648       ADD             SP, SP, #0x50 ; 'P'
+..text:000000000000E64C       RET
+..text:000000000000E650       BL              .__stack_chk_fail

@@ -1,0 +1,71 @@
+Function: sub_D2E0 (0xD2E0)
+Architecture: 64-bit
+Segment range: 0xD2E0 - 0xD3E8
+----------------------------------------
+
+..text:000000000000D2E0       SUB             SP, SP, #0x60
+..text:000000000000D2E4       STP             X23, X24, [SP,#0x60+var_40]
+..text:000000000000D2E8       ADRP            X23, #__stack_chk_guard_ptr@PAGE
+..text:000000000000D2EC       MOV             X24, X2
+..text:000000000000D2F0       STP             X21, X22, [SP,#0x60+var_50]
+..text:000000000000D2F4       MOV             X22, X1
+..text:000000000000D2F8       ADD             X21, SP, #0x60+var_20
+..text:000000000000D2FC       LDR             X1, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000D300       STP             X19, X20, [SP,#0x60+var_60]
+..text:000000000000D304       STP             X25, X30, [SP,#0x60+var_30]
+..text:000000000000D308       MOV             X20, X0
+..text:000000000000D30C       MOV             X0, X21
+..text:000000000000D310       LDR             X1, [X1]
+..text:000000000000D314       STR             X1, [SP,#0x60+var_8]
+..text:000000000000D318       BL              sub_93C4
+..text:000000000000D31C       CBZ             W0, loc_D34C
+..text:000000000000D320       LDR             X23, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000D324       LDR             X2, [SP,#0x60+var_8]
+..text:000000000000D328       LDR             X1, [X23]
+..text:000000000000D32C       CMP             X2, X1
+..text:000000000000D330       B.NE            loc_D3E4
+..text:000000000000D334       LDP             X19, X20, [SP,#0x60+var_60]
+..text:000000000000D338       LDP             X21, X22, [SP,#0x60+var_50]
+..text:000000000000D33C       LDP             X23, X24, [SP,#0x60+var_40]
+..text:000000000000D340       LDP             X25, X30, [SP,#0x60+var_30]
+..text:000000000000D344       ADD             SP, SP, #0x60 ; '`'
+..text:000000000000D348       RET
+..text:000000000000D34C       MOV             X0, X22
+..text:000000000000D350       BL              sub_6D38
+..text:000000000000D354       MOV             W25, W0
+..text:000000000000D358       B               loc_D3B8
+..text:000000000000D35C       MOV             X0, X21
+..text:000000000000D360       MOV             X1, X24
+..text:000000000000D364       MOV             X2, X21
+..text:000000000000D368       BL              sub_B0F8
+..text:000000000000D36C       MOV             W19, W0
+..text:000000000000D370       CBNZ            W0, loc_D3D4
+..text:000000000000D374       MOV             X0, X20
+..text:000000000000D378       MOV             X1, X21
+..text:000000000000D37C       MOV             X2, X20
+..text:000000000000D380       BL              sub_F8C8
+..text:000000000000D384       MOV             W19, W0
+..text:000000000000D388       CBNZ            W0, loc_D3D4
+..text:000000000000D38C       MOV             X0, X20
+..text:000000000000D390       MOV             X1, X22
+..text:000000000000D394       BL              sub_6A5C
+..text:000000000000D398       CMN             W0, #1
+..text:000000000000D39C       B.EQ            loc_D3D4
+..text:000000000000D3A0       MOV             X0, X20
+..text:000000000000D3A4       MOV             X1, X22
+..text:000000000000D3A8       MOV             X2, X20
+..text:000000000000D3AC       BL              sub_1061C
+..text:000000000000D3B0       MOV             W19, W0
+..text:000000000000D3B4       CBNZ            W0, loc_D3D4
+..text:000000000000D3B8       MOV             X0, X20
+..text:000000000000D3BC       MOV             W1, W25
+..text:000000000000D3C0       MOV             X2, X21
+..text:000000000000D3C4       MOV             X3, X20
+..text:000000000000D3C8       BL              sub_7470
+..text:000000000000D3CC       MOV             W19, W0
+..text:000000000000D3D0       CBZ             W0, loc_D35C
+..text:000000000000D3D4       MOV             X0, X21
+..text:000000000000D3D8       BL              sub_6814
+..text:000000000000D3DC       MOV             W0, W19
+..text:000000000000D3E0       B               loc_D320
+..text:000000000000D3E4       BL              .__stack_chk_fail

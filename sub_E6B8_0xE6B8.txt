@@ -1,0 +1,469 @@
+Function: sub_E6B8 (0xE6B8)
+Architecture: 64-bit
+Segment range: 0xE6B8 - 0xEDFC
+----------------------------------------
+
+..text:000000000000E6B8       SUB             SP, SP, #0x1F0
+..text:000000000000E6BC       STP             D8, D9, [SP,#0x1F0+var_198]
+..text:000000000000E6C0       FMOV            D8, X0
+..text:000000000000E6C4       STP             X19, X20, [SP,#0x1F0+var_1F0]
+..text:000000000000E6C8       STP             D10, D11, [SP,#0x1F0+var_188]
+..text:000000000000E6CC       STP             X21, X22, [SP,#0x1F0+var_1E0]
+..text:000000000000E6D0       STP             D12, D13, [SP,#0x1F0+var_178]
+..text:000000000000E6D4       STP             X23, X24, [SP,#0x1F0+var_1D0]
+..text:000000000000E6D8       STP             D14, D15, [SP,#0x1F0+var_168]
+..text:000000000000E6DC       STP             X25, X26, [SP,#0x1F0+var_1C0]
+..text:000000000000E6E0       STP             X27, X28, [SP,#0x1F0+var_1B0]
+..text:000000000000E6E4       STR             X30, [SP,#0x1F0+var_1A0]
+..text:000000000000E6E8       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000000E6EC       SUB             SP, SP, #0x30
+..text:000000000000E6F0       ADD             X0, SP, #0x220+var_50
+..text:000000000000E6F4       ADD             X3, SP, #0x220+var_140
+..text:000000000000E6F8       ADD             X4, SP, #0x220+var_E0
+..text:000000000000E6FC       LDR             X8, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000E700       STR             X0, [SP,#0x220+var_220]
+..text:000000000000E704       ADD             X28, SP, #0x220+var_38
+..text:000000000000E708       FMOV            D11, X0
+..text:000000000000E70C       ADD             X0, SP, #0x220+var_20
+..text:000000000000E710       STR             X28, [SP,#0x220+var_218]
+..text:000000000000E714       ADD             X22, SP, #0x220+var_C8
+..text:000000000000E718       STR             X0, [SP,#0x220+var_210]
+..text:000000000000E71C       ADD             X23, SP, #0x220+var_B0
+..text:000000000000E720       STR             X22, [SP,#0x220+var_208]
+..text:000000000000E724       ADD             X26, SP, #0x220+var_128
+..text:000000000000E728       STR             XZR, [SP,#0x220+var_1F8]
+..text:000000000000E72C       ADD             X24, SP, #0x220+var_110
+..text:000000000000E730       STR             X23, [SP,#0x220+var_200]
+..text:000000000000E734       ADD             X25, SP, #0x220+var_F8
+..text:000000000000E738       FMOV            D12, X3
+..text:000000000000E73C       ADD             X20, SP, #0x220+var_98
+..text:000000000000E740       FMOV            D13, X1
+..text:000000000000E744       ADD             X21, SP, #0x220+var_80
+..text:000000000000E748       FMOV            D14, X2
+..text:000000000000E74C       ADD             X27, SP, #0x220+var_68
+..text:000000000000E750       FMOV            D10, X0
+..text:000000000000E754       LDR             X8, [X8]
+..text:000000000000E758       FMOV            D9, X4
+..text:000000000000E75C       MOV             X0, X3
+..text:000000000000E760       MOV             X1, X26
+..text:000000000000E764       MOV             X2, X24
+..text:000000000000E768       MOV             X3, X25
+..text:000000000000E76C       MOV             X5, X20
+..text:000000000000E770       MOV             X6, X21
+..text:000000000000E774       MOV             X7, X27
+..text:000000000000E778       STR             X8, [SP,#0x220+var_8]
+..text:000000000000E77C       BL              sub_94F4
+..text:000000000000E780       CBZ             W0, loc_E7CC
+..text:000000000000E784       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000E788       LDR             X2, [SP,#0x220+var_8]
+..text:000000000000E78C       LDR             X1, [X19]
+..text:000000000000E790       CMP             X2, X1
+..text:000000000000E794       B.NE            loc_EDF8
+..text:000000000000E798       ADD             SP, SP, #0x30 ; '0'
+..text:000000000000E79C       LDP             D8, D9, [SP,#0x1F0+var_198]
+..text:000000000000E7A0       LDP             X19, X20, [SP,#0x1F0+var_1F0]
+..text:000000000000E7A4       LDP             D10, D11, [SP,#0x1F0+var_188]
+..text:000000000000E7A8       LDP             X21, X22, [SP,#0x1F0+var_1E0]
+..text:000000000000E7AC       LDP             D12, D13, [SP,#0x1F0+var_178]
+..text:000000000000E7B0       LDP             X23, X24, [SP,#0x1F0+var_1D0]
+..text:000000000000E7B4       LDP             D14, D15, [SP,#0x1F0+var_168]
+..text:000000000000E7B8       LDP             X25, X26, [SP,#0x1F0+var_1C0]
+..text:000000000000E7BC       LDP             X27, X28, [SP,#0x1F0+var_1B0]
+..text:000000000000E7C0       LDR             X30, [SP,#0x1F0+var_1A0]
+..text:000000000000E7C4       ADD             SP, SP, #0x1F0
+..text:000000000000E7C8       RET
+..text:000000000000E7CC       FMOV            X0, D13
+..text:000000000000E7D0       MOV             W4, #0x55555556
+..text:000000000000E7D8       MOV             X2, X20
+..text:000000000000E7DC       LDR             W3, [X0]
+..text:000000000000E7E0       FMOV            X0, D8
+..text:000000000000E7E4       LDR             W1, [X0]
+..text:000000000000E7E8       CMP             W1, W3
+..text:000000000000E7EC       CSEL            W1, W1, W3, LE
+..text:000000000000E7F0       SMULL           X3, W1, W4
+..text:000000000000E7F4       LSR             X3, X3, #0x20 ; ' '
+..text:000000000000E7F8       SUB             W3, W3, W1,ASR#31
+..text:000000000000E7FC       STR             X3, [SP,#0x220+var_150]
+..text:000000000000E800       LSL             W1, W3, #2
+..text:000000000000E804       STR             W1, [SP,#0x220+var_144]
+..text:000000000000E808       MOV             W4, W1
+..text:000000000000E80C       LSL             W1, W3, #6
+..text:000000000000E810       SUB             W1, W1, W4
+..text:000000000000E814       FMOV            S15, W1
+..text:000000000000E818       BL              sub_AC74
+..text:000000000000E81C       MOV             W8, W0
+..text:000000000000E820       CBZ             W0, loc_E870
+..text:000000000000E824       FMOV            X0, D12
+..text:000000000000E828       STR             D11, [SP,#0x220+var_220]
+..text:000000000000E82C       FMOV            X4, D9
+..text:000000000000E830       STR             X28, [SP,#0x220+var_218]
+..text:000000000000E834       MOV             X1, X26
+..text:000000000000E838       STR             D10, [SP,#0x220+var_210]
+..text:000000000000E83C       MOV             X2, X24
+..text:000000000000E840       STR             X22, [SP,#0x220+var_208]
+..text:000000000000E844       MOV             X3, X25
+..text:000000000000E848       STR             X23, [SP,#0x220+var_200]
+..text:000000000000E84C       STR             XZR, [SP,#0x220+var_1F8]
+..text:000000000000E850       MOV             X5, X20
+..text:000000000000E854       MOV             X6, X21
+..text:000000000000E858       MOV             X7, X27
+..text:000000000000E85C       STR             X8, [SP,#0x220+var_150]
+..text:000000000000E860       BL              sub_68E4
+..text:000000000000E864       LDR             X8, [SP,#0x220+var_150]
+..text:000000000000E868       MOV             W0, W8
+..text:000000000000E86C       B               loc_E784
+..text:000000000000E870       FMOV            X0, D8
+..text:000000000000E874       MOV             X1, X21
+..text:000000000000E878       BL              sub_6B8C
+..text:000000000000E87C       MOV             W8, W0
+..text:000000000000E880       LDR             X3, [SP,#0x220+var_150]
+..text:000000000000E884       CBNZ            W0, loc_E824
+..text:000000000000E888       MOV             W1, W3
+..text:000000000000E88C       MOV             X0, X21
+..text:000000000000E890       BL              sub_D6A0
+..text:000000000000E894       FMOV            W1, S15
+..text:000000000000E898       MOV             X0, X21
+..text:000000000000E89C       MOV             X2, X21
+..text:000000000000E8A0       BL              sub_AC74
+..text:000000000000E8A4       MOV             W8, W0
+..text:000000000000E8A8       CBNZ            W0, loc_E824
+..text:000000000000E8AC       FMOV            X0, D8
+..text:000000000000E8B0       MOV             X1, X27
+..text:000000000000E8B4       BL              sub_6B8C
+..text:000000000000E8B8       MOV             W8, W0
+..text:000000000000E8BC       LDR             X3, [SP,#0x220+var_150]
+..text:000000000000E8C0       CBNZ            W0, loc_E824
+..text:000000000000E8C4       LSL             W0, W3, #1
+..text:000000000000E8C8       MOV             W1, W0
+..text:000000000000E8CC       FMOV            S8, W0
+..text:000000000000E8D0       MOV             X0, X27
+..text:000000000000E8D4       BL              sub_D6A0
+..text:000000000000E8D8       FMOV            X0, D13
+..text:000000000000E8DC       FMOV            W1, S15
+..text:000000000000E8E0       FMOV            X2, D11
+..text:000000000000E8E4       BL              sub_AC74
+..text:000000000000E8E8       MOV             W8, W0
+..text:000000000000E8EC       CBNZ            W0, loc_E824
+..text:000000000000E8F0       FMOV            X0, D13
+..text:000000000000E8F4       MOV             X1, X28
+..text:000000000000E8F8       BL              sub_6B8C
+..text:000000000000E8FC       MOV             W8, W0
+..text:000000000000E900       LDR             X3, [SP,#0x220+var_150]
+..text:000000000000E904       CBNZ            W0, loc_E824
+..text:000000000000E908       MOV             W1, W3
+..text:000000000000E90C       MOV             X0, X28
+..text:000000000000E910       BL              sub_D6A0
+..text:000000000000E914       FMOV            W1, S15
+..text:000000000000E918       MOV             X2, X28
+..text:000000000000E91C       MOV             X0, X28
+..text:000000000000E920       BL              sub_AC74
+..text:000000000000E924       FMOV            X0, D13
+..text:000000000000E928       FMOV            X1, D10
+..text:000000000000E92C       BL              sub_6B8C
+..text:000000000000E930       MOV             W8, W0
+..text:000000000000E934       CBNZ            W0, loc_E824
+..text:000000000000E938       FMOV            X0, D10
+..text:000000000000E93C       FMOV            W1, S8
+..text:000000000000E940       BL              sub_D6A0
+..text:000000000000E944       FMOV            X1, D11
+..text:000000000000E948       MOV             X0, X20
+..text:000000000000E94C       FMOV            X2, D12
+..text:000000000000E950       BL              sub_B0F8
+..text:000000000000E954       MOV             W8, W0
+..text:000000000000E958       CBNZ            W0, loc_E824
+..text:000000000000E95C       FMOV            X1, D10
+..text:000000000000E960       MOV             X0, X27
+..text:000000000000E964       FMOV            X2, D9
+..text:000000000000E968       BL              sub_B0F8
+..text:000000000000E96C       MOV             W8, W0
+..text:000000000000E970       CBNZ            W0, loc_E824
+..text:000000000000E974       MOV             X0, X20
+..text:000000000000E978       MOV             X1, X22
+..text:000000000000E97C       BL              sub_B20C
+..text:000000000000E980       MOV             W8, W0
+..text:000000000000E984       CBNZ            W0, loc_E824
+..text:000000000000E988       MOV             X0, X22
+..text:000000000000E98C       MOV             X1, X21
+..text:000000000000E990       MOV             X2, X22
+..text:000000000000E994       BL              sub_6230
+..text:000000000000E998       MOV             W8, W0
+..text:000000000000E99C       CBNZ            W0, loc_E824
+..text:000000000000E9A0       MOV             X0, X22
+..text:000000000000E9A4       MOV             X1, X22
+..text:000000000000E9A8       BL              sub_B20C
+..text:000000000000E9AC       MOV             W8, W0
+..text:000000000000E9B0       CBNZ            W0, loc_E824
+..text:000000000000E9B4       MOV             X0, X22
+..text:000000000000E9B8       MOV             X1, X27
+..text:000000000000E9BC       MOV             X2, X22
+..text:000000000000E9C0       BL              sub_6230
+..text:000000000000E9C4       MOV             W8, W0
+..text:000000000000E9C8       CBNZ            W0, loc_E824
+..text:000000000000E9CC       FMOV            X0, D11
+..text:000000000000E9D0       MOV             X1, X23
+..text:000000000000E9D4       BL              sub_B20C
+..text:000000000000E9D8       MOV             W8, W0
+..text:000000000000E9DC       CBNZ            W0, loc_E824
+..text:000000000000E9E0       MOV             X0, X23
+..text:000000000000E9E4       MOV             X1, X28
+..text:000000000000E9E8       MOV             X2, X23
+..text:000000000000E9EC       BL              sub_6230
+..text:000000000000E9F0       MOV             W8, W0
+..text:000000000000E9F4       CBNZ            W0, loc_E824
+..text:000000000000E9F8       MOV             X0, X23
+..text:000000000000E9FC       MOV             X1, X23
+..text:000000000000EA00       BL              sub_B20C
+..text:000000000000EA04       MOV             W8, W0
+..text:000000000000EA08       CBNZ            W0, loc_E824
+..text:000000000000EA0C       FMOV            X1, D10
+..text:000000000000EA10       MOV             X0, X23
+..text:000000000000EA14       MOV             X2, X23
+..text:000000000000EA18       BL              sub_6230
+..text:000000000000EA1C       MOV             W8, W0
+..text:000000000000EA20       CBNZ            W0, loc_E824
+..text:000000000000EA24       MOV             X0, X22
+..text:000000000000EA28       MOV             X1, X23
+..text:000000000000EA2C       MOV             X2, X26
+..text:000000000000EA30       BL              sub_B0F8
+..text:000000000000EA34       MOV             W8, W0
+..text:000000000000EA38       CBNZ            W0, loc_E824
+..text:000000000000EA3C       MOV             X0, X27
+..text:000000000000EA40       MOV             X1, X22
+..text:000000000000EA44       BL              sub_B20C
+..text:000000000000EA48       MOV             W8, W0
+..text:000000000000EA4C       CBNZ            W0, loc_E824
+..text:000000000000EA50       MOV             X0, X22
+..text:000000000000EA54       MOV             X1, X21
+..text:000000000000EA58       MOV             X2, X22
+..text:000000000000EA5C       BL              sub_6230
+..text:000000000000EA60       MOV             W8, W0
+..text:000000000000EA64       CBNZ            W0, loc_E824
+..text:000000000000EA68       MOV             X0, X22
+..text:000000000000EA6C       MOV             X1, X22
+..text:000000000000EA70       BL              sub_B20C
+..text:000000000000EA74       MOV             W8, W0
+..text:000000000000EA78       CBNZ            W0, loc_E824
+..text:000000000000EA7C       MOV             X0, X22
+..text:000000000000EA80       MOV             X1, X20
+..text:000000000000EA84       MOV             X2, X22
+..text:000000000000EA88       BL              sub_6230
+..text:000000000000EA8C       MOV             W8, W0
+..text:000000000000EA90       CBNZ            W0, loc_E824
+..text:000000000000EA94       FMOV            X0, D10
+..text:000000000000EA98       MOV             X1, X23
+..text:000000000000EA9C       BL              sub_B20C
+..text:000000000000EAA0       MOV             W8, W0
+..text:000000000000EAA4       CBNZ            W0, loc_E824
+..text:000000000000EAA8       MOV             X0, X23
+..text:000000000000EAAC       MOV             X1, X28
+..text:000000000000EAB0       MOV             X2, X23
+..text:000000000000EAB4       BL              sub_6230
+..text:000000000000EAB8       MOV             W8, W0
+..text:000000000000EABC       CBNZ            W0, loc_E824
+..text:000000000000EAC0       MOV             X0, X23
+..text:000000000000EAC4       MOV             X1, X23
+..text:000000000000EAC8       BL              sub_B20C
+..text:000000000000EACC       MOV             W8, W0
+..text:000000000000EAD0       CBNZ            W0, loc_E824
+..text:000000000000EAD4       FMOV            X1, D11
+..text:000000000000EAD8       MOV             X0, X23
+..text:000000000000EADC       MOV             X2, X23
+..text:000000000000EAE0       BL              sub_6230
+..text:000000000000EAE4       MOV             W8, W0
+..text:000000000000EAE8       CBNZ            W0, loc_E824
+..text:000000000000EAEC       MOV             X0, X22
+..text:000000000000EAF0       MOV             X1, X23
+..text:000000000000EAF4       MOV             X2, X25
+..text:000000000000EAF8       BL              sub_B0F8
+..text:000000000000EAFC       MOV             W8, W0
+..text:000000000000EB00       CBNZ            W0, loc_E824
+..text:000000000000EB04       MOV             X0, X27
+..text:000000000000EB08       MOV             X1, X21
+..text:000000000000EB0C       MOV             X2, X22
+..text:000000000000EB10       BL              sub_6230
+..text:000000000000EB14       MOV             W8, W0
+..text:000000000000EB18       CBNZ            W0, loc_E824
+..text:000000000000EB1C       MOV             X0, X22
+..text:000000000000EB20       MOV             X1, X20
+..text:000000000000EB24       MOV             X2, X22
+..text:000000000000EB28       BL              sub_6230
+..text:000000000000EB2C       MOV             W8, W0
+..text:000000000000EB30       CBNZ            W0, loc_E824
+..text:000000000000EB34       FMOV            X0, D10
+..text:000000000000EB38       MOV             X1, X28
+..text:000000000000EB3C       MOV             X2, X23
+..text:000000000000EB40       BL              sub_6230
+..text:000000000000EB44       MOV             W8, W0
+..text:000000000000EB48       CBNZ            W0, loc_E824
+..text:000000000000EB4C       FMOV            X1, D11
+..text:000000000000EB50       MOV             X0, X23
+..text:000000000000EB54       MOV             X2, X23
+..text:000000000000EB58       BL              sub_6230
+..text:000000000000EB5C       MOV             W8, W0
+..text:000000000000EB60       CBNZ            W0, loc_E824
+..text:000000000000EB64       MOV             X0, X22
+..text:000000000000EB68       MOV             X1, X23
+..text:000000000000EB6C       MOV             X2, X24
+..text:000000000000EB70       BL              sub_B0F8
+..text:000000000000EB74       MOV             W8, W0
+..text:000000000000EB78       CBNZ            W0, loc_E824
+..text:000000000000EB7C       FMOV            X1, D9
+..text:000000000000EB80       MOV             X0, X26
+..text:000000000000EB84       MOV             X2, X26
+..text:000000000000EB88       BL              sub_E194
+..text:000000000000EB8C       MOV             W8, W0
+..text:000000000000EB90       CBNZ            W0, loc_E824
+..text:000000000000EB94       FMOV            X1, D12
+..text:000000000000EB98       MOV             X0, X25
+..text:000000000000EB9C       MOV             X2, X25
+..text:000000000000EBA0       BL              sub_E194
+..text:000000000000EBA4       MOV             W8, W0
+..text:000000000000EBA8       CBNZ            W0, loc_E824
+..text:000000000000EBAC       MOV             X0, X26
+..text:000000000000EBB0       MOV             X1, X26
+..text:000000000000EBB4       BL              sub_732C
+..text:000000000000EBB8       MOV             W8, W0
+..text:000000000000EBBC       CBNZ            W0, loc_E824
+..text:000000000000EBC0       MOV             X0, X25
+..text:000000000000EBC4       MOV             X1, X25
+..text:000000000000EBC8       BL              sub_732C
+..text:000000000000EBCC       MOV             W8, W0
+..text:000000000000EBD0       CBNZ            W0, loc_E824
+..text:000000000000EBD4       FMOV            X1, D12
+..text:000000000000EBD8       MOV             X0, X24
+..text:000000000000EBDC       MOV             X2, X24
+..text:000000000000EBE0       BL              sub_E194
+..text:000000000000EBE4       MOV             W8, W0
+..text:000000000000EBE8       CBNZ            W0, loc_E824
+..text:000000000000EBEC       FMOV            X1, D9
+..text:000000000000EBF0       MOV             X0, X24
+..text:000000000000EBF4       MOV             X2, X24
+..text:000000000000EBF8       BL              sub_E194
+..text:000000000000EBFC       MOV             W8, W0
+..text:000000000000EC00       CBNZ            W0, loc_E824
+..text:000000000000EC04       MOV             X0, X26
+..text:000000000000EC08       MOV             X1, X24
+..text:000000000000EC0C       MOV             X2, X26
+..text:000000000000EC10       BL              sub_E194
+..text:000000000000EC14       MOV             W8, W0
+..text:000000000000EC18       CBNZ            W0, loc_E824
+..text:000000000000EC1C       MOV             X0, X25
+..text:000000000000EC20       MOV             X1, X24
+..text:000000000000EC24       MOV             X2, X25
+..text:000000000000EC28       BL              sub_E194
+..text:000000000000EC2C       MOV             W8, W0
+..text:000000000000EC30       CBNZ            W0, loc_E824
+..text:000000000000EC34       FMOV            X0, D12
+..text:000000000000EC38       MOV             W1, #3
+..text:000000000000EC3C       MOV             X2, X22
+..text:000000000000EC40       BL              sub_B360
+..text:000000000000EC44       MOV             W8, W0
+..text:000000000000EC48       CBNZ            W0, loc_E824
+..text:000000000000EC4C       MOV             X0, X26
+..text:000000000000EC50       MOV             X1, X22
+..text:000000000000EC54       MOV             X2, X26
+..text:000000000000EC58       BL              sub_E194
+..text:000000000000EC5C       MOV             W8, W0
+..text:000000000000EC60       CBNZ            W0, loc_E824
+..text:000000000000EC64       FMOV            X0, D9
+..text:000000000000EC68       MOV             W1, #3
+..text:000000000000EC6C       MOV             X2, X22
+..text:000000000000EC70       BL              sub_B360
+..text:000000000000EC74       MOV             W8, W0
+..text:000000000000EC78       CBNZ            W0, loc_E824
+..text:000000000000EC7C       MOV             X0, X25
+..text:000000000000EC80       MOV             X1, X22
+..text:000000000000EC84       MOV             X2, X25
+..text:000000000000EC88       BL              sub_E194
+..text:000000000000EC8C       MOV             W8, W0
+..text:000000000000EC90       CBNZ            W0, loc_E824
+..text:000000000000EC94       MOV             X0, X24
+..text:000000000000EC98       MOV             X1, #3
+..text:000000000000EC9C       MOV             X2, X24
+..text:000000000000ECA0       BL              sub_B4A8
+..text:000000000000ECA4       MOV             W8, W0
+..text:000000000000ECA8       CBNZ            W0, loc_E824
+..text:000000000000ECAC       MOV             X0, X24
+..text:000000000000ECB0       MOV             X1, X26
+..text:000000000000ECB4       MOV             X2, X24
+..text:000000000000ECB8       BL              sub_E194
+..text:000000000000ECBC       MOV             W8, W0
+..text:000000000000ECC0       CBNZ            W0, loc_E824
+..text:000000000000ECC4       MOV             X0, X24
+..text:000000000000ECC8       MOV             X1, X25
+..text:000000000000ECCC       MOV             X2, X24
+..text:000000000000ECD0       BL              sub_E194
+..text:000000000000ECD4       MOV             W8, W0
+..text:000000000000ECD8       CBNZ            W0, loc_E824
+..text:000000000000ECDC       MOV             X0, X26
+..text:000000000000ECE0       MOV             X1, X24
+..text:000000000000ECE4       MOV             X2, X26
+..text:000000000000ECE8       BL              sub_E194
+..text:000000000000ECEC       MOV             W8, W0
+..text:000000000000ECF0       CBNZ            W0, loc_E824
+..text:000000000000ECF4       MOV             X0, X25
+..text:000000000000ECF8       MOV             X1, X24
+..text:000000000000ECFC       MOV             X2, X25
+..text:000000000000ED00       BL              sub_E194
+..text:000000000000ED04       MOV             W8, W0
+..text:000000000000ED08       CBNZ            W0, loc_E824
+..text:000000000000ED0C       MOV             X0, X26
+..text:000000000000ED10       MOV             X1, X26
+..text:000000000000ED14       MOV             X2, #0
+..text:000000000000ED18       BL              sub_75C8
+..text:000000000000ED1C       MOV             W8, W0
+..text:000000000000ED20       CBNZ            W0, loc_E824
+..text:000000000000ED24       MOV             X0, X25
+..text:000000000000ED28       MOV             X1, X25
+..text:000000000000ED2C       MOV             X2, #0
+..text:000000000000ED30       BL              sub_75C8
+..text:000000000000ED34       MOV             W8, W0
+..text:000000000000ED38       LDR             X3, [SP,#0x220+var_150]
+..text:000000000000ED3C       CBNZ            W0, loc_E824
+..text:000000000000ED40       MOV             X0, X26
+..text:000000000000ED44       MOV             W1, W3
+..text:000000000000ED48       BL              sub_A9D4
+..text:000000000000ED4C       MOV             W8, W0
+..text:000000000000ED50       CBNZ            W0, loc_E824
+..text:000000000000ED54       FMOV            W1, S8
+..text:000000000000ED58       MOV             X0, X24
+..text:000000000000ED5C       BL              sub_A9D4
+..text:000000000000ED60       MOV             W8, W0
+..text:000000000000ED64       LDR             X3, [SP,#0x220+var_150]
+..text:000000000000ED68       CBNZ            W0, loc_E824
+..text:000000000000ED6C       FMOV            W1, S8
+..text:000000000000ED70       MOV             X0, X25
+..text:000000000000ED74       ADD             W1, W1, W3
+..text:000000000000ED78       BL              sub_A9D4
+..text:000000000000ED7C       MOV             W8, W0
+..text:000000000000ED80       CBNZ            W0, loc_E824
+..text:000000000000ED84       FMOV            X0, D9
+..text:000000000000ED88       LDR             W1, [SP,#0x220+var_144]
+..text:000000000000ED8C       BL              sub_A9D4
+..text:000000000000ED90       MOV             W8, W0
+..text:000000000000ED94       CBNZ            W0, loc_E824
+..text:000000000000ED98       FMOV            X0, D12
+..text:000000000000ED9C       MOV             X1, X26
+..text:000000000000EDA0       FMOV            X2, D14
+..text:000000000000EDA4       BL              sub_6230
+..text:000000000000EDA8       MOV             W8, W0
+..text:000000000000EDAC       CBNZ            W0, loc_E824
+..text:000000000000EDB0       MOV             X0, X24
+..text:000000000000EDB4       MOV             X1, X25
+..text:000000000000EDB8       MOV             X2, X22
+..text:000000000000EDBC       BL              sub_6230
+..text:000000000000EDC0       MOV             W8, W0
+..text:000000000000EDC4       CBNZ            W0, loc_E824
+..text:000000000000EDC8       FMOV            X0, D9
+..text:000000000000EDCC       MOV             X1, X22
+..text:000000000000EDD0       MOV             X2, X22
+..text:000000000000EDD4       BL              sub_6230
+..text:000000000000EDD8       MOV             W8, W0
+..text:000000000000EDDC       CBNZ            W0, loc_E824
+..text:000000000000EDE0       FMOV            X1, D14
+..text:000000000000EDE4       MOV             X0, X22
+..text:000000000000EDE8       FMOV            X2, D14
+..text:000000000000EDEC       BL              sub_6230
+..text:000000000000EDF0       MOV             W8, W0
+..text:000000000000EDF4       B               loc_E824
+..text:000000000000EDF8       BL              .__stack_chk_fail

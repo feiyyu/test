@@ -1,0 +1,46 @@
+Function: sub_F7EC (0xF7EC)
+Architecture: 64-bit
+Segment range: 0xF7EC - 0xF890
+----------------------------------------
+
+..text:000000000000F7EC       LDR             W2, [X0,#4]
+..text:000000000000F7F0       STR             WZR, [X0,#8]
+..text:000000000000F7F4       STR             WZR, [X0]
+..text:000000000000F7F8       CMP             W2, WZR
+..text:000000000000F7FC       LDR             X3, [X0,#0x10]
+..text:000000000000F800       B.LE            locret_F874
+..text:000000000000F804       SUB             W1, W2, #1
+..text:000000000000F808       SUB             W0, W2, #2
+..text:000000000000F80C       CMP             W1, #2
+..text:000000000000F810       LSR             W0, W0, #1
+..text:000000000000F814       ADD             W0, W0, #1
+..text:000000000000F818       LSL             W1, W0, #1
+..text:000000000000F81C       B.LS            loc_F878
+..text:000000000000F820       MOVI            V0.4S, #0
+..text:000000000000F824       MOV             X5, X3
+..text:000000000000F828       MOV             W4, #0
+..text:000000000000F82C       STR             Q0, [X5],#0x10
+..text:000000000000F830       ADD             W4, W4, #1
+..text:000000000000F834       CMP             W0, W4
+..text:000000000000F838       B.HI            loc_F82C
+..text:000000000000F83C       MOV             W1, W1
+..text:000000000000F840       CMP             W1, W2
+..text:000000000000F844       MOV             X0, X1
+..text:000000000000F848       ADD             X3, X3, X1,LSL#3
+..text:000000000000F84C       B.EQ            locret_F874
+..text:000000000000F850       ADD             W1, W0, #1
+..text:000000000000F854       STR             XZR, [X3]
+..text:000000000000F858       CMP             W2, W1
+..text:000000000000F85C       B.LE            locret_F874
+..text:000000000000F860       ADD             W0, W0, #2
+..text:000000000000F864       STR             XZR, [X3,#8]
+..text:000000000000F868       CMP             W2, W0
+..text:000000000000F86C       B.LE            locret_F874
+..text:000000000000F870       STR             XZR, [X3,#0x10]
+..text:000000000000F874       RET
+..text:000000000000F878       MOV             W0, #0
+..text:000000000000F87C       STR             XZR, [X3]
+..text:000000000000F880       ADD             W1, W0, #1
+..text:000000000000F884       CMP             W2, W1
+..text:000000000000F888       B.LE            locret_F874
+..text:000000000000F88C       B               loc_F860

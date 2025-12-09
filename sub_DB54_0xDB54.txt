@@ -1,0 +1,108 @@
+Function: sub_DB54 (0xDB54)
+Architecture: 64-bit
+Segment range: 0xDB54 - 0xDCF0
+----------------------------------------
+
+..text:000000000000DB54       SUB             SP, SP, #0x80
+..text:000000000000DB58       STP             X19, X20, [SP,#0x80+var_80]
+..text:000000000000DB5C       ADRP            X20, #__stack_chk_guard_ptr@PAGE
+..text:000000000000DB60       STR             X30, [SP,#0x80+var_50]
+..text:000000000000DB64       STP             X21, X22, [SP,#0x80+var_70]
+..text:000000000000DB68       STP             X23, X24, [SP,#0x80+var_60]
+..text:000000000000DB6C       LDR             X2, [X20,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000DB70       MOV             X21, X0
+..text:000000000000DB74       LDR             W3, [X0,#8]
+..text:000000000000DB78       MOV             X23, X1
+..text:000000000000DB7C       LDR             X2, [X2]
+..text:000000000000DB80       CMP             W3, #1
+..text:000000000000DB84       STR             X2, [SP,#0x80+var_8]
+..text:000000000000DB88       B.EQ            loc_DCD4
+..text:000000000000DB8C       LDR             W19, [X0]
+..text:000000000000DB90       CBZ             W19, loc_DBFC
+..text:000000000000DB94       ADD             X22, SP, #0x80+var_38
+..text:000000000000DB98       MOV             X1, X0
+..text:000000000000DB9C       MOV             X0, X22
+..text:000000000000DBA0       BL              sub_9488
+..text:000000000000DBA4       MOV             W19, W0
+..text:000000000000DBA8       CBZ             W0, loc_DBDC
+..text:000000000000DBAC       LDR             X20, [X20,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000000DBB0       MOV             W0, W19
+..text:000000000000DBB4       LDR             X2, [SP,#0x80+var_8]
+..text:000000000000DBB8       LDR             X1, [X20]
+..text:000000000000DBBC       CMP             X2, X1
+..text:000000000000DBC0       B.NE            loc_DCEC
+..text:000000000000DBC4       LDP             X19, X20, [SP,#0x80+var_80]
+..text:000000000000DBC8       LDP             X21, X22, [SP,#0x80+var_70]
+..text:000000000000DBCC       LDP             X23, X24, [SP,#0x80+var_60]
+..text:000000000000DBD0       LDR             X30, [SP,#0x80+var_50]
+..text:000000000000DBD4       ADD             SP, SP, #0x80
+..text:000000000000DBD8       RET
+..text:000000000000DBDC       ADD             X24, SP, #0x80+var_20
+..text:000000000000DBE0       MOV             X0, X24
+..text:000000000000DBE4       BL              sub_93C4
+..text:000000000000DBE8       MOV             W19, W0
+..text:000000000000DBEC       CBZ             W0, loc_DC08
+..text:000000000000DBF0       MOV             X0, X22
+..text:000000000000DBF4       BL              sub_6814
+..text:000000000000DBF8       B               loc_DBAC
+..text:000000000000DBFC       MOV             X0, X1
+..text:000000000000DC00       BL              sub_F7EC
+..text:000000000000DC04       B               loc_DBAC
+..text:000000000000DC08       LDR             W1, [X22]
+..text:000000000000DC0C       MOV             X0, X22
+..text:000000000000DC10       ADD             W1, W1, W1,LSR#31
+..text:000000000000DC14       ASR             W1, W1, #1
+..text:000000000000DC18       BL              sub_D6A0
+..text:000000000000DC1C       MOV             X0, X21
+..text:000000000000DC20       MOV             X1, X22
+..text:000000000000DC24       MOV             X2, X24
+..text:000000000000DC28       MOV             X3, #0
+..text:000000000000DC2C       BL              sub_6D74
+..text:000000000000DC30       MOV             W19, W0
+..text:000000000000DC34       CBZ             W0, loc_DC44
+..text:000000000000DC38       MOV             X0, X24
+..text:000000000000DC3C       BL              sub_6814
+..text:000000000000DC40       B               loc_DBF0
+..text:000000000000DC44       MOV             X0, X22
+..text:000000000000DC48       MOV             X1, X24
+..text:000000000000DC4C       MOV             X2, X22
+..text:000000000000DC50       BL              sub_6230
+..text:000000000000DC54       MOV             W19, W0
+..text:000000000000DC58       CBNZ            W0, loc_DC38
+..text:000000000000DC5C       MOV             X0, X22
+..text:000000000000DC60       MOV             X1, X22
+..text:000000000000DC64       BL              sub_732C
+..text:000000000000DC68       MOV             W19, W0
+..text:000000000000DC6C       CBNZ            W0, loc_DC38
+..text:000000000000DC70       B               loc_DCB4
+..text:000000000000DC74       MOV             X0, X22
+..text:000000000000DC78       MOV             X1, X24
+..text:000000000000DC7C       MOV             X2, X22
+..text:000000000000DC80       BL              sub_6230
+..text:000000000000DC84       MOV             W19, W0
+..text:000000000000DC88       CBNZ            W0, loc_DC38
+..text:000000000000DC8C       MOV             X0, X22
+..text:000000000000DC90       MOV             X1, X22
+..text:000000000000DC94       BL              sub_732C
+..text:000000000000DC98       MOV             W19, W0
+..text:000000000000DC9C       CBNZ            W0, loc_DC38
+..text:000000000000DCA0       MOV             X0, X22
+..text:000000000000DCA4       MOV             X1, X24
+..text:000000000000DCA8       BL              sub_6A5C
+..text:000000000000DCAC       CMP             W0, #1
+..text:000000000000DCB0       B.NE            loc_DCDC
+..text:000000000000DCB4       MOV             X0, X21
+..text:000000000000DCB8       MOV             X1, X22
+..text:000000000000DCBC       MOV             X2, X24
+..text:000000000000DCC0       MOV             X3, #0
+..text:000000000000DCC4       BL              sub_6D74
+..text:000000000000DCC8       MOV             W19, W0
+..text:000000000000DCCC       CBZ             W0, loc_DC74
+..text:000000000000DCD0       B               loc_DC38
+..text:000000000000DCD4       MOV             W19, #0xFFFFFFFD
+..text:000000000000DCD8       B               loc_DBAC
+..text:000000000000DCDC       MOV             X0, X22
+..text:000000000000DCE0       MOV             X1, X23
+..text:000000000000DCE4       BL              sub_7BF0
+..text:000000000000DCE8       B               loc_DC38
+..text:000000000000DCEC       BL              .__stack_chk_fail

@@ -1,0 +1,30 @@
+Function: sub_25598 (0x25598)
+Architecture: 64-bit
+Segment range: 0x25598 - 0x255FC
+----------------------------------------
+
+..text:0000000000025598       SUB             SP, SP, #0x10
+..text:000000000002559C       STP             X19, X30, [SP,#0x10+var_10]
+..text:00000000000255A0       MOV             X19, X0
+..text:00000000000255A4       CBZ             X0, loc_255F0
+..text:00000000000255A8       LDR             X1, [X19,#0x30]
+..text:00000000000255AC       MOV             X0, X1
+..text:00000000000255B0       CBZ             X1, loc_255B8
+..text:00000000000255B4       BL              sub_25598
+..text:00000000000255B8       LDR             W0, [X19]
+..text:00000000000255BC       CMP             W0, #0xD
+..text:00000000000255C0       B.CC            loc_255E8
+..text:00000000000255C4       CMP             W0, #0xE
+..text:00000000000255C8       B.LS            loc_255D4
+..text:00000000000255CC       CMP             W0, #0x12
+..text:00000000000255D0       B.NE            loc_255E8
+..text:00000000000255D4       LDR             X1, [X19,#8]
+..text:00000000000255D8       MOV             X0, X1; p
+..text:00000000000255DC       CBZ             X1, loc_255E8
+..text:00000000000255E0       BL              .free
+..text:00000000000255E4       STR             XZR, [X19,#8]
+..text:00000000000255E8       LDR             X19, [X19,#0x28]
+..text:00000000000255EC       CBNZ            X19, loc_255A8
+..text:00000000000255F0       LDP             X19, X30, [SP,#0x10+var_10]
+..text:00000000000255F4       ADD             SP, SP, #0x10
+..text:00000000000255F8       RET

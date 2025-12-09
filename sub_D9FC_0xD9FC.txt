@@ -1,0 +1,12 @@
+Function: sub_D9FC (0xD9FC)
+Architecture: 64-bit
+Segment range: 0xD9FC - 0xDA18
+----------------------------------------
+
+..text:000000000000D9FC       SUB             SP, SP, #0x10
+..text:000000000000DA00       STR             X30, [SP,#0x10+var_10]
+..text:000000000000DA04       BL              sub_F650
+..text:000000000000DA08       LDR             X30, [SP,#0x10+var_10]
+..text:000000000000DA0C       ADD             W0, W0, #1
+..text:000000000000DA10       ADD             SP, SP, #0x10
+..text:000000000000DA14       RET

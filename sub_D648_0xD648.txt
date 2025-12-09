@@ -1,0 +1,27 @@
+Function: sub_D648 (0xD648)
+Architecture: 64-bit
+Segment range: 0xD648 - 0xD6A0
+----------------------------------------
+
+..text:000000000000D648       SUB             SP, SP, #0x20
+..text:000000000000D64C       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000D650       STR             X30, [SP,#0x20+var_10]
+..text:000000000000D654       MOV             X19, X1
+..text:000000000000D658       MOV             X20, X0
+..text:000000000000D65C       LDR             W2, [X1]
+..text:000000000000D660       LSL             W1, W2, #7
+..text:000000000000D664       SUB             W1, W1, W2,LSL#3
+..text:000000000000D668       BL              sub_6180
+..text:000000000000D66C       CBZ             W0, loc_D680
+..text:000000000000D670       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000D674       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000D678       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000D67C       RET
+..text:000000000000D680       MOV             X0, X20
+..text:000000000000D684       MOV             X1, X19
+..text:000000000000D688       MOV             X2, X20
+..text:000000000000D68C       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000D690       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000D694       MOV             X3, #0
+..text:000000000000D698       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000D69C       B               sub_6D74

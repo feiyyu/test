@@ -1,0 +1,186 @@
+Function: sub_21744 (0x21744)
+Architecture: 64-bit
+Segment range: 0x21744 - 0x21A18
+----------------------------------------
+
+..text:0000000000021744       CBZ             X0, loc_21A00
+..text:0000000000021748       CMP             X1, XZR
+..text:000000000002174C       CSET            W3, EQ
+..text:0000000000021750       CBNZ            W3, loc_21A00
+..text:0000000000021754       SUB             X4, X2, #1
+..text:0000000000021758       CBZ             X2, loc_21A10
+..text:000000000002175C       SUB             X5, X2, #0x10
+..text:0000000000021760       CMP             X4, #0xF
+..text:0000000000021764       LSR             X5, X5, #4
+..text:0000000000021768       ADD             X5, X5, #1
+..text:000000000002176C       LSL             X6, X5, #4
+..text:0000000000021770       B.LS            loc_21A08
+..text:0000000000021774       MOVI            V0.4S, #0
+..text:0000000000021778       MOV             X8, X1
+..text:000000000002177C       MOV             X7, X0
+..text:0000000000021780       MOV             X3, #0
+..text:0000000000021784       LDR             Q1, [X8],#0x10
+..text:0000000000021788       ADD             X3, X3, #1
+..text:000000000002178C       LDR             Q2, [X7],#0x10
+..text:0000000000021790       CMP             X3, X5
+..text:0000000000021794       EOR             V1.16B, V1.16B, V2.16B
+..text:0000000000021798       ORR             V0.16B, V0.16B, V1.16B
+..text:000000000002179C       B.CC            loc_21784
+..text:00000000000217A0       CMP             X2, X6
+..text:00000000000217A4       UMOV            W8, V0.B[1]
+..text:00000000000217A8       UMOV            W2, V0.B[0]
+..text:00000000000217AC       ADD             X0, X0, X6
+..text:00000000000217B0       UMOV            W5, V0.B[2]
+..text:00000000000217B4       ADD             X1, X1, X6
+..text:00000000000217B8       UMOV            W3, V0.B[3]
+..text:00000000000217BC       SUB             X4, X4, X6
+..text:00000000000217C0       UMOV            W7, V0.B[4]
+..text:00000000000217C4       UMOV            W6, V0.B[5]
+..text:00000000000217C8       ORR             W2, W8, W2
+..text:00000000000217CC       ORR             W2, W2, W5
+..text:00000000000217D0       UMOV            W5, V0.B[6]
+..text:00000000000217D4       ORR             W2, W2, W3
+..text:00000000000217D8       UMOV            W3, V0.B[7]
+..text:00000000000217DC       ORR             W2, W2, W7
+..text:00000000000217E0       UMOV            W7, V0.B[8]
+..text:00000000000217E4       ORR             W2, W2, W6
+..text:00000000000217E8       UMOV            W6, V0.B[9]
+..text:00000000000217EC       ORR             W2, W2, W5
+..text:00000000000217F0       UMOV            W5, V0.B[10]
+..text:00000000000217F4       ORR             W2, W2, W3
+..text:00000000000217F8       UMOV            W3, V0.B[11]
+..text:00000000000217FC       ORR             W2, W2, W7
+..text:0000000000021800       UMOV            W7, V0.B[12]
+..text:0000000000021804       ORR             W2, W2, W6
+..text:0000000000021808       UMOV            W6, V0.B[13]
+..text:000000000002180C       ORR             W2, W2, W5
+..text:0000000000021810       UMOV            W5, V0.B[14]
+..text:0000000000021814       ORR             W2, W2, W3
+..text:0000000000021818       UMOV            W3, V0.B[15]
+..text:000000000002181C       ORR             W2, W2, W7
+..text:0000000000021820       ORR             W2, W2, W6
+..text:0000000000021824       ORR             W2, W2, W5
+..text:0000000000021828       ORR             W2, W2, W3
+..text:000000000002182C       UXTB            W2, W2
+..text:0000000000021830       B.EQ            loc_219E8
+..text:0000000000021834       LDRB            W5, [X1]
+..text:0000000000021838       LDRB            W3, [X0]
+..text:000000000002183C       EOR             W3, W5, W3
+..text:0000000000021840       ORR             W2, W2, W3
+..text:0000000000021844       UXTB            W2, W2
+..text:0000000000021848       CBZ             X4, loc_219E8
+..text:000000000002184C       LDRB            W5, [X1,#1]
+..text:0000000000021850       CMP             X4, #1
+..text:0000000000021854       LDRB            W3, [X0,#1]
+..text:0000000000021858       EOR             W3, W5, W3
+..text:000000000002185C       ORR             W2, W2, W3
+..text:0000000000021860       UXTB            W2, W2
+..text:0000000000021864       B.EQ            loc_219E8
+..text:0000000000021868       LDRB            W5, [X1,#2]
+..text:000000000002186C       CMP             X4, #2
+..text:0000000000021870       LDRB            W3, [X0,#2]
+..text:0000000000021874       EOR             W3, W5, W3
+..text:0000000000021878       ORR             W2, W2, W3
+..text:000000000002187C       UXTB            W2, W2
+..text:0000000000021880       B.EQ            loc_219E8
+..text:0000000000021884       LDRB            W5, [X1,#3]
+..text:0000000000021888       CMP             X4, #3
+..text:000000000002188C       LDRB            W3, [X0,#3]
+..text:0000000000021890       EOR             W3, W5, W3
+..text:0000000000021894       ORR             W2, W2, W3
+..text:0000000000021898       UXTB            W2, W2
+..text:000000000002189C       B.EQ            loc_219E8
+..text:00000000000218A0       LDRB            W5, [X1,#4]
+..text:00000000000218A4       CMP             X4, #4
+..text:00000000000218A8       LDRB            W3, [X0,#4]
+..text:00000000000218AC       EOR             W3, W5, W3
+..text:00000000000218B0       ORR             W2, W2, W3
+..text:00000000000218B4       UXTB            W2, W2
+..text:00000000000218B8       B.EQ            loc_219E8
+..text:00000000000218BC       LDRB            W5, [X1,#5]
+..text:00000000000218C0       CMP             X4, #5
+..text:00000000000218C4       LDRB            W3, [X0,#5]
+..text:00000000000218C8       EOR             W3, W5, W3
+..text:00000000000218CC       ORR             W2, W2, W3
+..text:00000000000218D0       UXTB            W2, W2
+..text:00000000000218D4       B.EQ            loc_219E8
+..text:00000000000218D8       LDRB            W5, [X1,#6]
+..text:00000000000218DC       CMP             X4, #6
+..text:00000000000218E0       LDRB            W3, [X0,#6]
+..text:00000000000218E4       EOR             W3, W5, W3
+..text:00000000000218E8       ORR             W2, W2, W3
+..text:00000000000218EC       UXTB            W2, W2
+..text:00000000000218F0       B.EQ            loc_219E8
+..text:00000000000218F4       LDRB            W5, [X1,#7]
+..text:00000000000218F8       CMP             X4, #7
+..text:00000000000218FC       LDRB            W3, [X0,#7]
+..text:0000000000021900       EOR             W3, W5, W3
+..text:0000000000021904       ORR             W2, W2, W3
+..text:0000000000021908       UXTB            W2, W2
+..text:000000000002190C       B.EQ            loc_219E8
+..text:0000000000021910       LDRB            W5, [X1,#8]
+..text:0000000000021914       CMP             X4, #8
+..text:0000000000021918       LDRB            W3, [X0,#8]
+..text:000000000002191C       EOR             W3, W5, W3
+..text:0000000000021920       ORR             W2, W2, W3
+..text:0000000000021924       UXTB            W2, W2
+..text:0000000000021928       B.EQ            loc_219E8
+..text:000000000002192C       LDRB            W5, [X1,#9]
+..text:0000000000021930       CMP             X4, #9
+..text:0000000000021934       LDRB            W3, [X0,#9]
+..text:0000000000021938       EOR             W3, W5, W3
+..text:000000000002193C       ORR             W2, W2, W3
+..text:0000000000021940       UXTB            W2, W2
+..text:0000000000021944       B.EQ            loc_219E8
+..text:0000000000021948       LDRB            W5, [X1,#0xA]
+..text:000000000002194C       CMP             X4, #0xA
+..text:0000000000021950       LDRB            W3, [X0,#0xA]
+..text:0000000000021954       EOR             W3, W5, W3
+..text:0000000000021958       ORR             W2, W2, W3
+..text:000000000002195C       UXTB            W2, W2
+..text:0000000000021960       B.EQ            loc_219E8
+..text:0000000000021964       LDRB            W5, [X1,#0xB]
+..text:0000000000021968       CMP             X4, #0xB
+..text:000000000002196C       LDRB            W3, [X0,#0xB]
+..text:0000000000021970       EOR             W3, W5, W3
+..text:0000000000021974       ORR             W2, W2, W3
+..text:0000000000021978       UXTB            W2, W2
+..text:000000000002197C       B.EQ            loc_219E8
+..text:0000000000021980       LDRB            W5, [X1,#0xC]
+..text:0000000000021984       CMP             X4, #0xC
+..text:0000000000021988       LDRB            W3, [X0,#0xC]
+..text:000000000002198C       EOR             W3, W5, W3
+..text:0000000000021990       ORR             W2, W2, W3
+..text:0000000000021994       UXTB            W2, W2
+..text:0000000000021998       B.EQ            loc_219E8
+..text:000000000002199C       LDRB            W5, [X1,#0xD]
+..text:00000000000219A0       CMP             X4, #0xD
+..text:00000000000219A4       LDRB            W3, [X0,#0xD]
+..text:00000000000219A8       EOR             W3, W5, W3
+..text:00000000000219AC       ORR             W2, W2, W3
+..text:00000000000219B0       UXTB            W2, W2
+..text:00000000000219B4       B.EQ            loc_219E8
+..text:00000000000219B8       LDRB            W5, [X1,#0xE]
+..text:00000000000219BC       CMP             X4, #0xE
+..text:00000000000219C0       LDRB            W3, [X0,#0xE]
+..text:00000000000219C4       EOR             W3, W5, W3
+..text:00000000000219C8       ORR             W2, W2, W3
+..text:00000000000219CC       UXTB            W2, W2
+..text:00000000000219D0       B.EQ            loc_219E8
+..text:00000000000219D4       LDRB            W1, [X1,#0xF]
+..text:00000000000219D8       LDRB            W0, [X0,#0xF]
+..text:00000000000219DC       EOR             W0, W1, W0
+..text:00000000000219E0       ORR             W2, W2, W0
+..text:00000000000219E4       UXTB            W2, W2
+..text:00000000000219E8       ORR             W2, W2, W2,LSR#4
+..text:00000000000219EC       ORR             W2, W2, W2,LSR#2
+..text:00000000000219F0       UXTB            W0, W2
+..text:00000000000219F4       ORR             W0, W0, W0,LSR#1
+..text:00000000000219F8       AND             W0, W0, #1
+..text:00000000000219FC       RET
+..text:0000000000021A00       MOV             W0, #0x10
+..text:0000000000021A04       RET
+..text:0000000000021A08       MOV             W2, W3
+..text:0000000000021A0C       B               loc_21834
+..text:0000000000021A10       MOV             W0, W2
+..text:0000000000021A14       RET

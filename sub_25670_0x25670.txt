@@ -1,0 +1,28 @@
+Function: sub_25670 (0x25670)
+Architecture: 64-bit
+Segment range: 0x25670 - 0x256CC
+----------------------------------------
+
+..text:0000000000025670       CBZ             X2, loc_2569C
+..text:0000000000025674       CMP             X1, XZR
+..text:0000000000025678       CSET            W3, EQ
+..text:000000000002567C       CBNZ            W3, loc_2569C
+..text:0000000000025680       LDR             X4, [X2]
+..text:0000000000025684       CMP             X4, #2
+..text:0000000000025688       B.HI            loc_256A4
+..text:000000000002568C       MOV             X1, #3
+..text:0000000000025690       MOV             W0, #6
+..text:0000000000025694       STR             X1, [X2]
+..text:0000000000025698       RET
+..text:000000000002569C       MOV             W0, #0x10
+..text:00000000000256A0       RET
+..text:00000000000256A4       CMP             W0, WZR
+..text:00000000000256A8       MOV             X0, #3
+..text:00000000000256AC       STR             X0, [X2]
+..text:00000000000256B0       MOV             W0, #1
+..text:00000000000256B4       CSETM           W2, NE
+..text:00000000000256B8       STRB            W0, [X1]
+..text:00000000000256BC       STRB            W0, [X1,#1]
+..text:00000000000256C0       MOV             W0, W3
+..text:00000000000256C4       STRB            W2, [X1,#2]
+..text:00000000000256C8       RET

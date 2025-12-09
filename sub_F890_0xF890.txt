@@ -1,0 +1,19 @@
+Function: sub_F890 (0xF890)
+Architecture: 64-bit
+Segment range: 0xF890 - 0xF8C8
+----------------------------------------
+
+..text:000000000000F890       SUB             W1, W1, #1
+..text:000000000000F894       CMP             W1, WZR
+..text:000000000000F898       B.LE            locret_F8C4
+..text:000000000000F89C       MOV             W3, #0
+..text:000000000000F8A0       ADD             X2, X0, W1,SXTW
+..text:000000000000F8A4       LDRB            W5, [X2]
+..text:000000000000F8A8       ADD             W3, W3, #1
+..text:000000000000F8AC       LDRB            W4, [X0]
+..text:000000000000F8B0       SUB             W1, W1, #1
+..text:000000000000F8B4       STRB            W5, [X0],#1
+..text:000000000000F8B8       CMP             W3, W1
+..text:000000000000F8BC       STRB            W4, [X2],#-1
+..text:000000000000F8C0       B.LT            loc_F8A4
+..text:000000000000F8C4       RET

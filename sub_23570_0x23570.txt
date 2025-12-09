@@ -1,0 +1,33 @@
+Function: sub_23570 (0x23570)
+Architecture: 64-bit
+Segment range: 0x23570 - 0x235E0
+----------------------------------------
+
+..text:0000000000023570       SUB             SP, SP, #0x20
+..text:0000000000023574       STP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000023578       STR             X30, [SP,#0x20+var_10]
+..text:000000000002357C       MOV             W20, #0x10
+..text:0000000000023580       CBZ             X0, loc_23598
+..text:0000000000023584       MOV             X19, X0
+..text:0000000000023588       LDR             W0, [X0]
+..text:000000000002358C       BL              sub_1F964
+..text:0000000000023590       MOV             W20, W0
+..text:0000000000023594       CBZ             W0, loc_235AC
+..text:0000000000023598       MOV             W0, W20
+..text:000000000002359C       LDR             X30, [SP,#0x20+var_10]
+..text:00000000000235A0       LDP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000235A4       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000235A8       RET
+..text:00000000000235AC       MOV             X0, X19
+..text:00000000000235B0       ADRP            X3, #off_59FA8@PAGE
+..text:00000000000235B4       LDRSW           X2, [X0],#8
+..text:00000000000235B8       LDR             X3, [X3,#off_59FA8@PAGEOFF]
+..text:00000000000235BC       ADD             X2, X2, X2,LSL#1
+..text:00000000000235C0       ADD             X2, X3, X2,LSL#6
+..text:00000000000235C4       LDR             X1, [X2,#0x40]
+..text:00000000000235C8       BLR             X1
+..text:00000000000235CC       MOV             W0, W20
+..text:00000000000235D0       LDR             X30, [SP,#0x20+var_10]
+..text:00000000000235D4       LDP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000235D8       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000235DC       RET

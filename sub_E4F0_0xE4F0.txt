@@ -1,0 +1,21 @@
+Function: sub_E4F0 (0xE4F0)
+Architecture: 64-bit
+Segment range: 0xE4F0 - 0xE530
+----------------------------------------
+
+..text:000000000000E4F0       SUB             SP, SP, #0x20
+..text:000000000000E4F4       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000E4F8       MOV             X19, X1
+..text:000000000000E4FC       ADD             X1, X1, #1
+..text:000000000000E500       STR             X30, [SP,#0x20+var_10]
+..text:000000000000E504       MOV             X20, X0
+..text:000000000000E508       BL              sub_E594
+..text:000000000000E50C       CBNZ            W0, loc_E520
+..text:000000000000E510       LDR             W1, [X20,#8]
+..text:000000000000E514       CMP             W1, WZR
+..text:000000000000E518       CSET            W1, NE
+..text:000000000000E51C       STRB            W1, [X19]
+..text:000000000000E520       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000E524       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000E528       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000E52C       RET

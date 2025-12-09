@@ -1,0 +1,35 @@
+Function: sub_D83C (0xD83C)
+Architecture: 64-bit
+Segment range: 0xD83C - 0xD8B4
+----------------------------------------
+
+..text:000000000000D83C       SUB             SP, SP, #0x20
+..text:000000000000D840       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000D844       STP             X21, X30, [SP,#0x20+var_10]
+..text:000000000000D848       MOV             W20, #8
+..text:000000000000D84C       MOV             X19, X0
+..text:000000000000D850       MOV             X21, X1
+..text:000000000000D854       BL              sub_F7EC
+..text:000000000000D858       MOV             X2, X19
+..text:000000000000D85C       MOV             X0, X19
+..text:000000000000D860       MOV             W1, #4
+..text:000000000000D864       BL              sub_B360
+..text:000000000000D868       UBFX            X2, X21, #0x1C, #4
+..text:000000000000D86C       SUBS            W20, W20, #1
+..text:000000000000D870       CBNZ            W0, loc_D8A4
+..text:000000000000D874       LDR             X0, [X19,#0x10]
+..text:000000000000D878       LSL             X21, X21, #4
+..text:000000000000D87C       LDR             W3, [X19]
+..text:000000000000D880       LDR             X1, [X0]
+..text:000000000000D884       ADD             W3, W3, #1
+..text:000000000000D888       ORR             X2, X1, X2
+..text:000000000000D88C       STR             X2, [X0]
+..text:000000000000D890       STR             W3, [X19]
+..text:000000000000D894       B.NE            loc_D858
+..text:000000000000D898       MOV             X0, X19
+..text:000000000000D89C       BL              sub_67C0
+..text:000000000000D8A0       MOV             W0, W20
+..text:000000000000D8A4       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000D8A8       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000000D8AC       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000D8B0       RET

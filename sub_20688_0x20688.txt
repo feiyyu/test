@@ -1,0 +1,35 @@
+Function: sub_20688 (0x20688)
+Architecture: 64-bit
+Segment range: 0x20688 - 0x20700
+----------------------------------------
+
+..text:0000000000020688       SUB             SP, SP, #0x20
+..text:000000000002068C       STP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000020690       STR             X30, [SP,#0x20+var_10]
+..text:0000000000020694       MOV             W20, #0x10
+..text:0000000000020698       CBZ             X0, loc_206C0
+..text:000000000002069C       STRH            WZR, [X0,#0x11E8]
+..text:00000000000206A0       MOV             X19, X0
+..text:00000000000206A4       ADRP            X0, #off_59F40@PAGE
+..text:00000000000206A8       LDR             X0, [X0,#off_59F40@PAGEOFF]; src
+..text:00000000000206AC       BL              sub_1FFE4
+..text:00000000000206B0       STR             W0, [X19]
+..text:00000000000206B4       BL              sub_1F964
+..text:00000000000206B8       MOV             W20, W0
+..text:00000000000206BC       CBZ             W0, loc_206D4
+..text:00000000000206C0       MOV             W0, W20
+..text:00000000000206C4       LDR             X30, [SP,#0x20+var_10]
+..text:00000000000206C8       LDP             X19, X20, [SP,#0x20+var_20]
+..text:00000000000206CC       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000206D0       RET
+..text:00000000000206D4       ADRP            X0, #off_59F48@PAGE
+..text:00000000000206D8       LDR             X0, [X0,#off_59F48@PAGEOFF]; void *
+..text:00000000000206DC       BL              sub_200A8
+..text:00000000000206E0       STR             W0, [X19,#4]
+..text:00000000000206E4       BL              sub_1FF68
+..text:00000000000206E8       MOV             W20, W0
+..text:00000000000206EC       CBNZ            W0, loc_206C0
+..text:00000000000206F0       ADD             X0, X19, #8
+..text:00000000000206F4       MOV             X1, #0x80
+..text:00000000000206F8       BL              sub_2168C
+..text:00000000000206FC       B               loc_206C0

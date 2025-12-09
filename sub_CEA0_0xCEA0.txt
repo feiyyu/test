@@ -1,0 +1,27 @@
+Function: sub_CEA0 (0xCEA0)
+Architecture: 64-bit
+Segment range: 0xCEA0 - 0xCEF8
+----------------------------------------
+
+..text:000000000000CEA0       SUB             SP, SP, #0x20
+..text:000000000000CEA4       SUB             W2, W2, #1
+..text:000000000000CEA8       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000CEAC       MOV             X19, X1
+..text:000000000000CEB0       ADD             X1, X1, #1
+..text:000000000000CEB4       STR             X30, [SP,#0x20+var_10]
+..text:000000000000CEB8       MOV             X20, X0
+..text:000000000000CEBC       BL              sub_CEF8
+..text:000000000000CEC0       CBNZ            W0, loc_CED4
+..text:000000000000CEC4       LDRB            W1, [X19]
+..text:000000000000CEC8       CBZ             W1, loc_CEE4
+..text:000000000000CECC       MOV             W1, #1
+..text:000000000000CED0       STR             W1, [X20,#8]
+..text:000000000000CED4       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000CED8       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000CEDC       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000CEE0       RET
+..text:000000000000CEE4       STR             W0, [X20,#8]
+..text:000000000000CEE8       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000000CEEC       LDR             X30, [SP,#0x20+var_10]
+..text:000000000000CEF0       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000CEF4       RET

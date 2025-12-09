@@ -1,0 +1,60 @@
+Function: sub_20824 (0x20824)
+Architecture: 64-bit
+Segment range: 0x20824 - 0x20900
+----------------------------------------
+
+..text:0000000000020824       SUB             SP, SP, #0x30
+..text:0000000000020828       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000002082C       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:0000000000020830       STR             X30, [SP,#0x30+var_20]
+..text:0000000000020834       MOV             X20, X0
+..text:0000000000020838       MOV             W0, #0x10
+..text:000000000002083C       LDR             X1, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000020840       LDR             X1, [X1]
+..text:0000000000020844       STR             X1, [SP,#0x30+var_8]
+..text:0000000000020848       CBZ             X20, loc_20858
+..text:000000000002084C       LDR             W0, [X20,#4]
+..text:0000000000020850       BL              sub_1FF68
+..text:0000000000020854       CBZ             W0, loc_2087C
+..text:0000000000020858       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000002085C       LDR             X2, [SP,#0x30+var_8]
+..text:0000000000020860       LDR             X1, [X19]
+..text:0000000000020864       CMP             X2, X1
+..text:0000000000020868       B.NE            loc_208FC
+..text:000000000002086C       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000020870       LDR             X30, [SP,#0x30+var_20]
+..text:0000000000020874       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000020878       RET
+..text:000000000002087C       LDR             W0, [X20]
+..text:0000000000020880       BL              sub_1F964
+..text:0000000000020884       CBNZ            W0, loc_20858
+..text:0000000000020888       LDRSW           X2, [X20,#4]
+..text:000000000002088C       ADRP            X4, #off_59F88@PAGE
+..text:0000000000020890       LDRSW           X1, [X20]
+..text:0000000000020894       ADRP            X5, #off_59FA8@PAGE
+..text:0000000000020898       ADD             X0, SP, #0x30+arg_0
+..text:000000000002089C       ADD             X3, X2, X2,LSL#1
+..text:00000000000208A0       LDR             X4, [X4,#off_59F88@PAGEOFF]
+..text:00000000000208A4       LDR             X5, [X5,#off_59FA8@PAGEOFF]
+..text:00000000000208A8       ADD             X1, X1, X1,LSL#1
+..text:00000000000208AC       ADD             X2, X2, X3,LSL#2
+..text:00000000000208B0       ADD             X1, X5, X1,LSL#6
+..text:00000000000208B4       ADD             X2, X4, X2,LSL#4
+..text:00000000000208B8       LDR             X1, [X1,#0x48]
+..text:00000000000208BC       LDR             X2, [X2,#0x10]
+..text:00000000000208C0       STR             W2, [X0,#-0xC]!
+..text:00000000000208C4       BLR             X1
+..text:00000000000208C8       CBNZ            W0, loc_20858
+..text:00000000000208CC       MOV             X6, X20
+..text:00000000000208D0       MOV             W4, W0
+..text:00000000000208D4       ADD             X1, X20, #8
+..text:00000000000208D8       LDR             W3, [SP,#0x30+var_C]
+..text:00000000000208DC       MOV             X2, X1
+..text:00000000000208E0       MOV             W5, W4
+..text:00000000000208E4       LDR             W0, [X6],#0x88
+..text:00000000000208E8       BL              sub_22E64
+..text:00000000000208EC       CBNZ            W0, loc_20858
+..text:00000000000208F0       MOV             W1, #1
+..text:00000000000208F4       STRH            W1, [X20,#0x11E8]
+..text:00000000000208F8       B               loc_20858
+..text:00000000000208FC       BL              .__stack_chk_fail

@@ -1,0 +1,44 @@
+Function: sub_DA18 (0xDA18)
+Architecture: 64-bit
+Segment range: 0xDA18 - 0xDAB4
+----------------------------------------
+
+..text:000000000000DA18       ADRP            X2, #off_59F90@PAGE
+..text:000000000000DA1C       SUB             SP, SP, #0x10
+..text:000000000000DA20       MOV             X4, X0
+..text:000000000000DA24       LDR             X2, [X2,#off_59F90@PAGEOFF]
+..text:000000000000DA28       STP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000DA2C       MOV             X19, X1
+..text:000000000000DA30       LDR             W3, [X0]
+..text:000000000000DA34       LDR             W2, [X2]
+..text:000000000000DA38       CMP             W3, W2
+..text:000000000000DA3C       B.GE            loc_DA84
+..text:000000000000DA40       ADRP            X2, #off_59FF8@PAGE
+..text:000000000000DA44       LDR             X2, [X2,#off_59FF8@PAGEOFF]
+..text:000000000000DA48       LDR             W2, [X2]
+..text:000000000000DA4C       CMP             W3, W2
+..text:000000000000DA50       B.GE            loc_DAA0
+..text:000000000000DA54       LSL             W2, W3, #1
+..text:000000000000DA58       CMP             W2, #0x1FE
+..text:000000000000DA5C       B.GT            loc_DA68
+..text:000000000000DA60       CMP             W3, #0x7F
+..text:000000000000DA64       B.LE            loc_DA98
+..text:000000000000DA68       MOV             X0, X4
+..text:000000000000DA6C       MOV             X1, X19
+..text:000000000000DA70       BL              sub_1044C
+..text:000000000000DA74       STR             WZR, [X19,#8]
+..text:000000000000DA78       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000DA7C       ADD             SP, SP, #0x10
+..text:000000000000DA80       RET
+..text:000000000000DA84       BL              sub_EDFC
+..text:000000000000DA88       STR             WZR, [X19,#8]
+..text:000000000000DA8C       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000DA90       ADD             SP, SP, #0x10
+..text:000000000000DA94       RET
+..text:000000000000DA98       BL              sub_5D50
+..text:000000000000DA9C       B               loc_DA74
+..text:000000000000DAA0       BL              sub_A514
+..text:000000000000DAA4       STR             WZR, [X19,#8]
+..text:000000000000DAA8       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000000DAAC       ADD             SP, SP, #0x10
+..text:000000000000DAB0       RET

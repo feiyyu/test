@@ -1,0 +1,120 @@
+Function: sub_26410 (0x26410)
+Architecture: 64-bit
+Segment range: 0x26410 - 0x265DC
+----------------------------------------
+
+..text:0000000000026410       SUB             SP, SP, #0x40
+..text:0000000000026414       CMP             X2, XZR
+..text:0000000000026418       CSET            W6, EQ
+..text:000000000002641C       CMP             X3, XZR
+..text:0000000000026420       CSET            W4, EQ
+..text:0000000000026424       STP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000026428       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000002642C       MOV             X20, X0
+..text:0000000000026430       STP             X21, X30, [SP,#0x40+var_30]
+..text:0000000000026434       STR             X2, [SP,#0x40+var_18]
+..text:0000000000026438       ORR             W4, W6, W4
+..text:000000000002643C       LDR             X5, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000026440       MOV             X21, X1
+..text:0000000000026444       STR             X3, [SP,#0x40+var_20]
+..text:0000000000026448       LDR             X0, [X5]
+..text:000000000002644C       STR             X0, [SP,#0x40+var_8]
+..text:0000000000026450       CBNZ            W4, loc_264AC
+..text:0000000000026454       CBZ             X20, loc_264AC
+..text:0000000000026458       MOV             X0, X1
+..text:000000000002645C       ADD             X1, SP, #0x40+var_10
+..text:0000000000026460       BL              sub_265DC
+..text:0000000000026464       CBNZ            W0, loc_26488
+..text:0000000000026468       LDR             X3, [SP,#0x40+var_20]
+..text:000000000002646C       LDR             X0, [SP,#0x40+var_10]
+..text:0000000000026470       LDR             X2, [SP,#0x40+var_18]
+..text:0000000000026474       LDR             X1, [X3]
+..text:0000000000026478       CMP             X1, X0
+..text:000000000002647C       B.CS            loc_264B4
+..text:0000000000026480       STR             X0, [X3]
+..text:0000000000026484       MOV             W0, #6
+..text:0000000000026488       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000002648C       LDR             X2, [SP,#0x40+var_8]
+..text:0000000000026490       LDR             X1, [X19]
+..text:0000000000026494       CMP             X2, X1
+..text:0000000000026498       B.NE            loc_265D8
+..text:000000000002649C       LDP             X19, X20, [SP,#0x40+var_40]
+..text:00000000000264A0       LDP             X21, X30, [SP,#0x40+var_30]
+..text:00000000000264A4       ADD             SP, SP, #0x40 ; '@'
+..text:00000000000264A8       RET
+..text:00000000000264AC       MOV             W0, #0x10
+..text:00000000000264B0       B               loc_26488
+..text:00000000000264B4       AND             X1, X21, #7
+..text:00000000000264B8       LSR             X0, X21, #3
+..text:00000000000264BC       CMP             X1, XZR
+..text:00000000000264C0       MOV             W1, #3
+..text:00000000000264C4       CSET            W11, NE
+..text:00000000000264C8       STRB            W1, [X2]
+..text:00000000000264CC       ADD             X0, X0, #1
+..text:00000000000264D0       UXTB            W1, W11
+..text:00000000000264D4       ADD             X0, X0, X1
+..text:00000000000264D8       CMP             X0, #0x7F
+..text:00000000000264DC       B.LS            loc_26574
+..text:00000000000264E0       CMP             X0, #0xFF
+..text:00000000000264E4       B.HI            loc_265A0
+..text:00000000000264E8       STRB            W0, [X2,#2]
+..text:00000000000264EC       MOV             X1, #4
+..text:00000000000264F0       MOV             W0, #0xFFFFFF81
+..text:00000000000264F4       MOV             X4, #3
+..text:00000000000264F8       STRB            W0, [X2,#1]
+..text:00000000000264FC       NEG             W0, W21
+..text:0000000000026500       AND             W0, W0, #7
+..text:0000000000026504       STRB            W0, [X2,X4]
+..text:0000000000026508       CBZ             X21, loc_26584
+..text:000000000002650C       MOV             W6, #0
+..text:0000000000026510       MOV             X5, #0
+..text:0000000000026514       MOV             W10, #1
+..text:0000000000026518       B               loc_26528
+..text:000000000002651C       ADD             X5, X5, #1
+..text:0000000000026520       CMP             X5, X21
+..text:0000000000026524       B.EQ            loc_26588
+..text:0000000000026528       LSR             X9, X5, #3
+..text:000000000002652C       MVN             W4, W5
+..text:0000000000026530       AND             W4, W4, #7
+..text:0000000000026534       AND             X8, X5, #7
+..text:0000000000026538       LSL             W0, W10, W4
+..text:000000000002653C       LDRB            W7, [X20,X9]
+..text:0000000000026540       AND             W7, W0, W7
+..text:0000000000026544       ASR             W0, W7, W4
+..text:0000000000026548       CMP             W0, WZR
+..text:000000000002654C       CSET            W7, NE
+..text:0000000000026550       CMP             X8, #7
+..text:0000000000026554       LSL             W4, W7, W4
+..text:0000000000026558       ORR             W6, W4, W6
+..text:000000000002655C       UXTB            W6, W6
+..text:0000000000026560       B.NE            loc_2651C
+..text:0000000000026564       STRB            W6, [X2,X1]
+..text:0000000000026568       ADD             X1, X1, #1
+..text:000000000002656C       MOV             W6, #0
+..text:0000000000026570       B               loc_2651C
+..text:0000000000026574       STRB            W0, [X2,#1]
+..text:0000000000026578       MOV             X1, #3
+..text:000000000002657C       MOV             X4, #2
+..text:0000000000026580       B               loc_264FC
+..text:0000000000026584       MOV             W6, W21
+..text:0000000000026588       CBZ             W11, loc_26594
+..text:000000000002658C       STRB            W6, [X2,X1]
+..text:0000000000026590       ADD             X1, X1, #1
+..text:0000000000026594       STR             X1, [X3]
+..text:0000000000026598       MOV             W0, #0
+..text:000000000002659C       B               loc_26488
+..text:00000000000265A0       MOV             X1, #0xFFFF
+..text:00000000000265A4       CMP             X0, X1
+..text:00000000000265A8       B.HI            loc_265CC
+..text:00000000000265AC       LSR             X5, X0, #8
+..text:00000000000265B0       STRB            W0, [X2,#3]
+..text:00000000000265B4       MOV             X1, #5
+..text:00000000000265B8       MOV             W0, #0xFFFFFF82
+..text:00000000000265BC       MOV             X4, #4
+..text:00000000000265C0       STRB            W0, [X2,#1]
+..text:00000000000265C4       STRB            W5, [X2,#2]
+..text:00000000000265C8       B               loc_264FC
+..text:00000000000265CC       MOV             X1, #2
+..text:00000000000265D0       MOV             X4, #1
+..text:00000000000265D4       B               loc_264FC
+..text:00000000000265D8       BL              .__stack_chk_fail

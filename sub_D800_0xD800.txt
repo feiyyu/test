@@ -1,0 +1,20 @@
+Function: sub_D800 (0xD800)
+Architecture: 64-bit
+Segment range: 0xD800 - 0xD83C
+----------------------------------------
+
+..text:000000000000D800       SUB             SP, SP, #0x20
+..text:000000000000D804       STP             X19, X30, [SP,#0x20+var_20]
+..text:000000000000D808       MOV             X19, X0
+..text:000000000000D80C       STR             X1, [SP,#0x20+var_8]
+..text:000000000000D810       BL              sub_F7EC
+..text:000000000000D814       LDR             X1, [SP,#0x20+var_8]
+..text:000000000000D818       LDR             X2, [X19,#0x10]
+..text:000000000000D81C       AND             X1, X1, #0xFFFFFFFFFFFFFFF
+..text:000000000000D820       CMP             X1, XZR
+..text:000000000000D824       STR             X1, [X2]
+..text:000000000000D828       CSET            W0, NE
+..text:000000000000D82C       STR             W0, [X19]
+..text:000000000000D830       LDP             X19, X30, [SP,#0x20+var_20]
+..text:000000000000D834       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000D838       RET
