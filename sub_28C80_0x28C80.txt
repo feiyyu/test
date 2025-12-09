@@ -1,0 +1,33 @@
+Function: sub_28C80 (0x28C80)
+Architecture: 64-bit
+Segment range: 0x28C80 - 0x28CF0
+----------------------------------------
+
+..text:0000000000028C80       CBZ             X1, loc_28CE8
+..text:0000000000028C84       CBZ             X0, loc_28CE8
+..text:0000000000028C88       LDR             W2, [X0,#0x18]
+..text:0000000000028C8C       MOV             X4, #0x11
+..text:0000000000028C90       CBNZ            W2, loc_28CA4
+..text:0000000000028C94       STR             X4, [X1]
+..text:0000000000028C98       MOV             W0, #0
+..text:0000000000028C9C       RET
+..text:0000000000028CA0       MOV             X4, X5
+..text:0000000000028CA4       MOV             W3, #0xCCCD
+..text:0000000000028CA8       ADD             X5, X4, #1
+..text:0000000000028CAC       MOVK            W3, #0xCCCC,LSL#16
+..text:0000000000028CB0       UMULL           X2, W2, W3
+..text:0000000000028CB4       LSR             X2, X2, #0x20 ; ' '
+..text:0000000000028CB8       LSR             W2, W2, #3
+..text:0000000000028CBC       CBNZ            W2, loc_28CA0
+..text:0000000000028CC0       LDR             W2, [X0,#0x20]
+..text:0000000000028CC4       CBNZ            W2, loc_28CD8
+..text:0000000000028CC8       LDR             W0, [X0,#0x24]
+..text:0000000000028CCC       CBNZ            W0, loc_28CD8
+..text:0000000000028CD0       ADD             X4, X4, #2
+..text:0000000000028CD4       B               loc_28C94
+..text:0000000000028CD8       ADD             X4, X4, #6
+..text:0000000000028CDC       MOV             W0, #0
+..text:0000000000028CE0       STR             X4, [X1]
+..text:0000000000028CE4       B               locret_28C9C
+..text:0000000000028CE8       MOV             W0, #0x10
+..text:0000000000028CEC       RET

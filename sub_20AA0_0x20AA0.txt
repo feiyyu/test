@@ -1,0 +1,28 @@
+Function: sub_20AA0 (0x20AA0)
+Architecture: 64-bit
+Segment range: 0x20AA0 - 0x20AFC
+----------------------------------------
+
+..text:0000000000020AA0       SUB             SP, SP, #0x3F0
+..text:0000000000020AA4       MOV             X1, #0x1F4
+..text:0000000000020AA8       SUB             SP, SP, #0x10
+..text:0000000000020AAC       MOV             X2, #0
+..text:0000000000020AB0       ADD             X0, SP, #0x400+var_3F0
+..text:0000000000020AB4       STP             X19, X30, [SP,#0x400+var_400]
+..text:0000000000020AB8       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:0000000000020ABC       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000020AC0       LDR             X3, [X19]
+..text:0000000000020AC4       STR             X3, [SP,#0x400+var_8]
+..text:0000000000020AC8       BL              sub_20AFC
+..text:0000000000020ACC       CMP             X0, #0x1F4
+..text:0000000000020AD0       LDR             X2, [SP,#0x400+var_8]
+..text:0000000000020AD4       MOV             W0, #9
+..text:0000000000020AD8       LDR             X1, [X19]
+..text:0000000000020ADC       CSEL            W0, W0, WZR, NE
+..text:0000000000020AE0       CMP             X2, X1
+..text:0000000000020AE4       B.NE            loc_20AF8
+..text:0000000000020AE8       LDP             X19, X30, [SP,#0x400+var_400]
+..text:0000000000020AEC       ADD             SP, SP, #0x10
+..text:0000000000020AF0       ADD             SP, SP, #0x3F0
+..text:0000000000020AF4       RET
+..text:0000000000020AF8       BL              .__stack_chk_fail

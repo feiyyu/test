@@ -1,0 +1,10 @@
+Function: sub_20F0 (0x20F0)
+Architecture: 64-bit
+Segment range: 0x20F0 - 0x2104
+----------------------------------------
+
+..plt:00000000000020F0        STP             X16, X30, [SP,#var_10]!
+..plt:00000000000020F4        ADRP            X16, #qword_59E30@PAGE
+..plt:00000000000020F8        LDR             X17, [X16,#qword_59E30@PAGEOFF]
+..plt:00000000000020FC        ADD             X16, X16, #qword_59E30@PAGEOFF
+..plt:0000000000002100        BR              X17

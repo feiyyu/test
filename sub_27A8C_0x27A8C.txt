@@ -1,0 +1,14 @@
+Function: sub_27A8C (0x27A8C)
+Architecture: 64-bit
+Segment range: 0x27A8C - 0x27AB0
+----------------------------------------
+
+..text:0000000000027A8C       MOV             W1, W0
+..text:0000000000027A90       CBZ             X1, loc_27AA8
+..text:0000000000027A94       MOV             X0, #0
+..text:0000000000027A98       LSR             X1, X1, #1
+..text:0000000000027A9C       ADD             X0, X0, #1
+..text:0000000000027AA0       CBNZ            X1, loc_27A98
+..text:0000000000027AA4       RET
+..text:0000000000027AA8       MOV             X0, X1
+..text:0000000000027AAC       RET

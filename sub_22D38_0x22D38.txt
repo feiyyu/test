@@ -1,0 +1,41 @@
+Function: sub_22D38 (0x22D38)
+Architecture: 64-bit
+Segment range: 0x22D38 - 0x22DC8
+----------------------------------------
+
+..text:0000000000022D38       SUB             SP, SP, #0x20
+..text:0000000000022D3C       CMP             X1, XZR
+..text:0000000000022D40       CSET            W4, EQ
+..text:0000000000022D44       CMP             X2, XZR
+..text:0000000000022D48       CSET            W3, EQ
+..text:0000000000022D4C       STP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000022D50       STP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000022D54       ORR             W3, W4, W3
+..text:0000000000022D58       CBNZ            W3, loc_22D90
+..text:0000000000022D5C       CMP             X0, XZR
+..text:0000000000022D60       CSET            W19, EQ
+..text:0000000000022D64       CBNZ            W19, loc_22D90
+..text:0000000000022D68       LDRSW           X3, [X2,#4]
+..text:0000000000022D6C       LDR             X4, [X1]
+..text:0000000000022D70       CMP             X3, X4
+..text:0000000000022D74       B.LS            loc_22DA4
+..text:0000000000022D78       STR             X3, [X1]
+..text:0000000000022D7C       MOV             W0, #6
+..text:0000000000022D80       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000022D84       LDP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000022D88       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000022D8C       RET
+..text:0000000000022D90       MOV             W0, #word_10; dest
+..text:0000000000022D94       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000022D98       LDP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000022D9C       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000022DA0       RET
+..text:0000000000022DA4       MOV             X21, X2
+..text:0000000000022DA8       MOV             X20, X1
+..text:0000000000022DAC       ADD             X1, X2, #0x14; src
+..text:0000000000022DB0       MOV             X2, X3; n
+..text:0000000000022DB4       BL              .memcpy
+..text:0000000000022DB8       LDRSW           X0, [X21,#4]
+..text:0000000000022DBC       STR             X0, [X20]
+..text:0000000000022DC0       MOV             W0, W19
+..text:0000000000022DC4       B               loc_22D80

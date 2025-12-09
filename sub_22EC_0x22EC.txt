@@ -1,0 +1,11 @@
+Function: sub_22EC (0x22EC)
+Architecture: 64-bit
+Segment range: 0x22EC - 0x2304
+----------------------------------------
+
+..text:00000000000022EC       STP             X29, X30, [SP,#-0x10+var_s0]!
+..text:00000000000022F0       MOV             X29, SP
+..text:00000000000022F4       CBZ             X0, loc_22FC
+..text:00000000000022F8       BLR             X0
+..text:00000000000022FC       LDP             X29, X30, [SP+var_s0],#0x10
+..text:0000000000002300       RET

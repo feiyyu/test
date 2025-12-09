@@ -1,0 +1,83 @@
+Function: sub_8B80 (0x8B80)
+Architecture: 64-bit
+Segment range: 0x8B80 - 0x8CB8
+----------------------------------------
+
+..text:0000000000008B80       SUB             SP, SP, #0x50
+..text:0000000000008B84       STP             X21, X22, [SP,#0x50+var_40]
+..text:0000000000008B88       STP             X19, X20, [SP,#0x50+var_50]
+..text:0000000000008B8C       MOV             X22, X2
+..text:0000000000008B90       STR             X30, [SP,#0x50+var_10]
+..text:0000000000008B94       STP             X25, X26, [SP,#0x50+var_20]
+..text:0000000000008B98       MOV             W21, W1
+..text:0000000000008B9C       MOV             X19, X0
+..text:0000000000008BA0       STP             X23, X24, [SP,#0x50+var_30]
+..text:0000000000008BA4       BL              sub_F7EC
+..text:0000000000008BA8       MOV             W26, #0
+..text:0000000000008BAC       MOV             X0, X22; stream
+..text:0000000000008BB0       BL              .fgetc
+..text:0000000000008BB4       CMP             W0, #0x2D ; '-'
+..text:0000000000008BB8       B.EQ            loc_8CA8
+..text:0000000000008BBC       ADRP            X1, #off_59FA0@PAGE
+..text:0000000000008BC0       SUB             W0, W0, #0x28 ; '('
+..text:0000000000008BC4       LDR             X1, [X1,#off_59FA0@PAGEOFF]
+..text:0000000000008BC8       LDR             X23, [X1]
+..text:0000000000008BCC       CMP             X0, X23
+..text:0000000000008BD0       B.HI            loc_8C74
+..text:0000000000008BD4       ADRP            X24, #off_59F98@PAGE
+..text:0000000000008BD8       LDR             X1, [X24,#off_59F98@PAGEOFF]
+..text:0000000000008BDC       LDRB            W20, [X1,X0]
+..text:0000000000008BE0       CMP             W20, W21
+..text:0000000000008BE4       B.GE            loc_8C74
+..text:0000000000008BE8       CMP             W20, #0xFF
+..text:0000000000008BEC       B.EQ            loc_8C74
+..text:0000000000008BF0       SXTW            X25, W21
+..text:0000000000008BF4       B               loc_8C30
+..text:0000000000008BF8       BL              sub_62C4
+..text:0000000000008BFC       MOV             W3, W0
+..text:0000000000008C00       MOV             X0, X22; stream
+..text:0000000000008C04       CBNZ            W3, loc_8C54
+..text:0000000000008C08       BL              .fgetc
+..text:0000000000008C0C       SUB             W0, W0, #0x28 ; '('
+..text:0000000000008C10       CMP             X0, X23
+..text:0000000000008C14       B.HI            loc_8C74
+..text:0000000000008C18       LDR             X4, [X24,#off_59F98@PAGEOFF]
+..text:0000000000008C1C       LDRB            W20, [X4,X0]
+..text:0000000000008C20       CMP             W20, W21
+..text:0000000000008C24       B.GE            loc_8C74
+..text:0000000000008C28       CMP             W20, #0xFF
+..text:0000000000008C2C       B.EQ            loc_8C74
+..text:0000000000008C30       MOV             X1, X25
+..text:0000000000008C34       MOV             X2, X19
+..text:0000000000008C38       MOV             X0, X19
+..text:0000000000008C3C       BL              sub_B4A8
+..text:0000000000008C40       MOV             W3, W0
+..text:0000000000008C44       UXTB            W1, W20
+..text:0000000000008C48       MOV             X2, X19
+..text:0000000000008C4C       MOV             X0, X19
+..text:0000000000008C50       CBZ             W3, loc_8BF8
+..text:0000000000008C54       MOV             W0, W3
+..text:0000000000008C58       LDP             X19, X20, [SP,#0x50+var_50]
+..text:0000000000008C5C       LDP             X21, X22, [SP,#0x50+var_40]
+..text:0000000000008C60       LDP             X23, X24, [SP,#0x50+var_30]
+..text:0000000000008C64       LDP             X25, X26, [SP,#0x50+var_20]
+..text:0000000000008C68       LDR             X30, [SP,#0x50+var_10]
+..text:0000000000008C6C       ADD             SP, SP, #0x50 ; 'P'
+..text:0000000000008C70       RET
+..text:0000000000008C74       MOV             X0, X19
+..text:0000000000008C78       MOV             X1, #0
+..text:0000000000008C7C       BL              sub_6A14
+..text:0000000000008C80       CBZ             W0, loc_8C58
+..text:0000000000008C84       STR             W26, [X19,#8]
+..text:0000000000008C88       MOV             W0, #0
+..text:0000000000008C8C       LDP             X19, X20, [SP,#0x50+var_50]
+..text:0000000000008C90       LDP             X21, X22, [SP,#0x50+var_40]
+..text:0000000000008C94       LDP             X23, X24, [SP,#0x50+var_30]
+..text:0000000000008C98       LDP             X25, X26, [SP,#0x50+var_20]
+..text:0000000000008C9C       LDR             X30, [SP,#0x50+var_10]
+..text:0000000000008CA0       ADD             SP, SP, #0x50 ; 'P'
+..text:0000000000008CA4       RET
+..text:0000000000008CA8       MOV             X0, X22; stream
+..text:0000000000008CAC       MOV             W26, #1
+..text:0000000000008CB0       BL              .fgetc
+..text:0000000000008CB4       B               loc_8BBC

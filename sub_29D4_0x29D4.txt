@@ -1,0 +1,35 @@
+Function: sub_29D4 (0x29D4)
+Architecture: 64-bit
+Segment range: 0x29D4 - 0x2A4C
+----------------------------------------
+
+..text:00000000000029D4       ADRP            X6, #dword_5B010@PAGE
+..text:00000000000029D8       SUB             SP, SP, #0x30
+..text:00000000000029DC       LDR             W6, [X6,#dword_5B010@PAGEOFF]
+..text:00000000000029E0       STP             X19, X30, [SP,#0x30+var_30]
+..text:00000000000029E4       MOV             X19, X0
+..text:00000000000029E8       TBNZ            W6, #0x1F, loc_2A00
+..text:00000000000029EC       CBNZ            W6, loc_2A2C
+..text:00000000000029F0       MOV             W0, #0x65 ; 'e'
+..text:00000000000029F4       LDP             X19, X30, [SP,#0x30+var_30]
+..text:00000000000029F8       ADD             SP, SP, #0x30 ; '0'
+..text:00000000000029FC       RET
+..text:0000000000002A00       STR             X5, [SP,#0x30+var_8]
+..text:0000000000002A04       STR             X4, [SP,#0x30+var_10]
+..text:0000000000002A08       STR             X3, [SP,#0x30+var_18]
+..text:0000000000002A0C       STR             X2, [SP,#0x30+var_20]
+..text:0000000000002A10       BL              sub_23D0
+..text:0000000000002A14       MOV             W6, W0
+..text:0000000000002A18       LDR             X5, [SP,#0x30+var_8]
+..text:0000000000002A1C       LDR             X4, [SP,#0x30+var_10]
+..text:0000000000002A20       LDR             X3, [SP,#0x30+var_18]
+..text:0000000000002A24       LDR             X2, [SP,#0x30+var_20]
+..text:0000000000002A28       CBZ             W6, loc_29F0
+..text:0000000000002A2C       MOV             X0, X19
+..text:0000000000002A30       MOV             X1, X2
+..text:0000000000002A34       LDP             X19, X30, [SP,#0x30+var_30]
+..text:0000000000002A38       MOV             X2, X3
+..text:0000000000002A3C       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000002A40       MOV             W3, W4
+..text:0000000000002A44       MOV             X4, X5
+..text:0000000000002A48       B               loc_231C

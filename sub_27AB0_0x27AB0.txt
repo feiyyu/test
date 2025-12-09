@@ -1,0 +1,79 @@
+Function: sub_27AB0 (0x27AB0)
+Architecture: 64-bit
+Segment range: 0x27AB0 - 0x27BE4
+----------------------------------------
+
+..text:0000000000027AB0       CMP             X2, XZR
+..text:0000000000027AB4       CSET            W4, EQ
+..text:0000000000027AB8       CMP             X1, #1
+..text:0000000000027ABC       CSET            W3, LS
+..text:0000000000027AC0       ORR             W3, W4, W3
+..text:0000000000027AC4       CBNZ            W3, loc_27AE4
+..text:0000000000027AC8       CBZ             X0, loc_27AE4
+..text:0000000000027ACC       LDR             X3, [X0]
+..text:0000000000027AD0       MOV             W4, #0x10
+..text:0000000000027AD4       CMP             X3, #3
+..text:0000000000027AD8       B.LS            loc_27AF0
+..text:0000000000027ADC       MOV             W0, W4
+..text:0000000000027AE0       RET
+..text:0000000000027AE4       MOV             W4, #0x10
+..text:0000000000027AE8       MOV             W0, W4
+..text:0000000000027AEC       RET
+..text:0000000000027AF0       CMP             X3, #1
+..text:0000000000027AF4       LDR             X6, [X0,#8]
+..text:0000000000027AF8       B.LS            loc_27BB8
+..text:0000000000027AFC       ADD             X3, X3, X3,LSL#2
+..text:0000000000027B00       SUB             X9, X1, #1
+..text:0000000000027B04       MOV             X7, #2
+..text:0000000000027B08       MOV             X8, #0
+..text:0000000000027B0C       ADD             X6, X6, X3,LSL#3
+..text:0000000000027B10       AND             X3, X6, #0xFFFFFFFF
+..text:0000000000027B14       CBZ             W6, loc_27BA8
+..text:0000000000027B18       MOV             X4, #0
+..text:0000000000027B1C       LSR             X3, X3, #1
+..text:0000000000027B20       ADD             X4, X4, #1
+..text:0000000000027B24       CBNZ            X3, loc_27B1C
+..text:0000000000027B28       MOV             X3, #0x2492492492492493
+..text:0000000000027B38       UMULH           X5, X4, X3
+..text:0000000000027B3C       SUB             X3, X4, X5
+..text:0000000000027B40       ADD             X3, X5, X3,LSR#1
+..text:0000000000027B44       LSR             X5, X3, #2
+..text:0000000000027B48       LSL             X3, X5, #3
+..text:0000000000027B4C       SUB             X3, X3, X5
+..text:0000000000027B50       CMP             X4, X3
+..text:0000000000027B54       CSET            X3, NE
+..text:0000000000027B58       CMP             X6, XZR
+..text:0000000000027B5C       SUB             X4, X7, #1
+..text:0000000000027B60       CINC            X5, X5, EQ
+..text:0000000000027B64       CMP             X4, X9
+..text:0000000000027B68       ADD             X5, X5, X8
+..text:0000000000027B6C       ADD             X8, X5, X3
+..text:0000000000027B70       B.CS            loc_27BDC
+..text:0000000000027B74       LDR             X6, [X0,X7,LSL#3]
+..text:0000000000027B78       MOV             X3, X7
+..text:0000000000027B7C       CMP             X1, X3
+..text:0000000000027B80       ADD             X7, X7, #1
+..text:0000000000027B84       B.HI            loc_27B10
+..text:0000000000027B88       CMP             X8, #0x7F
+..text:0000000000027B8C       B.LS            loc_27BB0
+..text:0000000000027B90       CMP             X8, #0xFF
+..text:0000000000027B94       B.HI            loc_27BC4
+..text:0000000000027B98       ADD             X8, X8, #3
+..text:0000000000027B9C       STR             X8, [X2]
+..text:0000000000027BA0       MOV             W4, #0
+..text:0000000000027BA4       B               loc_27ADC
+..text:0000000000027BA8       MOV             X5, X3
+..text:0000000000027BAC       B               loc_27B58
+..text:0000000000027BB0       ADD             X8, X8, #2
+..text:0000000000027BB4       B               loc_27B9C
+..text:0000000000027BB8       CMP             X6, #0x27 ; '''
+..text:0000000000027BBC       B.HI            loc_27ADC
+..text:0000000000027BC0       B               loc_27AFC
+..text:0000000000027BC4       MOV             X0, #0xFFFF
+..text:0000000000027BC8       MOV             W4, #0x10
+..text:0000000000027BCC       CMP             X8, X0
+..text:0000000000027BD0       B.HI            loc_27ADC
+..text:0000000000027BD4       ADD             X8, X8, #4
+..text:0000000000027BD8       B               loc_27B9C
+..text:0000000000027BDC       MOV             X3, X7
+..text:0000000000027BE0       B               loc_27B7C

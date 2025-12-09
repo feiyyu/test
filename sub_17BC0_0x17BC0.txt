@@ -1,0 +1,1048 @@
+Function: sub_17BC0 (0x17BC0)
+Architecture: 64-bit
+Segment range: 0x17BC0 - 0x18C0C
+----------------------------------------
+
+..text:0000000000017BC0       SUB             SP, SP, #0x170
+..text:0000000000017BC4       MOV             X7, X0
+..text:0000000000017BC8       ADRP            X10, #__stack_chk_guard_ptr@PAGE
+..text:0000000000017BCC       ADD             X5, SP, #0x170+var_148
+..text:0000000000017BD0       ADD             X2, X5, #0x34 ; '4'
+..text:0000000000017BD4       ADD             X6, X5, #0x134
+..text:0000000000017BD8       STP             X19, X20, [SP,#0x170+var_170]
+..text:0000000000017BDC       STP             X21, X30, [SP,#0x170+var_160]
+..text:0000000000017BE0       LDR             X21, [X10,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000017BE4       LDR             W0, [X1,#8]
+..text:0000000000017BE8       LDR             W4, [X1]
+..text:0000000000017BEC       LDR             W3, [X1,#4]
+..text:0000000000017BF0       REV             W18, W0
+..text:0000000000017BF4       LDR             W0, [X1,#0x14]
+..text:0000000000017BF8       REV             W20, W4
+..text:0000000000017BFC       REV             W19, W3
+..text:0000000000017C00       LDR             W4, [X1,#0xC]
+..text:0000000000017C04       LDR             W3, [X1,#0x10]
+..text:0000000000017C08       REV             W15, W0
+..text:0000000000017C0C       LDR             W0, [X1,#0x20]
+..text:0000000000017C10       REV             W17, W4
+..text:0000000000017C14       REV             W16, W3
+..text:0000000000017C18       LDR             W4, [X1,#0x18]
+..text:0000000000017C1C       LDR             W3, [X1,#0x1C]
+..text:0000000000017C20       REV             W12, W0
+..text:0000000000017C24       LDR             W0, [X1,#0x2C]
+..text:0000000000017C28       REV             W14, W4
+..text:0000000000017C2C       REV             W13, W3
+..text:0000000000017C30       LDR             W4, [X1,#0x24]
+..text:0000000000017C34       LDR             W3, [X1,#0x28]
+..text:0000000000017C38       REV             W8, W0
+..text:0000000000017C3C       LDR             X21, [X21]
+..text:0000000000017C40       REV             W11, W4
+..text:0000000000017C44       LDR             W0, [X1,#0x38]
+..text:0000000000017C48       REV             W9, W3
+..text:0000000000017C4C       STR             W12, [X5,#0x20]
+..text:0000000000017C50       STR             W11, [X5,#0x24]
+..text:0000000000017C54       REV             W0, W0
+..text:0000000000017C58       STR             W9, [X5,#0x28]
+..text:0000000000017C5C       STR             X21, [SP,#0x170+var_8]
+..text:0000000000017C60       STR             W20, [X5]
+..text:0000000000017C64       STR             W19, [X5,#4]
+..text:0000000000017C68       STR             W18, [X5,#8]
+..text:0000000000017C6C       STR             W17, [X5,#0xC]
+..text:0000000000017C70       STR             W16, [X5,#0x10]
+..text:0000000000017C74       STR             W15, [X5,#0x14]
+..text:0000000000017C78       STR             W14, [X5,#0x18]
+..text:0000000000017C7C       STR             W13, [X5,#0x1C]
+..text:0000000000017C80       LDR             W4, [X1,#0x30]
+..text:0000000000017C84       LDR             W3, [X1,#0x34]
+..text:0000000000017C88       STR             W8, [X5,#0x2C]
+..text:0000000000017C8C       REV             W4, W4
+..text:0000000000017C90       LDR             W1, [X1,#0x3C]
+..text:0000000000017C94       REV             W3, W3
+..text:0000000000017C98       STR             W0, [X5,#0x38]
+..text:0000000000017C9C       LDR             W12, [X7,#8]
+..text:0000000000017CA0       REV             W1, W1
+..text:0000000000017CA4       LDR             W9, [X7,#0xC]
+..text:0000000000017CA8       LDR             W0, [X7,#0x10]
+..text:0000000000017CAC       LDR             W8, [X7,#0x14]
+..text:0000000000017CB0       LDR             W11, [X7,#0x18]
+..text:0000000000017CB4       STR             W4, [X5,#0x30]
+..text:0000000000017CB8       STR             W3, [X5,#0x34]
+..text:0000000000017CBC       STR             W1, [X5,#0x3C]
+..text:0000000000017CC0       SUB             X1, X2, #0x14
+..text:0000000000017CC4       SUB             X4, X2, #0x2C ; ','
+..text:0000000000017CC8       LDR             D0, [X2]
+..text:0000000000017CCC       SUB             X3, X2, #0x34 ; '4'
+..text:0000000000017CD0       LDR             D1, [X1]
+..text:0000000000017CD4       ADD             X1, X2, #0xC
+..text:0000000000017CD8       LDR             D3, [X4]
+..text:0000000000017CDC       ADD             X2, X2, #8
+..text:0000000000017CE0       LDR             D2, [X3]
+..text:0000000000017CE4       CMP             X2, X6
+..text:0000000000017CE8       EOR             V1.8B, V1.8B, V3.8B
+..text:0000000000017CEC       EOR             V0.8B, V1.8B, V0.8B
+..text:0000000000017CF0       EOR             V0.8B, V0.8B, V2.8B
+..text:0000000000017CF4       SHL             V1.2S, V0.2S, #1
+..text:0000000000017CF8       USHR            V0.2S, V0.2S, #0x1F
+..text:0000000000017CFC       ORR             V0.8B, V1.8B, V0.8B
+..text:0000000000017D00       STR             D0, [X1]
+..text:0000000000017D04       B.NE            loc_17CC0
+..text:0000000000017D08       MOV             W1, #0x7999
+..text:0000000000017D0C       EXTR            W14, W9, W9, #2
+..text:0000000000017D10       MOVK            W1, #0x5A82,LSL#16
+..text:0000000000017D14       LDR             W3, [X5]
+..text:0000000000017D18       ADD             W6, W11, W1
+..text:0000000000017D1C       EXTR            W13, W12, W12, #0x1B
+..text:0000000000017D20       EOR             W1, W0, W8
+..text:0000000000017D24       MOV             W4, #0x7999
+..text:0000000000017D28       LDR             W2, [X5,#4]
+..text:0000000000017D2C       ADD             W13, W6, W13
+..text:0000000000017D30       AND             W1, W9, W1
+..text:0000000000017D34       EOR             W6, W0, W14
+..text:0000000000017D38       MOVK            W4, #0x5A82,LSL#16
+..text:0000000000017D3C       EOR             W1, W8, W1
+..text:0000000000017D40       ADD             W4, W8, W4
+..text:0000000000017D44       AND             W6, W12, W6
+..text:0000000000017D48       ADD             W3, W13, W3
+..text:0000000000017D4C       EXTR            W17, W12, W12, #2
+..text:0000000000017D50       ADD             W3, W3, W1
+..text:0000000000017D54       MOV             W15, #0x7999
+..text:0000000000017D58       EOR             W1, W0, W6
+..text:0000000000017D5C       ADD             W2, W4, W2
+..text:0000000000017D60       EOR             W13, W17, W14
+..text:0000000000017D64       LDR             W4, [X5,#8]
+..text:0000000000017D68       ADD             W2, W2, W1
+..text:0000000000017D6C       MOV             W6, W15
+..text:0000000000017D70       EXTR            W1, W3, W3, #0x1B
+..text:0000000000017D74       MOVK            W15, #0x5A82,LSL#16
+..text:0000000000017D78       EXTR            W16, W3, W3, #2
+..text:0000000000017D7C       ADD             W2, W2, W1
+..text:0000000000017D80       AND             W3, W3, W13
+..text:0000000000017D84       ADD             W1, W0, W15
+..text:0000000000017D88       LDR             W18, [X5,#0xC]
+..text:0000000000017D8C       EOR             W13, W3, W14
+..text:0000000000017D90       ADD             W4, W1, W4
+..text:0000000000017D94       EOR             W3, W16, W17
+..text:0000000000017D98       MOVK            W6, #0x5A82,LSL#16
+..text:0000000000017D9C       EXTR            W15, W2, W2, #2
+..text:0000000000017DA0       EXTR            W1, W2, W2, #0x1B
+..text:0000000000017DA4       ADD             W4, W4, W13
+..text:0000000000017DA8       ADD             W6, W14, W6
+..text:0000000000017DAC       AND             W2, W3, W2
+..text:0000000000017DB0       ADD             W4, W4, W1
+..text:0000000000017DB4       ADD             W6, W6, W18
+..text:0000000000017DB8       EOR             W2, W2, W17
+..text:0000000000017DBC       EXTR            W1, W4, W4, #0x1B
+..text:0000000000017DC0       ADD             W2, W6, W2
+..text:0000000000017DC4       MOV             W3, #0x7999
+..text:0000000000017DC8       EOR             W13, W15, W16
+..text:0000000000017DCC       ADD             W2, W2, W1
+..text:0000000000017DD0       MOVK            W3, #0x5A82,LSL#16
+..text:0000000000017DD4       LDR             W1, [X5,#0x10]
+..text:0000000000017DD8       EXTR            W14, W4, W4, #2
+..text:0000000000017DDC       ADD             W3, W17, W3
+..text:0000000000017DE0       AND             W4, W13, W4
+..text:0000000000017DE4       MOV             W18, #0x7999
+..text:0000000000017DE8       ADD             W13, W3, W1
+..text:0000000000017DEC       EOR             W1, W4, W16
+..text:0000000000017DF0       LDR             W4, [X5,#0x14]
+..text:0000000000017DF4       EOR             W6, W14, W15
+..text:0000000000017DF8       MOVK            W18, #0x5A82,LSL#16
+..text:0000000000017DFC       EXTR            W17, W2, W2, #2
+..text:0000000000017E00       LDR             W3, [X5,#0x18]
+..text:0000000000017E04       ADD             W13, W13, W1
+..text:0000000000017E08       ADD             W4, W4, W18
+..text:0000000000017E0C       EXTR            W1, W2, W2, #0x1B
+..text:0000000000017E10       MOV             W18, #0x7999
+..text:0000000000017E14       AND             W2, W6, W2
+..text:0000000000017E18       ADD             W1, W13, W1
+..text:0000000000017E1C       ADD             W4, W4, W16
+..text:0000000000017E20       EOR             W6, W2, W15
+..text:0000000000017E24       MOVK            W18, #0x5A82,LSL#16
+..text:0000000000017E28       EOR             W2, W17, W14
+..text:0000000000017E2C       EXTR            W16, W1, W1, #2
+..text:0000000000017E30       ADD             W6, W4, W6
+..text:0000000000017E34       ADD             W3, W3, W18
+..text:0000000000017E38       EXTR            W4, W1, W1, #0x1B
+..text:0000000000017E3C       LDR             W18, [X5,#0x1C]
+..text:0000000000017E40       AND             W1, W2, W1
+..text:0000000000017E44       MOV             W2, #0x7999
+..text:0000000000017E48       ADD             W6, W6, W4
+..text:0000000000017E4C       EOR             W13, W16, W17
+..text:0000000000017E50       EOR             W1, W1, W14
+..text:0000000000017E54       ADD             W3, W3, W15
+..text:0000000000017E58       MOVK            W2, #0x5A82,LSL#16
+..text:0000000000017E5C       EXTR            W15, W6, W6, #2
+..text:0000000000017E60       LDR             W4, [X5,#0x20]
+..text:0000000000017E64       ADD             W3, W3, W1
+..text:0000000000017E68       ADD             W2, W18, W2
+..text:0000000000017E6C       EXTR            W1, W6, W6, #0x1B
+..text:0000000000017E70       MOV             W18, #0x7999
+..text:0000000000017E74       AND             W6, W6, W13
+..text:0000000000017E78       ADD             W3, W3, W1
+..text:0000000000017E7C       EOR             W13, W15, W16
+..text:0000000000017E80       EOR             W1, W6, W17
+..text:0000000000017E84       ADD             W2, W2, W14
+..text:0000000000017E88       MOVK            W18, #0x5A82,LSL#16
+..text:0000000000017E8C       EXTR            W14, W3, W3, #2
+..text:0000000000017E90       LDR             W6, [X5,#0x24]
+..text:0000000000017E94       ADD             W2, W2, W1
+..text:0000000000017E98       ADD             W4, W4, W18
+..text:0000000000017E9C       EXTR            W1, W3, W3, #0x1B
+..text:0000000000017EA0       AND             W3, W13, W3
+..text:0000000000017EA4       MOV             W13, #0x7999
+..text:0000000000017EA8       ADD             W2, W2, W1
+..text:0000000000017EAC       ADD             W4, W4, W17
+..text:0000000000017EB0       MOVK            W13, #0x5A82,LSL#16
+..text:0000000000017EB4       EOR             W17, W14, W15
+..text:0000000000017EB8       EXTR            W18, W2, W2, #2
+..text:0000000000017EBC       EXTR            W1, W2, W2, #0x1B
+..text:0000000000017EC0       ADD             W13, W6, W13
+..text:0000000000017EC4       AND             W2, W17, W2
+..text:0000000000017EC8       EOR             W3, W3, W16
+..text:0000000000017ECC       EOR             W2, W2, W15
+..text:0000000000017ED0       ADD             W16, W13, W16
+..text:0000000000017ED4       ADD             W4, W4, W3
+..text:0000000000017ED8       ADD             W2, W16, W2
+..text:0000000000017EDC       MOV             W6, #0x7999
+..text:0000000000017EE0       LDR             W16, [X5,#0x28]
+..text:0000000000017EE4       EOR             W3, W18, W14
+..text:0000000000017EE8       ADD             W4, W4, W1
+..text:0000000000017EEC       MOVK            W6, #0x5A82,LSL#16
+..text:0000000000017EF0       EXTR            W17, W4, W4, #2
+..text:0000000000017EF4       LDR             W13, [X5,#0x2C]
+..text:0000000000017EF8       EXTR            W1, W4, W4, #0x1B
+..text:0000000000017EFC       ADD             W6, W16, W6
+..text:0000000000017F00       AND             W4, W3, W4
+..text:0000000000017F04       MOV             W3, #0x7999
+..text:0000000000017F08       ADD             W2, W2, W1
+..text:0000000000017F0C       EOR             W4, W4, W14
+..text:0000000000017F10       ADD             W6, W6, W15
+..text:0000000000017F14       MOVK            W3, #0x5A82,LSL#16
+..text:0000000000017F18       EOR             W15, W17, W18
+..text:0000000000017F1C       EXTR            W16, W2, W2, #2
+..text:0000000000017F20       EXTR            W1, W2, W2, #0x1B
+..text:0000000000017F24       ADD             W6, W6, W4
+..text:0000000000017F28       ADD             W13, W13, W3
+..text:0000000000017F2C       AND             W2, W15, W2
+..text:0000000000017F30       ADD             W6, W6, W1
+..text:0000000000017F34       EOR             W2, W2, W18
+..text:0000000000017F38       LDR             W1, [X5,#0x30]
+..text:0000000000017F3C       ADD             W13, W13, W14
+..text:0000000000017F40       MOV             W4, #0x7999
+..text:0000000000017F44       EOR             W14, W16, W17
+..text:0000000000017F48       ADD             W13, W13, W2
+..text:0000000000017F4C       MOVK            W4, #0x5A82,LSL#16
+..text:0000000000017F50       EXTR            W2, W6, W6, #0x1B
+..text:0000000000017F54       EXTR            W15, W6, W6, #2
+..text:0000000000017F58       ADD             W13, W13, W2
+..text:0000000000017F5C       ADD             W4, W1, W4
+..text:0000000000017F60       LDR             W2, [X5,#0x34]
+..text:0000000000017F64       AND             W6, W6, W14
+..text:0000000000017F68       MOV             W3, #0x7999
+..text:0000000000017F6C       EOR             W1, W15, W16
+..text:0000000000017F70       EOR             W6, W6, W17
+..text:0000000000017F74       ADD             W4, W4, W18
+..text:0000000000017F78       MOVK            W3, #0x5A82,LSL#16
+..text:0000000000017F7C       EXTR            W14, W13, W13, #2
+..text:0000000000017F80       LDR             W18, [X5,#0x38]
+..text:0000000000017F84       ADD             W4, W4, W6
+..text:0000000000017F88       ADD             W3, W2, W3
+..text:0000000000017F8C       EXTR            W6, W13, W13, #0x1B
+..text:0000000000017F90       MOV             W2, #0x7999
+..text:0000000000017F94       AND             W13, W1, W13
+..text:0000000000017F98       ADD             W4, W4, W6
+..text:0000000000017F9C       EOR             W13, W13, W16
+..text:0000000000017FA0       ADD             W3, W3, W17
+..text:0000000000017FA4       MOVK            W2, #0x5A82,LSL#16
+..text:0000000000017FA8       EOR             W17, W14, W15
+..text:0000000000017FAC       EXTR            W6, W4, W4, #2
+..text:0000000000017FB0       LDR             W19, [X5,#0x3C]
+..text:0000000000017FB4       EXTR            W1, W4, W4, #0x1B
+..text:0000000000017FB8       ADD             W2, W18, W2
+..text:0000000000017FBC       ADD             W3, W3, W13
+..text:0000000000017FC0       AND             W4, W17, W4
+..text:0000000000017FC4       MOV             W17, #0x7999
+..text:0000000000017FC8       ADD             W3, W3, W1
+..text:0000000000017FCC       EOR             W4, W4, W15
+..text:0000000000017FD0       ADD             W1, W2, W16
+..text:0000000000017FD4       MOVK            W17, #0x5A82,LSL#16
+..text:0000000000017FD8       EOR             W16, W6, W14
+..text:0000000000017FDC       EXTR            W13, W3, W3, #2
+..text:0000000000017FE0       LDR             W2, [X5,#0x40]
+..text:0000000000017FE4       ADD             W4, W1, W4
+..text:0000000000017FE8       ADD             W17, W19, W17
+..text:0000000000017FEC       EXTR            W1, W3, W3, #0x1B
+..text:0000000000017FF0       AND             W3, W16, W3
+..text:0000000000017FF4       MOV             W16, #0x7999
+..text:0000000000017FF8       ADD             W1, W4, W1
+..text:0000000000017FFC       EOR             W18, W13, W6
+..text:0000000000018000       ADD             W4, W17, W15
+..text:0000000000018004       EOR             W3, W3, W14
+..text:0000000000018008       MOVK            W16, #0x5A82,LSL#16
+..text:000000000001800C       EXTR            W15, W1, W1, #2
+..text:0000000000018010       LDR             W17, [X5,#0x44]
+..text:0000000000018014       ADD             W3, W4, W3
+..text:0000000000018018       ADD             W2, W2, W16
+..text:000000000001801C       EXTR            W4, W1, W1, #0x1B
+..text:0000000000018020       MOV             W5, #0x7999
+..text:0000000000018024       AND             W1, W18, W1
+..text:0000000000018028       ADD             W3, W3, W4
+..text:000000000001802C       EOR             W1, W1, W6
+..text:0000000000018030       EOR             W4, W15, W13
+..text:0000000000018034       ADD             W2, W2, W14
+..text:0000000000018038       MOVK            W5, #0x5A82,LSL#16
+..text:000000000001803C       EXTR            W14, W3, W3, #2
+..text:0000000000018040       ADD             W5, W17, W5
+..text:0000000000018044       ADD             W2, W2, W1
+..text:0000000000018048       EXTR            W1, W3, W3, #0x1B
+..text:000000000001804C       AND             W3, W3, W4
+..text:0000000000018050       ADD             W2, W2, W1
+..text:0000000000018054       ADD             W6, W5, W6
+..text:0000000000018058       EOR             W1, W3, W13
+..text:000000000001805C       MOV             W4, #0x7999
+..text:0000000000018060       ADD             W3, W6, W1
+..text:0000000000018064       LDR             W6, [SP,#0x170+var_100]
+..text:0000000000018068       EOR             W5, W14, W15
+..text:000000000001806C       MOVK            W4, #0x5A82,LSL#16
+..text:0000000000018070       EXTR            W16, W2, W2, #2
+..text:0000000000018074       ADD             W4, W6, W4
+..text:0000000000018078       EXTR            W1, W2, W2, #0x1B
+..text:000000000001807C       LDR             W6, [SP,#0x170+var_FC]
+..text:0000000000018080       AND             W2, W5, W2
+..text:0000000000018084       MOV             W5, #0x7999
+..text:0000000000018088       ADD             W13, W4, W13
+..text:000000000001808C       EOR             W2, W2, W15
+..text:0000000000018090       MOVK            W5, #0x5A82,LSL#16
+..text:0000000000018094       ADD             W1, W3, W1
+..text:0000000000018098       EOR             W4, W16, W14
+..text:000000000001809C       ADD             W2, W13, W2
+..text:00000000000180A0       ADD             W5, W6, W5
+..text:00000000000180A4       LDR             W13, [SP,#0x170+var_F8]
+..text:00000000000180A8       MOV             W6, #0xEBA1
+..text:00000000000180AC       EXTR            W3, W1, W1, #0x1B
+..text:00000000000180B0       AND             W4, W4, W1
+..text:00000000000180B4       MOVK            W6, #0x6ED9,LSL#16
+..text:00000000000180B8       EXTR            W1, W1, W1, #2
+..text:00000000000180BC       ADD             W2, W2, W3
+..text:00000000000180C0       ADD             W5, W5, W15
+..text:00000000000180C4       EOR             W3, W4, W14
+..text:00000000000180C8       ADD             W13, W13, W6
+..text:00000000000180CC       EOR             W6, W1, W16
+..text:00000000000180D0       EXTR            W15, W2, W2, #2
+..text:00000000000180D4       ADD             W5, W5, W3
+..text:00000000000180D8       MOV             W4, #0xEBA1
+..text:00000000000180DC       EXTR            W3, W2, W2, #0x1B
+..text:00000000000180E0       EOR             W2, W6, W2
+..text:00000000000180E4       LDR             W6, [SP,#0x170+var_F4]
+..text:00000000000180E8       MOVK            W4, #0x6ED9,LSL#16
+..text:00000000000180EC       ADD             W5, W5, W3
+..text:00000000000180F0       ADD             W13, W13, W14
+..text:00000000000180F4       ADD             W6, W6, W4
+..text:00000000000180F8       EOR             W4, W15, W1
+..text:00000000000180FC       EXTR            W17, W5, W5, #2
+..text:0000000000018100       ADD             W13, W13, W2
+..text:0000000000018104       MOV             W3, #0xEBA1
+..text:0000000000018108       EXTR            W2, W5, W5, #0x1B
+..text:000000000001810C       EOR             W5, W4, W5
+..text:0000000000018110       LDR             W4, [SP,#0x170+var_F0]
+..text:0000000000018114       ADD             W13, W13, W2
+..text:0000000000018118       ADD             W6, W6, W16
+..text:000000000001811C       MOVK            W3, #0x6ED9,LSL#16
+..text:0000000000018120       EXTR            W2, W13, W13, #0x1B
+..text:0000000000018124       ADD             W4, W4, W3
+..text:0000000000018128       ADD             W6, W6, W5
+..text:000000000001812C       EOR             W5, W17, W15
+..text:0000000000018130       EXTR            W14, W13, W13, #2
+..text:0000000000018134       ADD             W6, W6, W2
+..text:0000000000018138       EOR             W13, W5, W13
+..text:000000000001813C       ADD             W1, W4, W1
+..text:0000000000018140       MOV             W3, #0xEBA1
+..text:0000000000018144       LDR             W4, [SP,#0x170+var_EC]
+..text:0000000000018148       EXTR            W2, W6, W6, #0x1B
+..text:000000000001814C       MOVK            W3, #0x6ED9,LSL#16
+..text:0000000000018150       ADD             W1, W1, W13
+..text:0000000000018154       ADD             W4, W4, W3
+..text:0000000000018158       ADD             W1, W1, W2
+..text:000000000001815C       EOR             W3, W14, W17
+..text:0000000000018160       LDR             W2, [SP,#0x170+var_E8]
+..text:0000000000018164       MOV             W5, #0xEBA1
+..text:0000000000018168       EXTR            W16, W6, W6, #2
+..text:000000000001816C       ADD             W4, W4, W15
+..text:0000000000018170       EOR             W6, W3, W6
+..text:0000000000018174       MOVK            W5, #0x6ED9,LSL#16
+..text:0000000000018178       EXTR            W3, W1, W1, #0x1B
+..text:000000000001817C       ADD             W5, W2, W5
+..text:0000000000018180       ADD             W4, W4, W6
+..text:0000000000018184       MOV             W2, #0xEBA1
+..text:0000000000018188       ADD             W4, W4, W3
+..text:000000000001818C       ADD             W3, W5, W17
+..text:0000000000018190       LDR             W5, [SP,#0x170+var_E4]
+..text:0000000000018194       EXTR            W15, W1, W1, #2
+..text:0000000000018198       EOR             W6, W16, W14
+..text:000000000001819C       MOVK            W2, #0x6ED9,LSL#16
+..text:00000000000181A0       EOR             W1, W6, W1
+..text:00000000000181A4       ADD             W5, W5, W2
+..text:00000000000181A8       EOR             W6, W15, W16
+..text:00000000000181AC       EXTR            W17, W4, W4, #2
+..text:00000000000181B0       ADD             W3, W3, W1
+..text:00000000000181B4       ADD             W5, W5, W14
+..text:00000000000181B8       EXTR            W1, W4, W4, #0x1B
+..text:00000000000181BC       EOR             W4, W6, W4
+..text:00000000000181C0       ADD             W5, W5, W4
+..text:00000000000181C4       MOV             W2, #0xEBA1
+..text:00000000000181C8       LDR             W4, [SP,#0x170+var_E0]
+..text:00000000000181CC       ADD             W3, W3, W1
+..text:00000000000181D0       MOVK            W2, #0x6ED9,LSL#16
+..text:00000000000181D4       EOR             W6, W17, W15
+..text:00000000000181D8       EXTR            W1, W3, W3, #0x1B
+..text:00000000000181DC       ADD             W2, W4, W2
+..text:00000000000181E0       LDR             W13, [SP,#0x170+var_DC]
+..text:00000000000181E4       MOV             W4, #0xEBA1
+..text:00000000000181E8       EXTR            W14, W3, W3, #2
+..text:00000000000181EC       ADD             W5, W5, W1
+..text:00000000000181F0       EOR             W3, W6, W3
+..text:00000000000181F4       ADD             W2, W2, W16
+..text:00000000000181F8       MOVK            W4, #0x6ED9,LSL#16
+..text:00000000000181FC       EXTR            W16, W5, W5, #2
+..text:0000000000018200       EXTR            W1, W5, W5, #0x1B
+..text:0000000000018204       ADD             W2, W2, W3
+..text:0000000000018208       ADD             W13, W13, W4
+..text:000000000001820C       LDR             W6, [SP,#0x170+var_D8]
+..text:0000000000018210       EOR             W4, W14, W17
+..text:0000000000018214       MOV             W3, #0xEBA1
+..text:0000000000018218       ADD             W2, W2, W1
+..text:000000000001821C       EOR             W5, W4, W5
+..text:0000000000018220       MOVK            W3, #0x6ED9,LSL#16
+..text:0000000000018224       EOR             W4, W16, W14
+..text:0000000000018228       EXTR            W1, W2, W2, #0x1B
+..text:000000000001822C       ADD             W13, W13, W15
+..text:0000000000018230       ADD             W6, W6, W3
+..text:0000000000018234       EXTR            W15, W2, W2, #2
+..text:0000000000018238       MOV             W3, #0xEBA1
+..text:000000000001823C       EOR             W2, W4, W2
+..text:0000000000018240       LDR             W4, [SP,#0x170+var_D4]
+..text:0000000000018244       ADD             W13, W13, W5
+..text:0000000000018248       MOVK            W3, #0x6ED9,LSL#16
+..text:000000000001824C       ADD             W13, W13, W1
+..text:0000000000018250       ADD             W6, W6, W17
+..text:0000000000018254       ADD             W4, W4, W3
+..text:0000000000018258       EOR             W3, W15, W16
+..text:000000000001825C       EXTR            W17, W13, W13, #2
+..text:0000000000018260       EXTR            W1, W13, W13, #0x1B
+..text:0000000000018264       ADD             W6, W6, W2
+..text:0000000000018268       EOR             W13, W3, W13
+..text:000000000001826C       MOV             W2, #0xEBA1
+..text:0000000000018270       LDR             W3, [SP,#0x170+var_D0]
+..text:0000000000018274       EOR             W5, W17, W15
+..text:0000000000018278       ADD             W6, W6, W1
+..text:000000000001827C       MOVK            W2, #0x6ED9,LSL#16
+..text:0000000000018280       EXTR            W1, W6, W6, #0x1B
+..text:0000000000018284       ADD             W4, W4, W14
+..text:0000000000018288       ADD             W3, W3, W2
+..text:000000000001828C       EXTR            W14, W6, W6, #2
+..text:0000000000018290       MOV             W2, #0xEBA1
+..text:0000000000018294       EOR             W6, W5, W6
+..text:0000000000018298       LDR             W5, [SP,#0x170+var_CC]
+..text:000000000001829C       ADD             W4, W4, W13
+..text:00000000000182A0       ADD             W3, W3, W16
+..text:00000000000182A4       MOVK            W2, #0x6ED9,LSL#16
+..text:00000000000182A8       ADD             W4, W4, W1
+..text:00000000000182AC       ADD             W3, W3, W6
+..text:00000000000182B0       ADD             W5, W5, W2
+..text:00000000000182B4       EOR             W6, W14, W17
+..text:00000000000182B8       EXTR            W16, W4, W4, #2
+..text:00000000000182BC       EXTR            W1, W4, W4, #0x1B
+..text:00000000000182C0       ADD             W5, W5, W15
+..text:00000000000182C4       EOR             W4, W6, W4
+..text:00000000000182C8       ADD             W5, W5, W4
+..text:00000000000182CC       MOV             W2, #0xEBA1
+..text:00000000000182D0       LDR             W4, [SP,#0x170+var_C8]
+..text:00000000000182D4       ADD             W3, W3, W1
+..text:00000000000182D8       MOVK            W2, #0x6ED9,LSL#16
+..text:00000000000182DC       LDR             W13, [SP,#0x170+var_C4]
+..text:00000000000182E0       EOR             W6, W16, W14
+..text:00000000000182E4       EXTR            W1, W3, W3, #0x1B
+..text:00000000000182E8       ADD             W2, W4, W2
+..text:00000000000182EC       MOV             W4, #0xEBA1
+..text:00000000000182F0       EXTR            W15, W3, W3, #2
+..text:00000000000182F4       ADD             W5, W5, W1
+..text:00000000000182F8       EOR             W3, W6, W3
+..text:00000000000182FC       ADD             W2, W2, W17
+..text:0000000000018300       MOVK            W4, #0x6ED9,LSL#16
+..text:0000000000018304       EXTR            W17, W5, W5, #2
+..text:0000000000018308       EXTR            W1, W5, W5, #0x1B
+..text:000000000001830C       ADD             W2, W2, W3
+..text:0000000000018310       ADD             W13, W13, W4
+..text:0000000000018314       LDR             W6, [SP,#0x170+var_C0]
+..text:0000000000018318       EOR             W4, W15, W16
+..text:000000000001831C       MOV             W3, #0xEBA1
+..text:0000000000018320       ADD             W2, W2, W1
+..text:0000000000018324       EOR             W5, W4, W5
+..text:0000000000018328       MOVK            W3, #0x6ED9,LSL#16
+..text:000000000001832C       EOR             W4, W17, W15
+..text:0000000000018330       EXTR            W1, W2, W2, #0x1B
+..text:0000000000018334       ADD             W13, W13, W14
+..text:0000000000018338       ADD             W6, W6, W3
+..text:000000000001833C       EXTR            W14, W2, W2, #2
+..text:0000000000018340       MOV             W3, #0xEBA1
+..text:0000000000018344       EOR             W2, W4, W2
+..text:0000000000018348       LDR             W4, [SP,#0x170+var_BC]
+..text:000000000001834C       ADD             W13, W13, W5
+..text:0000000000018350       MOVK            W3, #0x6ED9,LSL#16
+..text:0000000000018354       ADD             W13, W13, W1
+..text:0000000000018358       ADD             W6, W6, W16
+..text:000000000001835C       ADD             W4, W4, W3
+..text:0000000000018360       EOR             W3, W14, W17
+..text:0000000000018364       EXTR            W16, W13, W13, #2
+..text:0000000000018368       EXTR            W1, W13, W13, #0x1B
+..text:000000000001836C       ADD             W6, W6, W2
+..text:0000000000018370       EOR             W13, W3, W13
+..text:0000000000018374       MOV             W2, #0xEBA1
+..text:0000000000018378       LDR             W3, [SP,#0x170+var_B8]
+..text:000000000001837C       EOR             W5, W16, W14
+..text:0000000000018380       ADD             W6, W6, W1
+..text:0000000000018384       MOVK            W2, #0x6ED9,LSL#16
+..text:0000000000018388       EXTR            W1, W6, W6, #0x1B
+..text:000000000001838C       ADD             W4, W4, W15
+..text:0000000000018390       ADD             W3, W3, W2
+..text:0000000000018394       EXTR            W15, W6, W6, #2
+..text:0000000000018398       MOV             W2, #0xEBA1
+..text:000000000001839C       EOR             W6, W5, W6
+..text:00000000000183A0       LDR             W5, [SP,#0x170+var_B4]
+..text:00000000000183A4       ADD             W4, W4, W13
+..text:00000000000183A8       ADD             W3, W3, W17
+..text:00000000000183AC       MOVK            W2, #0x6ED9,LSL#16
+..text:00000000000183B0       ADD             W4, W4, W1
+..text:00000000000183B4       ADD             W3, W3, W6
+..text:00000000000183B8       ADD             W5, W5, W2
+..text:00000000000183BC       EOR             W6, W15, W16
+..text:00000000000183C0       EXTR            W13, W4, W4, #2
+..text:00000000000183C4       EXTR            W1, W4, W4, #0x1B
+..text:00000000000183C8       ADD             W5, W5, W14
+..text:00000000000183CC       EOR             W4, W6, W4
+..text:00000000000183D0       ADD             W5, W5, W4
+..text:00000000000183D4       MOV             W2, #0xEBA1
+..text:00000000000183D8       LDR             W4, [SP,#0x170+var_B0]
+..text:00000000000183DC       MOVK            W2, #0x6ED9,LSL#16
+..text:00000000000183E0       EOR             W6, W13, W15
+..text:00000000000183E4       ADD             W3, W3, W1
+..text:00000000000183E8       ADD             W2, W4, W2
+..text:00000000000183EC       EXTR            W14, W3, W3, #2
+..text:00000000000183F0       EXTR            W1, W3, W3, #0x1B
+..text:00000000000183F4       ADD             W2, W2, W16
+..text:00000000000183F8       EOR             W3, W6, W3
+..text:00000000000183FC       MOV             W4, #0xEBA1
+..text:0000000000018400       ADD             W2, W2, W3
+..text:0000000000018404       LDR             W3, [SP,#0x170+var_AC]
+..text:0000000000018408       ADD             W5, W5, W1
+..text:000000000001840C       MOVK            W4, #0x6ED9,LSL#16
+..text:0000000000018410       EXTR            W1, W5, W5, #0x1B
+..text:0000000000018414       ADD             W3, W3, W4
+..text:0000000000018418       EOR             W4, W14, W13
+..text:000000000001841C       ADD             W2, W2, W1
+..text:0000000000018420       ADD             W3, W3, W15
+..text:0000000000018424       EOR             W1, W4, W5
+..text:0000000000018428       ADD             W3, W3, W1
+..text:000000000001842C       EXTR            W1, W2, W2, #0x1B
+..text:0000000000018430       ADD             W3, W3, W1
+..text:0000000000018434       MOV             W4, #0xBCDC
+..text:0000000000018438       LDR             W1, [SP,#0x170+var_A8]
+..text:000000000001843C       EXTR            W5, W5, W5, #2
+..text:0000000000018440       MOVK            W4, #0x8F1B,LSL#16
+..text:0000000000018444       ORR             W16, W2, W5
+..text:0000000000018448       ADD             W4, W1, W4
+..text:000000000001844C       EXTR            W6, W2, W2, #2
+..text:0000000000018450       ADD             W13, W4, W13
+..text:0000000000018454       AND             W2, W2, W5
+..text:0000000000018458       AND             W4, W16, W14
+..text:000000000001845C       MOV             W15, #0xBCDC
+..text:0000000000018460       ORR             W2, W4, W2
+..text:0000000000018464       LDR             W4, [SP,#0x170+var_A4]
+..text:0000000000018468       ORR             W16, W3, W6
+..text:000000000001846C       EXTR            W1, W3, W3, #0x1B
+..text:0000000000018470       MOVK            W15, #0x8F1B,LSL#16
+..text:0000000000018474       ADD             W1, W13, W1
+..text:0000000000018478       ADD             W4, W4, W15
+..text:000000000001847C       AND             W13, W3, W6
+..text:0000000000018480       AND             W15, W16, W5
+..text:0000000000018484       ADD             W1, W1, W2
+..text:0000000000018488       ADD             W4, W4, W14
+..text:000000000001848C       ORR             W2, W15, W13
+..text:0000000000018490       EXTR            W3, W3, W3, #2
+..text:0000000000018494       ADD             W4, W4, W2
+..text:0000000000018498       EXTR            W2, W1, W1, #0x1B
+..text:000000000001849C       ORR             W15, W1, W3
+..text:00000000000184A0       ADD             W4, W4, W2
+..text:00000000000184A4       MOV             W14, #0xBCDC
+..text:00000000000184A8       LDR             W2, [SP,#0x170+var_A0]
+..text:00000000000184AC       EXTR            W13, W1, W1, #2
+..text:00000000000184B0       AND             W15, W15, W6
+..text:00000000000184B4       MOVK            W14, #0x8F1B,LSL#16
+..text:00000000000184B8       AND             W1, W1, W3
+..text:00000000000184BC       ADD             W2, W2, W14
+..text:00000000000184C0       ORR             W1, W15, W1
+..text:00000000000184C4       MOV             W14, #0xBCDC
+..text:00000000000184C8       LDR             W15, [SP,#0x170+var_9C]
+..text:00000000000184CC       ORR             W16, W4, W13
+..text:00000000000184D0       ADD             W5, W2, W5
+..text:00000000000184D4       MOVK            W14, #0x8F1B,LSL#16
+..text:00000000000184D8       EXTR            W2, W4, W4, #0x1B
+..text:00000000000184DC       ADD             W15, W15, W14
+..text:00000000000184E0       AND             W16, W16, W3
+..text:00000000000184E4       AND             W14, W4, W13
+..text:00000000000184E8       ADD             W5, W5, W2
+..text:00000000000184EC       ADD             W6, W15, W6
+..text:00000000000184F0       ADD             W2, W5, W1
+..text:00000000000184F4       ORR             W5, W16, W14
+..text:00000000000184F8       EXTR            W1, W2, W2, #0x1B
+..text:00000000000184FC       ADD             W6, W6, W5
+..text:0000000000018500       ADD             W5, W6, W1
+..text:0000000000018504       MOV             W14, #0xBCDC
+..text:0000000000018508       LDR             W1, [SP,#0x170+var_98]
+..text:000000000001850C       EXTR            W4, W4, W4, #2
+..text:0000000000018510       MOVK            W14, #0x8F1B,LSL#16
+..text:0000000000018514       ORR             W6, W2, W4
+..text:0000000000018518       ADD             W1, W1, W14
+..text:000000000001851C       AND             W6, W6, W13
+..text:0000000000018520       EXTR            W14, W2, W2, #2
+..text:0000000000018524       ADD             W3, W1, W3
+..text:0000000000018528       AND             W2, W2, W4
+..text:000000000001852C       EXTR            W1, W5, W5, #0x1B
+..text:0000000000018530       ORR             W2, W6, W2
+..text:0000000000018534       ADD             W3, W3, W1
+..text:0000000000018538       ADD             W1, W3, W2
+..text:000000000001853C       MOV             W15, #0xBCDC
+..text:0000000000018540       LDR             W2, [SP,#0x170+var_94]
+..text:0000000000018544       ORR             W16, W5, W14
+..text:0000000000018548       MOVK            W15, #0x8F1B,LSL#16
+..text:000000000001854C       EXTR            W6, W5, W5, #2
+..text:0000000000018550       AND             W3, W16, W4
+..text:0000000000018554       ADD             W2, W2, W15
+..text:0000000000018558       AND             W5, W5, W14
+..text:000000000001855C       ADD             W13, W2, W13
+..text:0000000000018560       ORR             W5, W3, W5
+..text:0000000000018564       MOV             W15, #0xBCDC
+..text:0000000000018568       ADD             W3, W13, W5
+..text:000000000001856C       LDR             W5, [SP,#0x170+var_90]
+..text:0000000000018570       ORR             W16, W1, W6
+..text:0000000000018574       MOVK            W15, #0x8F1B,LSL#16
+..text:0000000000018578       AND             W13, W16, W14
+..text:000000000001857C       EXTR            W2, W1, W1, #0x1B
+..text:0000000000018580       ADD             W15, W5, W15
+..text:0000000000018584       AND             W5, W1, W6
+..text:0000000000018588       ADD             W3, W3, W2
+..text:000000000001858C       ADD             W4, W15, W4
+..text:0000000000018590       ORR             W2, W13, W5
+..text:0000000000018594       EXTR            W1, W1, W1, #2
+..text:0000000000018598       ADD             W4, W4, W2
+..text:000000000001859C       EXTR            W2, W3, W3, #0x1B
+..text:00000000000185A0       ADD             W4, W4, W2
+..text:00000000000185A4       ORR             W15, W3, W1
+..text:00000000000185A8       LDR             W2, [SP,#0x170+var_8C]
+..text:00000000000185AC       MOV             W5, #0xBCDC
+..text:00000000000185B0       EXTR            W13, W3, W3, #2
+..text:00000000000185B4       AND             W15, W15, W6
+..text:00000000000185B8       MOVK            W5, #0x8F1B,LSL#16
+..text:00000000000185BC       AND             W3, W3, W1
+..text:00000000000185C0       ADD             W2, W2, W5
+..text:00000000000185C4       ORR             W3, W15, W3
+..text:00000000000185C8       MOV             W5, #0xBCDC
+..text:00000000000185CC       LDR             W15, [SP,#0x170+var_88]
+..text:00000000000185D0       ORR             W16, W4, W13
+..text:00000000000185D4       ADD             W14, W2, W14
+..text:00000000000185D8       MOVK            W5, #0x8F1B,LSL#16
+..text:00000000000185DC       EXTR            W2, W4, W4, #0x1B
+..text:00000000000185E0       ADD             W15, W15, W5
+..text:00000000000185E4       AND             W16, W16, W1
+..text:00000000000185E8       AND             W5, W4, W13
+..text:00000000000185EC       ADD             W14, W14, W2
+..text:00000000000185F0       ADD             W2, W14, W3
+..text:00000000000185F4       ADD             W6, W15, W6
+..text:00000000000185F8       ORR             W3, W16, W5
+..text:00000000000185FC       EXTR            W5, W2, W2, #0x1B
+..text:0000000000018600       ADD             W6, W6, W3
+..text:0000000000018604       EXTR            W4, W4, W4, #2
+..text:0000000000018608       ADD             W3, W6, W5
+..text:000000000001860C       MOV             W14, #0xBCDC
+..text:0000000000018610       LDR             W5, [SP,#0x170+var_84]
+..text:0000000000018614       ORR             W15, W2, W4
+..text:0000000000018618       MOVK            W14, #0x8F1B,LSL#16
+..text:000000000001861C       EXTR            W6, W2, W2, #2
+..text:0000000000018620       ADD             W14, W5, W14
+..text:0000000000018624       AND             W15, W15, W13
+..text:0000000000018628       AND             W2, W2, W4
+..text:000000000001862C       EXTR            W5, W3, W3, #0x1B
+..text:0000000000018630       ORR             W2, W15, W2
+..text:0000000000018634       ADD             W1, W14, W1
+..text:0000000000018638       LDR             W15, [SP,#0x170+var_80]
+..text:000000000001863C       MOV             W14, #0xBCDC
+..text:0000000000018640       ORR             W16, W3, W6
+..text:0000000000018644       ADD             W1, W1, W5
+..text:0000000000018648       MOVK            W14, #0x8F1B,LSL#16
+..text:000000000001864C       ADD             W1, W1, W2
+..text:0000000000018650       ADD             W15, W15, W14
+..text:0000000000018654       AND             W16, W16, W4
+..text:0000000000018658       AND             W2, W3, W6
+..text:000000000001865C       EXTR            W5, W3, W3, #2
+..text:0000000000018660       ADD             W13, W15, W13
+..text:0000000000018664       ORR             W3, W16, W2
+..text:0000000000018668       ADD             W3, W13, W3
+..text:000000000001866C       MOV             W14, #0xBCDC
+..text:0000000000018670       LDR             W13, [SP,#0x170+var_7C]
+..text:0000000000018674       ORR             W15, W1, W5
+..text:0000000000018678       MOVK            W14, #0x8F1B,LSL#16
+..text:000000000001867C       EXTR            W2, W1, W1, #0x1B
+..text:0000000000018680       ADD             W14, W13, W14
+..text:0000000000018684       AND             W15, W15, W6
+..text:0000000000018688       AND             W13, W1, W5
+..text:000000000001868C       ADD             W3, W3, W2
+..text:0000000000018690       ADD             W4, W14, W4
+..text:0000000000018694       ORR             W2, W15, W13
+..text:0000000000018698       EXTR            W1, W1, W1, #2
+..text:000000000001869C       ADD             W4, W4, W2
+..text:00000000000186A0       EXTR            W2, W3, W3, #0x1B
+..text:00000000000186A4       ORR             W15, W3, W1
+..text:00000000000186A8       ADD             W4, W4, W2
+..text:00000000000186AC       MOV             W14, #0xBCDC
+..text:00000000000186B0       LDR             W2, [SP,#0x170+var_78]
+..text:00000000000186B4       EXTR            W13, W3, W3, #2
+..text:00000000000186B8       AND             W15, W15, W5
+..text:00000000000186BC       MOVK            W14, #0x8F1B,LSL#16
+..text:00000000000186C0       AND             W3, W3, W1
+..text:00000000000186C4       ADD             W2, W2, W14
+..text:00000000000186C8       ORR             W3, W15, W3
+..text:00000000000186CC       MOV             W14, #0xBCDC
+..text:00000000000186D0       LDR             W15, [SP,#0x170+var_74]
+..text:00000000000186D4       ORR             W16, W4, W13
+..text:00000000000186D8       ADD             W6, W2, W6
+..text:00000000000186DC       MOVK            W14, #0x8F1B,LSL#16
+..text:00000000000186E0       EXTR            W2, W4, W4, #0x1B
+..text:00000000000186E4       ADD             W15, W15, W14
+..text:00000000000186E8       ADD             W2, W6, W2
+..text:00000000000186EC       AND             W14, W4, W13
+..text:00000000000186F0       AND             W6, W16, W1
+..text:00000000000186F4       ADD             W2, W2, W3
+..text:00000000000186F8       ADD             W5, W15, W5
+..text:00000000000186FC       ORR             W6, W6, W14
+..text:0000000000018700       ADD             W6, W5, W6
+..text:0000000000018704       EXTR            W5, W2, W2, #0x1B
+..text:0000000000018708       ADD             W5, W6, W5
+..text:000000000001870C       MOV             W3, #0xBCDC
+..text:0000000000018710       LDR             W6, [SP,#0x170+var_70]
+..text:0000000000018714       EXTR            W4, W4, W4, #2
+..text:0000000000018718       MOVK            W3, #0x8F1B,LSL#16
+..text:000000000001871C       EXTR            W14, W2, W2, #2
+..text:0000000000018720       ADD             W3, W6, W3
+..text:0000000000018724       ORR             W6, W2, W4
+..text:0000000000018728       ADD             W3, W3, W1
+..text:000000000001872C       AND             W6, W6, W13
+..text:0000000000018730       EXTR            W1, W5, W5, #0x1B
+..text:0000000000018734       AND             W2, W2, W4
+..text:0000000000018738       ORR             W2, W6, W2
+..text:000000000001873C       ADD             W1, W3, W1
+..text:0000000000018740       ADD             W1, W1, W2
+..text:0000000000018744       MOV             W15, #0xBCDC
+..text:0000000000018748       LDR             W2, [SP,#0x170+var_6C]
+..text:000000000001874C       ORR             W3, W5, W14
+..text:0000000000018750       MOVK            W15, #0x8F1B,LSL#16
+..text:0000000000018754       EXTR            W6, W5, W5, #2
+..text:0000000000018758       ADD             W2, W2, W15
+..text:000000000001875C       AND             W3, W3, W4
+..text:0000000000018760       AND             W5, W5, W14
+..text:0000000000018764       ADD             W13, W2, W13
+..text:0000000000018768       ORR             W5, W3, W5
+..text:000000000001876C       MOV             W15, #0xBCDC
+..text:0000000000018770       ADD             W3, W13, W5
+..text:0000000000018774       LDR             W5, [SP,#0x170+var_68]
+..text:0000000000018778       ORR             W16, W1, W6
+..text:000000000001877C       MOVK            W15, #0x8F1B,LSL#16
+..text:0000000000018780       AND             W13, W16, W14
+..text:0000000000018784       EXTR            W2, W1, W1, #0x1B
+..text:0000000000018788       ADD             W15, W5, W15
+..text:000000000001878C       AND             W5, W1, W6
+..text:0000000000018790       ADD             W3, W3, W2
+..text:0000000000018794       ADD             W4, W15, W4
+..text:0000000000018798       ORR             W2, W13, W5
+..text:000000000001879C       MOV             W5, #0xBCDC
+..text:00000000000187A0       ADD             W4, W4, W2
+..text:00000000000187A4       EXTR            W2, W3, W3, #0x1B
+..text:00000000000187A8       ADD             W4, W4, W2
+..text:00000000000187AC       LDR             W2, [SP,#0x170+var_64]
+..text:00000000000187B0       MOVK            W5, #0x8F1B,LSL#16
+..text:00000000000187B4       EXTR            W1, W1, W1, #2
+..text:00000000000187B8       ADD             W5, W2, W5
+..text:00000000000187BC       EXTR            W2, W4, W4, #0x1B
+..text:00000000000187C0       ADD             W14, W5, W14
+..text:00000000000187C4       EXTR            W13, W3, W3, #2
+..text:00000000000187C8       ORR             W16, W3, W1
+..text:00000000000187CC       ADD             W14, W14, W2
+..text:00000000000187D0       MOV             W15, #0xBCDC
+..text:00000000000187D4       LDR             W2, [SP,#0x170+var_60]
+..text:00000000000187D8       ORR             W5, W4, W13
+..text:00000000000187DC       AND             W16, W16, W6
+..text:00000000000187E0       AND             W3, W3, W1
+..text:00000000000187E4       MOVK            W15, #0x8F1B,LSL#16
+..text:00000000000187E8       ORR             W3, W16, W3
+..text:00000000000187EC       ADD             W15, W2, W15
+..text:00000000000187F0       AND             W16, W5, W1
+..text:00000000000187F4       AND             W5, W4, W13
+..text:00000000000187F8       ADD             W2, W14, W3
+..text:00000000000187FC       ORR             W5, W16, W5
+..text:0000000000018800       ADD             W6, W15, W6
+..text:0000000000018804       EXTR            W3, W4, W4, #2
+..text:0000000000018808       ADD             W6, W6, W5
+..text:000000000001880C       EXTR            W4, W2, W2, #0x1B
+..text:0000000000018810       ADD             W6, W6, W4
+..text:0000000000018814       MOV             W14, #0xBCDC
+..text:0000000000018818       LDR             W4, [SP,#0x170+var_5C]
+..text:000000000001881C       MOVK            W14, #0x8F1B,LSL#16
+..text:0000000000018820       EXTR            W5, W6, W6, #0x1B
+..text:0000000000018824       ORR             W16, W2, W3
+..text:0000000000018828       ADD             W14, W4, W14
+..text:000000000001882C       MOV             W4, #0xC1D6
+..text:0000000000018830       ADD             W1, W14, W1
+..text:0000000000018834       MOVK            W4, #0xCA62,LSL#16
+..text:0000000000018838       ADD             W1, W1, W5
+..text:000000000001883C       LDR             W5, [SP,#0x170+var_58]
+..text:0000000000018840       EXTR            W15, W2, W2, #2
+..text:0000000000018844       AND             W14, W16, W13
+..text:0000000000018848       ADD             W5, W5, W4
+..text:000000000001884C       AND             W2, W2, W3
+..text:0000000000018850       ADD             W5, W5, W13
+..text:0000000000018854       MOV             W4, #0xC1D6
+..text:0000000000018858       LDR             W13, [SP,#0x170+var_54]
+..text:000000000001885C       EOR             W16, W15, W3
+..text:0000000000018860       ORR             W2, W14, W2
+..text:0000000000018864       MOVK            W4, #0xCA62,LSL#16
+..text:0000000000018868       EXTR            W14, W6, W6, #2
+..text:000000000001886C       ADD             W1, W1, W2
+..text:0000000000018870       EOR             W6, W16, W6
+..text:0000000000018874       ADD             W13, W13, W4
+..text:0000000000018878       EOR             W16, W14, W15
+..text:000000000001887C       EXTR            W2, W1, W1, #0x1B
+..text:0000000000018880       ADD             W3, W13, W3
+..text:0000000000018884       ADD             W5, W5, W6
+..text:0000000000018888       EXTR            W6, W1, W1, #2
+..text:000000000001888C       EOR             W1, W16, W1
+..text:0000000000018890       ADD             W1, W3, W1
+..text:0000000000018894       MOV             W4, #0xC1D6
+..text:0000000000018898       LDR             W3, [SP,#0x170+var_50]
+..text:000000000001889C       ADD             W5, W5, W2
+..text:00000000000188A0       MOVK            W4, #0xCA62,LSL#16
+..text:00000000000188A4       EXTR            W2, W5, W5, #0x1B
+..text:00000000000188A8       ADD             W4, W3, W4
+..text:00000000000188AC       EOR             W3, W6, W14
+..text:00000000000188B0       EXTR            W17, W5, W5, #2
+..text:00000000000188B4       ADD             W1, W1, W2
+..text:00000000000188B8       EOR             W5, W3, W5
+..text:00000000000188BC       LDR             W2, [SP,#0x170+var_4C]
+..text:00000000000188C0       ADD             W4, W4, W15
+..text:00000000000188C4       MOV             W13, #0xC1D6
+..text:00000000000188C8       ADD             W4, W4, W5
+..text:00000000000188CC       MOVK            W13, #0xCA62,LSL#16
+..text:00000000000188D0       EOR             W5, W17, W6
+..text:00000000000188D4       EXTR            W16, W1, W1, #2
+..text:00000000000188D8       EXTR            W3, W1, W1, #0x1B
+..text:00000000000188DC       ADD             W13, W2, W13
+..text:00000000000188E0       EOR             W1, W5, W1
+..text:00000000000188E4       MOV             W2, #0xC1D6
+..text:00000000000188E8       LDR             W5, [SP,#0x170+var_48]
+..text:00000000000188EC       MOVK            W2, #0xCA62,LSL#16
+..text:00000000000188F0       ADD             W4, W4, W3
+..text:00000000000188F4       ADD             W3, W13, W14
+..text:00000000000188F8       ADD             W5, W5, W2
+..text:00000000000188FC       EOR             W13, W16, W17
+..text:0000000000018900       EXTR            W15, W4, W4, #2
+..text:0000000000018904       ADD             W6, W5, W6
+..text:0000000000018908       ADD             W3, W3, W1
+..text:000000000001890C       EXTR            W1, W4, W4, #0x1B
+..text:0000000000018910       EOR             W4, W13, W4
+..text:0000000000018914       MOV             W2, #0xC1D6
+..text:0000000000018918       ADD             W13, W6, W4
+..text:000000000001891C       LDR             W4, [SP,#0x170+var_44]
+..text:0000000000018920       ADD             W3, W3, W1
+..text:0000000000018924       MOVK            W2, #0xCA62,LSL#16
+..text:0000000000018928       LDR             W6, [SP,#0x170+var_40]
+..text:000000000001892C       EOR             W5, W15, W16
+..text:0000000000018930       EXTR            W1, W3, W3, #0x1B
+..text:0000000000018934       ADD             W2, W4, W2
+..text:0000000000018938       MOV             W4, #0xC1D6
+..text:000000000001893C       EXTR            W14, W3, W3, #2
+..text:0000000000018940       ADD             W13, W13, W1
+..text:0000000000018944       EOR             W3, W5, W3
+..text:0000000000018948       ADD             W2, W2, W17
+..text:000000000001894C       MOVK            W4, #0xCA62,LSL#16
+..text:0000000000018950       EXTR            W17, W13, W13, #2
+..text:0000000000018954       EXTR            W1, W13, W13, #0x1B
+..text:0000000000018958       ADD             W2, W2, W3
+..text:000000000001895C       ADD             W6, W6, W4
+..text:0000000000018960       MOV             W3, #0xC1D6
+..text:0000000000018964       EOR             W4, W14, W15
+..text:0000000000018968       LDR             W5, [SP,#0x170+var_3C]
+..text:000000000001896C       ADD             W2, W2, W1
+..text:0000000000018970       EOR             W13, W4, W13
+..text:0000000000018974       MOVK            W3, #0xCA62,LSL#16
+..text:0000000000018978       EOR             W4, W17, W14
+..text:000000000001897C       EXTR            W1, W2, W2, #0x1B
+..text:0000000000018980       ADD             W6, W6, W16
+..text:0000000000018984       ADD             W5, W5, W3
+..text:0000000000018988       EXTR            W16, W2, W2, #2
+..text:000000000001898C       MOV             W3, #0xC1D6
+..text:0000000000018990       EOR             W2, W4, W2
+..text:0000000000018994       LDR             W4, [SP,#0x170+var_38]
+..text:0000000000018998       ADD             W6, W6, W13
+..text:000000000001899C       MOVK            W3, #0xCA62,LSL#16
+..text:00000000000189A0       ADD             W6, W6, W1
+..text:00000000000189A4       ADD             W5, W5, W15
+..text:00000000000189A8       ADD             W4, W4, W3
+..text:00000000000189AC       EOR             W3, W16, W17
+..text:00000000000189B0       EXTR            W15, W6, W6, #2
+..text:00000000000189B4       EXTR            W1, W6, W6, #0x1B
+..text:00000000000189B8       ADD             W5, W5, W2
+..text:00000000000189BC       EOR             W6, W3, W6
+..text:00000000000189C0       MOV             W2, #0xC1D6
+..text:00000000000189C4       LDR             W3, [SP,#0x170+var_34]
+..text:00000000000189C8       ADD             W4, W4, W14
+..text:00000000000189CC       MOVK            W2, #0xCA62,LSL#16
+..text:00000000000189D0       ADD             W5, W5, W1
+..text:00000000000189D4       ADD             W4, W4, W6
+..text:00000000000189D8       ADD             W3, W3, W2
+..text:00000000000189DC       EOR             W6, W15, W16
+..text:00000000000189E0       MOV             W2, #0xC1D6
+..text:00000000000189E4       LDR             W13, [SP,#0x170+var_30]
+..text:00000000000189E8       EXTR            W14, W5, W5, #2
+..text:00000000000189EC       EXTR            W1, W5, W5, #0x1B
+..text:00000000000189F0       ADD             W3, W3, W17
+..text:00000000000189F4       EOR             W5, W6, W5
+..text:00000000000189F8       MOVK            W2, #0xCA62,LSL#16
+..text:00000000000189FC       ADD             W4, W4, W1
+..text:0000000000018A00       ADD             W3, W3, W5
+..text:0000000000018A04       ADD             W13, W13, W2
+..text:0000000000018A08       EOR             W5, W14, W15
+..text:0000000000018A0C       EXTR            W17, W4, W4, #2
+..text:0000000000018A10       EXTR            W1, W4, W4, #0x1B
+..text:0000000000018A14       ADD             W13, W13, W16
+..text:0000000000018A18       EOR             W4, W5, W4
+..text:0000000000018A1C       MOV             W2, #0xC1D6
+..text:0000000000018A20       ADD             W13, W13, W4
+..text:0000000000018A24       LDR             W4, [SP,#0x170+var_2C]
+..text:0000000000018A28       ADD             W3, W3, W1
+..text:0000000000018A2C       MOVK            W2, #0xCA62,LSL#16
+..text:0000000000018A30       EXTR            W1, W3, W3, #0x1B
+..text:0000000000018A34       EOR             W5, W17, W14
+..text:0000000000018A38       ADD             W2, W4, W2
+..text:0000000000018A3C       LDR             W6, [SP,#0x170+var_28]
+..text:0000000000018A40       MOV             W4, #0xC1D6
+..text:0000000000018A44       EXTR            W16, W3, W3, #2
+..text:0000000000018A48       ADD             W13, W13, W1
+..text:0000000000018A4C       EOR             W3, W5, W3
+..text:0000000000018A50       ADD             W2, W2, W15
+..text:0000000000018A54       MOVK            W4, #0xCA62,LSL#16
+..text:0000000000018A58       EXTR            W15, W13, W13, #2
+..text:0000000000018A5C       EXTR            W1, W13, W13, #0x1B
+..text:0000000000018A60       ADD             W2, W2, W3
+..text:0000000000018A64       ADD             W6, W6, W4
+..text:0000000000018A68       MOV             W3, #0xC1D6
+..text:0000000000018A6C       EOR             W4, W16, W17
+..text:0000000000018A70       LDR             W5, [SP,#0x170+var_24]
+..text:0000000000018A74       ADD             W2, W2, W1
+..text:0000000000018A78       EOR             W13, W4, W13
+..text:0000000000018A7C       MOVK            W3, #0xCA62,LSL#16
+..text:0000000000018A80       EOR             W4, W15, W16
+..text:0000000000018A84       EXTR            W1, W2, W2, #0x1B
+..text:0000000000018A88       ADD             W6, W6, W14
+..text:0000000000018A8C       ADD             W5, W5, W3
+..text:0000000000018A90       EXTR            W14, W2, W2, #2
+..text:0000000000018A94       MOV             W3, #0xC1D6
+..text:0000000000018A98       EOR             W2, W4, W2
+..text:0000000000018A9C       LDR             W4, [SP,#0x170+var_20]
+..text:0000000000018AA0       ADD             W6, W6, W13
+..text:0000000000018AA4       MOVK            W3, #0xCA62,LSL#16
+..text:0000000000018AA8       ADD             W6, W6, W1
+..text:0000000000018AAC       ADD             W4, W4, W3
+..text:0000000000018AB0       ADD             W5, W5, W17
+..text:0000000000018AB4       EOR             W3, W14, W15
+..text:0000000000018AB8       EXTR            W13, W6, W6, #2
+..text:0000000000018ABC       ADD             W5, W5, W2
+..text:0000000000018AC0       MOV             W1, #0xC1D6
+..text:0000000000018AC4       EXTR            W2, W6, W6, #0x1B
+..text:0000000000018AC8       EOR             W6, W3, W6
+..text:0000000000018ACC       LDR             W3, [SP,#0x170+var_1C]
+..text:0000000000018AD0       MOVK            W1, #0xCA62,LSL#16
+..text:0000000000018AD4       ADD             W5, W5, W2
+..text:0000000000018AD8       ADD             W4, W4, W16
+..text:0000000000018ADC       ADD             W3, W3, W1
+..text:0000000000018AE0       EOR             W16, W13, W14
+..text:0000000000018AE4       EXTR            W2, W5, W5, #0x1B
+..text:0000000000018AE8       ADD             W4, W4, W6
+..text:0000000000018AEC       ADD             W3, W3, W15
+..text:0000000000018AF0       EXTR            W6, W5, W5, #2
+..text:0000000000018AF4       EOR             W5, W16, W5
+..text:0000000000018AF8       ADD             W3, W3, W5
+..text:0000000000018AFC       MOV             W1, #0xC1D6
+..text:0000000000018B00       LDR             W5, [SP,#0x170+var_18]
+..text:0000000000018B04       MOVK            W1, #0xCA62,LSL#16
+..text:0000000000018B08       EOR             W16, W6, W13
+..text:0000000000018B0C       ADD             W4, W4, W2
+..text:0000000000018B10       ADD             W1, W5, W1
+..text:0000000000018B14       EXTR            W2, W4, W4, #0x1B
+..text:0000000000018B18       EXTR            W5, W4, W4, #2
+..text:0000000000018B1C       ADD             W1, W1, W14
+..text:0000000000018B20       EOR             W4, W16, W4
+..text:0000000000018B24       MOV             W15, #0xC1D6
+..text:0000000000018B28       ADD             W1, W1, W4
+..text:0000000000018B2C       LDR             W4, [SP,#0x170+var_14]
+..text:0000000000018B30       MOVK            W15, #0xCA62,LSL#16
+..text:0000000000018B34       ADD             W3, W3, W2
+..text:0000000000018B38       ADD             W15, W4, W15
+..text:0000000000018B3C       EOR             W4, W5, W6
+..text:0000000000018B40       EXTR            W16, W3, W3, #2
+..text:0000000000018B44       EXTR            W2, W3, W3, #0x1B
+..text:0000000000018B48       ADD             W13, W15, W13
+..text:0000000000018B4C       EOR             W3, W4, W3
+..text:0000000000018B50       ADD             W1, W1, W2
+..text:0000000000018B54       ADD             W3, W13, W3
+..text:0000000000018B58       MOV             W14, #0xC1D6
+..text:0000000000018B5C       LDR             W13, [SP,#0x170+var_10]
+..text:0000000000018B60       EXTR            W2, W1, W1, #0x1B
+..text:0000000000018B64       MOVK            W14, #0xCA62,LSL#16
+..text:0000000000018B68       MOV             W4, #0xC1D6
+..text:0000000000018B6C       ADD             W3, W3, W2
+..text:0000000000018B70       ADD             W14, W13, W14
+..text:0000000000018B74       EOR             W15, W16, W5
+..text:0000000000018B78       MOVK            W4, #0xCA62,LSL#16
+..text:0000000000018B7C       LDR             W2, [SP,#0x170+var_C]
+..text:0000000000018B80       EXTR            W13, W1, W1, #2
+..text:0000000000018B84       ADD             W6, W14, W6
+..text:0000000000018B88       ADD             W12, W12, W4
+..text:0000000000018B8C       EOR             W1, W15, W1
+..text:0000000000018B90       ADD             W1, W6, W1
+..text:0000000000018B94       ADD             W2, W12, W2
+..text:0000000000018B98       EXTR            W6, W3, W3, #0x1B
+..text:0000000000018B9C       EOR             W4, W13, W16
+..text:0000000000018BA0       ADD             W1, W1, W6
+..text:0000000000018BA4       ADD             W2, W2, W5
+..text:0000000000018BA8       EOR             W4, W4, W3
+..text:0000000000018BAC       EXTR            W5, W1, W1, #0x1B
+..text:0000000000018BB0       ADD             W2, W2, W4
+..text:0000000000018BB4       EXTR            W3, W3, W3, #2
+..text:0000000000018BB8       ADD             W2, W2, W5
+..text:0000000000018BBC       ADD             W9, W1, W9
+..text:0000000000018BC0       STR             W2, [X7,#8]
+..text:0000000000018BC4       ADD             W0, W3, W0
+..text:0000000000018BC8       STR             W9, [X7,#0xC]
+..text:0000000000018BCC       ADD             W8, W13, W8
+..text:0000000000018BD0       STR             W0, [X7,#0x10]
+..text:0000000000018BD4       ADD             W11, W16, W11
+..text:0000000000018BD8       STR             W8, [X7,#0x14]
+..text:0000000000018BDC       MOV             W0, #0
+..text:0000000000018BE0       STR             W11, [X7,#0x18]
+..text:0000000000018BE4       LDR             X2, [SP,#0x170+var_8]
+..text:0000000000018BE8       LDR             X10, [X10,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000018BEC       LDR             X1, [X10]
+..text:0000000000018BF0       CMP             X2, X1
+..text:0000000000018BF4       B.NE            loc_18C08
+..text:0000000000018BF8       LDP             X19, X20, [SP,#0x170+var_170]
+..text:0000000000018BFC       LDP             X21, X30, [SP,#0x170+var_160]
+..text:0000000000018C00       ADD             SP, SP, #0x170
+..text:0000000000018C04       RET
+..text:0000000000018C08       BL              .__stack_chk_fail

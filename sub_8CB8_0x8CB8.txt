@@ -1,0 +1,69 @@
+Function: sub_8CB8 (0x8CB8)
+Architecture: 64-bit
+Segment range: 0x8CB8 - 0x8DB8
+----------------------------------------
+
+..text:0000000000008CB8       SUB             SP, SP, #0x40
+..text:0000000000008CBC       STP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000008CC0       ADRP            X21, #__stack_chk_guard_ptr@PAGE
+..text:0000000000008CC4       MOV             X22, X2
+..text:0000000000008CC8       STP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000008CCC       STP             X23, X30, [SP,#0x40+var_20]
+..text:0000000000008CD0       LDR             X3, [X21,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000008CD4       ADD             X2, SP, #0x40+byte_count
+..text:0000000000008CD8       MOV             X20, X0
+..text:0000000000008CDC       MOV             W19, W1
+..text:0000000000008CE0       LDR             X3, [X3]
+..text:0000000000008CE4       STR             X3, [SP,#0x40+byte_count+4]
+..text:0000000000008CE8       BL              sub_C9E0
+..text:0000000000008CEC       CBZ             W0, loc_8D18
+..text:0000000000008CF0       LDR             X21, [X21,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000008CF4       LDR             X2, [SP,#0x40+byte_count+4]
+..text:0000000000008CF8       LDR             X1, [X21]
+..text:0000000000008CFC       CMP             X2, X1
+..text:0000000000008D00       B.NE            loc_8DB4
+..text:0000000000008D04       LDP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000008D08       LDP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000008D0C       LDP             X23, X30, [SP,#0x40+var_20]
+..text:0000000000008D10       ADD             SP, SP, #0x40 ; '@'
+..text:0000000000008D14       RET
+..text:0000000000008D18       LDRSW           X0, [SP,#0x40+byte_count]; byte_count
+..text:0000000000008D1C       BL              .malloc
+..text:0000000000008D20       MOV             X23, X0
+..text:0000000000008D24       CBZ             X0, loc_8DAC
+..text:0000000000008D28       MOV             W2, W19
+..text:0000000000008D2C       MOV             X0, X20
+..text:0000000000008D30       MOV             X1, X23
+..text:0000000000008D34       BL              sub_F374
+..text:0000000000008D38       MOV             W19, W0
+..text:0000000000008D3C       CBNZ            W0, loc_8D9C
+..text:0000000000008D40       LDR             W0, [SP,#0x40+byte_count]
+..text:0000000000008D44       MOV             X20, X23
+..text:0000000000008D48       CMP             W0, WZR
+..text:0000000000008D4C       B.GT            loc_8D68
+..text:0000000000008D50       B               loc_8D8C
+..text:0000000000008D54       LDR             W3, [SP,#0x40+byte_count]
+..text:0000000000008D58       ADD             W19, W19, #1
+..text:0000000000008D5C       ADD             X20, X20, #1
+..text:0000000000008D60       CMP             W3, W19
+..text:0000000000008D64       B.LE            loc_8D8C
+..text:0000000000008D68       LDRB            W0, [X20]; c
+..text:0000000000008D6C       MOV             X1, X22; stream
+..text:0000000000008D70       BL              .fputc
+..text:0000000000008D74       CMN             W0, #1
+..text:0000000000008D78       B.NE            loc_8D54
+..text:0000000000008D7C       MOV             X0, X23; p
+..text:0000000000008D80       BL              .free
+..text:0000000000008D84       MOV             W0, #0xFFFFFFFD
+..text:0000000000008D88       B               loc_8CF0
+..text:0000000000008D8C       MOV             X0, X23; p
+..text:0000000000008D90       BL              .free
+..text:0000000000008D94       MOV             W0, #0
+..text:0000000000008D98       B               loc_8CF0
+..text:0000000000008D9C       MOV             X0, X23; p
+..text:0000000000008DA0       BL              .free
+..text:0000000000008DA4       MOV             W0, W19
+..text:0000000000008DA8       B               loc_8CF0
+..text:0000000000008DAC       MOV             W0, #0xFFFFFFFE
+..text:0000000000008DB0       B               loc_8CF0
+..text:0000000000008DB4       BL              .__stack_chk_fail

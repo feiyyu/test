@@ -1,0 +1,116 @@
+Function: sub_13F9C (0x13F9C)
+Architecture: 64-bit
+Segment range: 0x13F9C - 0x14158
+----------------------------------------
+
+..text:0000000000013F9C       SUB             SP, SP, #1,LSL#12
+..text:0000000000013FA0       SUB             SP, SP, #0x60
+..text:0000000000013FA4       SUB             SP, SP, #0x60
+..text:0000000000013FA8       STR             D8, [SP,#0x10C0+var_1070]
+..text:0000000000013FAC       MOVI            V8.2S, #0
+..text:0000000000013FB0       STP             X25, X26, [SP,#0x10C0+var_1090]
+..text:0000000000013FB4       ADRP            X25, #__stack_chk_guard_ptr@PAGE
+..text:0000000000013FB8       ADRP            X26, #aCast5Encrypt@PAGE; "CAST5 Encrypt"
+..text:0000000000013FBC       STP             X23, X24, [SP,#0x10C0+var_10A0]
+..text:0000000000013FC0       STP             X19, X20, [SP,#0x10C0+var_10C0]
+..text:0000000000013FC4       LDR             X0, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000013FC8       ADRP            X23, #unk_35810@PAGE
+..text:0000000000013FCC       STP             X21, X22, [SP,#0x10C0+var_10B0]
+..text:0000000000013FD0       STP             X27, X30, [SP,#0x10C0+var_1080]
+..text:0000000000013FD4       ADD             X19, SP, #0x10C0+var_1060
+..text:0000000000013FD8       ADD             X23, X23, #unk_35810@PAGEOFF
+..text:0000000000013FDC       LDR             X0, [X0]
+..text:0000000000013FE0       ADD             X23, X23, #0xF14
+..text:0000000000013FE4       MOV             W24, #0
+..text:0000000000013FE8       ADD             X21, SP, #0x10C0+var_1050
+..text:0000000000013FEC       ADD             X27, X19, #8
+..text:0000000000013FF0       ADD             X26, X26, #aCast5Encrypt@PAGEOFF; "CAST5 Encrypt"
+..text:0000000000013FF4       STR             X0, [SP,#0x10C0+var_8]
+..text:0000000000013FF8       LDUR            W1, [X23,#-0x14]
+..text:0000000000013FFC       SUB             X0, X23, #0x10
+..text:0000000000014000       MOV             W2, #0
+..text:0000000000014004       MOV             X3, X21
+..text:0000000000014008       BL              sub_1340C
+..text:000000000001400C       CBNZ            W0, loc_1414C
+..text:0000000000014010       MOV             X1, X19
+..text:0000000000014014       MOV             X2, X21
+..text:0000000000014018       MOV             X0, X23
+..text:000000000001401C       BL              sub_13BF4
+..text:0000000000014020       MOV             X1, X27
+..text:0000000000014024       MOV             X2, X21
+..text:0000000000014028       MOV             X0, X19
+..text:000000000001402C       BL              sub_13DC8
+..text:0000000000014030       MOV             X1, #8
+..text:0000000000014034       MOV             X0, X19
+..text:0000000000014038       ADD             X2, X23, X1
+..text:000000000001403C       MOV             X3, X1
+..text:0000000000014040       MOV             X4, X26
+..text:0000000000014044       MOV             W5, W24
+..text:0000000000014048       BL              sub_216AC
+..text:000000000001404C       CBNZ            W0, loc_14144
+..text:0000000000014050       MOV             X1, #8
+..text:0000000000014054       ADRP            X4, #aCast5Decrypt@PAGE; "CAST5 Decrypt"
+..text:0000000000014058       MOV             X0, X27
+..text:000000000001405C       MOV             X2, X23
+..text:0000000000014060       MOV             X3, X1
+..text:0000000000014064       ADD             X4, X4, #aCast5Decrypt@PAGEOFF; "CAST5 Decrypt"
+..text:0000000000014068       MOV             W5, W24
+..text:000000000001406C       BL              sub_216AC
+..text:0000000000014070       MOV             W22, W0
+..text:0000000000014074       CBNZ            W0, loc_14144
+..text:0000000000014078       STR             D8, [X19]
+..text:000000000001407C       MOV             W20, #0x3E8
+..text:0000000000014080       MOV             X0, X19
+..text:0000000000014084       MOV             X1, X19
+..text:0000000000014088       MOV             X2, X21
+..text:000000000001408C       BL              sub_13BF4
+..text:0000000000014090       SUBS            W20, W20, #1
+..text:0000000000014094       B.NE            loc_14080
+..text:0000000000014098       MOV             W20, #0x3E8
+..text:000000000001409C       MOV             X0, X19
+..text:00000000000140A0       MOV             X1, X19
+..text:00000000000140A4       MOV             X2, X21
+..text:00000000000140A8       BL              sub_13DC8
+..text:00000000000140AC       SUBS            W20, W20, #1
+..text:00000000000140B0       B.NE            loc_1409C
+..text:00000000000140B4       LDRB            W0, [X19]
+..text:00000000000140B8       CBNZ            W0, loc_14144
+..text:00000000000140BC       LDRB            W0, [X19,#1]
+..text:00000000000140C0       CBNZ            W0, loc_14144
+..text:00000000000140C4       LDRB            W0, [X19,#2]
+..text:00000000000140C8       CBNZ            W0, loc_14144
+..text:00000000000140CC       LDRB            W0, [X19,#3]
+..text:00000000000140D0       CBNZ            W0, loc_14144
+..text:00000000000140D4       LDRB            W0, [X19,#4]
+..text:00000000000140D8       CBNZ            W0, loc_14144
+..text:00000000000140DC       LDRB            W0, [X19,#5]
+..text:00000000000140E0       CBNZ            W0, loc_14144
+..text:00000000000140E4       LDRB            W0, [X19,#6]
+..text:00000000000140E8       CBNZ            W0, loc_14144
+..text:00000000000140EC       LDRB            W0, [X19,#7]
+..text:00000000000140F0       CBNZ            W0, loc_14144
+..text:00000000000140F4       ADD             W24, W24, #1
+..text:00000000000140F8       ADD             X23, X23, #0x24 ; '$'
+..text:00000000000140FC       CMP             W24, #3
+..text:0000000000014100       B.NE            loc_13FF8
+..text:0000000000014104       LDR             X1, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000014108       MOV             W0, W22
+..text:000000000001410C       LDR             X2, [SP,#0x10C0+var_8]
+..text:0000000000014110       LDR             X1, [X1]
+..text:0000000000014114       CMP             X2, X1
+..text:0000000000014118       B.NE            loc_14154
+..text:000000000001411C       LDP             X19, X20, [SP,#0x10C0+var_10C0]
+..text:0000000000014120       LDP             X21, X22, [SP,#0x10C0+var_10B0]
+..text:0000000000014124       LDP             X23, X24, [SP,#0x10C0+var_10A0]
+..text:0000000000014128       LDP             X25, X26, [SP,#0x10C0+var_1090]
+..text:000000000001412C       LDP             X27, X30, [SP,#0x10C0+var_1080]
+..text:0000000000014130       LDR             D8, [SP,#0x10C0+var_1070]
+..text:0000000000014134       ADD             SP, SP, #0x60 ; '`'
+..text:0000000000014138       ADD             SP, SP, #0x60 ; '`'
+..text:000000000001413C       ADD             SP, SP, #1,LSL#12
+..text:0000000000014140       RET
+..text:0000000000014144       MOV             W22, #5
+..text:0000000000014148       B               loc_14104
+..text:000000000001414C       MOV             W22, W0
+..text:0000000000014150       B               loc_14104
+..text:0000000000014154       BL              .__stack_chk_fail

@@ -1,0 +1,301 @@
+Function: sub_22E64 (0x22E64)
+Architecture: 64-bit
+Segment range: 0x22E64 - 0x23304
+----------------------------------------
+
+..text:0000000000022E64       SUB             SP, SP, #0x70
+..text:0000000000022E68       CMP             X2, XZR
+..text:0000000000022E6C       CSET            W8, EQ
+..text:0000000000022E70       CMP             X6, XZR
+..text:0000000000022E74       CSET            W7, EQ
+..text:0000000000022E78       STP             X19, X20, [SP,#0x70+var_70]
+..text:0000000000022E7C       STP             X21, X22, [SP,#0x70+var_60]
+..text:0000000000022E80       STP             X23, X24, [SP,#0x70+var_50]
+..text:0000000000022E84       STP             X25, X30, [SP,#0x70+var_40]
+..text:0000000000022E88       ORR             W7, W8, W7
+..text:0000000000022E8C       MOV             W20, W0
+..text:0000000000022E90       MOV             X19, X1
+..text:0000000000022E94       CBNZ            W7, loc_22EF8
+..text:0000000000022E98       CBZ             X1, loc_22EF8
+..text:0000000000022E9C       STR             X6, [SP,#0x70+var_8]
+..text:0000000000022EA0       STR             X5, [SP,#0x70+var_10]
+..text:0000000000022EA4       STR             X4, [SP,#0x70+var_18]
+..text:0000000000022EA8       STR             X3, [SP,#0x70+var_20]
+..text:0000000000022EAC       STR             X2, [SP,#0x70+var_28]
+..text:0000000000022EB0       BL              sub_1F964
+..text:0000000000022EB4       CBNZ            W0, loc_22EFC
+..text:0000000000022EB8       LDR             X5, [SP,#0x70+var_10]
+..text:0000000000022EBC       ADRP            X23, #off_59FA8@PAGE
+..text:0000000000022EC0       SXTW            X21, W20
+..text:0000000000022EC4       LDR             X2, [SP,#0x70+var_28]
+..text:0000000000022EC8       ANDS            W0, W5, #0xFF
+..text:0000000000022ECC       LDR             X3, [SP,#0x70+var_20]
+..text:0000000000022ED0       LDR             X4, [SP,#0x70+var_18]
+..text:0000000000022ED4       LDR             X6, [SP,#0x70+var_8]
+..text:0000000000022ED8       B.EQ            loc_22F14
+..text:0000000000022EDC       LDR             X7, [X23,#off_59FA8@PAGEOFF]
+..text:0000000000022EE0       ADD             X1, X21, X21,LSL#1
+..text:0000000000022EE4       ADD             X1, X7, X1,LSL#6
+..text:0000000000022EE8       LDR             W1, [X1,#0x14]
+..text:0000000000022EEC       STR             W0, [X6,#0x10]
+..text:0000000000022EF0       CMP             W1, W0
+..text:0000000000022EF4       B.GE            loc_22F2C
+..text:0000000000022EF8       MOV             W0, #0x10
+..text:0000000000022EFC       LDP             X19, X20, [SP,#0x70+var_70]
+..text:0000000000022F00       LDP             X21, X22, [SP,#0x70+var_60]
+..text:0000000000022F04       LDP             X23, X24, [SP,#0x70+var_50]
+..text:0000000000022F08       LDP             X25, X30, [SP,#0x70+var_40]
+..text:0000000000022F0C       ADD             SP, SP, #0x70 ; 'p'
+..text:0000000000022F10       RET
+..text:0000000000022F14       LDR             X1, [X23,#off_59FA8@PAGEOFF]
+..text:0000000000022F18       ADD             X0, X21, X21,LSL#1
+..text:0000000000022F1C       ADD             X0, X1, X0,LSL#6
+..text:0000000000022F20       LDR             W0, [X0,#0x14]
+..text:0000000000022F24       STR             W0, [X6,#0x10]
+..text:0000000000022F28       MOV             W1, W0
+..text:0000000000022F2C       AND             W22, W5, #0x1000
+..text:0000000000022F30       TBZ             W5, #0xC, loc_22F3C
+..text:0000000000022F34       SUB             W0, W1, W0
+..text:0000000000022F38       STR             W0, [X6,#0x10]
+..text:0000000000022F3C       LDR             X1, [X23,#off_59FA8@PAGEOFF]
+..text:0000000000022F40       ADD             X24, X21, X21,LSL#1
+..text:0000000000022F44       ADD             X25, X6, #0x118
+..text:0000000000022F48       MOV             X0, X2
+..text:0000000000022F4C       ADD             X24, X1, X24,LSL#6
+..text:0000000000022F50       MOV             W2, W4
+..text:0000000000022F54       MOV             W1, W3
+..text:0000000000022F58       MOV             X3, X25
+..text:0000000000022F5C       STR             X5, [SP,#0x70+var_20]
+..text:0000000000022F60       LDR             X4, [X24,#0x20]
+..text:0000000000022F64       STR             X6, [SP,#0x70+var_28]
+..text:0000000000022F68       BLR             X4
+..text:0000000000022F6C       MOV             W1, W0
+..text:0000000000022F70       CBNZ            W1, loc_22EFC
+..text:0000000000022F74       LDR             X6, [SP,#0x70+var_28]
+..text:0000000000022F78       LDR             W8, [X24,#0x14]
+..text:0000000000022F7C       LDR             X5, [SP,#0x70+var_20]
+..text:0000000000022F80       STR             W8, [X6,#4]
+..text:0000000000022F84       CMP             W8, WZR
+..text:0000000000022F88       STR             W20, [X6]
+..text:0000000000022F8C       STR             W1, [X6,#8]
+..text:0000000000022F90       STR             W22, [X6,#0xC]
+..text:0000000000022F94       B.LE            loc_232FC
+..text:0000000000022F98       ADD             X4, X19, #0x10
+..text:0000000000022F9C       ADD             X0, X6, #0x14
+..text:0000000000022FA0       CMP             X4, X0
+..text:0000000000022FA4       ADD             X3, X6, #0x24 ; '$'
+..text:0000000000022FA8       CSET            W2, LS
+..text:0000000000022FAC       CMP             X19, X3
+..text:0000000000022FB0       CSET            W1, CS
+..text:0000000000022FB4       ORR             W1, W2, W1
+..text:0000000000022FB8       CBZ             W1, loc_232D4
+..text:0000000000022FBC       CMP             W8, #0xF
+..text:0000000000022FC0       B.LS            loc_232D4
+..text:0000000000022FC4       LDR             Q0, [X19]
+..text:0000000000022FC8       SUB             W2, W8, #0x10
+..text:0000000000022FCC       LSR             W2, W2, #4
+..text:0000000000022FD0       ADD             W2, W2, #1
+..text:0000000000022FD4       CMP             W2, #1
+..text:0000000000022FD8       LSL             W1, W2, #4
+..text:0000000000022FDC       STR             Q0, [X0]
+..text:0000000000022FE0       B.EQ            loc_2307C
+..text:0000000000022FE4       LDR             Q0, [X4]
+..text:0000000000022FE8       CMP             W2, #2
+..text:0000000000022FEC       STR             Q0, [X3]
+..text:0000000000022FF0       B.EQ            loc_2307C
+..text:0000000000022FF4       ADD             X3, X19, #0x20 ; ' '
+..text:0000000000022FF8       ADD             X4, X6, #0x34 ; '4'
+..text:0000000000022FFC       CMP             W2, #3
+..text:0000000000023000       LDR             Q0, [X3]
+..text:0000000000023004       STR             Q0, [X4]
+..text:0000000000023008       B.EQ            loc_2307C
+..text:000000000002300C       ADD             X3, X19, #0x30 ; '0'
+..text:0000000000023010       ADD             X4, X6, #0x44 ; 'D'
+..text:0000000000023014       CMP             W2, #4
+..text:0000000000023018       LDR             Q0, [X3]
+..text:000000000002301C       STR             Q0, [X4]
+..text:0000000000023020       B.EQ            loc_2307C
+..text:0000000000023024       ADD             X3, X19, #0x40 ; '@'
+..text:0000000000023028       ADD             X4, X6, #0x54 ; 'T'
+..text:000000000002302C       CMP             W2, #5
+..text:0000000000023030       LDR             Q0, [X3]
+..text:0000000000023034       STR             Q0, [X4]
+..text:0000000000023038       B.EQ            loc_2307C
+..text:000000000002303C       ADD             X3, X19, #0x50 ; 'P'
+..text:0000000000023040       ADD             X4, X6, #0x64 ; 'd'
+..text:0000000000023044       CMP             W2, #6
+..text:0000000000023048       LDR             Q0, [X3]
+..text:000000000002304C       STR             Q0, [X4]
+..text:0000000000023050       B.EQ            loc_2307C
+..text:0000000000023054       ADD             X3, X19, #0x60 ; '`'
+..text:0000000000023058       ADD             X4, X6, #0x74 ; 't'
+..text:000000000002305C       CMP             W2, #7
+..text:0000000000023060       LDR             Q0, [X3]
+..text:0000000000023064       STR             Q0, [X4]
+..text:0000000000023068       B.EQ            loc_2307C
+..text:000000000002306C       ADD             X2, X19, #0x70 ; 'p'
+..text:0000000000023070       ADD             X3, X6, #0x84
+..text:0000000000023074       LDR             Q0, [X2]
+..text:0000000000023078       STR             Q0, [X3]
+..text:000000000002307C       CMP             W8, W1
+..text:0000000000023080       B.EQ            loc_2321C
+..text:0000000000023084       SXTW            X3, W1
+..text:0000000000023088       ADD             W2, W1, #1
+..text:000000000002308C       ADD             X4, X6, X3
+..text:0000000000023090       CMP             W8, W2
+..text:0000000000023094       LDRB            W3, [X19,X3]
+..text:0000000000023098       STRB            W3, [X4,#0x14]
+..text:000000000002309C       B.LE            loc_2321C
+..text:00000000000230A0       SXTW            X2, W2
+..text:00000000000230A4       ADD             W3, W1, #2
+..text:00000000000230A8       ADD             X4, X6, X2
+..text:00000000000230AC       CMP             W8, W3
+..text:00000000000230B0       LDRB            W2, [X19,X2]
+..text:00000000000230B4       STRB            W2, [X4,#0x14]
+..text:00000000000230B8       B.LE            loc_2321C
+..text:00000000000230BC       SXTW            X3, W3
+..text:00000000000230C0       ADD             W2, W1, #3
+..text:00000000000230C4       ADD             X4, X6, X3
+..text:00000000000230C8       CMP             W8, W2
+..text:00000000000230CC       LDRB            W3, [X19,X3]
+..text:00000000000230D0       STRB            W3, [X4,#0x14]
+..text:00000000000230D4       B.LE            loc_2321C
+..text:00000000000230D8       SXTW            X2, W2
+..text:00000000000230DC       ADD             W3, W1, #4
+..text:00000000000230E0       ADD             X4, X6, X2
+..text:00000000000230E4       CMP             W8, W3
+..text:00000000000230E8       LDRB            W2, [X19,X2]
+..text:00000000000230EC       STRB            W2, [X4,#0x14]
+..text:00000000000230F0       B.LE            loc_2321C
+..text:00000000000230F4       SXTW            X3, W3
+..text:00000000000230F8       ADD             W2, W1, #5
+..text:00000000000230FC       ADD             X4, X6, X3
+..text:0000000000023100       CMP             W8, W2
+..text:0000000000023104       LDRB            W3, [X19,X3]
+..text:0000000000023108       STRB            W3, [X4,#0x14]
+..text:000000000002310C       B.LE            loc_2321C
+..text:0000000000023110       SXTW            X2, W2
+..text:0000000000023114       ADD             W3, W1, #6
+..text:0000000000023118       ADD             X4, X6, X2
+..text:000000000002311C       CMP             W8, W3
+..text:0000000000023120       LDRB            W2, [X19,X2]
+..text:0000000000023124       STRB            W2, [X4,#0x14]
+..text:0000000000023128       B.LE            loc_2321C
+..text:000000000002312C       SXTW            X3, W3
+..text:0000000000023130       ADD             W2, W1, #7
+..text:0000000000023134       ADD             X4, X6, X3
+..text:0000000000023138       CMP             W8, W2
+..text:000000000002313C       LDRB            W3, [X19,X3]
+..text:0000000000023140       STRB            W3, [X4,#0x14]
+..text:0000000000023144       B.LE            loc_2321C
+..text:0000000000023148       SXTW            X2, W2
+..text:000000000002314C       ADD             W3, W1, #8
+..text:0000000000023150       ADD             X4, X6, X2
+..text:0000000000023154       CMP             W8, W3
+..text:0000000000023158       LDRB            W2, [X19,X2]
+..text:000000000002315C       STRB            W2, [X4,#0x14]
+..text:0000000000023160       B.LE            loc_2321C
+..text:0000000000023164       SXTW            X3, W3
+..text:0000000000023168       ADD             W2, W1, #9
+..text:000000000002316C       ADD             X4, X6, X3
+..text:0000000000023170       CMP             W8, W2
+..text:0000000000023174       LDRB            W3, [X19,X3]
+..text:0000000000023178       STRB            W3, [X4,#0x14]
+..text:000000000002317C       B.LE            loc_2321C
+..text:0000000000023180       SXTW            X2, W2
+..text:0000000000023184       ADD             W3, W1, #0xA
+..text:0000000000023188       ADD             X4, X6, X2
+..text:000000000002318C       CMP             W8, W3
+..text:0000000000023190       LDRB            W2, [X19,X2]
+..text:0000000000023194       STRB            W2, [X4,#0x14]
+..text:0000000000023198       B.LE            loc_2321C
+..text:000000000002319C       SXTW            X3, W3
+..text:00000000000231A0       ADD             W2, W1, #0xB
+..text:00000000000231A4       ADD             X4, X6, X3
+..text:00000000000231A8       CMP             W8, W2
+..text:00000000000231AC       LDRB            W3, [X19,X3]
+..text:00000000000231B0       STRB            W3, [X4,#0x14]
+..text:00000000000231B4       B.LE            loc_2321C
+..text:00000000000231B8       SXTW            X2, W2
+..text:00000000000231BC       ADD             W3, W1, #0xC
+..text:00000000000231C0       ADD             X4, X6, X2
+..text:00000000000231C4       CMP             W8, W3
+..text:00000000000231C8       LDRB            W2, [X19,X2]
+..text:00000000000231CC       STRB            W2, [X4,#0x14]
+..text:00000000000231D0       B.LE            loc_2321C
+..text:00000000000231D4       SXTW            X3, W3
+..text:00000000000231D8       ADD             W2, W1, #0xD
+..text:00000000000231DC       ADD             X4, X6, X3
+..text:00000000000231E0       CMP             W8, W2
+..text:00000000000231E4       LDRB            W3, [X19,X3]
+..text:00000000000231E8       STRB            W3, [X4,#0x14]
+..text:00000000000231EC       B.LE            loc_2321C
+..text:00000000000231F0       SXTW            X2, W2
+..text:00000000000231F4       ADD             W1, W1, #0xE
+..text:00000000000231F8       ADD             X3, X6, X2
+..text:00000000000231FC       CMP             W8, W1
+..text:0000000000023200       LDRB            W2, [X19,X2]
+..text:0000000000023204       STRB            W2, [X3,#0x14]
+..text:0000000000023208       B.LE            loc_2321C
+..text:000000000002320C       SXTW            X1, W1
+..text:0000000000023210       ADD             X2, X6, X1
+..text:0000000000023214       LDRB            W1, [X19,X1]
+..text:0000000000023218       STRB            W1, [X2,#0x14]
+..text:000000000002321C       TBZ             W5, #0xD, loc_23274
+..text:0000000000023220       CBNZ            W22, loc_23294
+..text:0000000000023224       LDR             W1, [X6,#0x10]
+..text:0000000000023228       CMP             W1, WZR
+..text:000000000002322C       B.LE            loc_23274
+..text:0000000000023230       LDRB            W2, [X6,#0x14]
+..text:0000000000023234       ADD             W2, W2, #1
+..text:0000000000023238       UXTB            W2, W2
+..text:000000000002323C       STRB            W2, [X6,#0x14]
+..text:0000000000023240       CBNZ            W2, loc_23274
+..text:0000000000023244       SUB             W2, W1, #1
+..text:0000000000023248       ADD             X4, X6, #0x15
+..text:000000000002324C       ADD             X2, X2, #0x15
+..text:0000000000023250       ADD             X2, X6, X2
+..text:0000000000023254       B               loc_2326C
+..text:0000000000023258       LDRB            W1, [X4]
+..text:000000000002325C       ADD             W1, W1, #1
+..text:0000000000023260       UXTB            W1, W1
+..text:0000000000023264       STRB            W1, [X4],#1
+..text:0000000000023268       CBNZ            W1, loc_23274
+..text:000000000002326C       CMP             X4, X2
+..text:0000000000023270       B.NE            loc_23258
+..text:0000000000023274       LDR             X23, [X23,#off_59FA8@PAGEOFF]
+..text:0000000000023278       ADD             X21, X21, X21,LSL#1
+..text:000000000002327C       ADD             X1, X6, #0x94
+..text:0000000000023280       MOV             X2, X25
+..text:0000000000023284       ADD             X21, X23, X21,LSL#6
+..text:0000000000023288       LDR             X3, [X21,#0x28]
+..text:000000000002328C       BLR             X3
+..text:0000000000023290       B               loc_22EFC
+..text:0000000000023294       LDR             W3, [X6,#0x10]
+..text:0000000000023298       SUB             W8, W8, #1
+..text:000000000002329C       CMP             W8, W3
+..text:00000000000232A0       B.LT            loc_23274
+..text:00000000000232A4       ADD             X2, X6, W8,SXTW
+..text:00000000000232A8       B               loc_232BC
+..text:00000000000232AC       SUB             W8, W8, #1
+..text:00000000000232B0       ADD             X2, X6, W8,SXTW
+..text:00000000000232B4       CMP             W8, W3
+..text:00000000000232B8       B.LT            loc_23274
+..text:00000000000232BC       LDRB            W1, [X2,#0x14]
+..text:00000000000232C0       ADD             W1, W1, #1
+..text:00000000000232C4       UXTB            W1, W1
+..text:00000000000232C8       STRB            W1, [X2,#0x14]
+..text:00000000000232CC       CBZ             W1, loc_232AC
+..text:00000000000232D0       B               loc_23274
+..text:00000000000232D4       SUB             W9, W8, #1
+..text:00000000000232D8       MOV             X4, #0
+..text:00000000000232DC       ADD             X9, X9, #1
+..text:00000000000232E0       ADD             X1, X6, X4
+..text:00000000000232E4       LDRB            W7, [X19,X4]
+..text:00000000000232E8       ADD             X4, X4, #1
+..text:00000000000232EC       CMP             X4, X9
+..text:00000000000232F0       STRB            W7, [X1,#0x14]
+..text:00000000000232F4       B.NE            loc_232E0
+..text:00000000000232F8       B               loc_2321C
+..text:00000000000232FC       ADD             X0, X6, #0x14
+..text:0000000000023300       B               loc_2321C

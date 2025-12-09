@@ -1,0 +1,74 @@
+Function: sub_18E7C (0x18E7C)
+Architecture: 64-bit
+Segment range: 0x18E7C - 0x18F90
+----------------------------------------
+
+..text:0000000000018E7C       SUB             SP, SP, #0x130
+..text:0000000000018E80       STP             X23, X24, [SP,#0x130+var_110]
+..text:0000000000018E84       ADRP            X23, #__stack_chk_guard_ptr@PAGE
+..text:0000000000018E88       ADRP            X24, #aSha1@PAGE; "SHA1"
+..text:0000000000018E8C       STP             X19, X20, [SP,#0x130+var_130]
+..text:0000000000018E90       STP             X21, X22, [SP,#0x130+var_120]
+..text:0000000000018E94       LDR             X0, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000018E98       ADRP            X20, #off_58AA8@PAGE; "abc"
+..text:0000000000018E9C       STP             X25, X30, [SP,#0x130+var_100]
+..text:0000000000018EA0       ADD             X20, X20, #off_58AA8@PAGEOFF; "abc"
+..text:0000000000018EA4       MOV             W22, #0
+..text:0000000000018EA8       LDR             X0, [X0]
+..text:0000000000018EAC       ADD             X20, X20, #8
+..text:0000000000018EB0       ADD             X19, SP, #0x130+var_F0
+..text:0000000000018EB4       ADD             X25, SP, #0x130+var_20
+..text:0000000000018EB8       ADD             X24, X24, #aSha1@PAGEOFF; "SHA1"
+..text:0000000000018EBC       STR             X0, [SP,#0x130+var_8]
+..text:0000000000018EC0       LDUR            X21, [X20,#-8]
+..text:0000000000018EC4       MOV             W8, #0x2301
+..text:0000000000018EC8       MOV             W7, #0xAB89
+..text:0000000000018ECC       MOV             W6, #0xDCFE
+..text:0000000000018ED0       MOV             W3, #0x5476
+..text:0000000000018ED4       MOV             W2, #0xE1F0
+..text:0000000000018ED8       MOVK            W3, #0x1032,LSL#16
+..text:0000000000018EDC       MOVK            W8, #0x6745,LSL#16
+..text:0000000000018EE0       MOVK            W7, #0xEFCD,LSL#16
+..text:0000000000018EE4       MOVK            W6, #0x98BA,LSL#16
+..text:0000000000018EE8       MOVK            W2, #0xC3D2,LSL#16
+..text:0000000000018EEC       MOV             X0, X21; char *
+..text:0000000000018EF0       STR             W3, [X19,#0x14]
+..text:0000000000018EF4       STR             W8, [X19,#8]
+..text:0000000000018EF8       STR             W7, [X19,#0xC]
+..text:0000000000018EFC       STR             W6, [X19,#0x10]
+..text:0000000000018F00       STR             W2, [X19,#0x18]
+..text:0000000000018F04       STR             WZR, [X19,#0x1C]
+..text:0000000000018F08       STR             XZR, [X19]
+..text:0000000000018F0C       BL              .strlen
+..text:0000000000018F10       MOV             X1, X21; src
+..text:0000000000018F14       MOV             X2, X0
+..text:0000000000018F18       MOV             X0, X19; int
+..text:0000000000018F1C       BL              sub_18C0C
+..text:0000000000018F20       MOV             X1, X25
+..text:0000000000018F24       MOV             X0, X19
+..text:0000000000018F28       BL              sub_18D40
+..text:0000000000018F2C       MOV             X1, #0x14
+..text:0000000000018F30       MOV             X0, X25
+..text:0000000000018F34       MOV             X2, X20
+..text:0000000000018F38       MOV             X3, X1
+..text:0000000000018F3C       MOV             X4, X24
+..text:0000000000018F40       MOV             W5, W22
+..text:0000000000018F44       BL              sub_216AC
+..text:0000000000018F48       CBNZ            W0, loc_18F5C
+..text:0000000000018F4C       ADD             X20, X20, #0x20 ; ' '
+..text:0000000000018F50       CBNZ            W22, loc_18F60
+..text:0000000000018F54       MOV             W22, #1
+..text:0000000000018F58       B               loc_18EC0
+..text:0000000000018F5C       MOV             W0, #5
+..text:0000000000018F60       LDR             X23, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000018F64       LDR             X2, [SP,#0x130+var_8]
+..text:0000000000018F68       LDR             X1, [X23]
+..text:0000000000018F6C       CMP             X2, X1
+..text:0000000000018F70       B.NE            loc_18F8C
+..text:0000000000018F74       LDP             X19, X20, [SP,#0x130+var_130]
+..text:0000000000018F78       LDP             X21, X22, [SP,#0x130+var_120]
+..text:0000000000018F7C       LDP             X23, X24, [SP,#0x130+var_110]
+..text:0000000000018F80       LDP             X25, X30, [SP,#0x130+var_100]
+..text:0000000000018F84       ADD             SP, SP, #0x130
+..text:0000000000018F88       RET
+..text:0000000000018F8C       BL              .__stack_chk_fail

@@ -1,0 +1,26 @@
+Function: sub_67C0 (0x67C0)
+Architecture: 64-bit
+Segment range: 0x67C0 - 0x6814
+----------------------------------------
+
+..text:00000000000067C0       LDR             W2, [X0]
+..text:00000000000067C4       CMP             W2, WZR
+..text:00000000000067C8       B.LE            loc_6808
+..text:00000000000067CC       LDR             X1, [X0,#0x10]
+..text:00000000000067D0       ADD             X1, X1, W2,SXTW#3
+..text:00000000000067D4       LDUR            X3, [X1,#-8]
+..text:00000000000067D8       CBZ             X3, loc_67E8
+..text:00000000000067DC       B               locret_67FC
+..text:00000000000067E0       LDUR            X3, [X1,#-8]
+..text:00000000000067E4       CBNZ            X3, loc_6800
+..text:00000000000067E8       SUBS            W2, W2, #1
+..text:00000000000067EC       SUB             X1, X1, #8
+..text:00000000000067F0       B.NE            loc_67E0
+..text:00000000000067F4       STR             W2, [X0]
+..text:00000000000067F8       STR             WZR, [X0,#8]
+..text:00000000000067FC       RET
+..text:0000000000006800       STR             W2, [X0]
+..text:0000000000006804       RET
+..text:0000000000006808       B.NE            locret_67FC
+..text:000000000000680C       STR             WZR, [X0,#8]
+..text:0000000000006810       B               locret_67FC

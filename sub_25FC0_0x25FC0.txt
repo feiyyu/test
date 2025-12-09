@@ -1,0 +1,82 @@
+Function: sub_25FC0 (0x25FC0)
+Architecture: 64-bit
+Segment range: 0x25FC0 - 0x260F4
+----------------------------------------
+
+..text:0000000000025FC0       CMP             X3, XZR
+..text:0000000000025FC4       CSET            W5, EQ
+..text:0000000000025FC8       CMP             X1, #3
+..text:0000000000025FCC       CSET            W4, LS
+..text:0000000000025FD0       CMP             X2, XZR
+..text:0000000000025FD4       ORR             W4, W5, W4
+..text:0000000000025FD8       CSET            W5, EQ
+..text:0000000000025FDC       ORR             W4, W5, W4
+..text:0000000000025FE0       CBNZ            W4, loc_25FE8
+..text:0000000000025FE4       CBNZ            X0, loc_25FF4
+..text:0000000000025FE8       MOV             W4, #0x10
+..text:0000000000025FEC       MOV             W0, W4
+..text:0000000000025FF0       RET
+..text:0000000000025FF4       LDRB            W5, [X0]
+..text:0000000000025FF8       MOV             W4, #7
+..text:0000000000025FFC       AND             W5, W5, #0x1F
+..text:0000000000026000       CMP             W5, #3
+..text:0000000000026004       B.NE            loc_25FEC
+..text:0000000000026008       LDRB            W5, [X0,#1]
+..text:000000000002600C       TBNZ            W5, #7, loc_26058
+..text:0000000000026010       UXTB            W5, W5
+..text:0000000000026014       MOV             X6, #2
+..text:0000000000026018       MOV             W4, #7
+..text:000000000002601C       CBZ             X5, loc_25FEC
+..text:0000000000026020       ADD             X7, X6, X5
+..text:0000000000026024       CMP             X1, X7
+..text:0000000000026028       B.CC            loc_25FEC
+..text:000000000002602C       LDRB            W1, [X0,X6]
+..text:0000000000026030       SUB             X5, X5, #1
+..text:0000000000026034       LDR             X4, [X3]
+..text:0000000000026038       LSL             X5, X5, #3
+..text:000000000002603C       AND             X1, X1, #7
+..text:0000000000026040       SUB             X1, X5, X1
+..text:0000000000026044       CMP             X1, X4
+..text:0000000000026048       B.LS            loc_2609C
+..text:000000000002604C       STR             X1, [X3]
+..text:0000000000026050       MOV             W4, #6
+..text:0000000000026054       B               loc_25FEC
+..text:0000000000026058       AND             W5, W5, #0x7F
+..text:000000000002605C       SUB             W7, W5, #1
+..text:0000000000026060       UXTB            W6, W5
+..text:0000000000026064       UXTB            W5, W7
+..text:0000000000026068       CMP             W5, #1
+..text:000000000002606C       B.HI            loc_25FEC
+..text:0000000000026070       CMP             X6, #1
+..text:0000000000026074       LDRB            W5, [X0,#2]
+..text:0000000000026078       B.EQ            loc_26094
+..text:000000000002607C       LDRB            W4, [X0,#3]
+..text:0000000000026080       CMP             X6, #2
+..text:0000000000026084       ORR             X5, X4, X5,LSL#8
+..text:0000000000026088       B.EQ            loc_26094
+..text:000000000002608C       LDRB            W4, [X0,#4]
+..text:0000000000026090       ORR             X5, X4, X5,LSL#8
+..text:0000000000026094       ADD             X6, X6, #2
+..text:0000000000026098       B               loc_26018
+..text:000000000002609C       CBZ             X1, loc_260E8
+..text:00000000000260A0       ADD             X6, X6, #1
+..text:00000000000260A4       MOV             X5, #0
+..text:00000000000260A8       LDRB            W7, [X0,X6]
+..text:00000000000260AC       ASR             W4, W7, #7
+..text:00000000000260B0       STRB            W4, [X2]
+..text:00000000000260B4       B               loc_260D0
+..text:00000000000260B8       LDRB            W8, [X0,X6]
+..text:00000000000260BC       CMP             X7, #7
+..text:00000000000260C0       CINC            X6, X6, EQ
+..text:00000000000260C4       ASR             W4, W8, W4
+..text:00000000000260C8       AND             W4, W4, #1
+..text:00000000000260CC       STRB            W4, [X2,X5]
+..text:00000000000260D0       ADD             X5, X5, #1
+..text:00000000000260D4       CMP             X5, X1
+..text:00000000000260D8       MVN             W4, W5
+..text:00000000000260DC       AND             X7, X5, #7
+..text:00000000000260E0       AND             W4, W4, #7
+..text:00000000000260E4       B.NE            loc_260B8
+..text:00000000000260E8       STR             X1, [X3]
+..text:00000000000260EC       MOV             W4, #0
+..text:00000000000260F0       B               loc_25FEC

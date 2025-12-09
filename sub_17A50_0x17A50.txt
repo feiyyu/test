@@ -1,0 +1,73 @@
+Function: sub_17A50 (0x17A50)
+Architecture: 64-bit
+Segment range: 0x17A50 - 0x17B60
+----------------------------------------
+
+..text:0000000000017A50       SUB             SP, SP, #0x130
+..text:0000000000017A54       STP             X25, X30, [SP,#0x130+var_100]
+..text:0000000000017A58       ADRP            X25, #__stack_chk_guard_ptr@PAGE
+..text:0000000000017A5C       STP             X19, X20, [SP,#0x130+var_130]
+..text:0000000000017A60       STP             X21, X22, [SP,#0x130+var_120]
+..text:0000000000017A64       LDR             X0, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000017A68       ADRP            X20, #off_589E8@PAGE; ""
+..text:0000000000017A6C       STP             X23, X24, [SP,#0x130+var_110]
+..text:0000000000017A70       ADD             X20, X20, #off_589E8@PAGEOFF; ""
+..text:0000000000017A74       ADRP            X21, #(aUnused1+8)@PAGE; ""
+..text:0000000000017A78       ADRP            X24, #aMd5@PAGE; "MD5"
+..text:0000000000017A7C       LDR             X0, [X0]
+..text:0000000000017A80       ADD             X20, X20, #8
+..text:0000000000017A84       ADD             X21, X21, #(aUnused1+8)@PAGEOFF; ""
+..text:0000000000017A88       MOV             W22, #0
+..text:0000000000017A8C       ADD             X19, SP, #0x130+var_E8
+..text:0000000000017A90       ADD             X23, SP, #0x130+var_18
+..text:0000000000017A94       ADD             X24, X24, #aMd5@PAGEOFF; "MD5"
+..text:0000000000017A98       STR             X0, [SP,#0x130+var_8]
+..text:0000000000017A9C       B               loc_17AB0
+..text:0000000000017AA0       ADD             X20, X20, #0x18
+..text:0000000000017AA4       LDUR            X21, [X20,#-8]
+..text:0000000000017AA8       ADD             W22, W22, #1
+..text:0000000000017AAC       CBZ             X21, loc_17B30
+..text:0000000000017AB0       MOV             W6, #0x2301
+..text:0000000000017AB4       MOV             W5, #0xAB89
+..text:0000000000017AB8       MOV             W3, #0xDCFE
+..text:0000000000017ABC       MOV             W2, #0x5476
+..text:0000000000017AC0       MOVK            W5, #0xEFCD,LSL#16
+..text:0000000000017AC4       MOVK            W3, #0x98BA,LSL#16
+..text:0000000000017AC8       MOVK            W6, #0x6745,LSL#16
+..text:0000000000017ACC       MOVK            W2, #0x1032,LSL#16
+..text:0000000000017AD0       MOV             X0, X21; char *
+..text:0000000000017AD4       STR             W5, [X19,#0xC]
+..text:0000000000017AD8       STR             W3, [X19,#0x10]
+..text:0000000000017ADC       STR             W6, [X19,#8]
+..text:0000000000017AE0       STR             W2, [X19,#0x14]
+..text:0000000000017AE4       STR             WZR, [X19,#0x18]
+..text:0000000000017AE8       STR             XZR, [X19]
+..text:0000000000017AEC       BL              .strlen
+..text:0000000000017AF0       MOV             X1, X21; src
+..text:0000000000017AF4       MOV             X2, X0
+..text:0000000000017AF8       MOV             X0, X19; int
+..text:0000000000017AFC       BL              sub_17920
+..text:0000000000017B00       MOV             X1, X23
+..text:0000000000017B04       MOV             X0, X19
+..text:0000000000017B08       BL              sub_177D8
+..text:0000000000017B0C       MOV             X1, #0x10
+..text:0000000000017B10       MOV             X0, X23
+..text:0000000000017B14       MOV             X2, X20
+..text:0000000000017B18       MOV             X3, X1
+..text:0000000000017B1C       MOV             X4, X24
+..text:0000000000017B20       MOV             W5, W22
+..text:0000000000017B24       BL              sub_216AC
+..text:0000000000017B28       CBZ             W0, loc_17AA0
+..text:0000000000017B2C       MOV             W0, #5
+..text:0000000000017B30       LDR             X25, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000017B34       LDR             X2, [SP,#0x130+var_8]
+..text:0000000000017B38       LDR             X1, [X25]
+..text:0000000000017B3C       CMP             X2, X1
+..text:0000000000017B40       B.NE            loc_17B5C
+..text:0000000000017B44       LDP             X19, X20, [SP,#0x130+var_130]
+..text:0000000000017B48       LDP             X21, X22, [SP,#0x130+var_120]
+..text:0000000000017B4C       LDP             X23, X24, [SP,#0x130+var_110]
+..text:0000000000017B50       LDP             X25, X30, [SP,#0x130+var_100]
+..text:0000000000017B54       ADD             SP, SP, #0x130
+..text:0000000000017B58       RET
+..text:0000000000017B5C       BL              .__stack_chk_fail

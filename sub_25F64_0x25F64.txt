@@ -1,0 +1,28 @@
+Function: sub_25F64 (0x25F64)
+Architecture: 64-bit
+Segment range: 0x25F64 - 0x25FC0
+----------------------------------------
+
+..text:0000000000025F64       CBZ             X1, loc_25FB8
+..text:0000000000025F68       AND             X3, X0, #0xFFFFFFFF
+..text:0000000000025F6C       CBZ             W0, loc_25FAC
+..text:0000000000025F70       MOV             X0, X3
+..text:0000000000025F74       MOV             X2, #0
+..text:0000000000025F78       LSR             X0, X0, #8
+..text:0000000000025F7C       ADD             X2, X2, #1
+..text:0000000000025F80       CBNZ            X0, loc_25F78
+..text:0000000000025F84       CBZ             X2, loc_25FAC
+..text:0000000000025F88       LSL             W0, W2, #3
+..text:0000000000025F8C       ADD             X2, X2, #2
+..text:0000000000025F90       SUB             W0, W0, #1
+..text:0000000000025F94       LSR             X3, X3, X0
+..text:0000000000025F98       MOV             W0, #0
+..text:0000000000025F9C       AND             X3, X3, #1
+..text:0000000000025FA0       ADD             X2, X3, X2
+..text:0000000000025FA4       STR             X2, [X1]
+..text:0000000000025FA8       RET
+..text:0000000000025FAC       MOV             W0, #7
+..text:0000000000025FB0       MOV             X2, #3
+..text:0000000000025FB4       B               loc_25F94
+..text:0000000000025FB8       MOV             W0, #0x10
+..text:0000000000025FBC       RET

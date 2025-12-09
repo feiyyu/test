@@ -1,0 +1,19 @@
+Function: sub_96D8 (0x96D8)
+Architecture: 64-bit
+Segment range: 0x96D8 - 0x9710
+----------------------------------------
+
+..text:00000000000096D8       SUB             SP, SP, #0x20
+..text:00000000000096DC       STP             X19, X30, [SP,#0x20+var_20]
+..text:00000000000096E0       STR             X1, [SP,#0x20+var_8]
+..text:00000000000096E4       MOV             X19, X0
+..text:00000000000096E8       BL              sub_93C4
+..text:00000000000096EC       LDR             X1, [SP,#0x20+var_8]
+..text:00000000000096F0       CBZ             W0, loc_9700
+..text:00000000000096F4       LDP             X19, X30, [SP,#0x20+var_20]
+..text:00000000000096F8       ADD             SP, SP, #0x20 ; ' '
+..text:00000000000096FC       RET
+..text:0000000000009700       MOV             X0, X19
+..text:0000000000009704       LDP             X19, X30, [SP,#0x20+var_20]
+..text:0000000000009708       ADD             SP, SP, #0x20 ; ' '
+..text:000000000000970C       B               sub_D83C

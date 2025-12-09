@@ -1,0 +1,66 @@
+Function: sub_68E4 (0x68E4)
+Architecture: 64-bit
+Segment range: 0x68E4 - 0x69D8
+----------------------------------------
+
+..text:00000000000068E4       SUB             SP, SP, #0x110
+..text:00000000000068E8       STP             X19, X20, [SP,#0x110+var_110]
+..text:00000000000068EC       ADRP            X20, #__stack_chk_guard_ptr@PAGE
+..text:00000000000068F0       STR             X1, [SP,#0x110+var_38]
+..text:00000000000068F4       STR             X30, [SP,#0x110+var_100]
+..text:00000000000068F8       ADD             X19, SP, #0x110+var_E8
+..text:00000000000068FC       STR             X2, [SP,#0x110+var_30]
+..text:0000000000006900       LDR             X1, [X20,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000006904       STR             X3, [SP,#0x110+var_28]
+..text:0000000000006908       LDR             X1, [X1]
+..text:000000000000690C       STR             X1, [SP,#0x110+var_C8]
+..text:0000000000006910       ADD             X1, SP, #0x110+arg_0
+..text:0000000000006914       STR             X1, [SP,#0x110+var_E8]
+..text:0000000000006918       STR             X1, [SP,#0x110+var_E0]
+..text:000000000000691C       ADD             X1, SP, #0x110+var_40
+..text:0000000000006920       STR             X1, [SP,#0x110+var_D8]
+..text:0000000000006924       MOV             W1, #0xFFFFFFC8
+..text:0000000000006928       STR             X4, [SP,#0x110+var_20]
+..text:000000000000692C       STR             W1, [SP,#0x110+var_D0]
+..text:0000000000006930       MOV             W1, #0xFFFFFF80
+..text:0000000000006934       STR             X5, [SP,#0x110+var_18]
+..text:0000000000006938       STR             X6, [SP,#0x110+var_10]
+..text:000000000000693C       STR             X7, [SP,#0x110+var_8]
+..text:0000000000006940       STR             W1, [SP,#0x110+var_CC]
+..text:0000000000006944       STR             Q0, [SP,#0x110+var_C0]
+..text:0000000000006948       STR             Q1, [SP,#0x110+var_B0]
+..text:000000000000694C       STR             Q2, [SP,#0x110+var_A0]
+..text:0000000000006950       STR             Q3, [SP,#0x110+var_90]
+..text:0000000000006954       STR             Q4, [SP,#0x110+var_80]
+..text:0000000000006958       STR             Q5, [SP,#0x110+var_70]
+..text:000000000000695C       STR             Q6, [SP,#0x110+var_60]
+..text:0000000000006960       STR             Q7, [SP,#0x110+var_50]
+..text:0000000000006964       CBNZ            X0, loc_6980
+..text:0000000000006968       B               loc_69B0
+..text:000000000000696C       ADD             X1, X0, #0xF
+..text:0000000000006970       LDR             X0, [X0]
+..text:0000000000006974       AND             X1, X1, #0xFFFFFFFFFFFFFFF8
+..text:0000000000006978       STR             X1, [X19]
+..text:000000000000697C       CBZ             X0, loc_69B0
+..text:0000000000006980       BL              sub_6814
+..text:0000000000006984       LDR             W1, [X19,#0x18]
+..text:0000000000006988       LDR             X0, [X19]
+..text:000000000000698C       TBZ             W1, #0x1F, loc_696C
+..text:0000000000006990       ADD             W2, W1, #8
+..text:0000000000006994       STR             W2, [X19,#0x18]
+..text:0000000000006998       CMP             W2, WZR
+..text:000000000000699C       B.GT            loc_696C
+..text:00000000000069A0       LDR             X0, [X19,#8]
+..text:00000000000069A4       ADD             X0, X0, W1,SXTW
+..text:00000000000069A8       LDR             X0, [X0]
+..text:00000000000069AC       CBNZ            X0, loc_6980
+..text:00000000000069B0       LDR             X20, [X20,#__stack_chk_guard_ptr@PAGEOFF]
+..text:00000000000069B4       LDR             X1, [SP,#0x110+var_C8]
+..text:00000000000069B8       LDR             X0, [X20]
+..text:00000000000069BC       CMP             X1, X0
+..text:00000000000069C0       B.NE            loc_69D4
+..text:00000000000069C4       LDP             X19, X20, [SP,#0x110+var_110]
+..text:00000000000069C8       LDR             X30, [SP,#0x110+var_100]
+..text:00000000000069CC       ADD             SP, SP, #0x110
+..text:00000000000069D0       RET
+..text:00000000000069D4       BL              .__stack_chk_fail

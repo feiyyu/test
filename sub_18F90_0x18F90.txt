@@ -1,0 +1,38 @@
+Function: sub_18F90 (0x18F90)
+Architecture: 64-bit
+Segment range: 0x18F90 - 0x19014
+----------------------------------------
+
+..text:0000000000018F90       CBZ             X0, loc_19008
+..text:0000000000018F94       MOV             W9, #0
+..text:0000000000018F98       MOV             W8, #0xE667
+..text:0000000000018F9C       MOV             W7, #0xAE85
+..text:0000000000018FA0       MOV             W6, #0xF372
+..text:0000000000018FA4       MOV             W5, #0xF53A
+..text:0000000000018FA8       MOV             W4, #0x527F
+..text:0000000000018FAC       MOV             W3, #0x688C
+..text:0000000000018FB0       MOV             W2, #0xD9AB
+..text:0000000000018FB4       MOV             W1, #0xCD19
+..text:0000000000018FB8       MOVK            W8, #0x6A09,LSL#16
+..text:0000000000018FBC       MOVK            W7, #0xBB67,LSL#16
+..text:0000000000018FC0       MOVK            W6, #0x3C6E,LSL#16
+..text:0000000000018FC4       MOVK            W5, #0xA54F,LSL#16
+..text:0000000000018FC8       MOVK            W4, #0x510E,LSL#16
+..text:0000000000018FCC       MOVK            W3, #0x9B05,LSL#16
+..text:0000000000018FD0       MOVK            W2, #0x1F83,LSL#16
+..text:0000000000018FD4       MOVK            W1, #0x5BE0,LSL#16
+..text:0000000000018FD8       STR             WZR, [X0,#0x28]
+..text:0000000000018FDC       STR             XZR, [X0]
+..text:0000000000018FE0       STR             W8, [X0,#8]
+..text:0000000000018FE4       STR             W7, [X0,#0xC]
+..text:0000000000018FE8       STR             W6, [X0,#0x10]
+..text:0000000000018FEC       STR             W5, [X0,#0x14]
+..text:0000000000018FF0       STR             W4, [X0,#0x18]
+..text:0000000000018FF4       STR             W3, [X0,#0x1C]
+..text:0000000000018FF8       STR             W2, [X0,#0x20]
+..text:0000000000018FFC       STR             W1, [X0,#0x24]
+..text:0000000000019000       MOV             W0, W9
+..text:0000000000019004       RET
+..text:0000000000019008       MOV             W9, #0x10
+..text:000000000001900C       MOV             W0, W9
+..text:0000000000019010       RET

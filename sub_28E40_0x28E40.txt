@@ -1,0 +1,55 @@
+Function: sub_28E40 (0x28E40)
+Architecture: 64-bit
+Segment range: 0x28E40 - 0x28F08
+----------------------------------------
+
+..text:0000000000028E40       SUB             SP, SP, #0x30
+..text:0000000000028E44       STP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000028E48       STP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000028E4C       STR             X30, [SP,#0x30+var_10]
+..text:0000000000028E50       LDR             X20, [X0,#8]
+..text:0000000000028E54       LDR             X19, [X1,#8]
+..text:0000000000028E58       LDR             X21, [X0]
+..text:0000000000028E5C       LDR             X22, [X1]
+..text:0000000000028E60       CMP             X20, X19
+..text:0000000000028E64       MOV             X0, X21; void *
+..text:0000000000028E68       CSEL            X2, X20, X19, LS; size_t
+..text:0000000000028E6C       MOV             X1, X22; void *
+..text:0000000000028E70       BL              .memcmp
+..text:0000000000028E74       CBNZ            W0, loc_28EA4
+..text:0000000000028E78       CMP             X19, X20
+..text:0000000000028E7C       B.EQ            loc_28EA4
+..text:0000000000028E80       B.CC            loc_28EB8
+..text:0000000000028E84       B.HI            loc_28E98
+..text:0000000000028E88       B               loc_28EA4
+..text:0000000000028E8C       ADD             X20, X20, #1
+..text:0000000000028E90       CMP             X19, X20
+..text:0000000000028E94       B.LS            loc_28ED8
+..text:0000000000028E98       LDRB            W0, [X22,X20]
+..text:0000000000028E9C       CBZ             W0, loc_28E8C
+..text:0000000000028EA0       MOV             W0, #0xFFFFFFFF
+..text:0000000000028EA4       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000028EA8       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000028EAC       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000028EB0       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000028EB4       RET
+..text:0000000000028EB8       LDRB            W0, [X21,X19]
+..text:0000000000028EBC       CBZ             W0, loc_28ECC
+..text:0000000000028EC0       B               loc_28EF0
+..text:0000000000028EC4       LDRB            W1, [X21,X19]
+..text:0000000000028EC8       CBNZ            W1, loc_28EF0
+..text:0000000000028ECC       ADD             X19, X19, #1
+..text:0000000000028ED0       CMP             X20, X19
+..text:0000000000028ED4       B.HI            loc_28EC4
+..text:0000000000028ED8       MOV             W0, #0
+..text:0000000000028EDC       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000028EE0       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000028EE4       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000028EE8       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000028EEC       RET
+..text:0000000000028EF0       MOV             W0, #1
+..text:0000000000028EF4       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000028EF8       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000028EFC       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000028F00       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000028F04       RET

@@ -1,0 +1,24 @@
+Function: sub_79B8 (0x79B8)
+Architecture: 64-bit
+Segment range: 0x79B8 - 0x7A04
+----------------------------------------
+
+..text:00000000000079B8       LDR             W2, [X0]
+..text:00000000000079BC       CMP             W2, #1
+..text:00000000000079C0       B.LE            loc_79FC
+..text:00000000000079C4       SUB             W2, W2, #2
+..text:00000000000079C8       LDR             X1, [X0,#0x10]
+..text:00000000000079CC       ADD             X2, X2, #2
+..text:00000000000079D0       MOV             X3, #0xFFFFFFFFFFFFFFF
+..text:00000000000079D4       ADD             X0, X1, #8
+..text:00000000000079D8       ADD             X2, X1, X2,LSL#3
+..text:00000000000079DC       LDR             X1, [X0]
+..text:00000000000079E0       ADD             X0, X0, #8
+..text:00000000000079E4       CMP             X1, X3
+..text:00000000000079E8       B.NE            loc_79FC
+..text:00000000000079EC       CMP             X0, X2
+..text:00000000000079F0       B.NE            loc_79DC
+..text:00000000000079F4       MOV             W0, #1
+..text:00000000000079F8       RET
+..text:00000000000079FC       MOV             W0, #0
+..text:0000000000007A00       RET

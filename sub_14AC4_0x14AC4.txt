@@ -1,0 +1,51 @@
+Function: sub_14AC4 (0x14AC4)
+Architecture: 64-bit
+Segment range: 0x14AC4 - 0x14B7C
+----------------------------------------
+
+..text:0000000000014AC4       SUB             SP, SP, #0x30
+..text:0000000000014AC8       CMP             X1, XZR
+..text:0000000000014ACC       CSET            W4, EQ
+..text:0000000000014AD0       CMP             X2, XZR
+..text:0000000000014AD4       CSET            W3, EQ
+..text:0000000000014AD8       STP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000014ADC       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:0000000000014AE0       ORR             W3, W4, W3
+..text:0000000000014AE4       STP             X21, X30, [SP,#0x30+var_20]
+..text:0000000000014AE8       MOV             X21, X1
+..text:0000000000014AEC       MOV             X4, X0
+..text:0000000000014AF0       LDR             X1, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000014AF4       LDR             X0, [X1]
+..text:0000000000014AF8       STR             X0, [SP,#0x30+var_8]
+..text:0000000000014AFC       CBNZ            W3, loc_14B70
+..text:0000000000014B00       CMP             X4, XZR
+..text:0000000000014B04       CSET            W20, EQ
+..text:0000000000014B08       CBNZ            W20, loc_14B70
+..text:0000000000014B0C       LDR             W5, [X4]
+..text:0000000000014B10       MOV             X1, X2
+..text:0000000000014B14       LDR             W3, [X4,#4]
+..text:0000000000014B18       ADD             X0, SP, #0x30+var_10
+..text:0000000000014B1C       REV             W2, W5
+..text:0000000000014B20       STR             W2, [SP,#0x30+var_10]
+..text:0000000000014B24       REV             W2, W3
+..text:0000000000014B28       STR             W2, [SP,#0x30+var_C]
+..text:0000000000014B2C       BL              sub_14158
+..text:0000000000014B30       LDR             W1, [SP,#0x30+var_10]
+..text:0000000000014B34       MOV             W0, W20
+..text:0000000000014B38       REV             W1, W1
+..text:0000000000014B3C       STR             W1, [X21]
+..text:0000000000014B40       LDR             W1, [SP,#0x30+var_C]
+..text:0000000000014B44       REV             W1, W1
+..text:0000000000014B48       STR             W1, [X21,#4]
+..text:0000000000014B4C       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000014B50       LDR             X2, [SP,#0x30+var_8]
+..text:0000000000014B54       LDR             X1, [X19]
+..text:0000000000014B58       CMP             X2, X1
+..text:0000000000014B5C       B.NE            loc_14B78
+..text:0000000000014B60       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000014B64       LDP             X21, X30, [SP,#0x30+var_20]
+..text:0000000000014B68       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000014B6C       RET
+..text:0000000000014B70       MOV             W0, #0x10
+..text:0000000000014B74       B               loc_14B4C
+..text:0000000000014B78       BL              .__stack_chk_fail

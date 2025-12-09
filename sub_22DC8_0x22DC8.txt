@@ -1,0 +1,44 @@
+Function: sub_22DC8 (0x22DC8)
+Architecture: 64-bit
+Segment range: 0x22DC8 - 0x22E64
+----------------------------------------
+
+..text:0000000000022DC8       SUB             SP, SP, #0x30
+..text:0000000000022DCC       STP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000022DD0       STP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000022DD4       STR             X30, [SP,#0x30+var_10]
+..text:0000000000022DD8       CBZ             X0, loc_22E08
+..text:0000000000022DDC       CBZ             X2, loc_22E08
+..text:0000000000022DE0       MOV             X20, X0
+..text:0000000000022DE4       LDR             W0, [X2]
+..text:0000000000022DE8       MOV             X19, X2
+..text:0000000000022DEC       MOV             X22, X1
+..text:0000000000022DF0       BL              sub_1F964
+..text:0000000000022DF4       MOV             W21, W0
+..text:0000000000022DF8       CBNZ            W0, loc_22E0C
+..text:0000000000022DFC       LDRSW           X2, [X19,#4]; n
+..text:0000000000022E00       CMP             X2, X22
+..text:0000000000022E04       B.EQ            loc_22E24
+..text:0000000000022E08       MOV             W21, #0x10
+..text:0000000000022E0C       MOV             W0, W21
+..text:0000000000022E10       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000022E14       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000022E18       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000022E1C       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000022E20       RET
+..text:0000000000022E24       MOV             X1, X20; src
+..text:0000000000022E28       ADD             X0, X19, #0x14; dest
+..text:0000000000022E2C       BL              .memcpy
+..text:0000000000022E30       STR             W21, [X19,#8]
+..text:0000000000022E34       MOV             X1, X19
+..text:0000000000022E38       ADRP            X4, #off_59FA8@PAGE
+..text:0000000000022E3C       MOV             X0, X20
+..text:0000000000022E40       ADD             X2, X19, #0x118
+..text:0000000000022E44       LDRSW           X3, [X1],#0x94
+..text:0000000000022E48       LDR             X4, [X4,#off_59FA8@PAGEOFF]
+..text:0000000000022E4C       ADD             X3, X3, X3,LSL#1
+..text:0000000000022E50       ADD             X3, X4, X3,LSL#6
+..text:0000000000022E54       LDR             X3, [X3,#0x28]
+..text:0000000000022E58       BLR             X3
+..text:0000000000022E5C       MOV             W21, W0
+..text:0000000000022E60       B               loc_22E0C

@@ -1,0 +1,29 @@
+Function: sub_17B60 (0x17B60)
+Architecture: 64-bit
+Segment range: 0x17B60 - 0x17BC0
+----------------------------------------
+
+..text:0000000000017B60       CBZ             X0, loc_17BB4
+..text:0000000000017B64       MOV             W5, #0x2301
+..text:0000000000017B68       MOV             W4, #0xAB89
+..text:0000000000017B6C       MOVK            W5, #0x6745,LSL#16
+..text:0000000000017B70       MOV             W3, #0xDCFE
+..text:0000000000017B74       STR             W5, [X0,#8]
+..text:0000000000017B78       MOV             W2, #0x5476
+..text:0000000000017B7C       MOV             W5, #0
+..text:0000000000017B80       MOV             W1, #0xE1F0
+..text:0000000000017B84       MOVK            W4, #0xEFCD,LSL#16
+..text:0000000000017B88       MOVK            W3, #0x98BA,LSL#16
+..text:0000000000017B8C       MOVK            W2, #0x1032,LSL#16
+..text:0000000000017B90       MOVK            W1, #0xC3D2,LSL#16
+..text:0000000000017B94       STR             W4, [X0,#0xC]
+..text:0000000000017B98       STR             W3, [X0,#0x10]
+..text:0000000000017B9C       STR             W2, [X0,#0x14]
+..text:0000000000017BA0       STR             W1, [X0,#0x18]
+..text:0000000000017BA4       STR             W5, [X0,#0x1C]
+..text:0000000000017BA8       STR             XZR, [X0]
+..text:0000000000017BAC       MOV             W0, W5
+..text:0000000000017BB0       RET
+..text:0000000000017BB4       MOV             W5, #0x10
+..text:0000000000017BB8       MOV             W0, W5
+..text:0000000000017BBC       RET

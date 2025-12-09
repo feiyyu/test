@@ -1,0 +1,116 @@
+Function: sub_130F4 (0x130F4)
+Architecture: 64-bit
+Segment range: 0x130F4 - 0x132B0
+----------------------------------------
+
+..text:00000000000130F4       SUB             SP, SP, #1,LSL#12
+..text:00000000000130F8       SUB             SP, SP, #0x60
+..text:00000000000130FC       SUB             SP, SP, #0x60
+..text:0000000000013100       STR             D8, [SP,#0x10C0+var_1070]
+..text:0000000000013104       MOVI            V8.2S, #0
+..text:0000000000013108       STP             X25, X26, [SP,#0x10C0+var_1090]
+..text:000000000001310C       ADRP            X25, #__stack_chk_guard_ptr@PAGE
+..text:0000000000013110       ADRP            X26, #aBlowfishEncryp@PAGE; "Blowfish Encrypt"
+..text:0000000000013114       STP             X23, X24, [SP,#0x10C0+var_10A0]
+..text:0000000000013118       STP             X19, X20, [SP,#0x10C0+var_10C0]
+..text:000000000001311C       LDR             X0, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000013120       ADRP            X23, #unk_34730@PAGE
+..text:0000000000013124       STP             X21, X22, [SP,#0x10C0+var_10B0]
+..text:0000000000013128       STP             X27, X30, [SP,#0x10C0+var_1080]
+..text:000000000001312C       ADD             X19, SP, #0x10C0+var_1060
+..text:0000000000013130       ADD             X23, X23, #unk_34730@PAGEOFF
+..text:0000000000013134       LDR             X0, [X0]
+..text:0000000000013138       SUB             X23, X23, #0xA8
+..text:000000000001313C       MOV             W24, #0
+..text:0000000000013140       ADD             X21, SP, #0x10C0+var_1050
+..text:0000000000013144       ADD             X27, X19, #8
+..text:0000000000013148       ADD             X26, X26, #aBlowfishEncryp@PAGEOFF; "Blowfish Encrypt"
+..text:000000000001314C       STR             X0, [SP,#0x10C0+var_8]
+..text:0000000000013150       SUB             X0, X23, #8
+..text:0000000000013154       MOV             W1, #8
+..text:0000000000013158       MOV             W2, #0x10
+..text:000000000001315C       MOV             X3, X21
+..text:0000000000013160       BL              sub_12AC4
+..text:0000000000013164       CBNZ            W0, loc_132A4
+..text:0000000000013168       MOV             X1, X19
+..text:000000000001316C       MOV             X2, X21
+..text:0000000000013170       MOV             X0, X23
+..text:0000000000013174       BL              sub_12660
+..text:0000000000013178       MOV             X1, X27
+..text:000000000001317C       MOV             X2, X21
+..text:0000000000013180       MOV             X0, X19
+..text:0000000000013184       BL              sub_12C90
+..text:0000000000013188       MOV             X1, #8
+..text:000000000001318C       MOV             X0, X19
+..text:0000000000013190       ADD             X2, X23, X1
+..text:0000000000013194       MOV             X3, X1
+..text:0000000000013198       MOV             X4, X26
+..text:000000000001319C       MOV             W5, W24
+..text:00000000000131A0       BL              sub_216AC
+..text:00000000000131A4       CBNZ            W0, loc_1329C
+..text:00000000000131A8       MOV             X1, #8
+..text:00000000000131AC       ADRP            X4, #aBlowfishDecryp@PAGE; "Blowfish Decrypt"
+..text:00000000000131B0       MOV             X0, X27
+..text:00000000000131B4       MOV             X2, X23
+..text:00000000000131B8       MOV             X3, X1
+..text:00000000000131BC       ADD             X4, X4, #aBlowfishDecryp@PAGEOFF; "Blowfish Decrypt"
+..text:00000000000131C0       MOV             W5, W24
+..text:00000000000131C4       BL              sub_216AC
+..text:00000000000131C8       MOV             W22, W0
+..text:00000000000131CC       CBNZ            W0, loc_1329C
+..text:00000000000131D0       STR             D8, [X19]
+..text:00000000000131D4       MOV             W20, #0x3E8
+..text:00000000000131D8       MOV             X0, X19
+..text:00000000000131DC       MOV             X1, X19
+..text:00000000000131E0       MOV             X2, X21
+..text:00000000000131E4       BL              sub_12660
+..text:00000000000131E8       SUBS            W20, W20, #1
+..text:00000000000131EC       B.NE            loc_131D8
+..text:00000000000131F0       MOV             W20, #0x3E8
+..text:00000000000131F4       MOV             X0, X19
+..text:00000000000131F8       MOV             X1, X19
+..text:00000000000131FC       MOV             X2, X21
+..text:0000000000013200       BL              sub_12C90
+..text:0000000000013204       SUBS            W20, W20, #1
+..text:0000000000013208       B.NE            loc_131F4
+..text:000000000001320C       LDRB            W0, [X19]
+..text:0000000000013210       CBNZ            W0, loc_1329C
+..text:0000000000013214       LDRB            W0, [X19,#1]
+..text:0000000000013218       CBNZ            W0, loc_1329C
+..text:000000000001321C       LDRB            W0, [X19,#2]
+..text:0000000000013220       CBNZ            W0, loc_1329C
+..text:0000000000013224       LDRB            W0, [X19,#3]
+..text:0000000000013228       CBNZ            W0, loc_1329C
+..text:000000000001322C       LDRB            W0, [X19,#4]
+..text:0000000000013230       CBNZ            W0, loc_1329C
+..text:0000000000013234       LDRB            W0, [X19,#5]
+..text:0000000000013238       CBNZ            W0, loc_1329C
+..text:000000000001323C       LDRB            W0, [X19,#6]
+..text:0000000000013240       CBNZ            W0, loc_1329C
+..text:0000000000013244       LDRB            W0, [X19,#7]
+..text:0000000000013248       CBNZ            W0, loc_1329C
+..text:000000000001324C       ADD             W24, W24, #1
+..text:0000000000013250       ADD             X23, X23, #0x18
+..text:0000000000013254       CMP             W24, #3
+..text:0000000000013258       B.NE            loc_13150
+..text:000000000001325C       LDR             X1, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000013260       MOV             W0, W22
+..text:0000000000013264       LDR             X2, [SP,#0x10C0+var_8]
+..text:0000000000013268       LDR             X1, [X1]
+..text:000000000001326C       CMP             X2, X1
+..text:0000000000013270       B.NE            loc_132AC
+..text:0000000000013274       LDP             X19, X20, [SP,#0x10C0+var_10C0]
+..text:0000000000013278       LDP             X21, X22, [SP,#0x10C0+var_10B0]
+..text:000000000001327C       LDP             X23, X24, [SP,#0x10C0+var_10A0]
+..text:0000000000013280       LDP             X25, X26, [SP,#0x10C0+var_1090]
+..text:0000000000013284       LDP             X27, X30, [SP,#0x10C0+var_1080]
+..text:0000000000013288       LDR             D8, [SP,#0x10C0+var_1070]
+..text:000000000001328C       ADD             SP, SP, #0x60 ; '`'
+..text:0000000000013290       ADD             SP, SP, #0x60 ; '`'
+..text:0000000000013294       ADD             SP, SP, #1,LSL#12
+..text:0000000000013298       RET
+..text:000000000001329C       MOV             W22, #5
+..text:00000000000132A0       B               loc_1325C
+..text:00000000000132A4       MOV             W22, W0
+..text:00000000000132A8       B               loc_1325C
+..text:00000000000132AC       BL              .__stack_chk_fail

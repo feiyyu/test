@@ -1,0 +1,59 @@
+Function: sub_27F28 (0x27F28)
+Architecture: 64-bit
+Segment range: 0x27F28 - 0x28000
+----------------------------------------
+
+..text:0000000000027F28       CBZ             X2, loc_27FB8
+..text:0000000000027F2C       CBZ             X0, loc_27FB8
+..text:0000000000027F30       CBZ             X1, loc_27FC0
+..text:0000000000027F34       ADRP            X7, #dword_40A40@PAGE
+..text:0000000000027F38       ADD             X8, X0, X1
+..text:0000000000027F3C       LDRB            W6, [X0]
+..text:0000000000027F40       ADD             X4, X7, #dword_40A40@PAGEOFF
+..text:0000000000027F44       MOV             W3, #0
+..text:0000000000027F48       B               loc_27F58
+..text:0000000000027F4C       ADD             W3, W3, #1
+..text:0000000000027F50       CMP             W3, #0x4A ; 'J'
+..text:0000000000027F54       B.EQ            loc_27FB8
+..text:0000000000027F58       LDR             W5, [X4]
+..text:0000000000027F5C       ADD             X4, X4, #8
+..text:0000000000027F60       CMP             W6, W5
+..text:0000000000027F64       B.NE            loc_27F4C
+..text:0000000000027F68       ADD             X4, X7, #dword_40A40@PAGEOFF
+..text:0000000000027F6C       ADD             X3, X4, W3,SXTW#3
+..text:0000000000027F70       LDR             W3, [X3,#4]
+..text:0000000000027F74       CMN             W3, #1
+..text:0000000000027F78       B.EQ            loc_27FB8
+..text:0000000000027F7C       ADD             X0, X0, #1
+..text:0000000000027F80       CMP             X0, X8
+..text:0000000000027F84       B.NE            loc_27F3C
+..text:0000000000027F88       CMP             X1, #0x7F
+..text:0000000000027F8C       B.LS            loc_27FC0
+..text:0000000000027F90       CMP             X1, #0xFF
+..text:0000000000027F94       B.LS            loc_27FD0
+..text:0000000000027F98       MOV             X0, #0xFFFF
+..text:0000000000027F9C       CMP             X1, X0
+..text:0000000000027FA0       B.LS            loc_27FE0
+..text:0000000000027FA4       MOV             X3, #0xFFFFFF
+..text:0000000000027FA8       MOV             W0, #0x10
+..text:0000000000027FAC       CMP             X1, X3
+..text:0000000000027FB0       B.LS            loc_27FF0
+..text:0000000000027FB4       RET
+..text:0000000000027FB8       MOV             W0, #0x10
+..text:0000000000027FBC       RET
+..text:0000000000027FC0       ADD             X1, X1, #2
+..text:0000000000027FC4       MOV             W0, #0
+..text:0000000000027FC8       STR             X1, [X2]
+..text:0000000000027FCC       B               locret_27FB4
+..text:0000000000027FD0       ADD             X1, X1, #3
+..text:0000000000027FD4       MOV             W0, #0
+..text:0000000000027FD8       STR             X1, [X2]
+..text:0000000000027FDC       B               locret_27FB4
+..text:0000000000027FE0       ADD             X1, X1, #4
+..text:0000000000027FE4       MOV             W0, #0
+..text:0000000000027FE8       STR             X1, [X2]
+..text:0000000000027FEC       B               locret_27FB4
+..text:0000000000027FF0       ADD             X1, X1, #5
+..text:0000000000027FF4       MOV             W0, #0
+..text:0000000000027FF8       STR             X1, [X2]
+..text:0000000000027FFC       B               locret_27FB4

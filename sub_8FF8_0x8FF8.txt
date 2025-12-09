@@ -1,0 +1,20 @@
+Function: sub_8FF8 (0x8FF8)
+Architecture: 64-bit
+Segment range: 0x8FF8 - 0x9034
+----------------------------------------
+
+..text:0000000000008FF8       MOV             X3, X0
+..text:0000000000008FFC       MOV             X0, #0
+..text:0000000000009000       LDR             W1, [X3]
+..text:0000000000009004       CBZ             W1, locret_9030
+..text:0000000000009008       CMP             W1, #2
+..text:000000000000900C       MOV             W2, #2
+..text:0000000000009010       CSEL            W2, W1, W2, LE
+..text:0000000000009014       LDR             X1, [X3,#0x10]
+..text:0000000000009018       SUB             W0, W2, #1
+..text:000000000000901C       CMP             W2, #2
+..text:0000000000009020       LDR             X0, [X1,W0,SXTW#3]
+..text:0000000000009024       B.NE            locret_9030
+..text:0000000000009028       LDR             X1, [X1]
+..text:000000000000902C       ORR             X0, X1, X0,LSL#60
+..text:0000000000009030       RET

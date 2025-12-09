@@ -1,0 +1,122 @@
+Function: sub_13BF4 (0x13BF4)
+Architecture: 64-bit
+Segment range: 0x13BF4 - 0x13DC8
+----------------------------------------
+
+..text:0000000000013BF4       SUB             SP, SP, #0x30
+..text:0000000000013BF8       CMP             X1, XZR
+..text:0000000000013BFC       CSET            W4, EQ
+..text:0000000000013C00       CMP             X2, XZR
+..text:0000000000013C04       CSET            W3, EQ
+..text:0000000000013C08       STP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000013C0C       STP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000013C10       STR             X30, [SP,#0x30+var_10]
+..text:0000000000013C14       ORR             W3, W4, W3
+..text:0000000000013C18       CBNZ            W3, loc_13D5C
+..text:0000000000013C1C       CBZ             X0, loc_13D5C
+..text:0000000000013C20       LDR             W21, [X0,#4]
+..text:0000000000013C24       MOV             X19, X2
+..text:0000000000013C28       MOV             X22, X1
+..text:0000000000013C2C       LDR             W1, [X2]
+..text:0000000000013C30       REV             W21, W21
+..text:0000000000013C34       LDR             W2, [X2,#0x40]
+..text:0000000000013C38       LDR             W20, [X0]
+..text:0000000000013C3C       MOV             W0, W21
+..text:0000000000013C40       REV             W20, W20
+..text:0000000000013C44       BL              sub_132B0
+..text:0000000000013C48       LDR             W1, [X19,#4]
+..text:0000000000013C4C       EOR             W20, W0, W20
+..text:0000000000013C50       LDR             W2, [X19,#0x44]
+..text:0000000000013C54       MOV             W0, W20
+..text:0000000000013C58       BL              sub_1330C
+..text:0000000000013C5C       EOR             W21, W0, W21
+..text:0000000000013C60       LDR             W1, [X19,#8]
+..text:0000000000013C64       MOV             W0, W21
+..text:0000000000013C68       LDR             W2, [X19,#0x48]
+..text:0000000000013C6C       BL              sub_13368
+..text:0000000000013C70       EOR             W20, W20, W0
+..text:0000000000013C74       LDR             W1, [X19,#0xC]
+..text:0000000000013C78       MOV             W0, W20
+..text:0000000000013C7C       LDR             W2, [X19,#0x4C]
+..text:0000000000013C80       BL              sub_132B0
+..text:0000000000013C84       EOR             W21, W21, W0
+..text:0000000000013C88       LDR             W1, [X19,#0x10]
+..text:0000000000013C8C       MOV             W0, W21
+..text:0000000000013C90       LDR             W2, [X19,#0x50]
+..text:0000000000013C94       BL              sub_1330C
+..text:0000000000013C98       EOR             W20, W20, W0
+..text:0000000000013C9C       LDR             W1, [X19,#0x14]
+..text:0000000000013CA0       MOV             W0, W20
+..text:0000000000013CA4       LDR             W2, [X19,#0x54]
+..text:0000000000013CA8       BL              sub_13368
+..text:0000000000013CAC       EOR             W21, W21, W0
+..text:0000000000013CB0       LDR             W1, [X19,#0x18]
+..text:0000000000013CB4       MOV             W0, W21
+..text:0000000000013CB8       LDR             W2, [X19,#0x58]
+..text:0000000000013CBC       BL              sub_132B0
+..text:0000000000013CC0       EOR             W20, W20, W0
+..text:0000000000013CC4       LDR             W1, [X19,#0x1C]
+..text:0000000000013CC8       MOV             W0, W20
+..text:0000000000013CCC       LDR             W2, [X19,#0x5C]
+..text:0000000000013CD0       BL              sub_1330C
+..text:0000000000013CD4       EOR             W21, W21, W0
+..text:0000000000013CD8       LDR             W1, [X19,#0x20]
+..text:0000000000013CDC       MOV             W0, W21
+..text:0000000000013CE0       LDR             W2, [X19,#0x60]
+..text:0000000000013CE4       BL              sub_13368
+..text:0000000000013CE8       EOR             W20, W20, W0
+..text:0000000000013CEC       LDR             W1, [X19,#0x24]
+..text:0000000000013CF0       MOV             W0, W20
+..text:0000000000013CF4       LDR             W2, [X19,#0x64]
+..text:0000000000013CF8       BL              sub_132B0
+..text:0000000000013CFC       EOR             W21, W21, W0
+..text:0000000000013D00       LDR             W1, [X19,#0x28]
+..text:0000000000013D04       MOV             W0, W21
+..text:0000000000013D08       LDR             W2, [X19,#0x68]
+..text:0000000000013D0C       BL              sub_1330C
+..text:0000000000013D10       EOR             W20, W20, W0
+..text:0000000000013D14       LDR             W1, [X19,#0x2C]
+..text:0000000000013D18       MOV             W0, W20
+..text:0000000000013D1C       LDR             W2, [X19,#0x6C]
+..text:0000000000013D20       BL              sub_13368
+..text:0000000000013D24       EOR             W21, W21, W0
+..text:0000000000013D28       LDR             W1, [X19,#0x80]
+..text:0000000000013D2C       CMP             W1, #0xA
+..text:0000000000013D30       B.HI            loc_13D74
+..text:0000000000013D34       REV             W21, W21
+..text:0000000000013D38       REV             W20, W20
+..text:0000000000013D3C       STR             W21, [X22]
+..text:0000000000013D40       MOV             W0, #0
+..text:0000000000013D44       STR             W20, [X22,#4]
+..text:0000000000013D48       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000013D4C       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000013D50       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000013D54       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000013D58       RET
+..text:0000000000013D5C       MOV             W0, #0x10
+..text:0000000000013D60       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000013D64       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000013D68       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000013D6C       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000013D70       RET
+..text:0000000000013D74       LDR             W1, [X19,#0x30]
+..text:0000000000013D78       MOV             W0, W21
+..text:0000000000013D7C       LDR             W2, [X19,#0x70]
+..text:0000000000013D80       BL              sub_132B0
+..text:0000000000013D84       EOR             W20, W0, W20
+..text:0000000000013D88       LDR             W1, [X19,#0x34]
+..text:0000000000013D8C       MOV             W0, W20
+..text:0000000000013D90       LDR             W2, [X19,#0x74]
+..text:0000000000013D94       BL              sub_1330C
+..text:0000000000013D98       EOR             W21, W0, W21
+..text:0000000000013D9C       LDR             W1, [X19,#0x38]
+..text:0000000000013DA0       MOV             W0, W21
+..text:0000000000013DA4       LDR             W2, [X19,#0x78]
+..text:0000000000013DA8       BL              sub_13368
+..text:0000000000013DAC       EOR             W20, W20, W0
+..text:0000000000013DB0       LDR             W1, [X19,#0x3C]
+..text:0000000000013DB4       MOV             W0, W20
+..text:0000000000013DB8       LDR             W2, [X19,#0x7C]
+..text:0000000000013DBC       BL              sub_132B0
+..text:0000000000013DC0       EOR             W21, W21, W0
+..text:0000000000013DC4       B               loc_13D34

@@ -1,0 +1,100 @@
+Function: sub_20AFC (0x20AFC)
+Architecture: 64-bit
+Segment range: 0x20AFC - 0x20C78
+----------------------------------------
+
+..text:0000000000020AFC       SUB             SP, SP, #0x60
+..text:0000000000020B00       STP             X25, X26, [SP,#0x60+var_30]
+..text:0000000000020B04       STP             X27, X28, [SP,#0x60+var_20]
+..text:0000000000020B08       MOV             X26, X0
+..text:0000000000020B0C       STR             X30, [SP,#0x60+var_10]
+..text:0000000000020B10       STP             X19, X20, [SP,#0x60+var_60]
+..text:0000000000020B14       STP             X21, X22, [SP,#0x60+var_50]
+..text:0000000000020B18       STP             X23, X24, [SP,#0x60+var_40]
+..text:0000000000020B1C       MOV             X25, X1
+..text:0000000000020B20       MOV             X28, X2
+..text:0000000000020B24       MOV             X0, #0x10
+..text:0000000000020B28       CBZ             X26, loc_20B8C
+..text:0000000000020B2C       ADRP            X20, #aRb@PAGE; "rb"
+..text:0000000000020B30       ADRP            X0, #aDevUrandom@PAGE; "/dev/urandom"
+..text:0000000000020B34       ADD             X20, X20, #aRb@PAGEOFF; "rb"
+..text:0000000000020B38       ADD             X0, X0, #aDevUrandom@PAGEOFF; "/dev/urandom"
+..text:0000000000020B3C       MOV             X1, X20; modes
+..text:0000000000020B40       BL              .fopen
+..text:0000000000020B44       MOV             X19, X0
+..text:0000000000020B48       CBZ             X0, loc_20C5C
+..text:0000000000020B4C       MOV             X1, #0; buf
+..text:0000000000020B50       MOV             X0, X19; stream
+..text:0000000000020B54       MOV             W2, #2; modes
+..text:0000000000020B58       MOV             X3, X1; n
+..text:0000000000020B5C       BL              .setvbuf
+..text:0000000000020B60       CBNZ            W0, loc_20BAC
+..text:0000000000020B64       MOV             X1, #1; size
+..text:0000000000020B68       MOV             X2, X25; n
+..text:0000000000020B6C       MOV             X3, X19; stream
+..text:0000000000020B70       MOV             X0, X26; ptr
+..text:0000000000020B74       BL              .fread
+..text:0000000000020B78       MOV             X20, X0
+..text:0000000000020B7C       MOV             X0, X19; stream
+..text:0000000000020B80       BL              .fclose
+..text:0000000000020B84       MOV             X0, X20
+..text:0000000000020B88       CBZ             X20, loc_20BB4
+..text:0000000000020B8C       LDP             X19, X20, [SP,#0x60+var_60]
+..text:0000000000020B90       LDP             X21, X22, [SP,#0x60+var_50]
+..text:0000000000020B94       LDP             X23, X24, [SP,#0x60+var_40]
+..text:0000000000020B98       LDP             X25, X26, [SP,#0x60+var_30]
+..text:0000000000020B9C       LDP             X27, X28, [SP,#0x60+var_20]
+..text:0000000000020BA0       LDR             X30, [SP,#0x60+var_10]
+..text:0000000000020BA4       ADD             SP, SP, #0x60 ; '`'
+..text:0000000000020BA8       RET
+..text:0000000000020BAC       MOV             X0, X19; stream
+..text:0000000000020BB0       BL              .fclose
+..text:0000000000020BB4       CBZ             X25, loc_20C38
+..text:0000000000020BB8       MOV             W20, #0
+..text:0000000000020BBC       MOV             X27, X25
+..text:0000000000020BC0       MOV             W19, W20
+..text:0000000000020BC4       CBZ             X28, loc_20BCC
+..text:0000000000020BC8       BLR             X28
+..text:0000000000020BCC       MOV             W23, #8
+..text:0000000000020BD0       MOV             W24, #0
+..text:0000000000020BD4       MOV             W22, W19
+..text:0000000000020BD8       BL              .clock
+..text:0000000000020BDC       MOV             W19, W22
+..text:0000000000020BE0       MOV             X21, X0
+..text:0000000000020BE4       B               loc_20BEC
+..text:0000000000020BE8       EOR             W19, W19, #1
+..text:0000000000020BEC       BL              .clock
+..text:0000000000020BF0       CMP             X21, X0
+..text:0000000000020BF4       B.EQ            loc_20BE8
+..text:0000000000020BF8       BL              .clock
+..text:0000000000020BFC       MOV             X21, X0
+..text:0000000000020C00       B               loc_20C08
+..text:0000000000020C04       EOR             W20, W20, #1
+..text:0000000000020C08       BL              .clock
+..text:0000000000020C0C       CMP             X21, X0
+..text:0000000000020C10       B.EQ            loc_20C04
+..text:0000000000020C14       CMP             W20, W19
+..text:0000000000020C18       MOV             W22, W20
+..text:0000000000020C1C       B.EQ            loc_20BD8
+..text:0000000000020C20       SUBS            W23, W23, #1
+..text:0000000000020C24       ORR             W24, W19, W24,LSL#1
+..text:0000000000020C28       B.NE            loc_20BD4
+..text:0000000000020C2C       STRB            W24, [X26],#1
+..text:0000000000020C30       SUBS            X27, X27, #1
+..text:0000000000020C34       B.NE            loc_20BC4
+..text:0000000000020C38       SXTW            X0, W25
+..text:0000000000020C3C       LDR             X30, [SP,#0x60+var_10]
+..text:0000000000020C40       LDP             X19, X20, [SP,#0x60+var_60]
+..text:0000000000020C44       LDP             X21, X22, [SP,#0x60+var_50]
+..text:0000000000020C48       LDP             X23, X24, [SP,#0x60+var_40]
+..text:0000000000020C4C       LDP             X25, X26, [SP,#0x60+var_30]
+..text:0000000000020C50       LDP             X27, X28, [SP,#0x60+var_20]
+..text:0000000000020C54       ADD             SP, SP, #0x60 ; '`'
+..text:0000000000020C58       RET
+..text:0000000000020C5C       ADRP            X0, #aDevRandom@PAGE; "/dev/random"
+..text:0000000000020C60       MOV             X1, X20; modes
+..text:0000000000020C64       ADD             X0, X0, #aDevRandom@PAGEOFF; "/dev/random"
+..text:0000000000020C68       BL              .fopen
+..text:0000000000020C6C       MOV             X19, X0
+..text:0000000000020C70       CBZ             X0, loc_20BB4
+..text:0000000000020C74       B               loc_20B4C

@@ -1,0 +1,84 @@
+Function: sub_23D0 (0x23D0)
+Architecture: 64-bit
+Segment range: 0x23D0 - 0x2510
+----------------------------------------
+
+..text:00000000000023D0       SUB             SP, SP, #0x30
+..text:00000000000023D4       STP             X19, X20, [SP,#0x30+var_30]
+..text:00000000000023D8       ADRP            X19, #byte_5C060@PAGE
+..text:00000000000023DC       STR             X30, [SP,#0x30+var_10]
+..text:00000000000023E0       STP             X21, X22, [SP,#0x30+var_20]
+..text:00000000000023E4       MOV             X20, X0
+..text:00000000000023E8       LDRB            W21, [X19,#byte_5C060@PAGEOFF]
+..text:00000000000023EC       CBZ             W21, loc_2424
+..text:00000000000023F0       ADRP            X20, #dword_5B010@PAGE
+..text:00000000000023F4       ADD             X1, X20, #dword_5B010@PAGEOFF
+..text:00000000000023F8       ADD             X0, X1, #0x10
+..text:00000000000023FC       STR             WZR, [X20,#dword_5B010@PAGEOFF]
+..text:0000000000002400       LDRB            W1, [X1,#(byte_5B020 - 0x5B010)]
+..text:0000000000002404       CBNZ            W1, loc_24C4
+..text:0000000000002408       MOV             W0, #1
+..text:000000000000240C       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000002410       STR             W0, [X20,#dword_5B010@PAGEOFF]
+..text:0000000000002414       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000002418       LDP             X21, X22, [SP,#0x30+var_20]
+..text:000000000000241C       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000002420       RET
+..text:0000000000002424       LDR             X2, [X0]
+..text:0000000000002428       ADRL            X1, aAndroidAppActi; "android/app/ActivityThread"
+..text:0000000000002430       LDR             X2, [X2,#0x30]
+..text:0000000000002434       BLR             X2
+..text:0000000000002438       MOV             X22, X0
+..text:000000000000243C       LDR             X0, [X20]
+..text:0000000000002440       ADRP            X3, #aLjavaLangStrin@PAGE; "()Ljava/lang/String;"
+..text:0000000000002444       ADRP            X2, #aCurrentpackage@PAGE; "currentPackageName"
+..text:0000000000002448       MOV             X1, X22
+..text:000000000000244C       ADD             X3, X3, #aLjavaLangStrin@PAGEOFF; "()Ljava/lang/String;"
+..text:0000000000002450       ADD             X2, X2, #aCurrentpackage@PAGEOFF; "currentPackageName"
+..text:0000000000002454       LDR             X4, [X0,#0x388]
+..text:0000000000002458       MOV             X0, X20
+..text:000000000000245C       BLR             X4
+..text:0000000000002460       MOV             X2, X0
+..text:0000000000002464       LDR             X3, [X20]
+..text:0000000000002468       MOV             X1, X22
+..text:000000000000246C       MOV             X0, X20
+..text:0000000000002470       LDR             X4, [X3,#0x390]
+..text:0000000000002474       LDR             X22, [X3,#0x548]
+..text:0000000000002478       BLR             X4
+..text:000000000000247C       MOV             X1, X0
+..text:0000000000002480       MOV             X2, #0
+..text:0000000000002484       MOV             X0, X20
+..text:0000000000002488       BLR             X22
+..text:000000000000248C       MOV             X20, X0
+..text:0000000000002490       MOV             W1, #0x3A ; ':'; int
+..text:0000000000002494       BL              .strchr
+..text:0000000000002498       CBZ             X0, loc_24A0
+..text:000000000000249C       STRB            W21, [X0]
+..text:00000000000024A0       MOV             X1, X20; src
+..text:00000000000024A4       ADD             X0, X19, #byte_5C060@PAGEOFF; dest
+..text:00000000000024A8       ADRP            X20, #dword_5B010@PAGE
+..text:00000000000024AC       BL              .strcpy
+..text:00000000000024B0       ADD             X1, X20, #dword_5B010@PAGEOFF
+..text:00000000000024B4       ADD             X0, X1, #0x10; char *
+..text:00000000000024B8       STR             WZR, [X20,#dword_5B010@PAGEOFF]
+..text:00000000000024BC       LDRB            W1, [X1,#(byte_5B020 - 0x5B010)]
+..text:00000000000024C0       CBZ             W1, loc_2408
+..text:00000000000024C4       ADRP            X1, #(aLjavaLangStrin_0+0x38)@PAGE; ";"
+..text:00000000000024C8       ADD             X19, X19, #byte_5C060@PAGEOFF
+..text:00000000000024CC       ADD             X1, X1, #(aLjavaLangStrin_0+0x38)@PAGEOFF; char *
+..text:00000000000024D0       MOV             X21, X1
+..text:00000000000024D4       BL              .strtok
+..text:00000000000024D8       CBZ             X0, loc_24F8
+..text:00000000000024DC       MOV             X1, X19; char *
+..text:00000000000024E0       BL              .strcmp
+..text:00000000000024E4       MOV             X1, X21; char *
+..text:00000000000024E8       CBZ             W0, loc_2408
+..text:00000000000024EC       MOV             X0, #0; char *
+..text:00000000000024F0       BL              .strtok
+..text:00000000000024F4       CBNZ            X0, loc_24DC
+..text:00000000000024F8       LDR             W0, [X20,#dword_5B010@PAGEOFF]
+..text:00000000000024FC       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000002500       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000002504       LDR             X30, [SP,#0x30+var_10]
+..text:0000000000002508       ADD             SP, SP, #0x30 ; '0'
+..text:000000000000250C       RET

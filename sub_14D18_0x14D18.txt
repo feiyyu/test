@@ -1,0 +1,62 @@
+Function: sub_14D18 (0x14D18)
+Architecture: 64-bit
+Segment range: 0x14D18 - 0x14DFC
+----------------------------------------
+
+..text:0000000000014D18       SUB             SP, SP, #0x50
+..text:0000000000014D1C       CMP             X0, XZR
+..text:0000000000014D20       CSET            W5, EQ
+..text:0000000000014D24       CMP             X2, XZR
+..text:0000000000014D28       CSET            W3, EQ
+..text:0000000000014D2C       STP             X19, X20, [SP,#0x50+var_50]
+..text:0000000000014D30       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:0000000000014D34       STR             X30, [SP,#0x50+var_30]
+..text:0000000000014D38       STP             X21, X22, [SP,#0x50+var_40]
+..text:0000000000014D3C       MOV             X21, X1
+..text:0000000000014D40       ORR             W3, W5, W3
+..text:0000000000014D44       LDR             X4, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000014D48       LDR             X1, [X4]
+..text:0000000000014D4C       STR             X1, [SP,#0x50+var_8]
+..text:0000000000014D50       CBNZ            W3, loc_14DF0
+..text:0000000000014D54       CMP             X21, XZR
+..text:0000000000014D58       CSET            W20, EQ
+..text:0000000000014D5C       CBNZ            W20, loc_14DF0
+..text:0000000000014D60       LDR             W4, [X0]
+..text:0000000000014D64       ADD             X22, SP, #0x50+var_10
+..text:0000000000014D68       LDR             W3, [X0,#4]
+..text:0000000000014D6C       ADD             X1, X2, #0x180
+..text:0000000000014D70       REV             W4, W4
+..text:0000000000014D74       MOV             X0, X22
+..text:0000000000014D78       REV             W3, W3
+..text:0000000000014D7C       STR             W4, [SP,#0x50+var_10]
+..text:0000000000014D80       STR             W3, [SP,#0x50+var_C]
+..text:0000000000014D84       STR             X2, [SP,#0x50+var_18]
+..text:0000000000014D88       BL              sub_14158
+..text:0000000000014D8C       LDR             X2, [SP,#0x50+var_18]
+..text:0000000000014D90       MOV             X0, X22
+..text:0000000000014D94       ADD             X1, X2, #0x200
+..text:0000000000014D98       BL              sub_14158
+..text:0000000000014D9C       LDR             X2, [SP,#0x50+var_18]
+..text:0000000000014DA0       MOV             X0, X22
+..text:0000000000014DA4       ADD             X1, X2, #0x280
+..text:0000000000014DA8       BL              sub_14158
+..text:0000000000014DAC       LDR             W1, [SP,#0x50+var_10]
+..text:0000000000014DB0       MOV             W0, W20
+..text:0000000000014DB4       REV             W1, W1
+..text:0000000000014DB8       STR             W1, [X21]
+..text:0000000000014DBC       LDR             W1, [SP,#0x50+var_C]
+..text:0000000000014DC0       REV             W1, W1
+..text:0000000000014DC4       STR             W1, [X21,#4]
+..text:0000000000014DC8       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000014DCC       LDR             X2, [SP,#0x50+var_8]
+..text:0000000000014DD0       LDR             X1, [X19]
+..text:0000000000014DD4       CMP             X2, X1
+..text:0000000000014DD8       B.NE            loc_14DF8
+..text:0000000000014DDC       LDP             X19, X20, [SP,#0x50+var_50]
+..text:0000000000014DE0       LDP             X21, X22, [SP,#0x50+var_40]
+..text:0000000000014DE4       LDR             X30, [SP,#0x50+var_30]
+..text:0000000000014DE8       ADD             SP, SP, #0x50 ; 'P'
+..text:0000000000014DEC       RET
+..text:0000000000014DF0       MOV             W0, #0x10
+..text:0000000000014DF4       B               loc_14DC8
+..text:0000000000014DF8       BL              .__stack_chk_fail

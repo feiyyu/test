@@ -1,0 +1,32 @@
+Function: sub_28CF0 (0x28CF0)
+Architecture: 64-bit
+Segment range: 0x28CF0 - 0x28D5C
+----------------------------------------
+
+..text:0000000000028CF0       LDR             W2, [X0]
+..text:0000000000028CF4       CMP             W2, #0x14
+..text:0000000000028CF8       B.LS            loc_28D1C
+..text:0000000000028CFC       LDR             W4, [X1]
+..text:0000000000028D00       CMP             W4, #0x14
+..text:0000000000028D04       B.LS            loc_28D50
+..text:0000000000028D08       LDR             W0, [X0,#0x18]
+..text:0000000000028D0C       LDR             W2, [X1,#0x18]
+..text:0000000000028D10       SUB             W2, W0, W2
+..text:0000000000028D14       MOV             W0, W2
+..text:0000000000028D18       RET
+..text:0000000000028D1C       ADRP            X3, #unk_40CD0@PAGE
+..text:0000000000028D20       LDR             W4, [X1]
+..text:0000000000028D24       ADD             X6, X3, #unk_40CD0@PAGEOFF
+..text:0000000000028D28       MOV             W5, #0xFFFFFFFF
+..text:0000000000028D2C       CMP             W4, #0x14
+..text:0000000000028D30       LDR             W2, [X6,W2,UXTW#2]
+..text:0000000000028D34       B.HI            loc_28D40
+..text:0000000000028D38       ADD             X3, X3, #unk_40CD0@PAGEOFF
+..text:0000000000028D3C       LDR             W5, [X3,W4,UXTW#2]
+..text:0000000000028D40       SUBS            W2, W2, W5
+..text:0000000000028D44       B.EQ            loc_28D08
+..text:0000000000028D48       MOV             W0, W2
+..text:0000000000028D4C       RET
+..text:0000000000028D50       MOV             W2, #0xFFFFFFFF
+..text:0000000000028D54       ADRP            X3, #0x40000
+..text:0000000000028D58       B               loc_28D38

@@ -1,0 +1,37 @@
+Function: sub_23D84 (0x23D84)
+Architecture: 64-bit
+Segment range: 0x23D84 - 0x23E04
+----------------------------------------
+
+..text:0000000000023D84       SUB             SP, SP, #0x20
+..text:0000000000023D88       MOV             X1, #0x40 ; '@'; item_size
+..text:0000000000023D8C       STP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000023D90       STR             X30, [SP,#0x20+var_10]
+..text:0000000000023D94       MOV             X20, X0
+..text:0000000000023D98       LDR             X19, [X0]
+..text:0000000000023D9C       MOV             X0, #1; item_count
+..text:0000000000023DA0       CBZ             X19, loc_23DDC
+..text:0000000000023DA4       BL              .calloc
+..text:0000000000023DA8       STR             X0, [X19,#0x28]
+..text:0000000000023DAC       LDR             X1, [X20]
+..text:0000000000023DB0       LDR             X0, [X1,#0x28]
+..text:0000000000023DB4       CBZ             X0, loc_23DF0
+..text:0000000000023DB8       STR             X1, [X0,#0x20]
+..text:0000000000023DBC       MOV             W0, #0
+..text:0000000000023DC0       LDR             X1, [X20]
+..text:0000000000023DC4       LDR             X1, [X1,#0x28]
+..text:0000000000023DC8       STR             X1, [X20]
+..text:0000000000023DCC       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000023DD0       LDR             X30, [SP,#0x20+var_10]
+..text:0000000000023DD4       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000023DD8       RET
+..text:0000000000023DDC       BL              .calloc
+..text:0000000000023DE0       MOV             X1, X0
+..text:0000000000023DE4       STR             X0, [X20]
+..text:0000000000023DE8       MOV             W0, W19
+..text:0000000000023DEC       CBNZ            X1, loc_23DCC
+..text:0000000000023DF0       MOV             W0, #0xD
+..text:0000000000023DF4       LDR             X30, [SP,#0x20+var_10]
+..text:0000000000023DF8       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000023DFC       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000023E00       RET

@@ -1,0 +1,20 @@
+Function: sub_69D8 (0x69D8)
+Architecture: 64-bit
+Segment range: 0x69D8 - 0x6A14
+----------------------------------------
+
+..text:00000000000069D8       LDR             W2, [X0,#8]
+..text:00000000000069DC       MOV             X3, X0
+..text:00000000000069E0       LDR             W5, [X1,#8]
+..text:00000000000069E4       CMP             W2, W5
+..text:00000000000069E8       B.EQ            loc_69FC
+..text:00000000000069EC       CMP             W2, #1
+..text:00000000000069F0       MOV             W0, #0xFFFFFFFF
+..text:00000000000069F4       CSINC           W0, W0, WZR, EQ
+..text:00000000000069F8       RET
+..text:00000000000069FC       CMP             W2, #1
+..text:0000000000006A00       B.EQ            loc_6A08
+..text:0000000000006A04       B               sub_6A5C
+..text:0000000000006A08       MOV             X0, X1
+..text:0000000000006A0C       MOV             X1, X3
+..text:0000000000006A10       B               sub_6A5C

@@ -1,0 +1,11 @@
+Function: sub_20A34 (0x20A34)
+Architecture: 64-bit
+Segment range: 0x20A34 - 0x20A4C
+----------------------------------------
+
+..text:0000000000020A34       CBZ             X0, loc_20A44
+..text:0000000000020A38       STRH            WZR, [X0,#0x11E8]
+..text:0000000000020A3C       ADD             X0, X0, #0x88
+..text:0000000000020A40       B               sub_229E4
+..text:0000000000020A44       MOV             W0, #0x10
+..text:0000000000020A48       RET

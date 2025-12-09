@@ -1,0 +1,20 @@
+Function: sub_29BBC (0x29BBC)
+Architecture: 64-bit
+Segment range: 0x29BBC - 0x29BF8
+----------------------------------------
+
+..text:0000000000029BBC       CBZ             X1, loc_29BE4
+..text:0000000000029BC0       CBZ             X0, loc_29BE4
+..text:0000000000029BC4       LDR             W2, [X0,#0x1C]
+..text:0000000000029BC8       CBNZ            W2, loc_29BD4
+..text:0000000000029BCC       LDR             W0, [X0,#0x20]
+..text:0000000000029BD0       CBZ             W0, loc_29BEC
+..text:0000000000029BD4       MOV             X2, #0x13
+..text:0000000000029BD8       MOV             W0, #0
+..text:0000000000029BDC       STR             X2, [X1]
+..text:0000000000029BE0       RET
+..text:0000000000029BE4       MOV             W0, #0x10
+..text:0000000000029BE8       RET
+..text:0000000000029BEC       MOV             X2, #0xF
+..text:0000000000029BF0       STR             X2, [X1]
+..text:0000000000029BF4       RET

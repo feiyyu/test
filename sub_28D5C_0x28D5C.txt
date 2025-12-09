@@ -1,0 +1,62 @@
+Function: sub_28D5C (0x28D5C)
+Architecture: 64-bit
+Segment range: 0x28D5C - 0x28E40
+----------------------------------------
+
+..text:0000000000028D5C       SUB             SP, SP, #0x30
+..text:0000000000028D60       STP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000028D64       MOV             X19, X1
+..text:0000000000028D68       MOV             X20, X0
+..text:0000000000028D6C       MOV             X1, #0x40 ; '@'; item_size
+..text:0000000000028D70       MOV             X0, X19; item_count
+..text:0000000000028D74       STP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000028D78       STP             X23, X30, [SP,#0x30+var_10]
+..text:0000000000028D7C       MOV             X22, X2
+..text:0000000000028D80       MOV             X23, X3
+..text:0000000000028D84       BL              .calloc
+..text:0000000000028D88       MOV             X21, X0
+..text:0000000000028D8C       CBZ             X0, loc_28E28
+..text:0000000000028D90       MOV             X4, X0
+..text:0000000000028D94       MOV             X5, #0
+..text:0000000000028D98       CBZ             X19, loc_28DD4
+..text:0000000000028D9C       ADD             X6, X20, X5,LSL#6
+..text:0000000000028DA0       ADD             X4, X4, #0x40 ; '@'
+..text:0000000000028DA4       LDP             X12, X13, [X6,#0x10]
+..text:0000000000028DA8       STP             X12, X13, [X4,#-0x30]
+..text:0000000000028DAC       LDP             X10, X11, [X6]
+..text:0000000000028DB0       LDP             X8, X9, [X6,#0x20]
+..text:0000000000028DB4       STUR            W5, [X4,#-0x28]
+..text:0000000000028DB8       ADD             X5, X5, #1
+..text:0000000000028DBC       LDP             X6, X7, [X6,#0x30]
+..text:0000000000028DC0       CMP             X5, X19
+..text:0000000000028DC4       STP             X10, X11, [X4,#-0x40]
+..text:0000000000028DC8       STP             X8, X9, [X4,#-0x20]
+..text:0000000000028DCC       STP             X6, X7, [X4,#-0x10]
+..text:0000000000028DD0       B.NE            loc_28D9C
+..text:0000000000028DD4       ADRP            X3, #sub_28CF0@PAGE
+..text:0000000000028DD8       MOV             X0, X21; base
+..text:0000000000028DDC       MOV             X1, X19; nmemb
+..text:0000000000028DE0       MOV             X2, #0x40 ; '@'; size
+..text:0000000000028DE4       ADD             X3, X3, #sub_28CF0@PAGEOFF; compar
+..text:0000000000028DE8       BL              .qsort
+..text:0000000000028DEC       MOV             X1, X19
+..text:0000000000028DF0       MOV             X2, X22
+..text:0000000000028DF4       MOV             X3, X23
+..text:0000000000028DF8       MOV             W4, #0xE
+..text:0000000000028DFC       MOV             X0, X21
+..text:0000000000028E00       BL              sub_24B08
+..text:0000000000028E04       MOV             W19, W0
+..text:0000000000028E08       MOV             X0, X21; p
+..text:0000000000028E0C       BL              .free
+..text:0000000000028E10       MOV             W0, W19
+..text:0000000000028E14       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000028E18       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000028E1C       LDP             X23, X30, [SP,#0x30+var_10]
+..text:0000000000028E20       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000028E24       RET
+..text:0000000000028E28       MOV             W0, #0xD
+..text:0000000000028E2C       LDP             X19, X20, [SP,#0x30+var_30]
+..text:0000000000028E30       LDP             X21, X22, [SP,#0x30+var_20]
+..text:0000000000028E34       LDP             X23, X30, [SP,#0x30+var_10]
+..text:0000000000028E38       ADD             SP, SP, #0x30 ; '0'
+..text:0000000000028E3C       RET

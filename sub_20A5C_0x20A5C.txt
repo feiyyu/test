@@ -1,0 +1,7 @@
+Function: sub_20A5C (0x20A5C)
+Architecture: 64-bit
+Segment range: 0x20A5C - 0x20A64
+----------------------------------------
+
+..text:0000000000020A5C       MOV             W0, #0
+..text:0000000000020A60       RET

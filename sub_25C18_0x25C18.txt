@@ -1,0 +1,90 @@
+Function: sub_25C18 (0x25C18)
+Architecture: 64-bit
+Segment range: 0x25C18 - 0x25D6C
+----------------------------------------
+
+..text:0000000000025C18       SUB             SP, SP, #0x40
+..text:0000000000025C1C       STP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000025C20       STP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000025C24       STP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000025C28       STR             X30, [SP,#0x40+var_10]
+..text:0000000000025C2C       CBZ             X0, loc_25CD0
+..text:0000000000025C30       CBZ             X1, loc_25CD0
+..text:0000000000025C34       ADRP            X22, #off_59FB0@PAGE
+..text:0000000000025C38       MOV             X21, X1
+..text:0000000000025C3C       MOV             X1, #0
+..text:0000000000025C40       MOV             X20, X0
+..text:0000000000025C44       LDR             X23, [X22,#off_59FB0@PAGEOFF]
+..text:0000000000025C48       LDR             X2, [X23,#(off_60910 - 0x608B0)]
+..text:0000000000025C4C       BLR             X2
+..text:0000000000025C50       CMN             W0, #1
+..text:0000000000025C54       LDR             X1, [X23,#(off_60918 - 0x608B0)]
+..text:0000000000025C58       MOV             X0, X20
+..text:0000000000025C5C       B.EQ            loc_25CEC
+..text:0000000000025C60       BLR             X1
+..text:0000000000025C64       AND             W0, W0, #7
+..text:0000000000025C68       MOV             X19, #1
+..text:0000000000025C6C       CBNZ            W0, loc_25D2C
+..text:0000000000025C70       LDR             X22, [X22,#off_59FB0@PAGEOFF]
+..text:0000000000025C74       MOV             X0, X20
+..text:0000000000025C78       LDR             X1, [X22,#(off_60940 - 0x608B0)]
+..text:0000000000025C7C       BLR             X1
+..text:0000000000025C80       ADD             X0, X0, X19
+..text:0000000000025C84       CMP             X0, #0x7F
+..text:0000000000025C88       ADD             X2, X0, #1
+..text:0000000000025C8C       B.HI            loc_25CB4
+..text:0000000000025C90       ADD             X2, X2, #1
+..text:0000000000025C94       STR             X2, [X21]
+..text:0000000000025C98       MOV             W0, #0
+..text:0000000000025C9C       LDP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000025CA0       LDP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000025CA4       LDP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000025CA8       LDR             X30, [SP,#0x40+var_10]
+..text:0000000000025CAC       ADD             SP, SP, #0x40 ; '@'
+..text:0000000000025CB0       RET
+..text:0000000000025CB4       LSR             X0, X0, #8
+..text:0000000000025CB8       ADD             X2, X2, #1
+..text:0000000000025CBC       CBZ             X0, loc_25C90
+..text:0000000000025CC0       LSR             X0, X0, #8
+..text:0000000000025CC4       ADD             X2, X2, #1
+..text:0000000000025CC8       CBNZ            X0, loc_25CB4
+..text:0000000000025CCC       B               loc_25C90
+..text:0000000000025CD0       MOV             W0, #0x10
+..text:0000000000025CD4       LDR             X30, [SP,#0x40+var_10]
+..text:0000000000025CD8       LDP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000025CDC       LDP             X21, X22, [SP,#0x40+var_30]
+..text:0000000000025CE0       LDP             X23, X24, [SP,#0x40+var_20]
+..text:0000000000025CE4       ADD             SP, SP, #0x40 ; '@'
+..text:0000000000025CE8       RET
+..text:0000000000025CEC       BLR             X1
+..text:0000000000025CF0       SXTW            X22, W0
+..text:0000000000025CF4       LDR             X1, [X23,#(off_60920 - 0x608B0)]
+..text:0000000000025CF8       MOV             X0, X20
+..text:0000000000025CFC       AND             X22, X22, #0xFFFFFFFFFFFFFFF8
+..text:0000000000025D00       ADD             X19, X22, #8
+..text:0000000000025D04       BLR             X1
+..text:0000000000025D08       MOV             W24, W0
+..text:0000000000025D0C       LDR             X1, [X23,#(off_60918 - 0x608B0)]
+..text:0000000000025D10       MOV             X0, X20
+..text:0000000000025D14       ADD             W24, W24, #1
+..text:0000000000025D18       BLR             X1
+..text:0000000000025D1C       CMP             W24, W0
+..text:0000000000025D20       B.EQ            loc_25D48
+..text:0000000000025D24       LSR             X0, X19, #3
+..text:0000000000025D28       B               loc_25C84
+..text:0000000000025D2C       LDR             X2, [X23,#(off_60910 - 0x608B0)]
+..text:0000000000025D30       MOV             X0, X20
+..text:0000000000025D34       MOV             X1, #0
+..text:0000000000025D38       BLR             X2
+..text:0000000000025D3C       CMP             W0, WZR
+..text:0000000000025D40       CSET            X19, EQ
+..text:0000000000025D44       B               loc_25C70
+..text:0000000000025D48       LDR             X1, [X23,#(off_60918 - 0x608B0)]
+..text:0000000000025D4C       MOV             X0, X20
+..text:0000000000025D50       ADD             X22, X22, #7
+..text:0000000000025D54       BLR             X1
+..text:0000000000025D58       AND             W0, W0, #7
+..text:0000000000025D5C       CMP             W0, WZR
+..text:0000000000025D60       CSEL            X19, X22, X19, EQ
+..text:0000000000025D64       LSR             X0, X19, #3
+..text:0000000000025D68       B               loc_25C84

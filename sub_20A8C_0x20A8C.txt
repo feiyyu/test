@@ -1,0 +1,10 @@
+Function: sub_20A8C (0x20A8C)
+Architecture: 64-bit
+Segment range: 0x20A8C - 0x20AA0
+----------------------------------------
+
+..text:0000000000020A8C       CBZ             X0, loc_20A98
+..text:0000000000020A90       MOV             X2, #0
+..text:0000000000020A94       B               sub_20AFC
+..text:0000000000020A98       MOV             X0, #0x10
+..text:0000000000020A9C       RET

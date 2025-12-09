@@ -1,0 +1,7 @@
+Function: sub_20A84 (0x20A84)
+Architecture: 64-bit
+Segment range: 0x20A84 - 0x20A8C
+----------------------------------------
+
+..text:0000000000020A84       MOV             W0, #0
+..text:0000000000020A88       RET

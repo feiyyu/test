@@ -1,0 +1,23 @@
+Function: sub_27EE0 (0x27EE0)
+Architecture: 64-bit
+Segment range: 0x27EE0 - 0x27F28
+----------------------------------------
+
+..text:0000000000027EE0       ADRP            X4, #dword_40A40@PAGE
+..text:0000000000027EE4       MOV             W2, #0
+..text:0000000000027EE8       ADD             X1, X4, #dword_40A40@PAGEOFF
+..text:0000000000027EEC       ADD             X1, X1, #4
+..text:0000000000027EF0       B               loc_27F00
+..text:0000000000027EF4       ADD             W2, W2, #1
+..text:0000000000027EF8       CMP             W2, #0x4A ; 'J'
+..text:0000000000027EFC       B.EQ            loc_27F20
+..text:0000000000027F00       LDR             W3, [X1]
+..text:0000000000027F04       ADD             X1, X1, #8
+..text:0000000000027F08       CMP             W3, W0
+..text:0000000000027F0C       B.NE            loc_27EF4
+..text:0000000000027F10       ADD             X4, X4, #dword_40A40@PAGEOFF
+..text:0000000000027F14       SBFIZ           X2, X2, #3, #0x20 ; ' '
+..text:0000000000027F18       LDR             W0, [X4,X2]
+..text:0000000000027F1C       RET
+..text:0000000000027F20       MOV             W0, #0xFFFFFFFF
+..text:0000000000027F24       RET
