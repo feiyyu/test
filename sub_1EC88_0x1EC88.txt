@@ -1,0 +1,23 @@
+Function: sub_1EC88 (0x1EC88)
+Architecture: 64-bit
+Segment range: 0x1EC88 - 0x1ECD0
+----------------------------------------
+
+..text:000000000001EC88       SUB             SP, SP, #0x10
+..text:000000000001EC8C       MOV             W2, #0x10
+..text:000000000001EC90       STR             X30, [SP,#0x10+var_10]
+..text:000000000001EC94       CBZ             X0, loc_1ECAC
+..text:000000000001EC98       BL              sub_6A14
+..text:000000000001EC9C       CMN             W0, #1
+..text:000000000001ECA0       B.EQ            loc_1ECBC
+..text:000000000001ECA4       CMP             W0, #1
+..text:000000000001ECA8       CSET            W2, EQ
+..text:000000000001ECAC       MOV             W0, W2
+..text:000000000001ECB0       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001ECB4       ADD             SP, SP, #0x10
+..text:000000000001ECB8       RET
+..text:000000000001ECBC       MOV             W2, W0
+..text:000000000001ECC0       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001ECC4       MOV             W0, W2
+..text:000000000001ECC8       ADD             SP, SP, #0x10
+..text:000000000001ECCC       RET

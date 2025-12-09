@@ -1,0 +1,45 @@
+Function: sub_1E604 (0x1E604)
+Architecture: 64-bit
+Segment range: 0x1E604 - 0x1E6A8
+----------------------------------------
+
+..text:000000000001E604       SUB             SP, SP, #0x30
+..text:000000000001E608       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001E60C       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000001E610       MOV             X20, X2
+..text:000000000001E614       STR             X30, [SP,#0x30+var_20]
+..text:000000000001E618       LDR             X2, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001E61C       LDR             X2, [X2]
+..text:000000000001E620       STR             X2, [SP,#0x30+var_8]
+..text:000000000001E624       CBZ             X0, loc_1E670
+..text:000000000001E628       CBZ             X20, loc_1E670
+..text:000000000001E62C       ADD             X2, SP, #0x30+var_10
+..text:000000000001E630       BL              sub_ADC0
+..text:000000000001E634       CBZ             W0, loc_1E67C
+..text:000000000001E638       CMN             W0, #2
+..text:000000000001E63C       B.EQ            loc_1E678
+..text:000000000001E640       CMN             W0, #3
+..text:000000000001E644       MOV             W0, #1
+..text:000000000001E648       B.EQ            loc_1E69C
+..text:000000000001E64C       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001E650       LDR             X2, [SP,#0x30+var_8]
+..text:000000000001E654       LDR             X1, [X19]
+..text:000000000001E658       CMP             X2, X1
+..text:000000000001E65C       B.NE            loc_1E6A4
+..text:000000000001E660       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001E664       LDR             X30, [SP,#0x30+var_20]
+..text:000000000001E668       ADD             SP, SP, #0x30 ; '0'
+..text:000000000001E66C       RET
+..text:000000000001E670       MOV             W0, #0x10
+..text:000000000001E674       B               loc_1E64C
+..text:000000000001E678       MOV             W0, #1
+..text:000000000001E67C       ADRL            X1, dword_3FB00
+..text:000000000001E684       ADD             X0, X1, W0,SXTW#3
+..text:000000000001E688       LDR             W0, [X0,#4]
+..text:000000000001E68C       CBNZ            W0, loc_1E64C
+..text:000000000001E690       LDR             X1, [SP,#0x30+var_10]
+..text:000000000001E694       STR             X1, [X20]
+..text:000000000001E698       B               loc_1E64C
+..text:000000000001E69C       MOV             W0, #2
+..text:000000000001E6A0       B               loc_1E67C
+..text:000000000001E6A4       BL              .__stack_chk_fail

@@ -1,0 +1,37 @@
+Function: sub_1FA28 (0x1FA28)
+Architecture: 64-bit
+Segment range: 0x1FA28 - 0x1FAA8
+----------------------------------------
+
+..text:000000000001FA28       SUB             SP, SP, #0x20
+..text:000000000001FA2C       STR             X30, [SP,#0x20+var_20]
+..text:000000000001FA30       CBZ             X0, loc_1FA5C
+..text:000000000001FA34       STR             X2, [SP,#0x20+var_8]
+..text:000000000001FA38       STR             X1, [SP,#0x20+var_10]
+..text:000000000001FA3C       BL              sub_1F9A0
+..text:000000000001FA40       CMN             W0, #1
+..text:000000000001FA44       LDR             X1, [SP,#0x20+var_10]
+..text:000000000001FA48       LDR             X2, [SP,#0x20+var_8]
+..text:000000000001FA4C       B.EQ            loc_1FA5C
+..text:000000000001FA50       LDR             X30, [SP,#0x20+var_20]
+..text:000000000001FA54       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001FA58       RET
+..text:000000000001FA5C       ADRP            X3, #off_59FA8@PAGE
+..text:000000000001FA60       MOV             W0, #0
+..text:000000000001FA64       LDR             X3, [X3,#off_59FA8@PAGEOFF]
+..text:000000000001FA68       LDR             X4, [X3]
+..text:000000000001FA6C       CBZ             X4, loc_1FA88
+..text:000000000001FA70       LDR             W4, [X3,#0x14]
+..text:000000000001FA74       CMP             W4, W1
+..text:000000000001FA78       B.LT            loc_1FA88
+..text:000000000001FA7C       LDR             W4, [X3,#0x10]
+..text:000000000001FA80       CMP             W4, W2
+..text:000000000001FA84       B.GE            loc_1FA50
+..text:000000000001FA88       ADD             W0, W0, #1
+..text:000000000001FA8C       ADD             X3, X3, #0xC0
+..text:000000000001FA90       CMP             W0, #0x20 ; ' '
+..text:000000000001FA94       B.NE            loc_1FA68
+..text:000000000001FA98       MOV             W0, #0xFFFFFFFF
+..text:000000000001FA9C       LDR             X30, [SP,#0x20+var_20]
+..text:000000000001FAA0       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001FAA4       RET

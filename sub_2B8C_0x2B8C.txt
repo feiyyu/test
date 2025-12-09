@@ -1,0 +1,70 @@
+Function: sub_2B8C (0x2B8C)
+Architecture: 64-bit
+Segment range: 0x2B8C - 0x2C90
+----------------------------------------
+
+..text:0000000000002B8C       SUB             SP, SP, #0x20
+..text:0000000000002B90       ADRP            X10, #__stack_chk_guard_ptr@PAGE
+..text:0000000000002B94       MOV             X4, #0
+..text:0000000000002B98       MOV             W5, W4
+..text:0000000000002B9C       STR             X30, [SP,#0x20+var_20]
+..text:0000000000002BA0       LDR             X11, [X10,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000002BA4       LDRB            W9, [X0,#5]
+..text:0000000000002BA8       LDRB            W7, [X0,#6]
+..text:0000000000002BAC       LDRB            W3, [X0,#4]
+..text:0000000000002BB0       LSL             W7, W7, #0x10
+..text:0000000000002BB4       LDRB            W6, [X0,#7]
+..text:0000000000002BB8       ORR             W7, W7, W9,LSL#8
+..text:0000000000002BBC       LDR             X15, [X11]
+..text:0000000000002BC0       ORR             W7, W7, W3
+..text:0000000000002BC4       LDRB            W8, [X0]
+..text:0000000000002BC8       LDRB            W14, [X0,#1]
+..text:0000000000002BCC       ORR             W7, W7, W6,LSL#24
+..text:0000000000002BD0       LDRB            W13, [X0,#2]
+..text:0000000000002BD4       ADD             W9, W7, #0xA
+..text:0000000000002BD8       ADD             W11, W7, #9
+..text:0000000000002BDC       ADD             W6, W7, #8
+..text:0000000000002BE0       ADD             W3, W7, #0xB
+..text:0000000000002BE4       LDRB            W12, [X0,#3]
+..text:0000000000002BE8       LDRB            W9, [X0,X9]
+..text:0000000000002BEC       LDRB            W11, [X0,X11]
+..text:0000000000002BF0       LDRB            W6, [X0,X6]
+..text:0000000000002BF4       LSL             W9, W9, #0x10
+..text:0000000000002BF8       LDRB            W3, [X0,X3]
+..text:0000000000002BFC       ORR             W9, W9, W11,LSL#8
+..text:0000000000002C00       STR             X15, [SP,#0x20+var_8]
+..text:0000000000002C04       STRB            W8, [SP,#0x20+var_10]
+..text:0000000000002C08       ORR             W9, W9, W6
+..text:0000000000002C0C       STRB            W14, [SP,#0x20+var_F]
+..text:0000000000002C10       ORR             W9, W9, W3,LSL#24
+..text:0000000000002C14       STRB            W13, [SP,#0x20+var_E]
+..text:0000000000002C18       STRB            W12, [SP,#0x20+var_D]
+..text:0000000000002C1C       CBNZ            W7, loc_2C38
+..text:0000000000002C20       B               loc_2C54
+..text:0000000000002C24       AND             X3, X5, #3
+..text:0000000000002C28       ADD             X6, SP, #0x20+arg_0
+..text:0000000000002C2C       ADD             X3, X6, X3
+..text:0000000000002C30       ADD             X4, X4, #1
+..text:0000000000002C34       LDURB           W8, [X3,#-0x10]
+..text:0000000000002C38       ADD             W6, W4, #8
+..text:0000000000002C3C       ADD             W5, W5, #1
+..text:0000000000002C40       CMP             W5, W7
+..text:0000000000002C44       LDRB            W3, [X0,X6]
+..text:0000000000002C48       EOR             W3, W8, W3
+..text:0000000000002C4C       STRB            W3, [X0,X4]
+..text:0000000000002C50       B.NE            loc_2C24
+..text:0000000000002C54       STR             X7, [X1]
+..text:0000000000002C58       CBZ             X2, loc_2C64
+..text:0000000000002C5C       MOV             W3, W9
+..text:0000000000002C60       STR             X3, [X2]
+..text:0000000000002C64       LDR             X10, [X10,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000002C68       ADD             X7, X7, #0xC
+..text:0000000000002C6C       LDR             X2, [SP,#0x20+var_8]
+..text:0000000000002C70       ADD             X0, X0, X7
+..text:0000000000002C74       LDR             X1, [X10]
+..text:0000000000002C78       CMP             X2, X1
+..text:0000000000002C7C       B.NE            loc_2C8C
+..text:0000000000002C80       LDR             X30, [SP,#0x20+var_20]
+..text:0000000000002C84       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000002C88       RET
+..text:0000000000002C8C       BL              .__stack_chk_fail

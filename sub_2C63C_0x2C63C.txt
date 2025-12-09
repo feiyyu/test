@@ -1,0 +1,38 @@
+Function: sub_2C63C (0x2C63C)
+Architecture: 64-bit
+Segment range: 0x2C63C - 0x2C6C0
+----------------------------------------
+
+..text:000000000002C63C       SUB             SP, SP, #0x30
+..text:000000000002C640       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000002C644       ADRP            X19, #off_59FB0@PAGE
+..text:000000000002C648       MOV             X20, X1
+..text:000000000002C64C       STP             X21, X22, [SP,#0x30+var_20]
+..text:000000000002C650       STP             X23, X30, [SP,#0x30+var_10]
+..text:000000000002C654       LDR             X19, [X19,#off_59FB0@PAGEOFF]
+..text:000000000002C658       MOV             X23, X0
+..text:000000000002C65C       MOV             X22, X2
+..text:000000000002C660       LDR             X3, [X19,#(off_60940 - 0x608B0)]
+..text:000000000002C664       BLR             X3
+..text:000000000002C668       CMP             X0, X20
+..text:000000000002C66C       MOV             X21, X0
+..text:000000000002C670       MOV             W0, #6
+..text:000000000002C674       B.LS            loc_2C68C
+..text:000000000002C678       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000002C67C       LDP             X21, X22, [SP,#0x30+var_20]
+..text:000000000002C680       LDP             X23, X30, [SP,#0x30+var_10]
+..text:000000000002C684       ADD             SP, SP, #0x30 ; '0'
+..text:000000000002C688       RET
+..text:000000000002C68C       MOV             X0, X22
+..text:000000000002C690       MOV             X1, X20
+..text:000000000002C694       BL              sub_2168C
+..text:000000000002C698       SUB             X1, X20, X21
+..text:000000000002C69C       LDR             X2, [X19,#(off_60948 - 0x608B0)]
+..text:000000000002C6A0       ADD             X1, X22, X1
+..text:000000000002C6A4       MOV             X0, X23
+..text:000000000002C6A8       BLR             X2
+..text:000000000002C6AC       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000002C6B0       LDP             X21, X22, [SP,#0x30+var_20]
+..text:000000000002C6B4       LDP             X23, X30, [SP,#0x30+var_10]
+..text:000000000002C6B8       ADD             SP, SP, #0x30 ; '0'
+..text:000000000002C6BC       RET

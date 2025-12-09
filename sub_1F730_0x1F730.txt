@@ -1,0 +1,17 @@
+Function: sub_1F730 (0x1F730)
+Architecture: 64-bit
+Segment range: 0x1F730 - 0x1F760
+----------------------------------------
+
+..text:000000000001F730       CMP             X2, XZR
+..text:000000000001F734       CSET            W5, EQ
+..text:000000000001F738       CMP             X3, XZR
+..text:000000000001F73C       CSET            W4, EQ
+..text:000000000001F740       ORR             W4, W5, W4
+..text:000000000001F744       CBNZ            W4, loc_1F758
+..text:000000000001F748       CMP             X0, XZR
+..text:000000000001F74C       CSET            W4, EQ
+..text:000000000001F750       CBNZ            W4, loc_1F758
+..text:000000000001F754       B               loc_1F574
+..text:000000000001F758       MOV             W0, #0x10
+..text:000000000001F75C       RET

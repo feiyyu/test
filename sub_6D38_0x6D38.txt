@@ -1,0 +1,20 @@
+Function: sub_6D38 (0x6D38)
+Architecture: 64-bit
+Segment range: 0x6D38 - 0x6D74
+----------------------------------------
+
+..text:0000000000006D38       MOV             X1, X0
+..text:0000000000006D3C       LDR             W0, [X0]
+..text:0000000000006D40       CBZ             W0, locret_6D70
+..text:0000000000006D44       LDR             X3, [X1,#0x10]
+..text:0000000000006D48       MOV             X1, #0xFFFFFFFFFFFFFFF8
+..text:0000000000006D4C       ADD             X1, X1, W0,SXTW#3
+..text:0000000000006D50       SUB             W2, W0, #1
+..text:0000000000006D54       LSL             W0, W2, #6
+..text:0000000000006D58       LDR             X1, [X3,X1]
+..text:0000000000006D5C       SUB             W0, W0, W2,LSL#2
+..text:0000000000006D60       CBZ             X1, locret_6D70
+..text:0000000000006D64       LSR             X1, X1, #1
+..text:0000000000006D68       ADD             W0, W0, #1
+..text:0000000000006D6C       CBNZ            X1, loc_6D64
+..text:0000000000006D70       RET

@@ -1,0 +1,40 @@
+Function: sub_6B00 (0x6B00)
+Architecture: 64-bit
+Segment range: 0x6B00 - 0x6B8C
+----------------------------------------
+
+..text:0000000000006B00       MOV             X1, X0
+..text:0000000000006B04       LDR             W0, [X0]
+..text:0000000000006B08       CMP             W0, WZR
+..text:0000000000006B0C       B.EQ            locret_6B70
+..text:0000000000006B10       LDR             X4, [X1,#0x10]
+..text:0000000000006B14       B.LE            loc_6B80
+..text:0000000000006B18       LDR             X1, [X4]
+..text:0000000000006B1C       CBNZ            X1, loc_6B80
+..text:0000000000006B20       ADD             X3, X4, #8
+..text:0000000000006B24       B               loc_6B30
+..text:0000000000006B28       LDR             X2, [X3],#8
+..text:0000000000006B2C       CBNZ            X2, loc_6B74
+..text:0000000000006B30       ADD             W1, W1, #1
+..text:0000000000006B34       CMP             W1, W0
+..text:0000000000006B38       B.NE            loc_6B28
+..text:0000000000006B3C       LSL             W0, W1, #6
+..text:0000000000006B40       LDR             X2, [X4,W1,SXTW#3]
+..text:0000000000006B44       SUB             W1, W0, W1,LSL#2
+..text:0000000000006B48       MOV             W0, W1
+..text:0000000000006B4C       TBNZ            W2, #0, locret_6B70
+..text:0000000000006B50       ADRP            X4, #unk_2E620@PAGE
+..text:0000000000006B54       AND             X0, X2, #0xF
+..text:0000000000006B58       ADD             X3, X4, #unk_2E620@PAGEOFF
+..text:0000000000006B5C       LSR             X2, X2, #4
+..text:0000000000006B60       LDR             W3, [X3,X0,LSL#2]
+..text:0000000000006B64       ADD             W1, W1, W3
+..text:0000000000006B68       CBZ             X0, loc_6B54
+..text:0000000000006B6C       MOV             W0, W1
+..text:0000000000006B70       RET
+..text:0000000000006B74       LSL             W0, W1, #6
+..text:0000000000006B78       SUB             W1, W0, W1,LSL#2
+..text:0000000000006B7C       B               loc_6B48
+..text:0000000000006B80       LDR             X2, [X4]
+..text:0000000000006B84       MOV             W1, #0
+..text:0000000000006B88       B               loc_6B48

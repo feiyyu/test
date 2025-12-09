@@ -1,0 +1,30 @@
+Function: sub_1EBC4 (0x1EBC4)
+Architecture: 64-bit
+Segment range: 0x1EBC4 - 0x1EC2C
+----------------------------------------
+
+..text:000000000001EBC4       SUB             SP, SP, #0x10
+..text:000000000001EBC8       STR             X30, [SP,#0x10+var_10]
+..text:000000000001EBCC       CBZ             X0, loc_1EBFC
+..text:000000000001EBD0       CBZ             X1, loc_1EBFC
+..text:000000000001EBD4       BL              sub_CCD8
+..text:000000000001EBD8       CBZ             W0, loc_1EC10
+..text:000000000001EBDC       CMN             W0, #2
+..text:000000000001EBE0       B.EQ            loc_1EC0C
+..text:000000000001EBE4       CMN             W0, #3
+..text:000000000001EBE8       MOV             W0, #1
+..text:000000000001EBEC       B.EQ            loc_1EC24
+..text:000000000001EBF0       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001EBF4       ADD             SP, SP, #0x10
+..text:000000000001EBF8       RET
+..text:000000000001EBFC       MOV             W0, #0x10
+..text:000000000001EC00       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001EC04       ADD             SP, SP, #0x10
+..text:000000000001EC08       RET
+..text:000000000001EC0C       MOV             W0, #1
+..text:000000000001EC10       ADRL            X1, dword_3FB00
+..text:000000000001EC18       ADD             X0, X1, W0,SXTW#3
+..text:000000000001EC1C       LDR             W0, [X0,#4]
+..text:000000000001EC20       B               loc_1EBF0
+..text:000000000001EC24       MOV             W0, #2
+..text:000000000001EC28       B               loc_1EC10

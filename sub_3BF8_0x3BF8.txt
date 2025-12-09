@@ -1,0 +1,22 @@
+Function: sub_3BF8 (0x3BF8)
+Architecture: 64-bit
+Segment range: 0x3BF8 - 0x3C3C
+----------------------------------------
+
+..text:0000000000003BF8       LDRB            W2, [X0]
+..text:0000000000003BFC       STRB            W2, [X1,#5]
+..text:0000000000003C00       LDRB            W2, [X0,#1]
+..text:0000000000003C04       STRB            W2, [X1,#6]
+..text:0000000000003C08       LDRB            W2, [X0,#2]
+..text:0000000000003C0C       STRB            W2, [X1,#7]
+..text:0000000000003C10       LDRB            W2, [X0,#3]
+..text:0000000000003C14       STRB            W2, [X1]
+..text:0000000000003C18       LDRB            W2, [X0,#4]
+..text:0000000000003C1C       STRB            W2, [X1,#1]
+..text:0000000000003C20       LDRB            W2, [X0,#5]
+..text:0000000000003C24       STRB            W2, [X1,#2]
+..text:0000000000003C28       LDRB            W2, [X0,#6]
+..text:0000000000003C2C       STRB            W2, [X1,#3]
+..text:0000000000003C30       LDRB            W0, [X0,#7]
+..text:0000000000003C34       STRB            W0, [X1,#4]
+..text:0000000000003C38       RET

@@ -1,0 +1,27 @@
+Function: sub_1EC2C (0x1EC2C)
+Architecture: 64-bit
+Segment range: 0x1EC2C - 0x1EC88
+----------------------------------------
+
+..text:000000000001EC2C       SUB             SP, SP, #0x10
+..text:000000000001EC30       MOV             W2, #0x10
+..text:000000000001EC34       STR             X30, [SP,#0x10+var_10]
+..text:000000000001EC38       CBZ             X0, loc_1EC58
+..text:000000000001EC3C       BL              sub_6180
+..text:000000000001EC40       CBZ             W0, loc_1EC6C
+..text:000000000001EC44       CMN             W0, #2
+..text:000000000001EC48       B.EQ            loc_1EC68
+..text:000000000001EC4C       CMN             W0, #3
+..text:000000000001EC50       MOV             W2, #1
+..text:000000000001EC54       B.EQ            loc_1EC80
+..text:000000000001EC58       MOV             W0, W2
+..text:000000000001EC5C       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001EC60       ADD             SP, SP, #0x10
+..text:000000000001EC64       RET
+..text:000000000001EC68       MOV             W0, #1
+..text:000000000001EC6C       ADRL            X1, dword_3FB00
+..text:000000000001EC74       ADD             X0, X1, W0,SXTW#3
+..text:000000000001EC78       LDR             W2, [X0,#4]
+..text:000000000001EC7C       B               loc_1EC58
+..text:000000000001EC80       MOV             W0, #2
+..text:000000000001EC84       B               loc_1EC6C

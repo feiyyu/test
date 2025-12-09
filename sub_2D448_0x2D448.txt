@@ -1,0 +1,14 @@
+Function: sub_2D448 (0x2D448)
+Architecture: 64-bit
+Segment range: 0x2D448 - 0x2D46C
+----------------------------------------
+
+..text:000000000002D448       ADRP            X3, #off_59FB0@PAGE
+..text:000000000002D44C       SUB             SP, SP, #0x10
+..text:000000000002D450       LDR             X3, [X3,#off_59FB0@PAGEOFF]
+..text:000000000002D454       STR             X30, [SP,#0x10+var_10]
+..text:000000000002D458       LDR             X3, [X3,#(off_60950 - 0x608B0)]
+..text:000000000002D45C       BLR             X3
+..text:000000000002D460       LDR             X30, [SP,#0x10+var_10]
+..text:000000000002D464       ADD             SP, SP, #0x10
+..text:000000000002D468       RET

@@ -1,0 +1,38 @@
+Function: sub_1EE6C (0x1EE6C)
+Architecture: 64-bit
+Segment range: 0x1EE6C - 0x1EEF4
+----------------------------------------
+
+..text:000000000001EE6C       SUB             SP, SP, #0x20
+..text:000000000001EE70       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001EE74       STR             X30, [SP,#0x20+var_10]
+..text:000000000001EE78       CBZ             X0, loc_1EE8C
+..text:000000000001EE7C       MOV             X20, X1
+..text:000000000001EE80       MOV             X19, X0
+..text:000000000001EE84       BL              sub_1EDD4
+..text:000000000001EE88       CBZ             W0, loc_1EEA0
+..text:000000000001EE8C       MOV             W0, #0xD
+..text:000000000001EE90       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001EE94       LDR             X30, [SP,#0x20+var_10]
+..text:000000000001EE98       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001EE9C       RET
+..text:000000000001EEA0       LDR             X1, [X19]
+..text:000000000001EEA4       CBZ             X1, loc_1EEE4
+..text:000000000001EEA8       CBZ             X20, loc_1EEE4
+..text:000000000001EEAC       MOV             X0, X20
+..text:000000000001EEB0       BL              sub_6B8C
+..text:000000000001EEB4       CBZ             W0, loc_1EED0
+..text:000000000001EEB8       CMN             W0, #2
+..text:000000000001EEBC       B.EQ            loc_1EEEC
+..text:000000000001EEC0       CMN             W0, #3
+..text:000000000001EEC4       MOV             W0, #1
+..text:000000000001EEC8       B.NE            loc_1EE90
+..text:000000000001EECC       MOV             W0, #2
+..text:000000000001EED0       ADRL            X1, dword_3FB00
+..text:000000000001EED8       ADD             X0, X1, W0,SXTW#3
+..text:000000000001EEDC       LDR             W0, [X0,#4]
+..text:000000000001EEE0       B               loc_1EE90
+..text:000000000001EEE4       MOV             W0, #0x10
+..text:000000000001EEE8       B               loc_1EE90
+..text:000000000001EEEC       MOV             W0, #1
+..text:000000000001EEF0       B               loc_1EED0

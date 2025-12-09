@@ -1,0 +1,35 @@
+Function: sub_1E92C (0x1E92C)
+Architecture: 64-bit
+Segment range: 0x1E92C - 0x1E9A8
+----------------------------------------
+
+..text:000000000001E92C       CMP             X1, XZR
+..text:000000000001E930       SUB             SP, SP, #0x10
+..text:000000000001E934       CSET            W4, EQ
+..text:000000000001E938       CMP             X2, XZR
+..text:000000000001E93C       CSET            W3, EQ
+..text:000000000001E940       STR             X30, [SP,#0x10+var_10]
+..text:000000000001E944       ORR             W3, W4, W3
+..text:000000000001E948       CBNZ            W3, loc_1E978
+..text:000000000001E94C       CBZ             X0, loc_1E978
+..text:000000000001E950       BL              sub_E194
+..text:000000000001E954       CBZ             W0, loc_1E98C
+..text:000000000001E958       CMN             W0, #2
+..text:000000000001E95C       B.EQ            loc_1E988
+..text:000000000001E960       CMN             W0, #3
+..text:000000000001E964       MOV             W0, #1
+..text:000000000001E968       B.EQ            loc_1E9A0
+..text:000000000001E96C       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001E970       ADD             SP, SP, #0x10
+..text:000000000001E974       RET
+..text:000000000001E978       MOV             W0, #0x10
+..text:000000000001E97C       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001E980       ADD             SP, SP, #0x10
+..text:000000000001E984       RET
+..text:000000000001E988       MOV             W0, #1
+..text:000000000001E98C       ADRL            X1, dword_3FB00
+..text:000000000001E994       ADD             X0, X1, W0,SXTW#3
+..text:000000000001E998       LDR             W0, [X0,#4]
+..text:000000000001E99C       B               loc_1E96C
+..text:000000000001E9A0       MOV             W0, #2
+..text:000000000001E9A4       B               loc_1E98C

@@ -1,0 +1,22 @@
+Function: sub_2A0E4 (0x2A0E4)
+Architecture: 64-bit
+Segment range: 0x2A0E4 - 0x2A128
+----------------------------------------
+
+..text:000000000002A0E4       ADRP            X4, #dword_40D90@PAGE
+..text:000000000002A0E8       MOV             W2, #0
+..text:000000000002A0EC       ADD             X1, X4, #dword_40D90@PAGEOFF
+..text:000000000002A0F0       B               loc_2A100
+..text:000000000002A0F4       ADD             W2, W2, #1
+..text:000000000002A0F8       CMP             W2, #0x76 ; 'v'
+..text:000000000002A0FC       B.EQ            loc_2A120
+..text:000000000002A100       LDR             W3, [X1]
+..text:000000000002A104       ADD             X1, X1, #8
+..text:000000000002A108       CMP             W3, W0
+..text:000000000002A10C       B.NE            loc_2A0F4
+..text:000000000002A110       ADD             X4, X4, #dword_40D90@PAGEOFF
+..text:000000000002A114       ADD             X2, X4, W2,SXTW#3
+..text:000000000002A118       LDR             W0, [X2,#4]
+..text:000000000002A11C       RET
+..text:000000000002A120       MOV             W0, #0xFFFFFFFF
+..text:000000000002A124       RET

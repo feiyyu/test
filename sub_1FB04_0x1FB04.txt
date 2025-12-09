@@ -1,0 +1,39 @@
+Function: sub_1FB04 (0x1FB04)
+Architecture: 64-bit
+Segment range: 0x1FB04 - 0x1FB8C
+----------------------------------------
+
+..text:000000000001FB04       SUB             SP, SP, #0x20
+..text:000000000001FB08       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001FB0C       STP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001FB10       CBZ             X0, loc_1FB78
+..text:000000000001FB14       ADRP            X19, #off_59F88@PAGE
+..text:000000000001FB18       MOV             X21, X0
+..text:000000000001FB1C       MOV             W20, #0
+..text:000000000001FB20       LDR             X19, [X19,#off_59F88@PAGEOFF]
+..text:000000000001FB24       B               loc_1FB34
+..text:000000000001FB28       ADD             W20, W20, #1
+..text:000000000001FB2C       CMP             W20, #0x20 ; ' '
+..text:000000000001FB30       B.EQ            loc_1FB64
+..text:000000000001FB34       LDR             X2, [X19]
+..text:000000000001FB38       MOV             X1, X21; char *
+..text:000000000001FB3C       ADD             X19, X19, #0xD0
+..text:000000000001FB40       MOV             X0, X2; char *
+..text:000000000001FB44       CBZ             X2, loc_1FB28
+..text:000000000001FB48       BL              .strcmp
+..text:000000000001FB4C       CBNZ            W0, loc_1FB28
+..text:000000000001FB50       MOV             W0, W20
+..text:000000000001FB54       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001FB58       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001FB5C       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001FB60       RET
+..text:000000000001FB64       MOV             W0, #0xFFFFFFFF
+..text:000000000001FB68       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001FB6C       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001FB70       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001FB74       RET
+..text:000000000001FB78       MOV             W0, #0x10
+..text:000000000001FB7C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001FB80       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001FB84       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001FB88       RET

@@ -1,0 +1,29 @@
+Function: sub_1FC14 (0x1FC14)
+Architecture: 64-bit
+Segment range: 0x1FC14 - 0x1FC74
+----------------------------------------
+
+..text:000000000001FC14       ADRP            X4, #off_59F88@PAGE
+..text:000000000001FC18       UXTB            W0, W0
+..text:000000000001FC1C       MOV             W2, #0
+..text:000000000001FC20       LDR             X1, [X4,#off_59F88@PAGEOFF]
+..text:000000000001FC24       ADD             X1, X1, #8
+..text:000000000001FC28       B               loc_1FC38
+..text:000000000001FC2C       ADD             W2, W2, #1
+..text:000000000001FC30       CMP             W2, #0x20 ; ' '
+..text:000000000001FC34       B.EQ            loc_1FC6C
+..text:000000000001FC38       LDRB            W3, [X1]
+..text:000000000001FC3C       ADD             X1, X1, #0xD0
+..text:000000000001FC40       CMP             W3, W0
+..text:000000000001FC44       B.NE            loc_1FC2C
+..text:000000000001FC48       SXTW            X1, W2
+..text:000000000001FC4C       LDR             X4, [X4,#off_59F88@PAGEOFF]
+..text:000000000001FC50       ADD             X0, X1, X1,LSL#1
+..text:000000000001FC54       ADD             X0, X1, X0,LSL#2
+..text:000000000001FC58       LSL             X0, X0, #4
+..text:000000000001FC5C       LDR             X0, [X4,X0]
+..text:000000000001FC60       CMP             X0, XZR
+..text:000000000001FC64       CSINV           W0, W2, WZR, NE
+..text:000000000001FC68       RET
+..text:000000000001FC6C       MOV             W0, #0xFFFFFFFF
+..text:000000000001FC70       RET

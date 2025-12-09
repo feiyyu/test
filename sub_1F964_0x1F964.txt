@@ -1,0 +1,20 @@
+Function: sub_1F964 (0x1F964)
+Architecture: 64-bit
+Segment range: 0x1F964 - 0x1F9A0
+----------------------------------------
+
+..text:000000000001F964       CMP             W0, #0x1F
+..text:000000000001F968       MOV             W2, #0xA
+..text:000000000001F96C       B.LS            loc_1F978
+..text:000000000001F970       MOV             W0, W2
+..text:000000000001F974       RET
+..text:000000000001F978       SXTW            X1, W0
+..text:000000000001F97C       ADRP            X0, #off_59FA8@PAGE
+..text:000000000001F980       ADD             X1, X1, X1,LSL#1
+..text:000000000001F984       LDR             X0, [X0,#off_59FA8@PAGEOFF]
+..text:000000000001F988       LSL             X1, X1, #6
+..text:000000000001F98C       LDR             X0, [X0,X1]
+..text:000000000001F990       CMP             X0, XZR
+..text:000000000001F994       CSEL            W2, W2, WZR, EQ
+..text:000000000001F998       MOV             W0, W2
+..text:000000000001F99C       RET

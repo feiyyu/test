@@ -1,0 +1,23 @@
+Function: sub_6A14 (0x6A14)
+Architecture: 64-bit
+Segment range: 0x6A14 - 0x6A5C
+----------------------------------------
+
+..text:0000000000006A14       LDR             W2, [X0,#8]
+..text:0000000000006A18       CMP             W2, #1
+..text:0000000000006A1C       B.EQ            loc_6A54
+..text:0000000000006A20       LDR             W3, [X0]
+..text:0000000000006A24       MOV             W2, #1
+..text:0000000000006A28       CMP             W3, W2
+..text:0000000000006A2C       B.LE            loc_6A38
+..text:0000000000006A30       MOV             W0, W2
+..text:0000000000006A34       RET
+..text:0000000000006A38       LDR             X0, [X0,#0x10]
+..text:0000000000006A3C       LDR             X0, [X0]
+..text:0000000000006A40       CMP             X0, X1
+..text:0000000000006A44       B.HI            loc_6A30
+..text:0000000000006A48       CSETM           W2, CC
+..text:0000000000006A4C       MOV             W0, W2
+..text:0000000000006A50       RET
+..text:0000000000006A54       MOV             W2, #0xFFFFFFFF
+..text:0000000000006A58       B               loc_6A30

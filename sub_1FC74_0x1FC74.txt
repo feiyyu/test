@@ -1,0 +1,50 @@
+Function: sub_1FC74 (0x1FC74)
+Architecture: 64-bit
+Segment range: 0x1FC74 - 0x1FD28
+----------------------------------------
+
+..text:000000000001FC74       SUB             SP, SP, #0x30
+..text:000000000001FC78       STP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001FC7C       STP             X21, X22, [SP,#0x30+var_20]
+..text:000000000001FC80       STP             X23, X30, [SP,#0x30+var_10]
+..text:000000000001FC84       CBZ             X0, loc_1FD10
+..text:000000000001FC88       ADRP            X19, #off_59F88@PAGE
+..text:000000000001FC8C       MOV             X21, X1
+..text:000000000001FC90       MOV             X22, X0
+..text:000000000001FC94       LSL             X23, X1, #3
+..text:000000000001FC98       MOV             W20, #0
+..text:000000000001FC9C       LDR             X19, [X19,#off_59F88@PAGEOFF]
+..text:000000000001FCA0       ADD             X19, X19, #0x20 ; ' '
+..text:000000000001FCA4       B               loc_1FCB8
+..text:000000000001FCA8       ADD             W20, W20, #1
+..text:000000000001FCAC       ADD             X19, X19, #0xD0
+..text:000000000001FCB0       CMP             W20, #0x20 ; ' '
+..text:000000000001FCB4       B.EQ            loc_1FCF8
+..text:000000000001FCB8       LDUR            X3, [X19,#-0x20]
+..text:000000000001FCBC       CBZ             X3, loc_1FCA8
+..text:000000000001FCC0       LDR             X3, [X19,#0x80]
+..text:000000000001FCC4       CMP             X3, X21
+..text:000000000001FCC8       B.NE            loc_1FCA8
+..text:000000000001FCCC       MOV             X0, X19; void *
+..text:000000000001FCD0       MOV             X1, X22; void *
+..text:000000000001FCD4       MOV             X2, X23; size_t
+..text:000000000001FCD8       BL              .memcmp
+..text:000000000001FCDC       CBNZ            W0, loc_1FCA8
+..text:000000000001FCE0       MOV             W0, W20
+..text:000000000001FCE4       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001FCE8       LDP             X21, X22, [SP,#0x30+var_20]
+..text:000000000001FCEC       LDP             X23, X30, [SP,#0x30+var_10]
+..text:000000000001FCF0       ADD             SP, SP, #0x30 ; '0'
+..text:000000000001FCF4       RET
+..text:000000000001FCF8       MOV             W0, #0xFFFFFFFF
+..text:000000000001FCFC       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001FD00       LDP             X21, X22, [SP,#0x30+var_20]
+..text:000000000001FD04       LDP             X23, X30, [SP,#0x30+var_10]
+..text:000000000001FD08       ADD             SP, SP, #0x30 ; '0'
+..text:000000000001FD0C       RET
+..text:000000000001FD10       MOV             W0, #0x10
+..text:000000000001FD14       LDP             X19, X20, [SP,#0x30+var_30]
+..text:000000000001FD18       LDP             X21, X22, [SP,#0x30+var_20]
+..text:000000000001FD1C       LDP             X23, X30, [SP,#0x30+var_10]
+..text:000000000001FD20       ADD             SP, SP, #0x30 ; '0'
+..text:000000000001FD24       RET

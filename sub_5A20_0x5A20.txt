@@ -1,0 +1,207 @@
+Function: sub_5A20 (0x5A20)
+Architecture: 64-bit
+Segment range: 0x5A20 - 0x5D48
+----------------------------------------
+
+..text:0000000000005A20       SUB             SP, SP, #1,LSL#12
+..text:0000000000005A24       SUB             SP, SP, #0x20
+..text:0000000000005A28       SUB             SP, SP, #0x90
+..text:0000000000005A2C       STP             D12, D13, [SP,#0x10B0+var_1038]
+..text:0000000000005A30       FMOV            D12, X2
+..text:0000000000005A34       STP             X19, X20, [SP,#0x10B0+var_10B0]
+..text:0000000000005A38       STP             D8, D9, [SP,#0x10B0+var_1058]
+..text:0000000000005A3C       STP             D10, D11, [SP,#0x10B0+var_1048]
+..text:0000000000005A40       MOV             X20, X0
+..text:0000000000005A44       ADRP            X0, #__stack_chk_guard_ptr@PAGE
+..text:0000000000005A48       MOV             X19, X1
+..text:0000000000005A4C       STP             X25, X26, [SP,#0x10B0+var_1080]
+..text:0000000000005A50       STP             X21, X22, [SP,#0x10B0+var_10A0]
+..text:0000000000005A54       STP             X23, X24, [SP,#0x10B0+var_1090]
+..text:0000000000005A58       STP             X27, X28, [SP,#0x10B0+var_1070]
+..text:0000000000005A5C       STR             X30, [SP,#0x10B0+var_1060]
+..text:0000000000005A60       LDR             X1, [X0,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000005A64       LDR             W27, [X20]
+..text:0000000000005A68       LDR             W24, [X19]
+..text:0000000000005A6C       LDR             W0, [X2,#4]
+..text:0000000000005A70       LDR             X2, [X1]
+..text:0000000000005A74       ADD             W1, W27, W24
+..text:0000000000005A78       STR             W3, [SP,#0x10B0+var_1014]
+..text:0000000000005A7C       CMP             W1, W0
+..text:0000000000005A80       STR             X2, [SP,#0x10B0+var_8]
+..text:0000000000005A84       MOV             W25, W1
+..text:0000000000005A88       B.GT            loc_5D00
+..text:0000000000005A8C       LDR             W0, [SP,#0x10B0+var_1014]
+..text:0000000000005A90       CMP             W0, W25
+..text:0000000000005A94       B.GE            loc_5D28
+..text:0000000000005A98       SXTW            X1, W0
+..text:0000000000005A9C       MOV             W22, W0
+..text:0000000000005AA0       LDR             X0, [X19,#0x10]
+..text:0000000000005AA4       MOV             W2, #1
+..text:0000000000005AA8       SUB             W2, W2, W24
+..text:0000000000005AAC       ADD             X23, X1, W2,SXTW
+..text:0000000000005AB0       FMOV            D13, X1
+..text:0000000000005AB4       LDR             X1, [X20,#0x10]
+..text:0000000000005AB8       FMOV            D10, X0
+..text:0000000000005ABC       ADD             X0, SP, #0x10B0+var_1000
+..text:0000000000005AC0       FMOV            S11, W2
+..text:0000000000005AC4       MOV             X21, #0
+..text:0000000000005AC8       FMOV            D9, X1
+..text:0000000000005ACC       LSL             X23, X23, #3
+..text:0000000000005AD0       FMOV            D8, X0
+..text:0000000000005AD4       MOV             X19, X21
+..text:0000000000005AD8       CMP             W22, W24
+..text:0000000000005ADC       B.LT            loc_5CF0
+..text:0000000000005AE0       FMOV            W0, S11
+..text:0000000000005AE4       SUB             W1, W24, #1
+..text:0000000000005AE8       MOV             X20, X23
+..text:0000000000005AEC       ADD             W0, W0, W22
+..text:0000000000005AF0       FMOV            X2, D9
+..text:0000000000005AF4       SUB             W0, W27, W0
+..text:0000000000005AF8       CMP             W1, W0
+..text:0000000000005AFC       CSINC           W0, W0, W1, GE
+..text:0000000000005B00       CMP             W0, WZR
+..text:0000000000005B04       ADD             X20, X2, X20
+..text:0000000000005B08       FMOV            X2, D10
+..text:0000000000005B0C       ADD             X28, X2, W1,SXTW#3
+..text:0000000000005B10       B.LE            loc_5B50
+..text:0000000000005B14       SUB             W0, W0, #1
+..text:0000000000005B18       ADD             X0, X0, #1
+..text:0000000000005B1C       ADD             X26, X20, X0,LSL#3
+..text:0000000000005B20       MOV             X1, #0
+..text:0000000000005B24       LDR             X2, [X20],#8
+..text:0000000000005B28       LDR             X0, [X28],#-8
+..text:0000000000005B2C       MOV             X3, X1
+..text:0000000000005B30       BL              __multi3
+..text:0000000000005B34       ADD             X0, X21, X0
+..text:0000000000005B38       CMP             X0, X21
+..text:0000000000005B3C       ADD             X1, X19, X1
+..text:0000000000005B40       CINC            X19, X1, CC
+..text:0000000000005B44       CMP             X20, X26
+..text:0000000000005B48       MOV             X21, X0
+..text:0000000000005B4C       B.NE            loc_5B20
+..text:0000000000005B50       FMOV            X0, D8
+..text:0000000000005B54       AND             X1, X21, #0xFFFFFFFFFFFFFFF
+..text:0000000000005B58       ADD             X23, X23, #8
+..text:0000000000005B5C       EXTR            X21, X19, X21, #0x3C ; '<'
+..text:0000000000005B60       LSR             X19, X19, #0x3C ; '<'
+..text:0000000000005B64       SUB             X0, X0, #8
+..text:0000000000005B68       STR             X1, [X0,W22,SXTW#3]
+..text:0000000000005B6C       ADD             W22, W22, #1
+..text:0000000000005B70       CMP             W22, W25
+..text:0000000000005B74       B.NE            loc_5AD8
+..text:0000000000005B78       FMOV            X7, D12
+..text:0000000000005B7C       LDR             W1, [SP,#0x10B0+var_1014]
+..text:0000000000005B80       FMOV            X2, D13
+..text:0000000000005B84       SUB             W6, W25, W1
+..text:0000000000005B88       SUB             W5, W6, #2
+..text:0000000000005B8C       CMP             W6, #1
+..text:0000000000005B90       LDR             W4, [X7]
+..text:0000000000005B94       LSR             W5, W5, #1
+..text:0000000000005B98       LDR             X3, [X7,#0x10]
+..text:0000000000005B9C       LSL             X2, X2, #3
+..text:0000000000005BA0       STR             W25, [X7]
+..text:0000000000005BA4       ADD             W5, W5, #1
+..text:0000000000005BA8       ADD             X3, X3, X2
+..text:0000000000005BAC       LSL             W7, W5, #1
+..text:0000000000005BB0       B.EQ            loc_5D1C
+..text:0000000000005BB4       ADD             X0, X0, X2
+..text:0000000000005BB8       MOV             X8, X3
+..text:0000000000005BBC       MOV             W2, #0
+..text:0000000000005BC0       LDR             Q0, [X0],#0x10
+..text:0000000000005BC4       ADD             W2, W2, #1
+..text:0000000000005BC8       CMP             W2, W5
+..text:0000000000005BCC       STR             Q0, [X8],#0x10
+..text:0000000000005BD0       B.CC            loc_5BC0
+..text:0000000000005BD4       LDR             W2, [SP,#0x10B0+var_1014]
+..text:0000000000005BD8       MOV             W0, W7
+..text:0000000000005BDC       CMP             W6, W7
+..text:0000000000005BE0       ADD             W2, W2, W7
+..text:0000000000005BE4       STR             W2, [SP,#0x10B0+var_1014]
+..text:0000000000005BE8       ADD             X0, X3, X0,LSL#3
+..text:0000000000005BEC       B.EQ            loc_5C04
+..text:0000000000005BF0       FMOV            X2, D8
+..text:0000000000005BF4       SUB             X28, X2, #8
+..text:0000000000005BF8       LDR             W2, [SP,#0x10B0+var_1014]
+..text:0000000000005BFC       LDR             X2, [X28,W2,SXTW#3]
+..text:0000000000005C00       STR             X2, [X0]
+..text:0000000000005C04       MVN             W0, W1
+..text:0000000000005C08       ADD             W0, W0, W25
+..text:0000000000005C0C       ADD             X0, X0, #1
+..text:0000000000005C10       ADD             X0, X3, X0,LSL#3
+..text:0000000000005C14       CMP             W25, W4
+..text:0000000000005C18       B.GE            loc_5C80
+..text:0000000000005C1C       SUB             W5, W4, W25
+..text:0000000000005C20       SUB             W2, W4, #1
+..text:0000000000005C24       SUB             W2, W2, W25
+..text:0000000000005C28       SUB             W1, W5, #2
+..text:0000000000005C2C       CMP             W2, #2
+..text:0000000000005C30       LSR             W1, W1, #1
+..text:0000000000005C34       ADD             W1, W1, #1
+..text:0000000000005C38       LSL             W2, W1, #1
+..text:0000000000005C3C       B.LS            loc_5C70
+..text:0000000000005C40       MOVI            V0.4S, #0
+..text:0000000000005C44       MOV             X6, X0
+..text:0000000000005C48       MOV             W3, #0
+..text:0000000000005C4C       STR             Q0, [X6],#0x10
+..text:0000000000005C50       ADD             W3, W3, #1
+..text:0000000000005C54       CMP             W1, W3
+..text:0000000000005C58       B.HI            loc_5C4C
+..text:0000000000005C5C       MOV             W1, W2
+..text:0000000000005C60       CMP             W2, W5
+..text:0000000000005C64       ADD             W25, W25, W2
+..text:0000000000005C68       ADD             X0, X0, X1,LSL#3
+..text:0000000000005C6C       B.EQ            loc_5C80
+..text:0000000000005C70       ADD             W1, W25, #1
+..text:0000000000005C74       STR             XZR, [X0]
+..text:0000000000005C78       CMP             W4, W1
+..text:0000000000005C7C       B.GT            loc_5CD8
+..text:0000000000005C80       FMOV            X0, D12
+..text:0000000000005C84       BL              sub_67C0
+..text:0000000000005C88       MOV             W0, #0
+..text:0000000000005C8C       ADRP            X1, #__stack_chk_guard_ptr@PAGE
+..text:0000000000005C90       LDR             X2, [SP,#0x10B0+var_8]
+..text:0000000000005C94       LDR             X1, [X1,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000005C98       LDR             X1, [X1]
+..text:0000000000005C9C       CMP             X2, X1
+..text:0000000000005CA0       B.NE            loc_5D24
+..text:0000000000005CA4       LDP             X19, X20, [SP,#0x10B0+var_10B0]
+..text:0000000000005CA8       LDP             D8, D9, [SP,#0x10B0+var_1058]
+..text:0000000000005CAC       LDP             X21, X22, [SP,#0x10B0+var_10A0]
+..text:0000000000005CB0       LDP             D10, D11, [SP,#0x10B0+var_1048]
+..text:0000000000005CB4       LDP             X23, X24, [SP,#0x10B0+var_1090]
+..text:0000000000005CB8       LDP             D12, D13, [SP,#0x10B0+var_1038]
+..text:0000000000005CBC       LDP             X25, X26, [SP,#0x10B0+var_1080]
+..text:0000000000005CC0       LDP             X27, X28, [SP,#0x10B0+var_1070]
+..text:0000000000005CC4       LDR             X30, [SP,#0x10B0+var_1060]
+..text:0000000000005CC8       ADD             SP, SP, #0x90
+..text:0000000000005CCC       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000005CD0       ADD             SP, SP, #1,LSL#12
+..text:0000000000005CD4       RET
+..text:0000000000005CD8       ADD             W25, W25, #2
+..text:0000000000005CDC       STR             XZR, [X0,#8]
+..text:0000000000005CE0       CMP             W4, W25
+..text:0000000000005CE4       B.LE            loc_5C80
+..text:0000000000005CE8       STR             XZR, [X0,#0x10]
+..text:0000000000005CEC       B               loc_5C80
+..text:0000000000005CF0       MOV             X20, #0
+..text:0000000000005CF4       MOV             W1, W22
+..text:0000000000005CF8       MOV             W0, W20
+..text:0000000000005CFC       B               loc_5AF0
+..text:0000000000005D00       FMOV            X0, D12
+..text:0000000000005D04       BL              sub_9070
+..text:0000000000005D08       CBNZ            W0, loc_5C8C
+..text:0000000000005D0C       LDR             W27, [X20]
+..text:0000000000005D10       LDR             W24, [X19]
+..text:0000000000005D14       ADD             W25, W27, W24
+..text:0000000000005D18       B               loc_5A8C
+..text:0000000000005D1C       MOV             X0, X3
+..text:0000000000005D20       B               loc_5BF0
+..text:0000000000005D24       BL              .__stack_chk_fail
+..text:0000000000005D28       FMOV            X1, D12
+..text:0000000000005D2C       LDR             W2, [SP,#0x10B0+var_1014]
+..text:0000000000005D30       LDR             W4, [X1]
+..text:0000000000005D34       LDR             X0, [X1,#0x10]
+..text:0000000000005D38       ADD             X0, X0, W2,SXTW#3
+..text:0000000000005D3C       STR             W25, [X1]
+..text:0000000000005D40       MOV             W25, W2
+..text:0000000000005D44       B               loc_5C14

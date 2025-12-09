@@ -1,0 +1,39 @@
+Function: sub_2C13C (0x2C13C)
+Architecture: 64-bit
+Segment range: 0x2C13C - 0x2C1C4
+----------------------------------------
+
+..text:000000000002C13C       SUB             SP, SP, #0x20
+..text:000000000002C140       MOV             W3, #0x10
+..text:000000000002C144       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000002C148       STP             X21, X30, [SP,#0x20+var_10]
+..text:000000000002C14C       CBZ             X2, loc_2C174
+..text:000000000002C150       MOV             W21, W0
+..text:000000000002C154       MOV             W0, W1
+..text:000000000002C158       MOV             W20, W1
+..text:000000000002C15C       MOV             X19, X2
+..text:000000000002C160       BL              sub_1FF68
+..text:000000000002C164       CBNZ            W0, loc_2C170
+..text:000000000002C168       CMP             W21, #3
+..text:000000000002C16C       B.EQ            loc_2C188
+..text:000000000002C170       MOV             W3, #0x7FFFFFFF
+..text:000000000002C174       MOV             W0, W3
+..text:000000000002C178       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000002C17C       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000002C180       ADD             SP, SP, #0x20 ; ' '
+..text:000000000002C184       RET
+..text:000000000002C188       MOV             X0, X19
+..text:000000000002C18C       BL              sub_2ADB4
+..text:000000000002C190       MOV             W1, #0x7FFFFFFF
+..text:000000000002C194       CMP             W0, W1
+..text:000000000002C198       B.EQ            loc_2C170
+..text:000000000002C19C       SXTW            X1, W20
+..text:000000000002C1A0       ADRP            X2, #off_59F88@PAGE
+..text:000000000002C1A4       ADD             X20, X1, X1,LSL#1
+..text:000000000002C1A8       LDR             X2, [X2,#off_59F88@PAGEOFF]
+..text:000000000002C1AC       ADD             X1, X1, X20,LSL#2
+..text:000000000002C1B0       ADD             X1, X2, X1,LSL#4
+..text:000000000002C1B4       LDR             X3, [X1,#0x10]
+..text:000000000002C1B8       SUB             W0, W0, W3
+..text:000000000002C1BC       SUB             W3, W0, #2
+..text:000000000002C1C0       B               loc_2C174

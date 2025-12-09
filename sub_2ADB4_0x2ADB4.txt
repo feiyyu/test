@@ -1,0 +1,20 @@
+Function: sub_2ADB4 (0x2ADB4)
+Architecture: 64-bit
+Segment range: 0x2ADB4 - 0x2ADF0
+----------------------------------------
+
+..text:000000000002ADB4       SUB             SP, SP, #0x10
+..text:000000000002ADB8       STR             X30, [SP,#0x10+var_10]
+..text:000000000002ADBC       CBZ             X0, loc_2ADE0
+..text:000000000002ADC0       ADRP            X1, #off_59FB0@PAGE
+..text:000000000002ADC4       LDR             X0, [X0,#0x18]
+..text:000000000002ADC8       LDR             X1, [X1,#off_59FB0@PAGEOFF]
+..text:000000000002ADCC       LDR             X1, [X1,#(off_60940 - 0x608B0)]
+..text:000000000002ADD0       BLR             X1
+..text:000000000002ADD4       LDR             X30, [SP,#0x10+var_10]
+..text:000000000002ADD8       ADD             SP, SP, #0x10
+..text:000000000002ADDC       RET
+..text:000000000002ADE0       MOV             W0, #0x10
+..text:000000000002ADE4       LDR             X30, [SP,#0x10+var_10]
+..text:000000000002ADE8       ADD             SP, SP, #0x10
+..text:000000000002ADEC       RET

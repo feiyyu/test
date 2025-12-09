@@ -1,0 +1,30 @@
+Function: sub_1EA8C (0x1EA8C)
+Architecture: 64-bit
+Segment range: 0x1EA8C - 0x1EAF4
+----------------------------------------
+
+..text:000000000001EA8C       SUB             SP, SP, #0x10
+..text:000000000001EA90       STR             X30, [SP,#0x10+var_10]
+..text:000000000001EA94       CBZ             X0, loc_1EAC4
+..text:000000000001EA98       CBZ             X1, loc_1EAC4
+..text:000000000001EA9C       BL              sub_CEF8
+..text:000000000001EAA0       CBZ             W0, loc_1EAD8
+..text:000000000001EAA4       CMN             W0, #2
+..text:000000000001EAA8       B.EQ            loc_1EAD4
+..text:000000000001EAAC       CMN             W0, #3
+..text:000000000001EAB0       MOV             W0, #1
+..text:000000000001EAB4       B.EQ            loc_1EAEC
+..text:000000000001EAB8       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001EABC       ADD             SP, SP, #0x10
+..text:000000000001EAC0       RET
+..text:000000000001EAC4       MOV             W0, #0x10
+..text:000000000001EAC8       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001EACC       ADD             SP, SP, #0x10
+..text:000000000001EAD0       RET
+..text:000000000001EAD4       MOV             W0, #1
+..text:000000000001EAD8       ADRL            X1, dword_3FB00
+..text:000000000001EAE0       ADD             X0, X1, W0,SXTW#3
+..text:000000000001EAE4       LDR             W0, [X0,#4]
+..text:000000000001EAE8       B               loc_1EAB8
+..text:000000000001EAEC       MOV             W0, #2
+..text:000000000001EAF0       B               loc_1EAD8

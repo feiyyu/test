@@ -1,0 +1,20 @@
+Function: sub_1FFA8 (0x1FFA8)
+Architecture: 64-bit
+Segment range: 0x1FFA8 - 0x1FFE4
+----------------------------------------
+
+..text:000000000001FFA8       CMP             W0, #0x1F
+..text:000000000001FFAC       MOV             W2, #0xC
+..text:000000000001FFB0       B.LS            loc_1FFBC
+..text:000000000001FFB4       MOV             W0, W2
+..text:000000000001FFB8       RET
+..text:000000000001FFBC       SXTW            X1, W0
+..text:000000000001FFC0       ADRP            X0, #off_59FF0@PAGE
+..text:000000000001FFC4       ADD             X1, X1, X1,LSL#2
+..text:000000000001FFC8       LDR             X0, [X0,#off_59FF0@PAGEOFF]
+..text:000000000001FFCC       LSL             X1, X1, #4
+..text:000000000001FFD0       LDR             X0, [X0,X1]
+..text:000000000001FFD4       CMP             X0, XZR
+..text:000000000001FFD8       CSEL            W2, W2, WZR, EQ
+..text:000000000001FFDC       MOV             W0, W2
+..text:000000000001FFE0       RET

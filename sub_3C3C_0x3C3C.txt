@@ -1,0 +1,60 @@
+Function: sub_3C3C (0x3C3C)
+Architecture: 64-bit
+Segment range: 0x3C3C - 0x3D18
+----------------------------------------
+
+..text:0000000000003C3C       SUB             SP, SP, #0x20
+..text:0000000000003C40       STP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000003C44       MOV             X21, X0
+..text:0000000000003C48       MOV             X0, #8; byte_count
+..text:0000000000003C4C       STP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000003C50       BL              .malloc
+..text:0000000000003C54       MOV             X20, X0
+..text:0000000000003C58       MOV             X0, #8; byte_count
+..text:0000000000003C5C       BL              .malloc
+..text:0000000000003C60       MOV             X19, X0
+..text:0000000000003C64       MOV             X1, #0
+..text:0000000000003C68       UBFX            X7, X1, #3, #1
+..text:0000000000003C6C       UBFX            X8, X1, #4, #1
+..text:0000000000003C70       LSL             W2, W7, #6
+..text:0000000000003C74       UBFX            X9, X1, #5, #1
+..text:0000000000003C78       UBFX            X6, X1, #2, #1
+..text:0000000000003C7C       ORR             W2, W2, W8,LSL#7
+..text:0000000000003C80       UBFX            X5, X1, #1, #1
+..text:0000000000003C84       ORR             W2, W9, W2
+..text:0000000000003C88       AND             W4, W1, #1
+..text:0000000000003C8C       ORR             W2, W2, W6,LSL#5
+..text:0000000000003C90       ASR             W11, W1, #7
+..text:0000000000003C94       ORR             W2, W2, W5,LSL#4
+..text:0000000000003C98       UBFX            X10, X1, #6, #1
+..text:0000000000003C9C       UBFIZ           W3, W11, #2, #8
+..text:0000000000003CA0       ORR             W2, W2, W4,LSL#3
+..text:0000000000003CA4       STRB            W9, [X20,#2]
+..text:0000000000003CA8       ORR             W2, W2, W3
+..text:0000000000003CAC       STRB            W11, [X20]
+..text:0000000000003CB0       ORR             W2, W2, W10,LSL#1
+..text:0000000000003CB4       STRB            W2, [X21,X1]
+..text:0000000000003CB8       ADD             X1, X1, #1
+..text:0000000000003CBC       STRB            W10, [X20,#1]
+..text:0000000000003CC0       STRB            W8, [X20,#3]
+..text:0000000000003CC4       CMP             X1, #0x100
+..text:0000000000003CC8       STRB            W7, [X20,#4]
+..text:0000000000003CCC       STRB            W6, [X20,#5]
+..text:0000000000003CD0       STRB            W5, [X20,#6]
+..text:0000000000003CD4       STRB            W4, [X20,#7]
+..text:0000000000003CD8       STRB            W11, [X19,#5]
+..text:0000000000003CDC       STRB            W10, [X19,#6]
+..text:0000000000003CE0       STRB            W9, [X19,#7]
+..text:0000000000003CE4       STRB            W8, [X19]
+..text:0000000000003CE8       STRB            W7, [X19,#1]
+..text:0000000000003CEC       STRB            W6, [X19,#2]
+..text:0000000000003CF0       STRB            W5, [X19,#3]
+..text:0000000000003CF4       STRB            W4, [X19,#4]
+..text:0000000000003CF8       B.NE            loc_3C68
+..text:0000000000003CFC       MOV             X0, X20; p
+..text:0000000000003D00       BL              .free
+..text:0000000000003D04       MOV             X0, X19; p
+..text:0000000000003D08       LDP             X21, X30, [SP,#0x20+var_10]
+..text:0000000000003D0C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:0000000000003D10       ADD             SP, SP, #0x20 ; ' '
+..text:0000000000003D14       B               .free

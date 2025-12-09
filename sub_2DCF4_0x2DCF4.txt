@@ -1,0 +1,86 @@
+Function: sub_2DCF4 (0x2DCF4)
+Architecture: 64-bit
+Segment range: 0x2DCF4 - 0x2DE38
+----------------------------------------
+
+..text:000000000002DCF4       SUB             SP, SP, #0x20
+..text:000000000002DCF8       AND             X7, X3, #7
+..text:000000000002DCFC       CMP             X7, XZR
+..text:000000000002DD00       LSR             X3, X3, #3
+..text:000000000002DD04       CINC            X3, X3, NE
+..text:000000000002DD08       MOV             X9, X0
+..text:000000000002DD0C       STP             X19, X30, [SP,#0x20+var_20]
+..text:000000000002DD10       STR             WZR, [X6]
+..text:000000000002DD14       CMP             X3, #0xA
+..text:000000000002DD18       B.LS            loc_2DD24
+..text:000000000002DD1C       CMP             X1, X3
+..text:000000000002DD20       B.LS            loc_2DD38
+..text:000000000002DD24       MOV             W19, #0x16
+..text:000000000002DD28       MOV             W0, W19
+..text:000000000002DD2C       LDP             X19, X30, [SP,#0x20+var_20]
+..text:000000000002DD30       ADD             SP, SP, #0x20 ; ' '
+..text:000000000002DD34       RET
+..text:000000000002DD38       LDRB            W0, [X0]
+..text:000000000002DD3C       MOV             W10, #7
+..text:000000000002DD40       CBZ             W0, loc_2DDE8
+..text:000000000002DD44       CMP             W2, #2
+..text:000000000002DD48       B.EQ            loc_2DE00
+..text:000000000002DD4C       SUB             X3, X3, #1
+..text:000000000002DD50       LDRB            W8, [X9,#2]
+..text:000000000002DD54       CMP             X3, #2
+..text:000000000002DD58       B.LS            loc_2DE30
+..text:000000000002DD5C       CMP             W8, #0xFF
+..text:000000000002DD60       B.NE            loc_2DE30
+..text:000000000002DD64       MOV             X7, #2
+..text:000000000002DD68       B               loc_2DD78
+..text:000000000002DD6C       LDRB            W8, [X9,X7]
+..text:000000000002DD70       CMP             W8, #0xFF
+..text:000000000002DD74       B.NE            loc_2DDF8
+..text:000000000002DD78       ADD             X7, X7, #1
+..text:000000000002DD7C       CMP             X3, X7
+..text:000000000002DD80       B.NE            loc_2DD6C
+..text:000000000002DD84       LDRB            W8, [X9,X3]
+..text:000000000002DD88       SUB             X3, X3, #2
+..text:000000000002DD8C       CMP             W8, WZR
+..text:000000000002DD90       MOV             W0, #7
+..text:000000000002DD94       CSEL            W10, W10, W0, EQ
+..text:000000000002DD98       CMP             X3, #7
+..text:000000000002DD9C       MOV             W19, #7
+..text:000000000002DDA0       B.LS            loc_2DD28
+..text:000000000002DDA4       SUB             X1, X1, #3
+..text:000000000002DDA8       LDR             X0, [X5]
+..text:000000000002DDAC       SUB             X2, X1, X3; n
+..text:000000000002DDB0       CMP             X0, X2
+..text:000000000002DDB4       B.CC            loc_2DD28
+..text:000000000002DDB8       STR             X6, [SP,#0x20+var_8]
+..text:000000000002DDBC       MOV             W19, W10
+..text:000000000002DDC0       CBNZ            W10, loc_2DD28
+..text:000000000002DDC4       ADD             X1, X3, #3
+..text:000000000002DDC8       STR             X2, [X5]
+..text:000000000002DDCC       MOV             X0, X4; dest
+..text:000000000002DDD0       ADD             X1, X9, X1; src
+..text:000000000002DDD4       BL              .memcpy
+..text:000000000002DDD8       LDR             X6, [SP,#0x20+var_8]
+..text:000000000002DDDC       MOV             W0, #1
+..text:000000000002DDE0       STR             W0, [X6]
+..text:000000000002DDE4       B               loc_2DD28
+..text:000000000002DDE8       LDRB            W0, [X9,#1]
+..text:000000000002DDEC       CMP             W0, W2,UXTB
+..text:000000000002DDF0       CSEL            W10, W10, WZR, NE
+..text:000000000002DDF4       B               loc_2DD44
+..text:000000000002DDF8       SUB             X3, X7, #2
+..text:000000000002DDFC       B               loc_2DD8C
+..text:000000000002DE00       MOV             X7, #2
+..text:000000000002DE04       LDRB            W2, [X9,X7]
+..text:000000000002DE08       CBZ             W2, loc_2DE18
+..text:000000000002DE0C       ADD             X7, X7, #1
+..text:000000000002DE10       CMP             X3, X7
+..text:000000000002DE14       B.HI            loc_2DE04
+..text:000000000002DE18       ADD             X0, X7, #1
+..text:000000000002DE1C       CMP             X3, X0
+..text:000000000002DE20       MOV             W0, #7
+..text:000000000002DE24       SUB             X3, X7, #2
+..text:000000000002DE28       CSEL            W10, W10, W0, HI
+..text:000000000002DE2C       B               loc_2DD98
+..text:000000000002DE30       MOV             X3, #0
+..text:000000000002DE34       B               loc_2DD8C

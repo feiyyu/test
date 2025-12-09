@@ -1,0 +1,30 @@
+Function: sub_1E710 (0x1E710)
+Architecture: 64-bit
+Segment range: 0x1E710 - 0x1E778
+----------------------------------------
+
+..text:000000000001E710       SUB             SP, SP, #0x10
+..text:000000000001E714       STR             X30, [SP,#0x10+var_10]
+..text:000000000001E718       CBZ             X0, loc_1E748
+..text:000000000001E71C       CBZ             X1, loc_1E748
+..text:000000000001E720       BL              sub_6D74
+..text:000000000001E724       CBZ             W0, loc_1E75C
+..text:000000000001E728       CMN             W0, #2
+..text:000000000001E72C       B.EQ            loc_1E758
+..text:000000000001E730       CMN             W0, #3
+..text:000000000001E734       MOV             W0, #1
+..text:000000000001E738       B.EQ            loc_1E770
+..text:000000000001E73C       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001E740       ADD             SP, SP, #0x10
+..text:000000000001E744       RET
+..text:000000000001E748       MOV             W0, #0x10
+..text:000000000001E74C       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001E750       ADD             SP, SP, #0x10
+..text:000000000001E754       RET
+..text:000000000001E758       MOV             W0, #1
+..text:000000000001E75C       ADRL            X1, dword_3FB00
+..text:000000000001E764       ADD             X0, X1, W0,SXTW#3
+..text:000000000001E768       LDR             W0, [X0,#4]
+..text:000000000001E76C       B               loc_1E73C
+..text:000000000001E770       MOV             W0, #2
+..text:000000000001E774       B               loc_1E75C

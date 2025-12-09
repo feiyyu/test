@@ -1,0 +1,35 @@
+Function: sub_1E398 (0x1E398)
+Architecture: 64-bit
+Segment range: 0x1E398 - 0x1E414
+----------------------------------------
+
+..text:000000000001E398       CMP             X1, XZR
+..text:000000000001E39C       SUB             SP, SP, #0x10
+..text:000000000001E3A0       CSET            W4, EQ
+..text:000000000001E3A4       CMP             X2, XZR
+..text:000000000001E3A8       CSET            W3, EQ
+..text:000000000001E3AC       STR             X30, [SP,#0x10+var_10]
+..text:000000000001E3B0       ORR             W3, W4, W3
+..text:000000000001E3B4       CBNZ            W3, loc_1E3E4
+..text:000000000001E3B8       CBZ             X0, loc_1E3E4
+..text:000000000001E3BC       BL              sub_9810
+..text:000000000001E3C0       CBZ             W0, loc_1E3F8
+..text:000000000001E3C4       CMN             W0, #2
+..text:000000000001E3C8       B.EQ            loc_1E3F4
+..text:000000000001E3CC       CMN             W0, #3
+..text:000000000001E3D0       MOV             W0, #1
+..text:000000000001E3D4       B.EQ            loc_1E40C
+..text:000000000001E3D8       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001E3DC       ADD             SP, SP, #0x10
+..text:000000000001E3E0       RET
+..text:000000000001E3E4       MOV             W0, #0x10
+..text:000000000001E3E8       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001E3EC       ADD             SP, SP, #0x10
+..text:000000000001E3F0       RET
+..text:000000000001E3F4       MOV             W0, #1
+..text:000000000001E3F8       ADRL            X1, dword_3FB00
+..text:000000000001E400       ADD             X0, X1, W0,SXTW#3
+..text:000000000001E404       LDR             W0, [X0,#4]
+..text:000000000001E408       B               loc_1E3D8
+..text:000000000001E40C       MOV             W0, #2
+..text:000000000001E410       B               loc_1E3F8

@@ -1,0 +1,30 @@
+Function: sub_1ED6C (0x1ED6C)
+Architecture: 64-bit
+Segment range: 0x1ED6C - 0x1EDD4
+----------------------------------------
+
+..text:000000000001ED6C       SUB             SP, SP, #0x10
+..text:000000000001ED70       STR             X30, [SP,#0x10+var_10]
+..text:000000000001ED74       CBZ             X0, loc_1EDA4
+..text:000000000001ED78       CBZ             X1, loc_1EDA4
+..text:000000000001ED7C       BL              sub_B93C
+..text:000000000001ED80       CBZ             W0, loc_1EDB8
+..text:000000000001ED84       CMN             W0, #2
+..text:000000000001ED88       B.EQ            loc_1EDB4
+..text:000000000001ED8C       CMN             W0, #3
+..text:000000000001ED90       MOV             W0, #1
+..text:000000000001ED94       B.EQ            loc_1EDCC
+..text:000000000001ED98       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001ED9C       ADD             SP, SP, #0x10
+..text:000000000001EDA0       RET
+..text:000000000001EDA4       MOV             W0, #0x10
+..text:000000000001EDA8       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001EDAC       ADD             SP, SP, #0x10
+..text:000000000001EDB0       RET
+..text:000000000001EDB4       MOV             W0, #1
+..text:000000000001EDB8       ADRL            X1, dword_3FB00
+..text:000000000001EDC0       ADD             X0, X1, W0,SXTW#3
+..text:000000000001EDC4       LDR             W0, [X0,#4]
+..text:000000000001EDC8       B               loc_1ED98
+..text:000000000001EDCC       MOV             W0, #2
+..text:000000000001EDD0       B               loc_1EDB8

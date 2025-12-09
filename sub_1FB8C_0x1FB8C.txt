@@ -1,0 +1,39 @@
+Function: sub_1FB8C (0x1FB8C)
+Architecture: 64-bit
+Segment range: 0x1FB8C - 0x1FC14
+----------------------------------------
+
+..text:000000000001FB8C       SUB             SP, SP, #0x10
+..text:000000000001FB90       MOV             W2, #0x10
+..text:000000000001FB94       STP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001FB98       CBZ             X0, loc_1FBB0
+..text:000000000001FB9C       MOV             W19, W1
+..text:000000000001FBA0       BL              sub_1FB04
+..text:000000000001FBA4       CMN             W0, #1
+..text:000000000001FBA8       MOV             W2, W0
+..text:000000000001FBAC       B.EQ            loc_1FBC0
+..text:000000000001FBB0       MOV             W0, W2
+..text:000000000001FBB4       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001FBB8       ADD             SP, SP, #0x10
+..text:000000000001FBBC       RET
+..text:000000000001FBC0       ADRP            X2, #off_59F88@PAGE
+..text:000000000001FBC4       MOV             W5, #0x81
+..text:000000000001FBC8       MOV             W3, #0
+..text:000000000001FBCC       LDR             X2, [X2,#off_59F88@PAGEOFF]
+..text:000000000001FBD0       LDR             X4, [X2]
+..text:000000000001FBD4       CBZ             X4, loc_1FBF0
+..text:000000000001FBD8       LDR             X4, [X2,#0x10]
+..text:000000000001FBDC       CMP             W19, W4
+..text:000000000001FBE0       B.GT            loc_1FBF0
+..text:000000000001FBE4       CMP             W4, W5
+..text:000000000001FBE8       CSEL            W0, W0, W3, GE
+..text:000000000001FBEC       CSEL            W5, W4, W5, LT
+..text:000000000001FBF0       ADD             W3, W3, #1
+..text:000000000001FBF4       ADD             X2, X2, #0xD0
+..text:000000000001FBF8       CMP             W3, #0x20 ; ' '
+..text:000000000001FBFC       B.NE            loc_1FBD0
+..text:000000000001FC00       MOV             W2, W0
+..text:000000000001FC04       MOV             W0, W2
+..text:000000000001FC08       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001FC0C       ADD             SP, SP, #0x10
+..text:000000000001FC10       RET

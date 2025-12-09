@@ -1,0 +1,23 @@
+Function: sub_2A128 (0x2A128)
+Architecture: 64-bit
+Segment range: 0x2A128 - 0x2A170
+----------------------------------------
+
+..text:000000000002A128       ADRP            X4, #dword_40D90@PAGE
+..text:000000000002A12C       MOV             W2, #0
+..text:000000000002A130       ADD             X1, X4, #dword_40D90@PAGEOFF
+..text:000000000002A134       ADD             X1, X1, #4
+..text:000000000002A138       B               loc_2A148
+..text:000000000002A13C       ADD             W2, W2, #1
+..text:000000000002A140       CMP             W2, #0x76 ; 'v'
+..text:000000000002A144       B.EQ            loc_2A168
+..text:000000000002A148       LDR             W3, [X1]
+..text:000000000002A14C       ADD             X1, X1, #8
+..text:000000000002A150       CMP             W3, W0
+..text:000000000002A154       B.NE            loc_2A13C
+..text:000000000002A158       ADD             X4, X4, #dword_40D90@PAGEOFF
+..text:000000000002A15C       SBFIZ           X2, X2, #3, #0x20 ; ' '
+..text:000000000002A160       LDR             W0, [X4,X2]
+..text:000000000002A164       RET
+..text:000000000002A168       MOV             W0, #0xFFFFFFFF
+..text:000000000002A16C       RET

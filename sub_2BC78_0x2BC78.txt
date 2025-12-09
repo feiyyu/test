@@ -1,0 +1,80 @@
+Function: sub_2BC78 (0x2BC78)
+Architecture: 64-bit
+Segment range: 0x2BC78 - 0x2BDA4
+----------------------------------------
+
+..text:000000000002BC78       SUB             SP, SP, #0x50
+..text:000000000002BC7C       CMP             X4, XZR
+..text:000000000002BC80       STP             X21, X22, [SP,#0x50+var_40]
+..text:000000000002BC84       STP             X19, X20, [SP,#0x50+var_50]
+..text:000000000002BC88       STP             X23, X24, [SP,#0x50+var_30]
+..text:000000000002BC8C       STP             X25, X26, [SP,#0x50+var_20]
+..text:000000000002BC90       STR             X30, [SP,#0x50+var_10]
+..text:000000000002BC94       CSET            W21, EQ
+..text:000000000002BC98       CBNZ            W21, loc_2BD00
+..text:000000000002BC9C       CMP             X2, XZR
+..text:000000000002BCA0       CSET            W9, EQ
+..text:000000000002BCA4       CMP             X6, XZR
+..text:000000000002BCA8       CSET            W7, EQ
+..text:000000000002BCAC       CMP             X0, XZR
+..text:000000000002BCB0       CSET            W8, EQ
+..text:000000000002BCB4       ORR             W7, W7, W8
+..text:000000000002BCB8       ORR             W7, W9, W7
+..text:000000000002BCBC       CBNZ            W7, loc_2BD00
+..text:000000000002BCC0       ADRP            X23, #off_59FB0@PAGE
+..text:000000000002BCC4       LDR             X23, [X23,#off_59FB0@PAGEOFF]
+..text:000000000002BCC8       LDR             X7, [X23]
+..text:000000000002BCCC       CBZ             X7, loc_2BD00
+..text:000000000002BCD0       LDR             W8, [X6]
+..text:000000000002BCD4       MOV             W7, #0xE
+..text:000000000002BCD8       CMP             W8, #1
+..text:000000000002BCDC       B.EQ            loc_2BD24
+..text:000000000002BCE0       MOV             W0, W7
+..text:000000000002BCE4       LDR             X30, [SP,#0x50+var_10]
+..text:000000000002BCE8       LDP             X19, X20, [SP,#0x50+var_50]
+..text:000000000002BCEC       LDP             X21, X22, [SP,#0x50+var_40]
+..text:000000000002BCF0       LDP             X23, X24, [SP,#0x50+var_30]
+..text:000000000002BCF4       LDP             X25, X26, [SP,#0x50+var_20]
+..text:000000000002BCF8       ADD             SP, SP, #0x50 ; 'P'
+..text:000000000002BCFC       RET
+..text:000000000002BD00       MOV             W7, #0x10
+..text:000000000002BD04       LDR             X30, [SP,#0x50+var_10]
+..text:000000000002BD08       MOV             W0, W7
+..text:000000000002BD0C       LDP             X19, X20, [SP,#0x50+var_50]
+..text:000000000002BD10       LDP             X21, X22, [SP,#0x50+var_40]
+..text:000000000002BD14       LDP             X23, X24, [SP,#0x50+var_30]
+..text:000000000002BD18       LDP             X25, X26, [SP,#0x50+var_20]
+..text:000000000002BD1C       ADD             SP, SP, #0x50 ; 'P'
+..text:000000000002BD20       RET
+..text:000000000002BD24       MOV             X24, X3
+..text:000000000002BD28       MOV             X22, X2
+..text:000000000002BD2C       LDR             X3, [X23,#(off_60950 - 0x608B0)]
+..text:000000000002BD30       MOV             X2, X1
+..text:000000000002BD34       MOV             X1, X0
+..text:000000000002BD38       LDR             X0, [X6,#0x38]
+..text:000000000002BD3C       MOV             X19, X6
+..text:000000000002BD40       MOV             X25, X5
+..text:000000000002BD44       MOV             X20, X4
+..text:000000000002BD48       BLR             X3
+..text:000000000002BD4C       MOV             W26, W0
+..text:000000000002BD50       CBNZ            W0, loc_2BD70
+..text:000000000002BD54       LDR             X3, [X23,#(off_60950 - 0x608B0)]
+..text:000000000002BD58       MOV             X1, X22
+..text:000000000002BD5C       LDR             X0, [X19,#0x40]
+..text:000000000002BD60       MOV             X2, X24
+..text:000000000002BD64       BLR             X3
+..text:000000000002BD68       MOV             W26, W0
+..text:000000000002BD6C       CBZ             W0, loc_2BD80
+..text:000000000002BD70       MOV             X0, X19
+..text:000000000002BD74       BL              sub_2AD70
+..text:000000000002BD78       MOV             W7, W26
+..text:000000000002BD7C       B               loc_2BCE0
+..text:000000000002BD80       LDR             X3, [X23,#(off_60950 - 0x608B0)]
+..text:000000000002BD84       MOV             X1, X20
+..text:000000000002BD88       LDR             X0, [X19,#0x30]
+..text:000000000002BD8C       MOV             X2, X25
+..text:000000000002BD90       BLR             X3
+..text:000000000002BD94       MOV             W26, W0
+..text:000000000002BD98       MOV             W7, W21
+..text:000000000002BD9C       CBNZ            W0, loc_2BD70
+..text:000000000002BDA0       B               loc_2BCE0

@@ -1,0 +1,46 @@
+Function: sub_6A5C (0x6A5C)
+Architecture: 64-bit
+Segment range: 0x6A5C - 0x6B00
+----------------------------------------
+
+..text:0000000000006A5C       LDR             W4, [X0]
+..text:0000000000006A60       MOV             W6, #1
+..text:0000000000006A64       LDR             W2, [X1]
+..text:0000000000006A68       CMP             W4, W2
+..text:0000000000006A6C       B.GT            loc_6AE0
+..text:0000000000006A70       B.LT            loc_6AE8
+..text:0000000000006A74       LDR             X7, [X0,#0x10]
+..text:0000000000006A78       CMP             W4, WZR
+..text:0000000000006A7C       LDR             X0, [X1,#0x10]
+..text:0000000000006A80       MOV             X3, #0xFFFFFFFFFFFFFFF8
+..text:0000000000006A84       ADD             X5, X3, W4,SXTW#3
+..text:0000000000006A88       ADD             X1, X7, X5
+..text:0000000000006A8C       ADD             X2, X0, X5
+..text:0000000000006A90       B.LE            loc_6ADC
+..text:0000000000006A94       LDR             X7, [X7,X5]
+..text:0000000000006A98       LDR             X0, [X0,X5]
+..text:0000000000006A9C       CMP             X0, X7
+..text:0000000000006AA0       B.CC            loc_6AE0
+..text:0000000000006AA4       B.HI            loc_6AE8
+..text:0000000000006AA8       SUB             W4, W4, #1
+..text:0000000000006AAC       SUB             X4, X3, W4,UXTW#3
+..text:0000000000006AB0       ADD             X4, X1, X4
+..text:0000000000006AB4       B               loc_6ACC
+..text:0000000000006AB8       LDR             X3, [X1]
+..text:0000000000006ABC       LDR             X0, [X2]
+..text:0000000000006AC0       CMP             X3, X0
+..text:0000000000006AC4       B.HI            loc_6AF4
+..text:0000000000006AC8       B.CC            loc_6AE8
+..text:0000000000006ACC       SUB             X1, X1, #8
+..text:0000000000006AD0       SUB             X2, X2, #8
+..text:0000000000006AD4       CMP             X1, X4
+..text:0000000000006AD8       B.NE            loc_6AB8
+..text:0000000000006ADC       MOV             W6, #0
+..text:0000000000006AE0       MOV             W0, W6
+..text:0000000000006AE4       RET
+..text:0000000000006AE8       MOV             W6, #0xFFFFFFFF
+..text:0000000000006AEC       MOV             W0, W6
+..text:0000000000006AF0       RET
+..text:0000000000006AF4       MOV             W6, #1
+..text:0000000000006AF8       MOV             W0, W6
+..text:0000000000006AFC       RET

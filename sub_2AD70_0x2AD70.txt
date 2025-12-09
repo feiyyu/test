@@ -1,0 +1,22 @@
+Function: sub_2AD70 (0x2AD70)
+Architecture: 64-bit
+Segment range: 0x2AD70 - 0x2ADB4
+----------------------------------------
+
+..text:000000000002AD70       SUB             SP, SP, #0x20
+..text:000000000002AD74       STR             X30, [SP,#0x20+var_10]
+..text:000000000002AD78       CBZ             X0, loc_2ADA8
+..text:000000000002AD7C       MOV             X7, X0
+..text:000000000002AD80       STR             XZR, [SP,#0x20+var_20]
+..text:000000000002AD84       ADD             X1, X7, #0x20 ; ' '
+..text:000000000002AD88       ADD             X2, X7, #0x30 ; '0'
+..text:000000000002AD8C       ADD             X3, X7, #0x38 ; '8'
+..text:000000000002AD90       ADD             X4, X7, #0x40 ; '@'
+..text:000000000002AD94       ADD             X5, X7, #0x18
+..text:000000000002AD98       ADD             X6, X7, #0x10
+..text:000000000002AD9C       ADD             X0, X0, #0x28 ; '('
+..text:000000000002ADA0       ADD             X7, X7, #8
+..text:000000000002ADA4       BL              sub_1F218
+..text:000000000002ADA8       LDR             X30, [SP,#0x20+var_10]
+..text:000000000002ADAC       ADD             SP, SP, #0x20 ; ' '
+..text:000000000002ADB0       RET

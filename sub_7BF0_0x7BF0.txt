@@ -1,0 +1,18 @@
+Function: sub_7BF0 (0x7BF0)
+Architecture: 64-bit
+Segment range: 0x7BF0 - 0x7C24
+----------------------------------------
+
+..text:0000000000007BF0       LDP             X6, X7, [X1]
+..text:0000000000007BF4       LDR             W5, [X0]
+..text:0000000000007BF8       LDR             W4, [X0,#4]
+..text:0000000000007BFC       LDR             W3, [X0,#8]
+..text:0000000000007C00       STP             X6, X7, [X0]
+..text:0000000000007C04       LDR             X2, [X0,#0x10]
+..text:0000000000007C08       LDR             X6, [X1,#0x10]
+..text:0000000000007C0C       STR             X6, [X0,#0x10]
+..text:0000000000007C10       STR             W5, [X1]
+..text:0000000000007C14       STR             W4, [X1,#4]
+..text:0000000000007C18       STR             W3, [X1,#8]
+..text:0000000000007C1C       STR             X2, [X1,#0x10]
+..text:0000000000007C20       RET

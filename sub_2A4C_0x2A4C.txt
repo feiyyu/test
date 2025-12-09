@@ -1,0 +1,6 @@
+Function: sub_2A4C (0x2A4C)
+Architecture: 64-bit
+Segment range: 0x2A4C - 0x2A50
+----------------------------------------
+
+..text:0000000000002A4C       B               sub_3770

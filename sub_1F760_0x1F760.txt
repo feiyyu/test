@@ -1,0 +1,16 @@
+Function: sub_1F760 (0x1F760)
+Architecture: 64-bit
+Segment range: 0x1F760 - 0x1F78C
+----------------------------------------
+
+..text:000000000001F760       CMP             X2, XZR
+..text:000000000001F764       CSET            W5, EQ
+..text:000000000001F768       CMP             X3, XZR
+..text:000000000001F76C       CSET            W4, EQ
+..text:000000000001F770       ORR             W4, W5, W4
+..text:000000000001F774       CBNZ            W4, loc_1F784
+..text:000000000001F778       CBZ             X0, loc_1F784
+..text:000000000001F77C       MOV             W4, #1
+..text:000000000001F780       B               loc_1F574
+..text:000000000001F784       MOV             W0, #0x10
+..text:000000000001F788       RET

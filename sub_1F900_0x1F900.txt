@@ -1,0 +1,30 @@
+Function: sub_1F900 (0x1F900)
+Architecture: 64-bit
+Segment range: 0x1F900 - 0x1F964
+----------------------------------------
+
+..text:000000000001F900       SUB             SP, SP, #0x50
+..text:000000000001F904       MOV             X1, #0x20 ; ' '
+..text:000000000001F908       STP             X19, X20, [SP,#0x50+var_50]
+..text:000000000001F90C       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:000000000001F910       STR             X30, [SP,#0x50+var_40]
+..text:000000000001F914       MOV             X20, X0
+..text:000000000001F918       ADD             X0, SP, #0x50+var_28
+..text:000000000001F91C       LDR             X2, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001F920       LDR             X2, [X2]
+..text:000000000001F924       STR             X2, [SP,#0x50+var_8]
+..text:000000000001F928       BL              sub_2168C
+..text:000000000001F92C       CMP             X20, #0x20 ; ' '
+..text:000000000001F930       B.LS            loc_1F93C
+..text:000000000001F934       SUB             X0, X20, #0x20 ; ' '
+..text:000000000001F938       BL              sub_1F900
+..text:000000000001F93C       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001F940       LDR             X1, [SP,#0x50+var_8]
+..text:000000000001F944       LDR             X0, [X19]
+..text:000000000001F948       CMP             X1, X0
+..text:000000000001F94C       B.NE            loc_1F960
+..text:000000000001F950       LDP             X19, X20, [SP,#0x50+var_50]
+..text:000000000001F954       LDR             X30, [SP,#0x50+var_40]
+..text:000000000001F958       ADD             SP, SP, #0x50 ; 'P'
+..text:000000000001F95C       RET
+..text:000000000001F960       BL              .__stack_chk_fail

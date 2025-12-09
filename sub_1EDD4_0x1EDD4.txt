@@ -1,0 +1,38 @@
+Function: sub_1EDD4 (0x1EDD4)
+Architecture: 64-bit
+Segment range: 0x1EDD4 - 0x1EE5C
+----------------------------------------
+
+..text:000000000001EDD4       SUB             SP, SP, #0x20
+..text:000000000001EDD8       MOV             X1, #0x18; item_size
+..text:000000000001EDDC       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001EDE0       MOV             X20, X0
+..text:000000000001EDE4       MOV             X0, #1; item_count
+..text:000000000001EDE8       STR             X30, [SP,#0x20+var_10]
+..text:000000000001EDEC       MOV             W19, #0xD
+..text:000000000001EDF0       BL              .calloc
+..text:000000000001EDF4       STR             X0, [X20]
+..text:000000000001EDF8       CBZ             X0, loc_1EE24
+..text:000000000001EDFC       BL              sub_93C4
+..text:000000000001EE00       CBZ             W0, loc_1EE54
+..text:000000000001EE04       CMN             W0, #2
+..text:000000000001EE08       B.EQ            loc_1EE38
+..text:000000000001EE0C       CMN             W0, #3
+..text:000000000001EE10       MOV             W1, #2
+..text:000000000001EE14       MOV             W19, #1
+..text:000000000001EE18       B.EQ            loc_1EE3C
+..text:000000000001EE1C       LDR             X0, [X20]; p
+..text:000000000001EE20       BL              .free
+..text:000000000001EE24       MOV             W0, W19
+..text:000000000001EE28       LDR             X30, [SP,#0x20+var_10]
+..text:000000000001EE2C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001EE30       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001EE34       RET
+..text:000000000001EE38       MOV             W1, #1
+..text:000000000001EE3C       ADRL            X0, dword_3FB00
+..text:000000000001EE44       ADD             X1, X0, W1,SXTW#3
+..text:000000000001EE48       LDR             W19, [X1,#4]
+..text:000000000001EE4C       CBZ             W19, loc_1EE24
+..text:000000000001EE50       B               loc_1EE1C
+..text:000000000001EE54       MOV             W1, W0
+..text:000000000001EE58       B               loc_1EE3C
