@@ -1,0 +1,9 @@
+Function: .close (0x22C0)
+Architecture: 64-bit
+Segment range: 0x22C0 - 0x22D0
+----------------------------------------
+
+..plt:00000000000022C0        ADRP            X16, #close_ptr@PAGE
+..plt:00000000000022C4        LDR             X17, [X16,#close_ptr@PAGEOFF]
+..plt:00000000000022C8        ADD             X16, X16, #close_ptr@PAGEOFF
+..plt:00000000000022CC        BR              X17 ; close

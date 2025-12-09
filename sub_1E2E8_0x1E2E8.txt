@@ -1,0 +1,48 @@
+Function: sub_1E2E8 (0x1E2E8)
+Architecture: 64-bit
+Segment range: 0x1E2E8 - 0x1E398
+----------------------------------------
+
+..text:000000000001E2E8       SUB             SP, SP, #0x20
+..text:000000000001E2EC       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001E2F0       STP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001E2F4       CBZ             X0, loc_1E35C
+..text:000000000001E2F8       CBZ             X1, loc_1E35C
+..text:000000000001E2FC       MOV             X19, X1
+..text:000000000001E300       MOV             X20, X0
+..text:000000000001E304       MOV             X1, #8; item_size
+..text:000000000001E308       MOV             X0, #1; item_count
+..text:000000000001E30C       MOV             W21, #0xD
+..text:000000000001E310       BL              .calloc
+..text:000000000001E314       STR             X0, [X19]
+..text:000000000001E318       MOV             X1, X0
+..text:000000000001E31C       CBZ             X0, loc_1E348
+..text:000000000001E320       MOV             X0, X20
+..text:000000000001E324       BL              sub_B0A4
+..text:000000000001E328       CBZ             W0, loc_1E378
+..text:000000000001E32C       CMN             W0, #2
+..text:000000000001E330       B.EQ            loc_1E374
+..text:000000000001E334       CMN             W0, #3
+..text:000000000001E338       MOV             W21, #1
+..text:000000000001E33C       B.EQ            loc_1E390
+..text:000000000001E340       LDR             X0, [X19]; p
+..text:000000000001E344       BL              .free
+..text:000000000001E348       MOV             W0, W21
+..text:000000000001E34C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001E350       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001E354       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001E358       RET
+..text:000000000001E35C       MOV             W21, #0x10
+..text:000000000001E360       MOV             W0, W21
+..text:000000000001E364       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001E368       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001E36C       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001E370       RET
+..text:000000000001E374       MOV             W0, #1
+..text:000000000001E378       ADRL            X1, dword_3FB00
+..text:000000000001E380       ADD             X0, X1, W0,SXTW#3
+..text:000000000001E384       LDR             W21, [X0,#4]
+..text:000000000001E388       CBZ             W21, loc_1E348
+..text:000000000001E38C       B               loc_1E340
+..text:000000000001E390       MOV             W0, #2
+..text:000000000001E394       B               loc_1E378

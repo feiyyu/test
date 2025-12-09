@@ -1,0 +1,9 @@
+Function: .calloc (0x2190)
+Architecture: 64-bit
+Segment range: 0x2190 - 0x21A0
+----------------------------------------
+
+..plt:0000000000002190        ADRP            X16, #calloc_ptr@PAGE
+..plt:0000000000002194        LDR             X17, [X16,#calloc_ptr@PAGEOFF]
+..plt:0000000000002198        ADD             X16, X16, #calloc_ptr@PAGEOFF
+..plt:000000000000219C        BR              X17 ; calloc

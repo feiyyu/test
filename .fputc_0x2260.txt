@@ -1,0 +1,9 @@
+Function: .fputc (0x2260)
+Architecture: 64-bit
+Segment range: 0x2260 - 0x2270
+----------------------------------------
+
+..plt:0000000000002260        ADRP            X16, #fputc_ptr@PAGE
+..plt:0000000000002264        LDR             X17, [X16,#fputc_ptr@PAGEOFF]
+..plt:0000000000002268        ADD             X16, X16, #fputc_ptr@PAGEOFF
+..plt:000000000000226C        BR              X17 ; fputc

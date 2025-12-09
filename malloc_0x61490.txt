@@ -1,0 +1,6 @@
+Function: malloc (0x61490)
+Architecture: 64-bit
+Segment range: 0x61490 - 0x61498
+----------------------------------------
+
+.extern:0000000000061490      IMPORT malloc

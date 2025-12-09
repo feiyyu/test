@@ -1,0 +1,73 @@
+Function: sub_1DDC0 (0x1DDC0)
+Architecture: 64-bit
+Segment range: 0x1DDC0 - 0x1DED8
+----------------------------------------
+
+..text:000000000001DDC0       SUB             SP, SP, #0x70
+..text:000000000001DDC4       ADRL            X0, aAes; "aes"
+..text:000000000001DDCC       STP             X23, X24, [SP,#0x70+var_50]
+..text:000000000001DDD0       ADRP            X24, #__stack_chk_guard_ptr@PAGE
+..text:000000000001DDD4       STR             X30, [SP,#0x70+var_30]
+..text:000000000001DDD8       STP             X19, X20, [SP,#0x70+var_70]
+..text:000000000001DDDC       STP             X21, X22, [SP,#0x70+var_60]
+..text:000000000001DDE0       LDR             X1, [X24,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001DDE4       STP             X25, X26, [SP,#0x70+var_40]
+..text:000000000001DDE8       LDR             X1, [X1]
+..text:000000000001DDEC       STR             X1, [SP,#0x70+var_8]
+..text:000000000001DDF0       BL              sub_1F9A0
+..text:000000000001DDF4       CMN             W0, #1
+..text:000000000001DDF8       MOV             W23, W0
+..text:000000000001DDFC       B.EQ            loc_1DEAC
+..text:000000000001DE00       ADRP            X19, #unk_3F950@PAGE
+..text:000000000001DE04       ADRP            X22, #aOmac@PAGE; "OMAC"
+..text:000000000001DE08       ADD             X19, X19, #unk_3F950@PAGEOFF
+..text:000000000001DE0C       MOV             W20, #0
+..text:000000000001DE10       ADD             X19, X19, #0x18
+..text:000000000001DE14       ADD             X21, SP, #0x70+var_18
+..text:000000000001DE18       ADD             X26, SP, #0x70+var_20
+..text:000000000001DE1C       MOV             X25, #0x10
+..text:000000000001DE20       ADD             X22, X22, #aOmac@PAGEOFF; "OMAC"
+..text:000000000001DE24       LDURSW          X2, [X19,#-0x18]
+..text:000000000001DE28       MOV             W0, W23
+..text:000000000001DE2C       LDURSW          X4, [X19,#-0x14]
+..text:000000000001DE30       SUB             X1, X19, #0x10
+..text:000000000001DE34       MOV             X3, X19
+..text:000000000001DE38       MOV             X5, X21
+..text:000000000001DE3C       MOV             X6, X26
+..text:000000000001DE40       STR             X25, [SP,#0x70+var_20]
+..text:000000000001DE44       BL              sub_1D654
+..text:000000000001DE48       CBNZ            W0, loc_1DE7C
+..text:000000000001DE4C       LDR             X1, [SP,#0x70+var_20]
+..text:000000000001DE50       MOV             X0, X21
+..text:000000000001DE54       ADD             X2, X19, #0x40 ; '@'
+..text:000000000001DE58       MOV             X3, #0x10
+..text:000000000001DE5C       MOV             X4, X22
+..text:000000000001DE60       MOV             W5, W20
+..text:000000000001DE64       BL              sub_216AC
+..text:000000000001DE68       CBNZ            W0, loc_1DECC
+..text:000000000001DE6C       ADD             W20, W20, #1
+..text:000000000001DE70       ADD             X19, X19, #0x68 ; 'h'
+..text:000000000001DE74       CMP             W20, #4
+..text:000000000001DE78       B.NE            loc_1DE24
+..text:000000000001DE7C       LDR             X24, [X24,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001DE80       LDR             X2, [SP,#0x70+var_8]
+..text:000000000001DE84       LDR             X1, [X24]
+..text:000000000001DE88       CMP             X2, X1
+..text:000000000001DE8C       B.NE            loc_1DED4
+..text:000000000001DE90       LDP             X19, X20, [SP,#0x70+var_70]
+..text:000000000001DE94       LDP             X21, X22, [SP,#0x70+var_60]
+..text:000000000001DE98       LDP             X23, X24, [SP,#0x70+var_50]
+..text:000000000001DE9C       LDP             X25, X26, [SP,#0x70+var_40]
+..text:000000000001DEA0       LDR             X30, [SP,#0x70+var_30]
+..text:000000000001DEA4       ADD             SP, SP, #0x70 ; 'p'
+..text:000000000001DEA8       RET
+..text:000000000001DEAC       ADRL            X0, aRijndael; "rijndael"
+..text:000000000001DEB4       BL              sub_1F9A0
+..text:000000000001DEB8       CMN             W0, #1
+..text:000000000001DEBC       MOV             W23, W0
+..text:000000000001DEC0       MOV             W0, #2
+..text:000000000001DEC4       B.NE            loc_1DE00
+..text:000000000001DEC8       B               loc_1DE7C
+..text:000000000001DECC       MOV             W0, #5
+..text:000000000001DED0       B               loc_1DE7C
+..text:000000000001DED4       BL              .__stack_chk_fail

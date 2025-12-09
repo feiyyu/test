@@ -1,0 +1,9 @@
+Function: .fclose (0x2220)
+Architecture: 64-bit
+Segment range: 0x2220 - 0x2230
+----------------------------------------
+
+..plt:0000000000002220        ADRP            X16, #fclose_ptr@PAGE
+..plt:0000000000002224        LDR             X17, [X16,#fclose_ptr@PAGEOFF]
+..plt:0000000000002228        ADD             X16, X16, #fclose_ptr@PAGEOFF
+..plt:000000000000222C        BR              X17 ; fclose

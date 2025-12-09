@@ -1,0 +1,54 @@
+Function: sub_1AEF4 (0x1AEF4)
+Architecture: 64-bit
+Segment range: 0x1AEF4 - 0x1AFB8
+----------------------------------------
+
+..text:000000000001AEF4       CBZ             X0, loc_1AFAC
+..text:000000000001AEF8       MOV             X8, #0xC908
+..text:000000000001AEFC       MOV             X7, #0xA73B
+..text:000000000001AF00       MOV             X6, #0xF82B
+..text:000000000001AF04       MOV             X5, #0x36F1
+..text:000000000001AF08       MOV             X4, #0x82D1
+..text:000000000001AF0C       MOV             X3, #0x6C1F
+..text:000000000001AF10       MOV             X2, #0xBD6B
+..text:000000000001AF14       MOV             X1, #0x2179
+..text:000000000001AF18       MOVK            X8, #0xF3BC,LSL#16
+..text:000000000001AF1C       MOVK            X7, #0x84CA,LSL#16
+..text:000000000001AF20       MOVK            X6, #0xFE94,LSL#16
+..text:000000000001AF24       MOVK            X5, #0x5F1D,LSL#16
+..text:000000000001AF28       MOVK            X4, #0xADE6,LSL#16
+..text:000000000001AF2C       MOVK            X3, #0x2B3E,LSL#16
+..text:000000000001AF30       MOVK            X2, #0xFB41,LSL#16
+..text:000000000001AF34       MOVK            X1, #0x137E,LSL#16
+..text:000000000001AF38       MOV             W9, #0
+..text:000000000001AF3C       MOVK            X8, #0xE667,LSL#32
+..text:000000000001AF40       MOVK            X7, #0xAE85,LSL#32
+..text:000000000001AF44       MOVK            X6, #0xF372,LSL#32
+..text:000000000001AF48       MOVK            X5, #0xF53A,LSL#32
+..text:000000000001AF4C       MOVK            X4, #0x527F,LSL#32
+..text:000000000001AF50       MOVK            X3, #0x688C,LSL#32
+..text:000000000001AF54       MOVK            X2, #0xD9AB,LSL#32
+..text:000000000001AF58       MOVK            X1, #0xCD19,LSL#32
+..text:000000000001AF5C       MOVK            X8, #0x6A09,LSL#48
+..text:000000000001AF60       MOVK            X7, #0xBB67,LSL#48
+..text:000000000001AF64       MOVK            X6, #0x3C6E,LSL#48
+..text:000000000001AF68       MOVK            X5, #0xA54F,LSL#48
+..text:000000000001AF6C       MOVK            X4, #0x510E,LSL#48
+..text:000000000001AF70       MOVK            X3, #0x9B05,LSL#48
+..text:000000000001AF74       MOVK            X2, #0x1F83,LSL#48
+..text:000000000001AF78       MOVK            X1, #0x5BE0,LSL#48
+..text:000000000001AF7C       STR             XZR, [X0,#0x48]
+..text:000000000001AF80       STR             XZR, [X0]
+..text:000000000001AF84       STR             X8, [X0,#8]
+..text:000000000001AF88       STR             X7, [X0,#0x10]
+..text:000000000001AF8C       STR             X6, [X0,#0x18]
+..text:000000000001AF90       STR             X5, [X0,#0x20]
+..text:000000000001AF94       STR             X4, [X0,#0x28]
+..text:000000000001AF98       STR             X3, [X0,#0x30]
+..text:000000000001AF9C       STR             X2, [X0,#0x38]
+..text:000000000001AFA0       STR             X1, [X0,#0x40]
+..text:000000000001AFA4       MOV             W0, W9
+..text:000000000001AFA8       RET
+..text:000000000001AFAC       MOV             W9, #0x10
+..text:000000000001AFB0       MOV             W0, W9
+..text:000000000001AFB4       RET

@@ -1,0 +1,9 @@
+Function: .qsort (0x2130)
+Architecture: 64-bit
+Segment range: 0x2130 - 0x2140
+----------------------------------------
+
+..plt:0000000000002130        ADRP            X16, #qsort_ptr@PAGE
+..plt:0000000000002134        LDR             X17, [X16,#qsort_ptr@PAGEOFF]
+..plt:0000000000002138        ADD             X16, X16, #qsort_ptr@PAGEOFF
+..plt:000000000000213C        BR              X17 ; qsort

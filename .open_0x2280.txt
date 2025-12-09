@@ -1,0 +1,9 @@
+Function: .open (0x2280)
+Architecture: 64-bit
+Segment range: 0x2280 - 0x2290
+----------------------------------------
+
+..plt:0000000000002280        ADRP            X16, #open_ptr@PAGE
+..plt:0000000000002284        LDR             X17, [X16,#open_ptr@PAGEOFF]
+..plt:0000000000002288        ADD             X16, X16, #open_ptr@PAGEOFF
+..plt:000000000000228C        BR              X17 ; open

@@ -1,0 +1,9 @@
+Function: .sprintf (0x2250)
+Architecture: 64-bit
+Segment range: 0x2250 - 0x2260
+----------------------------------------
+
+..plt:0000000000002250        ADRP            X16, #sprintf_ptr@PAGE
+..plt:0000000000002254        LDR             X17, [X16,#sprintf_ptr@PAGEOFF]
+..plt:0000000000002258        ADD             X16, X16, #sprintf_ptr@PAGEOFF
+..plt:000000000000225C        BR              X17 ; sprintf

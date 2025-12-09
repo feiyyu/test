@@ -1,0 +1,6 @@
+Function: strcmp (0x614F0)
+Architecture: 64-bit
+Segment range: 0x614F0 - 0x614F8
+----------------------------------------
+
+.extern:00000000000614F0      IMPORT strcmp

@@ -1,0 +1,6 @@
+Function: __cxa_atexit (0x614B8)
+Architecture: 64-bit
+Segment range: 0x614B8 - 0x614C0
+----------------------------------------
+
+.extern:00000000000614B8      IMPORT __cxa_atexit

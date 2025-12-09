@@ -1,0 +1,9 @@
+Function: .strtok (0x21D0)
+Architecture: 64-bit
+Segment range: 0x21D0 - 0x21E0
+----------------------------------------
+
+..plt:00000000000021D0        ADRP            X16, #strtok_ptr@PAGE
+..plt:00000000000021D4        LDR             X17, [X16,#strtok_ptr@PAGEOFF]
+..plt:00000000000021D8        ADD             X16, X16, #strtok_ptr@PAGEOFF
+..plt:00000000000021DC        BR              X17 ; strtok

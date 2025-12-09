@@ -1,0 +1,6 @@
+Function: strchr (0x61530)
+Architecture: 64-bit
+Segment range: 0x61530 - 0x61538
+----------------------------------------
+
+.extern:0000000000061530      IMPORT strchr

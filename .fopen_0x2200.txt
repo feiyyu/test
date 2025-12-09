@@ -1,0 +1,9 @@
+Function: .fopen (0x2200)
+Architecture: 64-bit
+Segment range: 0x2200 - 0x2210
+----------------------------------------
+
+..plt:0000000000002200        ADRP            X16, #fopen_ptr@PAGE
+..plt:0000000000002204        LDR             X17, [X16,#fopen_ptr@PAGEOFF]
+..plt:0000000000002208        ADD             X16, X16, #fopen_ptr@PAGEOFF
+..plt:000000000000220C        BR              X17 ; fopen

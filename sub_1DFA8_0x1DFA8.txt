@@ -1,0 +1,27 @@
+Function: sub_1DFA8 (0x1DFA8)
+Architecture: 64-bit
+Segment range: 0x1DFA8 - 0x1E004
+----------------------------------------
+
+..text:000000000001DFA8       SUB             SP, SP, #0x10
+..text:000000000001DFAC       MOV             W2, #0x10
+..text:000000000001DFB0       STR             X30, [SP,#0x10+var_10]
+..text:000000000001DFB4       CBZ             X0, loc_1DFD4
+..text:000000000001DFB8       BL              sub_CC04
+..text:000000000001DFBC       CBZ             W0, loc_1DFE8
+..text:000000000001DFC0       CMN             W0, #2
+..text:000000000001DFC4       B.EQ            loc_1DFE4
+..text:000000000001DFC8       CMN             W0, #3
+..text:000000000001DFCC       MOV             W2, #1
+..text:000000000001DFD0       B.EQ            loc_1DFFC
+..text:000000000001DFD4       MOV             W0, W2
+..text:000000000001DFD8       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001DFDC       ADD             SP, SP, #0x10
+..text:000000000001DFE0       RET
+..text:000000000001DFE4       MOV             W0, #1
+..text:000000000001DFE8       ADRL            X1, dword_3FB00
+..text:000000000001DFF0       ADD             X0, X1, W0,SXTW#3
+..text:000000000001DFF4       LDR             W2, [X0,#4]
+..text:000000000001DFF8       B               loc_1DFD4
+..text:000000000001DFFC       MOV             W0, #2
+..text:000000000001E000       B               loc_1DFE8

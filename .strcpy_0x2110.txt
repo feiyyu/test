@@ -1,0 +1,9 @@
+Function: .strcpy (0x2110)
+Architecture: 64-bit
+Segment range: 0x2110 - 0x2120
+----------------------------------------
+
+..plt:0000000000002110        ADRP            X16, #strcpy_ptr@PAGE
+..plt:0000000000002114        LDR             X17, [X16,#strcpy_ptr@PAGEOFF]
+..plt:0000000000002118        ADD             X16, X16, #strcpy_ptr@PAGEOFF
+..plt:000000000000211C        BR              X17 ; strcpy

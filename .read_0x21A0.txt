@@ -1,0 +1,9 @@
+Function: .read (0x21A0)
+Architecture: 64-bit
+Segment range: 0x21A0 - 0x21B0
+----------------------------------------
+
+..plt:00000000000021A0        ADRP            X16, #read_ptr@PAGE
+..plt:00000000000021A4        LDR             X17, [X16,#read_ptr@PAGEOFF]
+..plt:00000000000021A8        ADD             X16, X16, #read_ptr@PAGEOFF
+..plt:00000000000021AC        BR              X17 ; read

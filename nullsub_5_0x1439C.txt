@@ -1,0 +1,6 @@
+Function: nullsub_5 (0x1439C)
+Architecture: 64-bit
+Segment range: 0x1439C - 0x143A0
+----------------------------------------
+
+..text:000000000001439C       RET

@@ -1,0 +1,6 @@
+Function: sprintf (0x61500)
+Architecture: 64-bit
+Segment range: 0x61500 - 0x61508
+----------------------------------------
+
+.extern:0000000000061500      IMPORT sprintf

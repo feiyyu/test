@@ -1,0 +1,6 @@
+Function: memcmp (0x614C8)
+Architecture: 64-bit
+Segment range: 0x614C8 - 0x614D0
+----------------------------------------
+
+.extern:00000000000614C8      IMPORT memcmp

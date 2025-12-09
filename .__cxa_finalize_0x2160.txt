@@ -1,0 +1,9 @@
+Function: .__cxa_finalize (0x2160)
+Architecture: 64-bit
+Segment range: 0x2160 - 0x2170
+----------------------------------------
+
+..plt:0000000000002160        ADRP            X16, #__cxa_finalize_ptr@PAGE
+..plt:0000000000002164        LDR             X17, [X16,#__cxa_finalize_ptr@PAGEOFF]
+..plt:0000000000002168        ADD             X16, X16, #__cxa_finalize_ptr@PAGEOFF
+..plt:000000000000216C        BR              X17 ; __cxa_finalize

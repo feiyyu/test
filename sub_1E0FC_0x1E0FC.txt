@@ -1,0 +1,38 @@
+Function: sub_1E0FC (0x1E0FC)
+Architecture: 64-bit
+Segment range: 0x1E0FC - 0x1E184
+----------------------------------------
+
+..text:000000000001E0FC       SUB             SP, SP, #0x10
+..text:000000000001E100       STP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001E104       CBZ             X0, loc_1E154
+..text:000000000001E108       CBZ             X2, loc_1E154
+..text:000000000001E10C       CMP             W1, WZR
+..text:000000000001E110       MOV             W3, #0x28 ; '('
+..text:000000000001E114       CSEL            W1, W1, W3, NE
+..text:000000000001E118       MOV             X19, X2
+..text:000000000001E11C       BL              sub_BC8C
+..text:000000000001E120       CBZ             W0, loc_1E168
+..text:000000000001E124       CMN             W0, #2
+..text:000000000001E128       B.EQ            loc_1E164
+..text:000000000001E12C       CMN             W0, #3
+..text:000000000001E130       MOV             W0, #1
+..text:000000000001E134       B.EQ            loc_1E17C
+..text:000000000001E138       LDR             W1, [X19]
+..text:000000000001E13C       CMP             W1, #1
+..text:000000000001E140       CSET            W1, EQ
+..text:000000000001E144       STR             W1, [X19]
+..text:000000000001E148       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001E14C       ADD             SP, SP, #0x10
+..text:000000000001E150       RET
+..text:000000000001E154       MOV             W0, #0x10
+..text:000000000001E158       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001E15C       ADD             SP, SP, #0x10
+..text:000000000001E160       RET
+..text:000000000001E164       MOV             W0, #1
+..text:000000000001E168       ADRL            X1, dword_3FB00
+..text:000000000001E170       ADD             X0, X1, W0,SXTW#3
+..text:000000000001E174       LDR             W0, [X0,#4]
+..text:000000000001E178       B               loc_1E138
+..text:000000000001E17C       MOV             W0, #2
+..text:000000000001E180       B               loc_1E168

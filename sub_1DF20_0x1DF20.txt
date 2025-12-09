@@ -1,0 +1,15 @@
+Function: sub_1DF20 (0x1DF20)
+Architecture: 64-bit
+Segment range: 0x1DF20 - 0x1DF48
+----------------------------------------
+
+..text:000000000001DF20       SUB             SP, SP, #0x10
+..text:000000000001DF24       MOV             X1, #0x10
+..text:000000000001DF28       STR             X30, [SP,#0x10+var_10]
+..text:000000000001DF2C       CBZ             X0, loc_1DF38
+..text:000000000001DF30       BL              sub_F650
+..text:000000000001DF34       SXTW            X1, W0
+..text:000000000001DF38       MOV             X0, X1
+..text:000000000001DF3C       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001DF40       ADD             SP, SP, #0x10
+..text:000000000001DF44       RET

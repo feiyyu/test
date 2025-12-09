@@ -1,0 +1,9 @@
+Function: .malloc (0x2170)
+Architecture: 64-bit
+Segment range: 0x2170 - 0x2180
+----------------------------------------
+
+..plt:0000000000002170        ADRP            X16, #malloc_ptr@PAGE
+..plt:0000000000002174        LDR             X17, [X16,#malloc_ptr@PAGEOFF]
+..plt:0000000000002178        ADD             X16, X16, #malloc_ptr@PAGEOFF
+..plt:000000000000217C        BR              X17 ; malloc

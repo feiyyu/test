@@ -1,0 +1,270 @@
+Function: __udivti3 (0x2E070)
+Architecture: 64-bit
+Segment range: 0x2E070 - 0x2E494
+----------------------------------------
+
+..text:000000000002E070       MOV             X5, X2
+..text:000000000002E074       MOV             X6, X3
+..text:000000000002E078       MOV             X8, X0
+..text:000000000002E07C       MOV             X4, X1
+..text:000000000002E080       CBNZ            X3, loc_2E304
+..text:000000000002E084       CMP             X2, X1
+..text:000000000002E088       B.LS            loc_2E170
+..text:000000000002E08C       MOV             X3, #0x38 ; '8'
+..text:000000000002E090       LSR             X6, X5, X3
+..text:000000000002E094       AND             X6, X6, #0xFF
+..text:000000000002E098       CBNZ            X6, loc_2E0A4
+..text:000000000002E09C       SUBS            X3, X3, #8
+..text:000000000002E0A0       B.NE            loc_2E090
+..text:000000000002E0A4       ADRP            X7, #__clz_tab_ptr@PAGE
+..text:000000000002E0A8       LSR             X9, X2, X3
+..text:000000000002E0AC       MOV             X6, #0x40 ; '@'
+..text:000000000002E0B0       SUB             X3, X6, X3
+..text:000000000002E0B4       LDR             X7, [X7,#__clz_tab_ptr@PAGEOFF]
+..text:000000000002E0B8       LDRB            W7, [X7,X9]
+..text:000000000002E0BC       SUBS            X3, X3, X7
+..text:000000000002E0C0       B.EQ            loc_2E0DC
+..text:000000000002E0C4       SUB             W4, W6, W3
+..text:000000000002E0C8       LSL             X1, X1, X3
+..text:000000000002E0CC       LSR             X4, X0, X4
+..text:000000000002E0D0       LSL             X5, X2, X3
+..text:000000000002E0D4       ORR             X4, X4, X1
+..text:000000000002E0D8       LSL             X8, X0, X3
+..text:000000000002E0DC       LSR             X3, X5, #0x20 ; ' '
+..text:000000000002E0E0       AND             X2, X5, #0xFFFFFFFF
+..text:000000000002E0E4       UDIV            X7, X4, X3
+..text:000000000002E0E8       MOV             X0, X7
+..text:000000000002E0EC       MSUB            X4, X7, X3, X4
+..text:000000000002E0F0       MUL             X6, X7, X2
+..text:000000000002E0F4       EXTR            X1, X4, X8, #0x20 ; ' '
+..text:000000000002E0F8       CMP             X1, X6
+..text:000000000002E0FC       B.CS            loc_2E124
+..text:000000000002E100       ADD             X1, X1, X5
+..text:000000000002E104       CMP             X1, X5
+..text:000000000002E108       B.CC            loc_2E114
+..text:000000000002E10C       CMP             X1, X6
+..text:000000000002E110       B.CC            loc_2E11C
+..text:000000000002E114       SUB             X0, X7, #1
+..text:000000000002E118       B               loc_2E124
+..text:000000000002E11C       SUB             X0, X7, #2
+..text:000000000002E120       ADD             X1, X1, X5
+..text:000000000002E124       SUB             X1, X1, X6
+..text:000000000002E128       AND             X8, X8, #0xFFFFFFFF
+..text:000000000002E12C       UDIV            X6, X1, X3
+..text:000000000002E130       MSUB            X1, X6, X3, X1
+..text:000000000002E134       MUL             X4, X6, X2
+..text:000000000002E138       MOV             X3, X6
+..text:000000000002E13C       ORR             X1, X8, X1,LSL#32
+..text:000000000002E140       CMP             X1, X4
+..text:000000000002E144       B.CS            loc_2E168
+..text:000000000002E148       ADD             X1, X1, X5
+..text:000000000002E14C       CMP             X1, X5
+..text:000000000002E150       B.CC            loc_2E15C
+..text:000000000002E154       CMP             X1, X4
+..text:000000000002E158       B.CC            loc_2E164
+..text:000000000002E15C       SUB             X3, X6, #1
+..text:000000000002E160       B               loc_2E168
+..text:000000000002E164       SUB             X3, X6, #2
+..text:000000000002E168       ORR             X3, X3, X0,LSL#32
+..text:000000000002E16C       B               loc_2E488
+..text:000000000002E170       CBNZ            X2, loc_2E17C
+..text:000000000002E174       MOV             X5, #1
+..text:000000000002E178       UDIV            X5, X5, X2
+..text:000000000002E17C       MOV             X3, #0x38 ; '8'
+..text:000000000002E180       LSR             X2, X5, X3
+..text:000000000002E184       AND             X2, X2, #0xFF
+..text:000000000002E188       CBNZ            X2, loc_2E194
+..text:000000000002E18C       SUBS            X3, X3, #8
+..text:000000000002E190       B.NE            loc_2E180
+..text:000000000002E194       ADRP            X2, #__clz_tab_ptr@PAGE
+..text:000000000002E198       LSR             X4, X5, X3
+..text:000000000002E19C       LDR             X2, [X2,#__clz_tab_ptr@PAGEOFF]
+..text:000000000002E1A0       LDRB            W2, [X2,X4]
+..text:000000000002E1A4       ADD             X3, X2, X3
+..text:000000000002E1A8       MOV             X2, #0x40 ; '@'
+..text:000000000002E1AC       SUBS            X2, X2, X3
+..text:000000000002E1B0       B.NE            loc_2E1C0
+..text:000000000002E1B4       SUB             X3, X1, X5
+..text:000000000002E1B8       MOV             X1, #1
+..text:000000000002E1BC       B               loc_2E270
+..text:000000000002E1C0       LSL             X5, X5, X2
+..text:000000000002E1C4       LSR             X6, X1, X3
+..text:000000000002E1C8       LSR             X4, X5, #0x20 ; ' '
+..text:000000000002E1CC       LSL             X1, X1, X2
+..text:000000000002E1D0       LSL             X8, X0, X2
+..text:000000000002E1D4       LSR             X3, X0, X3
+..text:000000000002E1D8       UDIV            X2, X6, X4
+..text:000000000002E1DC       ORR             X7, X1, X3
+..text:000000000002E1E0       AND             X3, X5, #0xFFFFFFFF
+..text:000000000002E1E4       MOV             X0, X2
+..text:000000000002E1E8       MSUB            X6, X2, X4, X6
+..text:000000000002E1EC       MUL             X1, X2, X3
+..text:000000000002E1F0       EXTR            X6, X6, X7, #0x20 ; ' '
+..text:000000000002E1F4       CMP             X6, X1
+..text:000000000002E1F8       B.CS            loc_2E220
+..text:000000000002E1FC       ADD             X6, X6, X5
+..text:000000000002E200       CMP             X6, X5
+..text:000000000002E204       B.CC            loc_2E210
+..text:000000000002E208       CMP             X6, X1
+..text:000000000002E20C       B.CC            loc_2E218
+..text:000000000002E210       SUB             X0, X2, #1
+..text:000000000002E214       B               loc_2E220
+..text:000000000002E218       SUB             X0, X2, #2
+..text:000000000002E21C       ADD             X6, X6, X5
+..text:000000000002E220       SUB             X6, X6, X1
+..text:000000000002E224       AND             X7, X7, #0xFFFFFFFF
+..text:000000000002E228       UDIV            X9, X6, X4
+..text:000000000002E22C       MOV             X1, X9
+..text:000000000002E230       MSUB            X4, X9, X4, X6
+..text:000000000002E234       MUL             X2, X9, X3
+..text:000000000002E238       ORR             X3, X7, X4,LSL#32
+..text:000000000002E23C       CMP             X3, X2
+..text:000000000002E240       B.CS            loc_2E268
+..text:000000000002E244       ADD             X3, X3, X5
+..text:000000000002E248       CMP             X3, X5
+..text:000000000002E24C       B.CC            loc_2E258
+..text:000000000002E250       CMP             X3, X2
+..text:000000000002E254       B.CC            loc_2E260
+..text:000000000002E258       SUB             X1, X9, #1
+..text:000000000002E25C       B               loc_2E268
+..text:000000000002E260       SUB             X1, X9, #2
+..text:000000000002E264       ADD             X3, X3, X5
+..text:000000000002E268       SUB             X3, X3, X2
+..text:000000000002E26C       ORR             X1, X1, X0,LSL#32
+..text:000000000002E270       LSR             X0, X5, #0x20 ; ' '
+..text:000000000002E274       AND             X6, X5, #0xFFFFFFFF
+..text:000000000002E278       UDIV            X9, X3, X0
+..text:000000000002E27C       MOV             X4, X9
+..text:000000000002E280       MSUB            X3, X9, X0, X3
+..text:000000000002E284       MUL             X7, X9, X6
+..text:000000000002E288       EXTR            X2, X3, X8, #0x20 ; ' '
+..text:000000000002E28C       CMP             X2, X7
+..text:000000000002E290       B.CS            loc_2E2B8
+..text:000000000002E294       ADD             X2, X2, X5
+..text:000000000002E298       CMP             X2, X5
+..text:000000000002E29C       B.CC            loc_2E2A8
+..text:000000000002E2A0       CMP             X2, X7
+..text:000000000002E2A4       B.CC            loc_2E2B0
+..text:000000000002E2A8       SUB             X4, X9, #1
+..text:000000000002E2AC       B               loc_2E2B8
+..text:000000000002E2B0       SUB             X4, X9, #2
+..text:000000000002E2B4       ADD             X2, X2, X5
+..text:000000000002E2B8       SUB             X2, X2, X7
+..text:000000000002E2BC       AND             X8, X8, #0xFFFFFFFF
+..text:000000000002E2C0       UDIV            X7, X2, X0
+..text:000000000002E2C4       MOV             X3, X7
+..text:000000000002E2C8       MSUB            X2, X7, X0, X2
+..text:000000000002E2CC       MUL             X0, X7, X6
+..text:000000000002E2D0       ORR             X2, X8, X2,LSL#32
+..text:000000000002E2D4       CMP             X2, X0
+..text:000000000002E2D8       B.CS            loc_2E2FC
+..text:000000000002E2DC       ADD             X2, X2, X5
+..text:000000000002E2E0       CMP             X2, X5
+..text:000000000002E2E4       B.CC            loc_2E2F0
+..text:000000000002E2E8       CMP             X2, X0
+..text:000000000002E2EC       B.CC            loc_2E2F8
+..text:000000000002E2F0       SUB             X3, X7, #1
+..text:000000000002E2F4       B               loc_2E2FC
+..text:000000000002E2F8       SUB             X3, X7, #2
+..text:000000000002E2FC       ORR             X3, X3, X4,LSL#32
+..text:000000000002E300       B               loc_2E48C
+..text:000000000002E304       CMP             X3, X1
+..text:000000000002E308       B.HI            loc_2E47C
+..text:000000000002E30C       MOV             X4, #0x38 ; '8'
+..text:000000000002E310       LSR             X5, X6, X4
+..text:000000000002E314       AND             X5, X5, #0xFF
+..text:000000000002E318       CBNZ            X5, loc_2E324
+..text:000000000002E31C       SUBS            X4, X4, #8
+..text:000000000002E320       B.NE            loc_2E310
+..text:000000000002E324       ADRP            X5, #__clz_tab_ptr@PAGE
+..text:000000000002E328       LSR             X6, X3, X4
+..text:000000000002E32C       LDR             X5, [X5,#__clz_tab_ptr@PAGEOFF]
+..text:000000000002E330       LDRB            W5, [X5,X6]
+..text:000000000002E334       MOV             X6, #0x40 ; '@'
+..text:000000000002E338       ADD             X5, X5, X4
+..text:000000000002E33C       SUBS            X6, X6, X5
+..text:000000000002E340       B.NE            loc_2E364
+..text:000000000002E344       CMP             X0, X2
+..text:000000000002E348       CSET            W0, CS
+..text:000000000002E34C       CMP             X1, X3
+..text:000000000002E350       CSET            W2, HI
+..text:000000000002E354       MOV             X1, X6
+..text:000000000002E358       ORR             W3, W0, W2
+..text:000000000002E35C       UXTB            W3, W3
+..text:000000000002E360       B               loc_2E48C
+..text:000000000002E364       LSR             X4, X2, X5
+..text:000000000002E368       LSL             X3, X3, X6
+..text:000000000002E36C       ORR             X9, X3, X4
+..text:000000000002E370       LSR             X8, X1, X5
+..text:000000000002E374       LSR             X7, X9, #0x20 ; ' '
+..text:000000000002E378       LSL             X4, X1, X6
+..text:000000000002E37C       AND             X1, X9, #0xFFFFFFFF
+..text:000000000002E380       LSR             X5, X0, X5
+..text:000000000002E384       UDIV            X10, X8, X7
+..text:000000000002E388       ORR             X4, X4, X5
+..text:000000000002E38C       LSL             X2, X2, X6
+..text:000000000002E390       MOV             X5, X10
+..text:000000000002E394       MSUB            X8, X10, X7, X8
+..text:000000000002E398       MUL             X3, X10, X1
+..text:000000000002E39C       EXTR            X8, X8, X4, #0x20 ; ' '
+..text:000000000002E3A0       CMP             X8, X3
+..text:000000000002E3A4       B.CS            loc_2E3CC
+..text:000000000002E3A8       ADD             X8, X8, X9
+..text:000000000002E3AC       CMP             X8, X9
+..text:000000000002E3B0       B.CC            loc_2E3BC
+..text:000000000002E3B4       CMP             X8, X3
+..text:000000000002E3B8       B.CC            loc_2E3C4
+..text:000000000002E3BC       SUB             X5, X10, #1
+..text:000000000002E3C0       B               loc_2E3CC
+..text:000000000002E3C4       SUB             X5, X10, #2
+..text:000000000002E3C8       ADD             X8, X8, X9
+..text:000000000002E3CC       SUB             X8, X8, X3
+..text:000000000002E3D0       AND             X4, X4, #0xFFFFFFFF
+..text:000000000002E3D4       UDIV            X10, X8, X7
+..text:000000000002E3D8       MOV             X3, X10
+..text:000000000002E3DC       MSUB            X7, X10, X7, X8
+..text:000000000002E3E0       MUL             X1, X10, X1
+..text:000000000002E3E4       ORR             X4, X4, X7,LSL#32
+..text:000000000002E3E8       CMP             X4, X1
+..text:000000000002E3EC       B.CS            loc_2E414
+..text:000000000002E3F0       ADD             X4, X4, X9
+..text:000000000002E3F4       CMP             X4, X9
+..text:000000000002E3F8       B.CC            loc_2E404
+..text:000000000002E3FC       CMP             X4, X1
+..text:000000000002E400       B.CC            loc_2E40C
+..text:000000000002E404       SUB             X3, X10, #1
+..text:000000000002E408       B               loc_2E414
+..text:000000000002E40C       SUB             X3, X10, #2
+..text:000000000002E410       ADD             X4, X4, X9
+..text:000000000002E414       ORR             X3, X3, X5,LSL#32
+..text:000000000002E418       AND             X7, X2, #0xFFFFFFFF
+..text:000000000002E41C       LSR             X5, X3, #0x20 ; ' '
+..text:000000000002E420       SUB             X4, X4, X1
+..text:000000000002E424       AND             X1, X3, #0xFFFFFFFF
+..text:000000000002E428       LSR             X2, X2, #0x20 ; ' '
+..text:000000000002E42C       MUL             X8, X1, X7
+..text:000000000002E430       MUL             X7, X5, X7
+..text:000000000002E434       MUL             X5, X5, X2
+..text:000000000002E438       MADD            X2, X1, X2, X7
+..text:000000000002E43C       ADD             X2, X2, X8,LSR#32
+..text:000000000002E440       CMP             X2, X7
+..text:000000000002E444       B.CS            loc_2E450
+..text:000000000002E448       MOV             X1, #0x100000000
+..text:000000000002E44C       ADD             X5, X5, X1
+..text:000000000002E450       ADD             X5, X5, X2,LSR#32
+..text:000000000002E454       CMP             X5, X4
+..text:000000000002E458       B.HI            loc_2E474
+..text:000000000002E45C       B.NE            loc_2E488
+..text:000000000002E460       AND             X8, X8, #0xFFFFFFFF
+..text:000000000002E464       LSL             X1, X0, X6
+..text:000000000002E468       ADD             X2, X8, X2,LSL#32
+..text:000000000002E46C       CMP             X2, X1
+..text:000000000002E470       B.LS            loc_2E488
+..text:000000000002E474       SUB             X3, X3, #1
+..text:000000000002E478       B               loc_2E488
+..text:000000000002E47C       MOV             X1, #0
+..text:000000000002E480       MOV             X3, X1
+..text:000000000002E484       B               loc_2E48C
+..text:000000000002E488       MOV             X1, #0
+..text:000000000002E48C       MOV             X0, X3
+..text:000000000002E490       RET

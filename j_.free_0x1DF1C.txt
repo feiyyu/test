@@ -1,0 +1,6 @@
+Function: j_.free (0x1DF1C)
+Architecture: 64-bit
+Segment range: 0x1DF1C - 0x1DF20
+----------------------------------------
+
+..text:000000000001DF1C       B               .free

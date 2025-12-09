@@ -1,0 +1,78 @@
+Function: sub_1C7B8 (0x1C7B8)
+Architecture: 64-bit
+Segment range: 0x1C7B8 - 0x1C8DC
+----------------------------------------
+
+..text:000000000001C7B8       SUB             SP, SP, #0xF0
+..text:000000000001C7BC       STP             X25, X26, [SP,#0xF0+var_C0]
+..text:000000000001C7C0       ADRP            X25, #__stack_chk_guard_ptr@PAGE
+..text:000000000001C7C4       STR             X30, [SP,#0xF0+var_A0]
+..text:000000000001C7C8       STP             X21, X22, [SP,#0xF0+var_E0]
+..text:000000000001C7CC       STP             X23, X24, [SP,#0xF0+var_D0]
+..text:000000000001C7D0       LDR             X0, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001C7D4       MOV             W22, #0
+..text:000000000001C7D8       STP             X27, X28, [SP,#0xF0+var_B0]
+..text:000000000001C7DC       STP             X19, X20, [SP,#0xF0+var_F0]
+..text:000000000001C7E0       ADRP            X19, #off_58BC8@PAGE; "rfc2202 3.1"
+..text:000000000001C7E4       MOV             W23, W22
+..text:000000000001C7E8       ADD             X19, X19, #off_58BC8@PAGEOFF; "rfc2202 3.1"
+..text:000000000001C7EC       LDR             X0, [X0]
+..text:000000000001C7F0       ADD             X19, X19, #0x30 ; '0'
+..text:000000000001C7F4       MOV             W21, W22
+..text:000000000001C7F8       MOV             X27, #0x80
+..text:000000000001C7FC       ADD             X24, SP, #0xF0+var_88
+..text:000000000001C800       ADD             X26, SP, #0xF0+var_90
+..text:000000000001C804       ADRP            X28, #off_59F88@PAGE
+..text:000000000001C808       STR             X0, [SP,#0xF0+var_8]
+..text:000000000001C80C       LDUR            X0, [X19,#-0x28]; char *
+..text:000000000001C810       BL              sub_1FB04
+..text:000000000001C814       SXTW            X20, W0
+..text:000000000001C818       CMN             W20, #1
+..text:000000000001C81C       B.EQ            loc_1C87C
+..text:000000000001C820       LDUR            X1, [X19,#-0x20]
+..text:000000000001C824       MOV             X5, X24
+..text:000000000001C828       LDUR            X2, [X19,#-0x18]
+..text:000000000001C82C       MOV             X6, X26
+..text:000000000001C830       LDUR            X3, [X19,#-0x10]
+..text:000000000001C834       ADD             W23, W23, #1
+..text:000000000001C838       LDUR            X4, [X19,#-8]
+..text:000000000001C83C       STR             X27, [SP,#0xF0+var_90]
+..text:000000000001C840       BL              sub_1C3D8
+..text:000000000001C844       CBNZ            W0, loc_1C894
+..text:000000000001C848       ADD             X3, X20, X20,LSL#1
+..text:000000000001C84C       LDR             X7, [X28,#off_59F88@PAGEOFF]
+..text:000000000001C850       LDR             X1, [SP,#0xF0+var_90]
+..text:000000000001C854       MOV             X0, X24
+..text:000000000001C858       ADD             X20, X20, X3,LSL#2
+..text:000000000001C85C       LDUR            X4, [X19,#-0x30]
+..text:000000000001C860       MOV             X2, X19
+..text:000000000001C864       MOV             W5, W21
+..text:000000000001C868       ADD             X20, X7, X20,LSL#4
+..text:000000000001C86C       LDR             X3, [X20,#0x10]
+..text:000000000001C870       BL              sub_216AC
+..text:000000000001C874       CMP             W0, WZR
+..text:000000000001C878       CINC            W22, W22, NE
+..text:000000000001C87C       ADD             W21, W21, #1
+..text:000000000001C880       ADD             X19, X19, #0xB0
+..text:000000000001C884       CMP             W21, #8
+..text:000000000001C888       B.NE            loc_1C80C
+..text:000000000001C88C       MOV             W0, #5
+..text:000000000001C890       CBZ             W22, loc_1C8C8
+..text:000000000001C894       LDR             X25, [X25,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001C898       LDR             X2, [SP,#0xF0+var_8]
+..text:000000000001C89C       LDR             X1, [X25]
+..text:000000000001C8A0       CMP             X2, X1
+..text:000000000001C8A4       B.NE            loc_1C8D8
+..text:000000000001C8A8       LDP             X19, X20, [SP,#0xF0+var_F0]
+..text:000000000001C8AC       LDP             X21, X22, [SP,#0xF0+var_E0]
+..text:000000000001C8B0       LDP             X23, X24, [SP,#0xF0+var_D0]
+..text:000000000001C8B4       LDP             X25, X26, [SP,#0xF0+var_C0]
+..text:000000000001C8B8       LDP             X27, X28, [SP,#0xF0+var_B0]
+..text:000000000001C8BC       LDR             X30, [SP,#0xF0+var_A0]
+..text:000000000001C8C0       ADD             SP, SP, #0xF0
+..text:000000000001C8C4       RET
+..text:000000000001C8C8       CMP             W23, WZR
+..text:000000000001C8CC       MOV             W0, #2
+..text:000000000001C8D0       CSEL            W0, W0, WZR, EQ
+..text:000000000001C8D4       B               loc_1C894
+..text:000000000001C8D8       BL              .__stack_chk_fail

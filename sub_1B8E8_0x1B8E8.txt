@@ -1,0 +1,98 @@
+Function: sub_1B8E8 (0x1B8E8)
+Architecture: 64-bit
+Segment range: 0x1B8E8 - 0x1BA5C
+----------------------------------------
+
+..text:000000000001B8E8       SUB             SP, SP, #0x160
+..text:000000000001B8EC       STP             X23, X24, [SP,#0x160+var_140]
+..text:000000000001B8F0       ADRP            X23, #__stack_chk_guard_ptr@PAGE
+..text:000000000001B8F4       ADD             X24, SP, #0x160+var_48
+..text:000000000001B8F8       STP             X19, X20, [SP,#0x160+var_160]
+..text:000000000001B8FC       STP             X21, X22, [SP,#0x160+var_150]
+..text:000000000001B900       LDR             X0, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001B904       ADRP            X20, #off_58B38@PAGE; "abc"
+..text:000000000001B908       STP             X25, X30, [SP,#0x160+var_130]
+..text:000000000001B90C       ADD             X20, X20, #off_58B38@PAGEOFF; "abc"
+..text:000000000001B910       MOV             W22, #0
+..text:000000000001B914       LDR             X0, [X0]
+..text:000000000001B918       ADD             X20, X20, #8
+..text:000000000001B91C       ADD             X19, SP, #0x160+var_118
+..text:000000000001B920       ADRP            X25, #aSha512@PAGE; "SHA512"
+..text:000000000001B924       STR             X0, [SP,#0x160+var_8]
+..text:000000000001B928       MOV             X10, #0xC908
+..text:000000000001B92C       MOV             X9, #0xA73B
+..text:000000000001B930       MOV             X8, #0xF82B
+..text:000000000001B934       MOV             X7, #0x36F1
+..text:000000000001B938       MOV             X6, #0x82D1
+..text:000000000001B93C       MOV             X4, #0x6C1F
+..text:000000000001B940       MOV             X3, #0xBD6B
+..text:000000000001B944       MOV             X2, #0x2179
+..text:000000000001B948       LDUR            X21, [X20,#-8]
+..text:000000000001B94C       MOVK            X10, #0xF3BC,LSL#16
+..text:000000000001B950       MOVK            X9, #0x84CA,LSL#16
+..text:000000000001B954       MOVK            X8, #0xFE94,LSL#16
+..text:000000000001B958       MOVK            X7, #0x5F1D,LSL#16
+..text:000000000001B95C       MOVK            X6, #0xADE6,LSL#16
+..text:000000000001B960       MOVK            X4, #0x2B3E,LSL#16
+..text:000000000001B964       MOVK            X3, #0xFB41,LSL#16
+..text:000000000001B968       MOVK            X2, #0x137E,LSL#16
+..text:000000000001B96C       MOVK            X10, #0xE667,LSL#32
+..text:000000000001B970       MOVK            X9, #0xAE85,LSL#32
+..text:000000000001B974       MOVK            X8, #0xF372,LSL#32
+..text:000000000001B978       MOVK            X7, #0xF53A,LSL#32
+..text:000000000001B97C       MOVK            X6, #0x527F,LSL#32
+..text:000000000001B980       MOVK            X4, #0x688C,LSL#32
+..text:000000000001B984       MOVK            X3, #0xD9AB,LSL#32
+..text:000000000001B988       MOVK            X2, #0xCD19,LSL#32
+..text:000000000001B98C       MOVK            X4, #0x9B05,LSL#48
+..text:000000000001B990       MOVK            X3, #0x1F83,LSL#48
+..text:000000000001B994       MOVK            X10, #0x6A09,LSL#48
+..text:000000000001B998       MOVK            X9, #0xBB67,LSL#48
+..text:000000000001B99C       MOVK            X8, #0x3C6E,LSL#48
+..text:000000000001B9A0       MOVK            X7, #0xA54F,LSL#48
+..text:000000000001B9A4       MOVK            X6, #0x510E,LSL#48
+..text:000000000001B9A8       MOVK            X2, #0x5BE0,LSL#48
+..text:000000000001B9AC       MOV             X0, X21; char *
+..text:000000000001B9B0       STR             X4, [X19,#0x30]
+..text:000000000001B9B4       STR             X3, [X19,#0x38]
+..text:000000000001B9B8       STR             X10, [X19,#8]
+..text:000000000001B9BC       STR             X9, [X19,#0x10]
+..text:000000000001B9C0       STR             X8, [X19,#0x18]
+..text:000000000001B9C4       STR             X7, [X19,#0x20]
+..text:000000000001B9C8       STR             X6, [X19,#0x28]
+..text:000000000001B9CC       STR             X2, [X19,#0x40]
+..text:000000000001B9D0       STR             XZR, [X19,#0x48]
+..text:000000000001B9D4       STR             XZR, [X19]
+..text:000000000001B9D8       BL              .strlen
+..text:000000000001B9DC       MOV             X1, X21; src
+..text:000000000001B9E0       MOV             X2, X0
+..text:000000000001B9E4       MOV             X0, X19; int
+..text:000000000001B9E8       BL              sub_1B550
+..text:000000000001B9EC       MOV             X1, X24
+..text:000000000001B9F0       MOV             X0, X19
+..text:000000000001B9F4       BL              sub_1B680
+..text:000000000001B9F8       MOV             X1, #0x40 ; '@'
+..text:000000000001B9FC       MOV             X0, X24
+..text:000000000001BA00       MOV             X2, X20
+..text:000000000001BA04       MOV             X3, X1
+..text:000000000001BA08       ADD             X4, X25, #aSha512@PAGEOFF; "SHA512"
+..text:000000000001BA0C       MOV             W5, W22
+..text:000000000001BA10       BL              sub_216AC
+..text:000000000001BA14       CBNZ            W0, loc_1BA28
+..text:000000000001BA18       ADD             X20, X20, #0x48 ; 'H'
+..text:000000000001BA1C       CBNZ            W22, loc_1BA2C
+..text:000000000001BA20       MOV             W22, #1
+..text:000000000001BA24       B               loc_1B928
+..text:000000000001BA28       MOV             W0, #5
+..text:000000000001BA2C       LDR             X23, [X23,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001BA30       LDR             X2, [SP,#0x160+var_8]
+..text:000000000001BA34       LDR             X1, [X23]
+..text:000000000001BA38       CMP             X2, X1
+..text:000000000001BA3C       B.NE            loc_1BA58
+..text:000000000001BA40       LDP             X19, X20, [SP,#0x160+var_160]
+..text:000000000001BA44       LDP             X21, X22, [SP,#0x160+var_150]
+..text:000000000001BA48       LDP             X23, X24, [SP,#0x160+var_140]
+..text:000000000001BA4C       LDP             X25, X30, [SP,#0x160+var_130]
+..text:000000000001BA50       ADD             SP, SP, #0x160
+..text:000000000001BA54       RET
+..text:000000000001BA58       BL              .__stack_chk_fail

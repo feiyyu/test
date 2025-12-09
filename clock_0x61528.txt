@@ -1,0 +1,6 @@
+Function: clock (0x61528)
+Architecture: 64-bit
+Segment range: 0x61528 - 0x61530
+----------------------------------------
+
+.extern:0000000000061528      IMPORT clock

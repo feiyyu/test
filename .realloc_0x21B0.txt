@@ -1,0 +1,9 @@
+Function: .realloc (0x21B0)
+Architecture: 64-bit
+Segment range: 0x21B0 - 0x21C0
+----------------------------------------
+
+..plt:00000000000021B0        ADRP            X16, #realloc_ptr@PAGE
+..plt:00000000000021B4        LDR             X17, [X16,#realloc_ptr@PAGEOFF]
+..plt:00000000000021B8        ADD             X16, X16, #realloc_ptr@PAGEOFF
+..plt:00000000000021BC        BR              X17 ; realloc

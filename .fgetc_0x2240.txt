@@ -1,0 +1,9 @@
+Function: .fgetc (0x2240)
+Architecture: 64-bit
+Segment range: 0x2240 - 0x2250
+----------------------------------------
+
+..plt:0000000000002240        ADRP            X16, #fgetc_ptr@PAGE
+..plt:0000000000002244        LDR             X17, [X16,#fgetc_ptr@PAGEOFF]
+..plt:0000000000002248        ADD             X16, X16, #fgetc_ptr@PAGEOFF
+..plt:000000000000224C        BR              X17 ; fgetc

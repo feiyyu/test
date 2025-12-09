@@ -1,0 +1,81 @@
+Function: JNI_OnLoad (0x2A50)
+Architecture: 64-bit
+Segment range: 0x2A50 - 0x2B8C
+----------------------------------------
+
+..text:0000000000002A50       SUB             SP, SP, #0x40
+..text:0000000000002A54       MOV             W2, #4
+..text:0000000000002A58       ADD             X1, SP, #0x40+arg_0
+..text:0000000000002A5C       MOVK            W2, #1,LSL#16
+..text:0000000000002A60       STP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000002A64       ADRP            X19, #__stack_chk_guard_ptr@PAGE
+..text:0000000000002A68       STP             X21, X30, [SP,#0x40+var_30]
+..text:0000000000002A6C       LDR             X4, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000002A70       LDR             X3, [X0]
+..text:0000000000002A74       STR             XZR, [X1,#-0x10]!
+..text:0000000000002A78       LDR             X4, [X4]
+..text:0000000000002A7C       LDR             X3, [X3,#0x30]
+..text:0000000000002A80       STR             X4, [SP,#0x40+var_8]
+..text:0000000000002A84       BLR             X3
+..text:0000000000002A88       CBNZ            W0, loc_2B80
+..text:0000000000002A8C       ADRP            X3, #byte_5C060@PAGE
+..text:0000000000002A90       ADRP            X0, #aRe@PAGE; "re"
+..text:0000000000002A94       ADD             X3, X3, #byte_5C060@PAGEOFF
+..text:0000000000002A98       ADD             X0, X0, #aRe@PAGEOFF; "re"
+..text:0000000000002A9C       ADRP            X1, #aLjavaLangStrin_0@PAGE; "(Ljava/lang/String;ILjava/lang/String;)"...
+..text:0000000000002AA0       ADD             X2, X3, #0x400
+..text:0000000000002AA4       ADD             X1, X1, #aLjavaLangStrin_0@PAGEOFF; "(Ljava/lang/String;ILjava/lang/String;)"...
+..text:0000000000002AA8       LDR             X20, [SP,#0x40+var_10]
+..text:0000000000002AAC       STR             X0, [X3,#(qword_5C460 - 0x5C060)]
+..text:0000000000002AB0       ADRL            X0, sub_2510
+..text:0000000000002AB8       STR             X0, [X3,#(qword_5C470 - 0x5C060)]
+..text:0000000000002ABC       ADRP            X0, #aRd@PAGE; "rd"
+..text:0000000000002AC0       STR             X1, [X3,#(qword_5C468 - 0x5C060)]
+..text:0000000000002AC4       ADD             X0, X0, #aRd@PAGEOFF; "rd"
+..text:0000000000002AC8       STR             X0, [X3,#(qword_5C478 - 0x5C060)]
+..text:0000000000002ACC       ADRP            X0, #sub_26AC@PAGE
+..text:0000000000002AD0       STR             X1, [X3,#(qword_5C480 - 0x5C060)]
+..text:0000000000002AD4       ADD             X0, X0, #sub_26AC@PAGEOFF
+..text:0000000000002AD8       STR             X0, [X3,#(qword_5C488 - 0x5C060)]
+..text:0000000000002ADC       ADRP            X0, #aRs@PAGE; "rs"
+..text:0000000000002AE0       STR             X1, [X3,#(qword_5C498 - 0x5C060)]
+..text:0000000000002AE4       ADD             X0, X0, #aRs@PAGEOFF; "rs"
+..text:0000000000002AE8       STR             X0, [X3,#(qword_5C490 - 0x5C060)]
+..text:0000000000002AEC       ADRP            X0, #sub_2844@PAGE
+..text:0000000000002AF0       ADRP            X1, #aLjavaLangStrin_1@PAGE; "(Ljava/lang/String;Ljava/lang/String;IL"...
+..text:0000000000002AF4       ADD             X0, X0, #sub_2844@PAGEOFF
+..text:0000000000002AF8       STR             X0, [X3,#(qword_5C4A0 - 0x5C060)]
+..text:0000000000002AFC       ADRP            X0, #aRv@PAGE; "rv"
+..text:0000000000002B00       ADD             X1, X1, #aLjavaLangStrin_1@PAGEOFF; "(Ljava/lang/String;Ljava/lang/String;IL"...
+..text:0000000000002B04       ADD             X0, X0, #aRv@PAGEOFF; "rv"
+..text:0000000000002B08       STR             X1, [X3,#(qword_5C4B0 - 0x5C060)]
+..text:0000000000002B0C       STR             X0, [X3,#(qword_5C4A8 - 0x5C060)]
+..text:0000000000002B10       ADRL            X3, sub_29D4
+..text:0000000000002B18       STR             X3, [X2,#(qword_5C4B8 - 0x5C460)]
+..text:0000000000002B1C       ADRP            X1, #aComCR@PAGE; "com/c/r"
+..text:0000000000002B20       MOV             X0, X20
+..text:0000000000002B24       LDR             X3, [X20]
+..text:0000000000002B28       ADD             X1, X1, #aComCR@PAGEOFF; "com/c/r"
+..text:0000000000002B2C       STR             X2, [SP,#0x40+var_18]
+..text:0000000000002B30       LDR             X4, [X3,#0x30]
+..text:0000000000002B34       LDR             X21, [X3,#0x6B8]
+..text:0000000000002B38       BLR             X4
+..text:0000000000002B3C       MOV             X1, X0
+..text:0000000000002B40       LDR             X2, [SP,#0x40+var_18]
+..text:0000000000002B44       MOV             W3, #4
+..text:0000000000002B48       MOV             X0, X20
+..text:0000000000002B4C       BLR             X21
+..text:0000000000002B50       BL              sub_3770
+..text:0000000000002B54       MOV             W0, #0x10004
+..text:0000000000002B5C       LDR             X19, [X19,#__stack_chk_guard_ptr@PAGEOFF]
+..text:0000000000002B60       LDR             X2, [SP,#0x40+var_8]
+..text:0000000000002B64       LDR             X1, [X19]
+..text:0000000000002B68       CMP             X2, X1
+..text:0000000000002B6C       B.NE            loc_2B88
+..text:0000000000002B70       LDP             X19, X20, [SP,#0x40+var_40]
+..text:0000000000002B74       LDP             X21, X30, [SP,#0x40+var_30]
+..text:0000000000002B78       ADD             SP, SP, #0x40 ; '@'
+..text:0000000000002B7C       RET
+..text:0000000000002B80       MOV             W0, #0xFFFFFFFF
+..text:0000000000002B84       B               loc_2B5C
+..text:0000000000002B88       BL              .__stack_chk_fail

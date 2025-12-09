@@ -1,0 +1,9 @@
+Function: .clock (0x22A0)
+Architecture: 64-bit
+Segment range: 0x22A0 - 0x22B0
+----------------------------------------
+
+..plt:00000000000022A0        ADRP            X16, #clock_ptr@PAGE
+..plt:00000000000022A4        LDR             X17, [X16,#clock_ptr@PAGEOFF]
+..plt:00000000000022A8        ADD             X16, X16, #clock_ptr@PAGEOFF
+..plt:00000000000022AC        BR              X17 ; clock

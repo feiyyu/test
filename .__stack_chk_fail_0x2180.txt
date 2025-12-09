@@ -1,0 +1,9 @@
+Function: .__stack_chk_fail (0x2180)
+Architecture: 64-bit
+Segment range: 0x2180 - 0x2190
+----------------------------------------
+
+..plt:0000000000002180        ADRP            X16, #__stack_chk_fail_ptr@PAGE
+..plt:0000000000002184        LDR             X17, [X16,#__stack_chk_fail_ptr@PAGEOFF]
+..plt:0000000000002188        ADD             X16, X16, #__stack_chk_fail_ptr@PAGEOFF
+..plt:000000000000218C        BR              X17 ; __stack_chk_fail

@@ -1,0 +1,6 @@
+Function: strtok (0x614C0)
+Architecture: 64-bit
+Segment range: 0x614C0 - 0x614C8
+----------------------------------------
+
+.extern:00000000000614C0      IMPORT strtok

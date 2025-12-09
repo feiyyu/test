@@ -1,0 +1,17 @@
+Function: sub_1DF78 (0x1DF78)
+Architecture: 64-bit
+Segment range: 0x1DF78 - 0x1DFA8
+----------------------------------------
+
+..text:000000000001DF78       SUB             SP, SP, #0x10
+..text:000000000001DF7C       STP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001DF80       CBZ             X0, loc_1DF9C
+..text:000000000001DF84       MOV             X19, X0
+..text:000000000001DF88       BL              sub_6814
+..text:000000000001DF8C       MOV             X0, X19
+..text:000000000001DF90       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001DF94       ADD             SP, SP, #0x10
+..text:000000000001DF98       B               .free
+..text:000000000001DF9C       LDP             X19, X30, [SP,#0x10+var_10]
+..text:000000000001DFA0       ADD             SP, SP, #0x10
+..text:000000000001DFA4       RET

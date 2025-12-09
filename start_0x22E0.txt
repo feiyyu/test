@@ -1,0 +1,7 @@
+Function: start (0x22E0)
+Architecture: 64-bit
+Segment range: 0x22E0 - 0x22EC
+----------------------------------------
+
+..text:00000000000022E0       ADRL            X0, unk_5B000; void *
+..text:00000000000022E8       B               .__cxa_finalize

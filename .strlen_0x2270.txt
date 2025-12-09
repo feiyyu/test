@@ -1,0 +1,9 @@
+Function: .strlen (0x2270)
+Architecture: 64-bit
+Segment range: 0x2270 - 0x2280
+----------------------------------------
+
+..plt:0000000000002270        ADRP            X16, #strlen_ptr@PAGE
+..plt:0000000000002274        LDR             X17, [X16,#strlen_ptr@PAGEOFF]
+..plt:0000000000002278        ADD             X16, X16, #strlen_ptr@PAGEOFF
+..plt:000000000000227C        BR              X17 ; strlen

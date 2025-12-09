@@ -1,0 +1,93 @@
+Function: sub_1AC60 (0x1AC60)
+Architecture: 64-bit
+Segment range: 0x1AC60 - 0x1ADC0
+----------------------------------------
+
+..text:000000000001AC60       SUB             SP, SP, #0x20
+..text:000000000001AC64       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001AC68       STP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001AC6C       MOV             X19, X0
+..text:000000000001AC70       CBZ             X0, loc_1AC98
+..text:000000000001AC74       CBZ             X1, loc_1AC98
+..text:000000000001AC78       LDR             W3, [X0,#0x28]
+..text:000000000001AC7C       MOV             W0, #0x10
+..text:000000000001AC80       CMP             W3, #0x3F ; '?'
+..text:000000000001AC84       B.LS            loc_1ACAC
+..text:000000000001AC88       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001AC8C       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001AC90       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001AC94       RET
+..text:000000000001AC98       MOV             W0, #0x10
+..text:000000000001AC9C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001ACA0       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001ACA4       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001ACA8       RET
+..text:000000000001ACAC       LDR             X0, [X19]
+..text:000000000001ACB0       UBFIZ           X4, X3, #3, #0x1D
+..text:000000000001ACB4       ADD             W2, W3, #1
+..text:000000000001ACB8       STR             W2, [X19,#0x28]
+..text:000000000001ACBC       ADD             X4, X4, X0
+..text:000000000001ACC0       STR             X4, [X19]
+..text:000000000001ACC4       ADD             X3, X19, W3,UXTW
+..text:000000000001ACC8       MOV             W0, #0xFFFFFF80
+..text:000000000001ACCC       CMP             W2, #0x38 ; '8'
+..text:000000000001ACD0       STRB            W0, [X3,#0x2C]
+..text:000000000001ACD4       MOV             X20, X1
+..text:000000000001ACD8       B.LS            loc_1ADB4
+..text:000000000001ACDC       CMP             W2, #0x40 ; '@'
+..text:000000000001ACE0       B.EQ            loc_1ACFC
+..text:000000000001ACE4       ADD             X0, X19, W2,UXTW
+..text:000000000001ACE8       ADD             W2, W2, #1
+..text:000000000001ACEC       STRB            WZR, [X0,#0x2C]
+..text:000000000001ACF0       CMP             W2, #0x40 ; '@'
+..text:000000000001ACF4       B.NE            loc_1ACE4
+..text:000000000001ACF8       STR             W2, [X19,#0x28]
+..text:000000000001ACFC       ADD             X21, X19, #0x2C ; ','
+..text:000000000001AD00       MOV             X0, X19
+..text:000000000001AD04       MOV             X1, X21
+..text:000000000001AD08       BL              sub_19014
+..text:000000000001AD0C       LDR             X4, [X19]
+..text:000000000001AD10       MOV             W2, #0
+..text:000000000001AD14       ADD             X0, X19, W2,UXTW
+..text:000000000001AD18       ADD             W2, W2, #1
+..text:000000000001AD1C       STRB            WZR, [X0,#0x2C]
+..text:000000000001AD20       CMP             W2, #0x38 ; '8'
+..text:000000000001AD24       B.NE            loc_1AD14
+..text:000000000001AD28       STR             W2, [X19,#0x28]
+..text:000000000001AD2C       REV             X4, X4
+..text:000000000001AD30       MOV             X1, X21
+..text:000000000001AD34       STUR            X4, [X19,#0x64]
+..text:000000000001AD38       MOV             X0, X19
+..text:000000000001AD3C       BL              sub_19014
+..text:000000000001AD40       LDR             W1, [X19,#8]
+..text:000000000001AD44       MOV             W0, #0
+..text:000000000001AD48       REV             W1, W1
+..text:000000000001AD4C       STR             W1, [X20]
+..text:000000000001AD50       LDR             W1, [X19,#0xC]
+..text:000000000001AD54       REV             W1, W1
+..text:000000000001AD58       STR             W1, [X20,#4]
+..text:000000000001AD5C       LDR             W1, [X19,#0x10]
+..text:000000000001AD60       REV             W1, W1
+..text:000000000001AD64       STR             W1, [X20,#8]
+..text:000000000001AD68       LDR             W1, [X19,#0x14]
+..text:000000000001AD6C       REV             W1, W1
+..text:000000000001AD70       STR             W1, [X20,#0xC]
+..text:000000000001AD74       LDR             W1, [X19,#0x18]
+..text:000000000001AD78       REV             W1, W1
+..text:000000000001AD7C       STR             W1, [X20,#0x10]
+..text:000000000001AD80       LDR             W1, [X19,#0x1C]
+..text:000000000001AD84       REV             W1, W1
+..text:000000000001AD88       STR             W1, [X20,#0x14]
+..text:000000000001AD8C       LDR             W1, [X19,#0x20]
+..text:000000000001AD90       REV             W1, W1
+..text:000000000001AD94       STR             W1, [X20,#0x18]
+..text:000000000001AD98       LDR             W1, [X19,#0x24]
+..text:000000000001AD9C       REV             W1, W1
+..text:000000000001ADA0       STR             W1, [X20,#0x1C]
+..text:000000000001ADA4       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001ADA8       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001ADAC       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001ADB0       RET
+..text:000000000001ADB4       ADD             X21, X19, #0x2C ; ','
+..text:000000000001ADB8       B.NE            loc_1AD14
+..text:000000000001ADBC       B               loc_1AD2C

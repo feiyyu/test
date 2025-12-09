@@ -1,0 +1,10 @@
+Function: sub_1DF08 (0x1DF08)
+Architecture: 64-bit
+Segment range: 0x1DF08 - 0x1DF1C
+----------------------------------------
+
+..text:000000000001DF08       CBZ             X0, loc_1DF14
+..text:000000000001DF0C       LDR             W0, [X0]
+..text:000000000001DF10       RET
+..text:000000000001DF14       MOV             W0, #0x10
+..text:000000000001DF18       RET

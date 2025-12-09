@@ -1,0 +1,9 @@
+Function: .memcpy (0x2140)
+Architecture: 64-bit
+Segment range: 0x2140 - 0x2150
+----------------------------------------
+
+..plt:0000000000002140        ADRP            X16, #memcpy_ptr@PAGE
+..plt:0000000000002144        LDR             X17, [X16,#memcpy_ptr@PAGEOFF]
+..plt:0000000000002148        ADD             X16, X16, #memcpy_ptr@PAGEOFF
+..plt:000000000000214C        BR              X17 ; memcpy

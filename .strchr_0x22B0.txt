@@ -1,0 +1,9 @@
+Function: .strchr (0x22B0)
+Architecture: 64-bit
+Segment range: 0x22B0 - 0x22C0
+----------------------------------------
+
+..plt:00000000000022B0        ADRP            X16, #strchr_ptr@PAGE
+..plt:00000000000022B4        LDR             X17, [X16,#strchr_ptr@PAGEOFF]
+..plt:00000000000022B8        ADD             X16, X16, #strchr_ptr@PAGEOFF
+..plt:00000000000022BC        BR              X17 ; strchr

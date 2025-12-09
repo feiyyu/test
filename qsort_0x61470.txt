@@ -1,0 +1,6 @@
+Function: qsort (0x61470)
+Architecture: 64-bit
+Segment range: 0x61470 - 0x61478
+----------------------------------------
+
+.extern:0000000000061470      IMPORT qsort

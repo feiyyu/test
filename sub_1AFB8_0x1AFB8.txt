@@ -1,0 +1,363 @@
+Function: sub_1AFB8 (0x1AFB8)
+Architecture: 64-bit
+Segment range: 0x1AFB8 - 0x1B550
+----------------------------------------
+
+..text:000000000001AFB8       SUB             SP, SP, #0x2D0
+..text:000000000001AFBC       ADD             X16, X0, #8
+..text:000000000001AFC0       SUB             SP, SP, #0x40
+..text:000000000001AFC4       ADD             X15, X0, #0x18
+..text:000000000001AFC8       ADD             X11, SP, #0x310+var_2D0
+..text:000000000001AFCC       ADD             X14, X0, #0x28 ; '('
+..text:000000000001AFD0       ADRP            X13, #__stack_chk_guard_ptr@PAGE
+..text:000000000001AFD4       ADD             X12, X0, #0x38 ; '8'
+..text:000000000001AFD8       STP             X19, X20, [SP,#0x310+var_310]
+..text:000000000001AFDC       STP             X21, X22, [SP,#0x310+var_300]
+..text:000000000001AFE0       STP             X23, X24, [SP,#0x310+var_2F0]
+..text:000000000001AFE4       STR             X30, [SP,#0x310+var_2E0]
+..text:000000000001AFE8       MOV             X0, X11
+..text:000000000001AFEC       LDR             X21, [X13,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001AFF0       ADD             X3, X11, #0x20 ; ' '
+..text:000000000001AFF4       LDR             Q3, [X16]
+..text:000000000001AFF8       ADD             X19, SP, #0x310+var_290
+..text:000000000001AFFC       LDR             Q1, [X15]
+..text:000000000001B000       ADD             X8, X11, #0x30 ; '0'
+..text:000000000001B004       LDR             Q2, [X14]
+..text:000000000001B008       ADD             X2, X19, #0x70 ; 'p'
+..text:000000000001B00C       LDR             Q0, [X12]
+..text:000000000001B010       ADD             X4, X19, #0x270
+..text:000000000001B014       LDR             X7, [X1]
+..text:000000000001B018       STR             Q3, [X0],#0x10
+..text:000000000001B01C       LDR             X6, [X1,#8]
+..text:000000000001B020       LDR             X5, [X1,#0x10]
+..text:000000000001B024       REV             X20, X7
+..text:000000000001B028       STR             Q2, [X3]
+..text:000000000001B02C       LDR             X3, [X1,#0x18]
+..text:000000000001B030       STR             Q0, [X8]
+..text:000000000001B034       LDR             X21, [X21]
+..text:000000000001B038       STR             Q1, [X0]
+..text:000000000001B03C       LDR             X0, [X1,#0x20]
+..text:000000000001B040       REV             X10, X3
+..text:000000000001B044       LDR             X3, [X1,#0x48]
+..text:000000000001B048       REV             X9, X0
+..text:000000000001B04C       LDR             X0, [X1,#0x50]
+..text:000000000001B050       LDR             X7, [X1,#0x30]
+..text:000000000001B054       REV             X18, X6
+..text:000000000001B058       REV             X17, X5
+..text:000000000001B05C       LDR             X6, [X1,#0x38]
+..text:000000000001B060       LDR             X5, [X1,#0x40]
+..text:000000000001B064       REV             X3, X3
+..text:000000000001B068       REV             X0, X0
+..text:000000000001B06C       STR             X21, [SP,#0x310+var_8]
+..text:000000000001B070       STR             X20, [X19]
+..text:000000000001B074       REV             X7, X7
+..text:000000000001B078       STR             X18, [X19,#8]
+..text:000000000001B07C       REV             X6, X6
+..text:000000000001B080       STR             X17, [X19,#0x10]
+..text:000000000001B084       REV             X5, X5
+..text:000000000001B088       STR             X10, [X19,#0x18]
+..text:000000000001B08C       LDR             X8, [X1,#0x28]
+..text:000000000001B090       STR             X9, [X19,#0x20]
+..text:000000000001B094       STR             X3, [X19,#0x48]
+..text:000000000001B098       REV             X8, X8
+..text:000000000001B09C       LDR             X3, [X1,#0x58]
+..text:000000000001B0A0       STR             X0, [X19,#0x50]
+..text:000000000001B0A4       LDR             X0, [X1,#0x60]
+..text:000000000001B0A8       STR             X7, [X19,#0x30]
+..text:000000000001B0AC       REV             X7, X3
+..text:000000000001B0B0       STR             X6, [X19,#0x38]
+..text:000000000001B0B4       REV             X6, X0
+..text:000000000001B0B8       STR             X5, [X19,#0x40]
+..text:000000000001B0BC       LDR             X0, [X1,#0x78]
+..text:000000000001B0C0       LDR             X5, [X1,#0x68]
+..text:000000000001B0C4       LDR             X3, [X1,#0x70]
+..text:000000000001B0C8       REV             X0, X0
+..text:000000000001B0CC       REV             X5, X5
+..text:000000000001B0D0       STR             X8, [X19,#0x28]
+..text:000000000001B0D4       REV             X1, X3
+..text:000000000001B0D8       STR             X7, [X19,#0x58]
+..text:000000000001B0DC       STR             X6, [X19,#0x60]
+..text:000000000001B0E0       STR             X5, [X19,#0x68]
+..text:000000000001B0E4       STR             X1, [X19,#0x70]
+..text:000000000001B0E8       STR             X0, [X19,#0x78]
+..text:000000000001B0EC       LDR             Q16, [X2]
+..text:000000000001B0F0       SUB             X1, X2, #0x68 ; 'h'
+..text:000000000001B0F4       SUB             X0, X2, #0x70 ; 'p'
+..text:000000000001B0F8       SUB             X3, X2, #0x28 ; '('
+..text:000000000001B0FC       LDR             Q5, [X1]
+..text:000000000001B100       ADD             X1, X2, #0x10
+..text:000000000001B104       LDR             Q2, [X3]
+..text:000000000001B108       CMP             X1, X4
+..text:000000000001B10C       LDR             Q18, [X0]
+..text:000000000001B110       MOV             X2, X1
+..text:000000000001B114       SHL             V3.2D, V16.2D, #0x2D ; '-'
+..text:000000000001B118       SHL             V17.2D, V16.2D, #3
+..text:000000000001B11C       USHR            V7.2D, V16.2D, #0x13
+..text:000000000001B120       USHR            V6.2D, V16.2D, #0x3D ; '='
+..text:000000000001B124       SHL             V4.2D, V5.2D, #0x3F ; '?'
+..text:000000000001B128       USHR            V0.2D, V5.2D, #8
+..text:000000000001B12C       ORR             V7.16B, V3.16B, V7.16B
+..text:000000000001B130       ORR             V6.16B, V17.16B, V6.16B
+..text:000000000001B134       USHR            V3.2D, V5.2D, #1
+..text:000000000001B138       SHL             V17.2D, V5.2D, #0x38 ; '8'
+..text:000000000001B13C       USHR            V16.2D, V16.2D, #6
+..text:000000000001B140       EOR             V6.16B, V7.16B, V6.16B
+..text:000000000001B144       ORR             V4.16B, V4.16B, V3.16B
+..text:000000000001B148       ORR             V0.16B, V17.16B, V0.16B
+..text:000000000001B14C       ADD             V2.2D, V2.2D, V18.2D
+..text:000000000001B150       EOR             V1.16B, V6.16B, V16.16B
+..text:000000000001B154       USHR            V5.2D, V5.2D, #7
+..text:000000000001B158       EOR             V3.16B, V4.16B, V0.16B
+..text:000000000001B15C       ADD             V1.2D, V2.2D, V1.2D
+..text:000000000001B160       EOR             V0.16B, V3.16B, V5.16B
+..text:000000000001B164       ADD             V0.2D, V1.2D, V0.2D
+..text:000000000001B168       STR             Q0, [X1]
+..text:000000000001B16C       B.NE            loc_1B0EC
+..text:000000000001B170       ADRP            X20, #qword_3F4A0@PAGE
+..text:000000000001B174       LDR             X5, [X11,#0x38]
+..text:000000000001B178       ADD             X20, X20, #qword_3F4A0@PAGEOFF
+..text:000000000001B17C       LDR             X1, [X11,#0x20]
+..text:000000000001B180       LDR             X6, [X11,#0x28]
+..text:000000000001B184       ADD             X21, X20, #0x280
+..text:000000000001B188       LDR             X4, [X11,#0x30]
+..text:000000000001B18C       LDR             X3, [X11]
+..text:000000000001B190       LDR             X23, [X11,#8]
+..text:000000000001B194       LDR             X22, [X11,#0x10]
+..text:000000000001B198       LDR             X2, [X11,#0x18]
+..text:000000000001B19C       LDR             X10, [X20]
+..text:000000000001B1A0       EXTR            X8, X1, X1, #0xE
+..text:000000000001B1A4       LDR             X17, [X19]
+..text:000000000001B1A8       EOR             X9, X4, X6
+..text:000000000001B1AC       EXTR            X0, X1, X1, #0x29 ; ')'
+..text:000000000001B1B0       EOR             X8, X8, X1,ROR#18
+..text:000000000001B1B4       ORR             X18, X23, X3
+..text:000000000001B1B8       ADD             X17, X17, X10
+..text:000000000001B1BC       AND             X9, X9, X1
+..text:000000000001B1C0       EXTR            X7, X3, X3, #0x22 ; '"'
+..text:000000000001B1C4       EOR             X8, X8, X0
+..text:000000000001B1C8       AND             X10, X23, X3
+..text:000000000001B1CC       EOR             X9, X9, X4
+..text:000000000001B1D0       EXTR            X0, X3, X3, #0x27 ; '''
+..text:000000000001B1D4       AND             X18, X18, X22
+..text:000000000001B1D8       EOR             X7, X7, X3,ROR#28
+..text:000000000001B1DC       ADD             X8, X17, X8
+..text:000000000001B1E0       ORR             X18, X18, X10
+..text:000000000001B1E4       EOR             X7, X7, X0
+..text:000000000001B1E8       ADD             X8, X8, X9
+..text:000000000001B1EC       ADD             X8, X8, X5
+..text:000000000001B1F0       LDR             X17, [X20,#8]
+..text:000000000001B1F4       ADD             X5, X18, X7
+..text:000000000001B1F8       LDR             X0, [X19,#8]
+..text:000000000001B1FC       ADD             X5, X5, X8
+..text:000000000001B200       ADD             X2, X2, X8
+..text:000000000001B204       EOR             X18, X6, X1
+..text:000000000001B208       ORR             X24, X5, X3
+..text:000000000001B20C       ADD             X0, X17, X0
+..text:000000000001B210       EXTR            X7, X5, X5, #0x22 ; '"'
+..text:000000000001B214       AND             X18, X2, X18
+..text:000000000001B218       EXTR            X10, X2, X2, #0xE
+..text:000000000001B21C       ADD             X8, X0, X4
+..text:000000000001B220       AND             X9, X5, X3
+..text:000000000001B224       EOR             X18, X18, X6
+..text:000000000001B228       AND             X24, X24, X23
+..text:000000000001B22C       EXTR            X0, X2, X2, #0x29 ; ')'
+..text:000000000001B230       EOR             X4, X7, X5,ROR#28
+..text:000000000001B234       EOR             X10, X10, X2,ROR#18
+..text:000000000001B238       EXTR            X7, X5, X5, #0x27 ; '''
+..text:000000000001B23C       ADD             X17, X8, X18
+..text:000000000001B240       EOR             X10, X10, X0
+..text:000000000001B244       ORR             X18, X24, X9
+..text:000000000001B248       EOR             X4, X4, X7
+..text:000000000001B24C       LDR             X8, [X20,#0x10]
+..text:000000000001B250       ADD             X17, X17, X10
+..text:000000000001B254       ADD             X4, X18, X4
+..text:000000000001B258       LDR             X0, [X19,#0x10]
+..text:000000000001B25C       ADD             X10, X4, X17
+..text:000000000001B260       ADD             X22, X17, X22
+..text:000000000001B264       EOR             X17, X2, X1
+..text:000000000001B268       ORR             X7, X10, X5
+..text:000000000001B26C       ADD             X0, X8, X0
+..text:000000000001B270       EXTR            X4, X10, X10, #0x22 ; '"'
+..text:000000000001B274       AND             X17, X22, X17
+..text:000000000001B278       EXTR            X9, X22, X22, #0xE
+..text:000000000001B27C       AND             X24, X7, X3
+..text:000000000001B280       EOR             X18, X4, X10,ROR#28
+..text:000000000001B284       ADD             X6, X0, X6
+..text:000000000001B288       EOR             X17, X17, X1
+..text:000000000001B28C       EXTR            X0, X22, X22, #0x29 ; ')'
+..text:000000000001B290       AND             X7, X10, X5
+..text:000000000001B294       EOR             X9, X9, X22,ROR#18
+..text:000000000001B298       EXTR            X4, X10, X10, #0x27 ; '''
+..text:000000000001B29C       ADD             X8, X6, X17
+..text:000000000001B2A0       EOR             X9, X9, X0
+..text:000000000001B2A4       ORR             X7, X24, X7
+..text:000000000001B2A8       EOR             X4, X18, X4
+..text:000000000001B2AC       LDR             X6, [X20,#0x18]
+..text:000000000001B2B0       ADD             X8, X8, X9
+..text:000000000001B2B4       LDR             X0, [X19,#0x18]
+..text:000000000001B2B8       ADD             X9, X7, X4
+..text:000000000001B2BC       ADD             X9, X9, X8
+..text:000000000001B2C0       ADD             X23, X8, X23
+..text:000000000001B2C4       EOR             X8, X22, X2
+..text:000000000001B2C8       ORR             X7, X9, X10
+..text:000000000001B2CC       EXTR            X17, X23, X23, #0xE
+..text:000000000001B2D0       EXTR            X4, X9, X9, #0x22 ; '"'
+..text:000000000001B2D4       ADD             X0, X6, X0
+..text:000000000001B2D8       AND             X8, X23, X8
+..text:000000000001B2DC       EOR             X18, X4, X9,ROR#28
+..text:000000000001B2E0       ADD             X6, X0, X1
+..text:000000000001B2E4       EOR             X8, X8, X2
+..text:000000000001B2E8       EOR             X1, X17, X23,ROR#18
+..text:000000000001B2EC       AND             X24, X7, X5
+..text:000000000001B2F0       EXTR            X17, X23, X23, #0x29 ; ')'
+..text:000000000001B2F4       AND             X7, X9, X10
+..text:000000000001B2F8       EXTR            X4, X9, X9, #0x27 ; '''
+..text:000000000001B2FC       ADD             X0, X6, X8
+..text:000000000001B300       EOR             X1, X1, X17
+..text:000000000001B304       EOR             X4, X18, X4
+..text:000000000001B308       ORR             X7, X24, X7
+..text:000000000001B30C       ADD             X0, X0, X1
+..text:000000000001B310       LDR             X6, [X20,#0x20]
+..text:000000000001B314       LDR             X17, [X19,#0x20]
+..text:000000000001B318       ADD             X1, X7, X4
+..text:000000000001B31C       ADD             X1, X1, X0
+..text:000000000001B320       ADD             X3, X0, X3
+..text:000000000001B324       EOR             X8, X23, X22
+..text:000000000001B328       ADD             X6, X17, X6
+..text:000000000001B32C       AND             X8, X3, X8
+..text:000000000001B330       ORR             X17, X1, X9
+..text:000000000001B334       EXTR            X18, X3, X3, #0xE
+..text:000000000001B338       EXTR            X7, X1, X1, #0x22 ; '"'
+..text:000000000001B33C       EOR             X8, X8, X22
+..text:000000000001B340       EOR             X18, X18, X3,ROR#18
+..text:000000000001B344       EXTR            X0, X3, X3, #0x29 ; ')'
+..text:000000000001B348       EOR             X7, X7, X1,ROR#28
+..text:000000000001B34C       EXTR            X4, X1, X1, #0x27 ; '''
+..text:000000000001B350       ADD             X2, X6, X2
+..text:000000000001B354       AND             X17, X17, X10
+..text:000000000001B358       AND             X6, X1, X9
+..text:000000000001B35C       ADD             X2, X2, X8
+..text:000000000001B360       ORR             X17, X17, X6
+..text:000000000001B364       EOR             X8, X18, X0
+..text:000000000001B368       EOR             X0, X7, X4
+..text:000000000001B36C       LDR             X6, [X20,#0x28]
+..text:000000000001B370       ADD             X8, X2, X8
+..text:000000000001B374       LDR             X7, [X19,#0x28]
+..text:000000000001B378       ADD             X2, X17, X0
+..text:000000000001B37C       ADD             X2, X2, X8
+..text:000000000001B380       ADD             X5, X8, X5
+..text:000000000001B384       EOR             X4, X3, X23
+..text:000000000001B388       ADD             X7, X7, X6
+..text:000000000001B38C       EXTR            X8, X2, X2, #0x22 ; '"'
+..text:000000000001B390       ORR             X6, X2, X1
+..text:000000000001B394       AND             X4, X5, X4
+..text:000000000001B398       EXTR            X18, X5, X5, #0xE
+..text:000000000001B39C       EOR             X4, X4, X23
+..text:000000000001B3A0       EOR             X17, X8, X2,ROR#28
+..text:000000000001B3A4       ADD             X7, X7, X22
+..text:000000000001B3A8       EOR             X18, X18, X5,ROR#18
+..text:000000000001B3AC       AND             X22, X6, X9
+..text:000000000001B3B0       EXTR            X0, X5, X5, #0x29 ; ')'
+..text:000000000001B3B4       AND             X6, X2, X1
+..text:000000000001B3B8       EXTR            X8, X2, X2, #0x27 ; '''
+..text:000000000001B3BC       EOR             X8, X17, X8
+..text:000000000001B3C0       ADD             X7, X7, X4
+..text:000000000001B3C4       ORR             X22, X22, X6
+..text:000000000001B3C8       EOR             X4, X18, X0
+..text:000000000001B3CC       ADD             X7, X7, X4
+..text:000000000001B3D0       LDR             X0, [X20,#0x30]
+..text:000000000001B3D4       LDR             X6, [X19,#0x30]
+..text:000000000001B3D8       ADD             X22, X22, X8
+..text:000000000001B3DC       ADD             X22, X22, X7
+..text:000000000001B3E0       ADD             X4, X7, X10
+..text:000000000001B3E4       EOR             X10, X5, X3
+..text:000000000001B3E8       ADD             X6, X6, X0
+..text:000000000001B3EC       ORR             X17, X22, X2
+..text:000000000001B3F0       EXTR            X0, X4, X4, #0xE
+..text:000000000001B3F4       EXTR            X7, X22, X22, #0x22 ; '"'
+..text:000000000001B3F8       AND             X10, X4, X10
+..text:000000000001B3FC       EOR             X10, X10, X3
+..text:000000000001B400       EOR             X8, X0, X4,ROR#18
+..text:000000000001B404       EOR             X18, X7, X22,ROR#28
+..text:000000000001B408       ADD             X6, X6, X23
+..text:000000000001B40C       EXTR            X0, X4, X4, #0x29 ; ')'
+..text:000000000001B410       AND             X23, X17, X1
+..text:000000000001B414       EXTR            X7, X22, X22, #0x27 ; '''
+..text:000000000001B418       AND             X17, X22, X2
+..text:000000000001B41C       EOR             X0, X8, X0
+..text:000000000001B420       EOR             X7, X18, X7
+..text:000000000001B424       ADD             X6, X6, X10
+..text:000000000001B428       ORR             X10, X23, X17
+..text:000000000001B42C       LDR             X8, [X20,#0x38]
+..text:000000000001B430       ADD             X6, X6, X0
+..text:000000000001B434       LDR             X17, [X19,#0x38]
+..text:000000000001B438       ADD             X0, X10, X7
+..text:000000000001B43C       ADD             X23, X0, X6
+..text:000000000001B440       EOR             X10, X4, X5
+..text:000000000001B444       ADD             X6, X6, X9
+..text:000000000001B448       EXTR            X7, X23, X23, #0x22 ; '"'
+..text:000000000001B44C       ADD             X9, X17, X8
+..text:000000000001B450       EXTR            X0, X6, X6, #0xE
+..text:000000000001B454       ORR             X8, X23, X22
+..text:000000000001B458       AND             X10, X6, X10
+..text:000000000001B45C       ADD             X3, X9, X3
+..text:000000000001B460       EOR             X18, X0, X6,ROR#18
+..text:000000000001B464       AND             X17, X8, X2
+..text:000000000001B468       EOR             X9, X7, X23,ROR#28
+..text:000000000001B46C       EOR             X10, X10, X5
+..text:000000000001B470       EXTR            X0, X6, X6, #0x29 ; ')'
+..text:000000000001B474       AND             X8, X23, X22
+..text:000000000001B478       EXTR            X7, X23, X23, #0x27 ; '''
+..text:000000000001B47C       ADD             X20, X20, #0x40 ; '@'
+..text:000000000001B480       EOR             X0, X18, X0
+..text:000000000001B484       ADD             X3, X3, X10
+..text:000000000001B488       ORR             X8, X17, X8
+..text:000000000001B48C       EOR             X7, X9, X7
+..text:000000000001B490       CMP             X20, X21
+..text:000000000001B494       ADD             X3, X3, X0
+..text:000000000001B498       ADD             X0, X8, X7
+..text:000000000001B49C       ADD             X1, X3, X1
+..text:000000000001B4A0       ADD             X19, X19, #0x40 ; '@'
+..text:000000000001B4A4       ADD             X3, X0, X3
+..text:000000000001B4A8       B.NE            loc_1B19C
+..text:000000000001B4AC       STR             X3, [X11]
+..text:000000000001B4B0       MOV             X7, X11
+..text:000000000001B4B4       STR             X23, [X11,#8]
+..text:000000000001B4B8       ADD             X8, X11, #0x20 ; ' '
+..text:000000000001B4BC       LDR             Q0, [X16]
+..text:000000000001B4C0       ADD             X3, X11, #0x30 ; '0'
+..text:000000000001B4C4       LDR             Q1, [X7],#0x10
+..text:000000000001B4C8       MOV             W0, #0
+..text:000000000001B4CC       STR             X2, [X11,#0x18]
+..text:000000000001B4D0       STR             X22, [X11,#0x10]
+..text:000000000001B4D4       STR             X1, [X11,#0x20]
+..text:000000000001B4D8       STR             X6, [X11,#0x28]
+..text:000000000001B4DC       ADD             V0.2D, V0.2D, V1.2D
+..text:000000000001B4E0       LDR             Q1, [X7]
+..text:000000000001B4E4       LDR             Q4, [X8]
+..text:000000000001B4E8       STR             X5, [X11,#0x38]
+..text:000000000001B4EC       STR             X4, [X11,#0x30]
+..text:000000000001B4F0       STR             Q0, [X16]
+..text:000000000001B4F4       LDR             X2, [SP,#0x310+var_8]
+..text:000000000001B4F8       LDR             Q3, [X3]
+..text:000000000001B4FC       LDR             Q2, [X15]
+..text:000000000001B500       ADD             V2.2D, V2.2D, V1.2D
+..text:000000000001B504       STR             Q2, [X15]
+..text:000000000001B508       LDR             Q1, [X14]
+..text:000000000001B50C       ADD             V1.2D, V1.2D, V4.2D
+..text:000000000001B510       STR             Q1, [X14]
+..text:000000000001B514       LDR             Q0, [X12]
+..text:000000000001B518       ADD             V0.2D, V0.2D, V3.2D
+..text:000000000001B51C       STR             Q0, [X12]
+..text:000000000001B520       LDR             X13, [X13,#__stack_chk_guard_ptr@PAGEOFF]
+..text:000000000001B524       LDR             X1, [X13]
+..text:000000000001B528       CMP             X2, X1
+..text:000000000001B52C       B.NE            loc_1B54C
+..text:000000000001B530       LDP             X19, X20, [SP,#0x310+var_310]
+..text:000000000001B534       LDP             X21, X22, [SP,#0x310+var_300]
+..text:000000000001B538       LDP             X23, X24, [SP,#0x310+var_2F0]
+..text:000000000001B53C       LDR             X30, [SP,#0x310+var_2E0]
+..text:000000000001B540       ADD             SP, SP, #0x40 ; '@'
+..text:000000000001B544       ADD             SP, SP, #0x2D0
+..text:000000000001B548       RET
+..text:000000000001B54C       BL              .__stack_chk_fail

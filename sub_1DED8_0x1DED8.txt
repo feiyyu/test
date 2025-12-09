@@ -1,0 +1,17 @@
+Function: sub_1DED8 (0x1DED8)
+Architecture: 64-bit
+Segment range: 0x1DED8 - 0x1DF08
+----------------------------------------
+
+..text:000000000001DED8       CBZ             X0, loc_1DEF8
+..text:000000000001DEDC       LDR             W2, [X0]
+..text:000000000001DEE0       CMP             W2, W1
+..text:000000000001DEE4       B.LE            loc_1DF00
+..text:000000000001DEE8       TBNZ            W1, #0x1F, loc_1DF00
+..text:000000000001DEEC       LDR             X0, [X0,#0x10]
+..text:000000000001DEF0       LDR             X0, [X0,W1,SXTW#3]
+..text:000000000001DEF4       RET
+..text:000000000001DEF8       MOV             X0, #0x10
+..text:000000000001DEFC       RET
+..text:000000000001DF00       MOV             X0, #0
+..text:000000000001DF04       RET

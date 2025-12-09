@@ -1,0 +1,9 @@
+Function: .strcmp (0x2230)
+Architecture: 64-bit
+Segment range: 0x2230 - 0x2240
+----------------------------------------
+
+..plt:0000000000002230        ADRP            X16, #strcmp_ptr@PAGE
+..plt:0000000000002234        LDR             X17, [X16,#strcmp_ptr@PAGEOFF]
+..plt:0000000000002238        ADD             X16, X16, #strcmp_ptr@PAGEOFF
+..plt:000000000000223C        BR              X17 ; strcmp

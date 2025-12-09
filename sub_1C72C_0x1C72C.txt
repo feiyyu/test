@@ -1,0 +1,40 @@
+Function: sub_1C72C (0x1C72C)
+Architecture: 64-bit
+Segment range: 0x1C72C - 0x1C7B8
+----------------------------------------
+
+..text:000000000001C72C       SUB             SP, SP, #0x20
+..text:000000000001C730       STP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001C734       STP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001C738       CBZ             X0, loc_1C768
+..text:000000000001C73C       CBZ             X1, loc_1C768
+..text:000000000001C740       MOV             X19, X0
+..text:000000000001C744       LDR             W0, [X0,#0xD0]
+..text:000000000001C748       MOV             X20, X2
+..text:000000000001C74C       MOV             X21, X1
+..text:000000000001C750       BL              sub_1FF68
+..text:000000000001C754       CBZ             W0, loc_1C77C
+..text:000000000001C758       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001C75C       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001C760       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001C764       RET
+..text:000000000001C768       MOV             W0, #0x10
+..text:000000000001C76C       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001C770       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001C774       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001C778       RET
+..text:000000000001C77C       LDRSW           X3, [X19,#0xD0]
+..text:000000000001C780       ADRP            X5, #off_59F88@PAGE
+..text:000000000001C784       MOV             X1, X21
+..text:000000000001C788       MOV             X2, X20
+..text:000000000001C78C       MOV             X0, X19
+..text:000000000001C790       ADD             X4, X3, X3,LSL#1
+..text:000000000001C794       LDR             X5, [X5,#off_59F88@PAGEOFF]
+..text:000000000001C798       ADD             X3, X3, X4,LSL#2
+..text:000000000001C79C       ADD             X3, X5, X3,LSL#4
+..text:000000000001C7A0       LDR             X3, [X3,#0xB0]
+..text:000000000001C7A4       BLR             X3
+..text:000000000001C7A8       LDP             X19, X20, [SP,#0x20+var_20]
+..text:000000000001C7AC       LDP             X21, X30, [SP,#0x20+var_10]
+..text:000000000001C7B0       ADD             SP, SP, #0x20 ; ' '
+..text:000000000001C7B4       RET

@@ -1,0 +1,6 @@
+Function: calloc (0x614A0)
+Architecture: 64-bit
+Segment range: 0x614A0 - 0x614A8
+----------------------------------------
+
+.extern:00000000000614A0      IMPORT calloc

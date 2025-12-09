@@ -1,0 +1,9 @@
+Function: .fread (0x21F0)
+Architecture: 64-bit
+Segment range: 0x21F0 - 0x2200
+----------------------------------------
+
+..plt:00000000000021F0        ADRP            X16, #fread_ptr@PAGE
+..plt:00000000000021F4        LDR             X17, [X16,#fread_ptr@PAGEOFF]
+..plt:00000000000021F8        ADD             X16, X16, #fread_ptr@PAGEOFF
+..plt:00000000000021FC        BR              X17 ; fread

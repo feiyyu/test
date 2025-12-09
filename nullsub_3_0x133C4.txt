@@ -1,0 +1,6 @@
+Function: nullsub_3 (0x133C4)
+Architecture: 64-bit
+Segment range: 0x133C4 - 0x133C8
+----------------------------------------
+
+..text:00000000000133C4       RET

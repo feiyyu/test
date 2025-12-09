@@ -1,0 +1,6 @@
+Function: open (0x61518)
+Architecture: 64-bit
+Segment range: 0x61518 - 0x61520
+----------------------------------------
+
+.extern:0000000000061518      IMPORT open

@@ -1,0 +1,9 @@
+Function: .memcmp (0x21E0)
+Architecture: 64-bit
+Segment range: 0x21E0 - 0x21F0
+----------------------------------------
+
+..plt:00000000000021E0        ADRP            X16, #memcmp_ptr@PAGE
+..plt:00000000000021E4        LDR             X17, [X16,#memcmp_ptr@PAGEOFF]
+..plt:00000000000021E8        ADD             X16, X16, #memcmp_ptr@PAGEOFF
+..plt:00000000000021EC        BR              X17 ; memcmp

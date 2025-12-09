@@ -1,0 +1,9 @@
+Function: .__cxa_atexit (0x21C0)
+Architecture: 64-bit
+Segment range: 0x21C0 - 0x21D0
+----------------------------------------
+
+..plt:00000000000021C0        ADRP            X16, #__cxa_atexit_ptr@PAGE
+..plt:00000000000021C4        LDR             X17, [X16,#__cxa_atexit_ptr@PAGEOFF]
+..plt:00000000000021C8        ADD             X16, X16, #__cxa_atexit_ptr@PAGEOFF
+..plt:00000000000021CC        BR              X17 ; __cxa_atexit

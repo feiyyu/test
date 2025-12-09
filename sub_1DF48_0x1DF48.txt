@@ -1,0 +1,9 @@
+Function: sub_1DF48 (0x1DF48)
+Architecture: 64-bit
+Segment range: 0x1DF48 - 0x1DF58
+----------------------------------------
+
+..text:000000000001DF48       CBZ             X0, loc_1DF50
+..text:000000000001DF4C       B               sub_6B00
+..text:000000000001DF50       MOV             W0, #0x10
+..text:000000000001DF54       RET

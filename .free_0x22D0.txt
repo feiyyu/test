@@ -1,0 +1,9 @@
+Function: .free (0x22D0)
+Architecture: 64-bit
+Segment range: 0x22D0 - 0x22E0
+----------------------------------------
+
+..plt:00000000000022D0        ADRP            X16, #free_ptr@PAGE
+..plt:00000000000022D4        LDR             X17, [X16,#free_ptr@PAGEOFF]
+..plt:00000000000022D8        ADD             X16, X16, #free_ptr@PAGEOFF
+..plt:00000000000022DC        BR              X17 ; free

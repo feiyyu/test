@@ -1,0 +1,6 @@
+Function: memcpy (0x61478)
+Architecture: 64-bit
+Segment range: 0x61478 - 0x61480
+----------------------------------------
+
+.extern:0000000000061478      IMPORT memcpy

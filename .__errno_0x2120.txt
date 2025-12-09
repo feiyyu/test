@@ -1,0 +1,9 @@
+Function: .__errno (0x2120)
+Architecture: 64-bit
+Segment range: 0x2120 - 0x2130
+----------------------------------------
+
+..plt:0000000000002120        ADRP            X16, #__errno_ptr@PAGE
+..plt:0000000000002124        LDR             X17, [X16,#__errno_ptr@PAGEOFF]
+..plt:0000000000002128        ADD             X16, X16, #__errno_ptr@PAGEOFF
+..plt:000000000000212C        BR              X17 ; __errno

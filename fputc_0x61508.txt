@@ -1,0 +1,6 @@
+Function: fputc (0x61508)
+Architecture: 64-bit
+Segment range: 0x61508 - 0x61510
+----------------------------------------
+
+.extern:0000000000061508      IMPORT fputc

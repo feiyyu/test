@@ -1,0 +1,6 @@
+Function: setvbuf (0x61480)
+Architecture: 64-bit
+Segment range: 0x61480 - 0x61488
+----------------------------------------
+
+.extern:0000000000061480      IMPORT setvbuf

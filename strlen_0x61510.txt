@@ -1,0 +1,6 @@
+Function: strlen (0x61510)
+Architecture: 64-bit
+Segment range: 0x61510 - 0x61518
+----------------------------------------
+
+.extern:0000000000061510      IMPORT strlen

@@ -1,0 +1,6 @@
+Function: __stack_chk_fail (0x61498)
+Architecture: 64-bit
+Segment range: 0x61498 - 0x614A0
+----------------------------------------
+
+.extern:0000000000061498      IMPORT __stack_chk_fail

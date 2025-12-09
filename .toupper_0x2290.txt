@@ -1,0 +1,9 @@
+Function: .toupper (0x2290)
+Architecture: 64-bit
+Segment range: 0x2290 - 0x22A0
+----------------------------------------
+
+..plt:0000000000002290        ADRP            X16, #toupper_ptr@PAGE
+..plt:0000000000002294        LDR             X17, [X16,#toupper_ptr@PAGEOFF]
+..plt:0000000000002298        ADD             X16, X16, #toupper_ptr@PAGEOFF
+..plt:000000000000229C        BR              X17 ; toupper

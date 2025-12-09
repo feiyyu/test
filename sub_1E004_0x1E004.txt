@@ -1,0 +1,35 @@
+Function: sub_1E004 (0x1E004)
+Architecture: 64-bit
+Segment range: 0x1E004 - 0x1E080
+----------------------------------------
+
+..text:000000000001E004       CMP             X2, XZR
+..text:000000000001E008       SUB             SP, SP, #0x10
+..text:000000000001E00C       CSET            W5, EQ
+..text:000000000001E010       CMP             X3, XZR
+..text:000000000001E014       CSET            W4, EQ
+..text:000000000001E018       CMP             X1, XZR
+..text:000000000001E01C       ORR             W4, W5, W4
+..text:000000000001E020       CSET            W5, EQ
+..text:000000000001E024       STR             X30, [SP,#0x10+var_10]
+..text:000000000001E028       ORR             W4, W5, W4
+..text:000000000001E02C       CBNZ            W4, loc_1E068
+..text:000000000001E030       CBZ             X0, loc_1E068
+..text:000000000001E034       BL              sub_E448
+..text:000000000001E038       CBZ             W0, loc_1E054
+..text:000000000001E03C       CMN             W0, #2
+..text:000000000001E040       B.EQ            loc_1E078
+..text:000000000001E044       CMN             W0, #3
+..text:000000000001E048       MOV             W0, #1
+..text:000000000001E04C       B.NE            loc_1E06C
+..text:000000000001E050       MOV             W0, #2
+..text:000000000001E054       ADRL            X1, dword_3FB00
+..text:000000000001E05C       ADD             X0, X1, W0,SXTW#3
+..text:000000000001E060       LDR             W0, [X0,#4]
+..text:000000000001E064       B               loc_1E06C
+..text:000000000001E068       MOV             W0, #0x10
+..text:000000000001E06C       LDR             X30, [SP,#0x10+var_10]
+..text:000000000001E070       ADD             SP, SP, #0x10
+..text:000000000001E074       RET
+..text:000000000001E078       MOV             W0, #1
+..text:000000000001E07C       B               loc_1E054

@@ -1,0 +1,25 @@
+Function: __multi3 (0x2E020)
+Architecture: 64-bit
+Segment range: 0x2E020 - 0x2E070
+----------------------------------------
+
+..text:000000000002E020       AND             X8, X0, #0xFFFFFFFF
+..text:000000000002E024       LSR             X4, X0, #0x20 ; ' '
+..text:000000000002E028       AND             X6, X2, #0xFFFFFFFF
+..text:000000000002E02C       LSR             X5, X2, #0x20 ; ' '
+..text:000000000002E030       MUL             X7, X6, X8
+..text:000000000002E034       MUL             X6, X6, X4
+..text:000000000002E038       MUL             X4, X5, X4
+..text:000000000002E03C       MADD            X5, X5, X8, X6
+..text:000000000002E040       ADD             X5, X5, X7,LSR#32
+..text:000000000002E044       CMP             X5, X6
+..text:000000000002E048       B.CS            loc_2E054
+..text:000000000002E04C       MOV             X6, #0x100000000
+..text:000000000002E050       ADD             X4, X4, X6
+..text:000000000002E054       MUL             X1, X1, X2
+..text:000000000002E058       MADD            X1, X3, X0, X1
+..text:000000000002E05C       ADD             X4, X4, X5,LSR#32
+..text:000000000002E060       AND             X7, X7, #0xFFFFFFFF
+..text:000000000002E064       ADD             X0, X7, X5,LSL#32
+..text:000000000002E068       ADD             X1, X1, X4
+..text:000000000002E06C       RET

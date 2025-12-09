@@ -1,0 +1,6 @@
+Function: strcpy (0x61458)
+Architecture: 64-bit
+Segment range: 0x61458 - 0x61460
+----------------------------------------
+
+.extern:0000000000061458      IMPORT strcpy

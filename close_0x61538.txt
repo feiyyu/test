@@ -1,0 +1,6 @@
+Function: close (0x61538)
+Architecture: 64-bit
+Segment range: 0x61538 - 0x61540
+----------------------------------------
+
+.extern:0000000000061538      IMPORT close

@@ -1,0 +1,6 @@
+Function: __cxa_finalize (0x61488)
+Architecture: 64-bit
+Segment range: 0x61488 - 0x61490
+----------------------------------------
+
+.extern:0000000000061488      IMPORT __cxa_finalize
